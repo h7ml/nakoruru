@@ -1,13 +1,13 @@
 // index.js
-import React, { useRef, useState } from 'react';
-import { Node } from "@/types";
+import React, { useCallback, useRef, useState } from 'react';
+import { Node as Nodes } from "@/types";
 import ReactFlow, {
   MiniMap,    // 缩略图
   Controls,   // 画布缩放大小控制
-  Background, // 背景组件
+  Background,
 } from 'react-flow-renderer';
 
-const initialElements: Node[] = [
+const initialElements: Nodes[] = [
   {
     id: '1',
     type: 'input',
@@ -78,23 +78,16 @@ const initialElements: Node[] = [
   },
 ];
 
-const onLoad = (reactFlowInstance: { fitView: () => void; }) => {
-  console.log('flow loaded:', reactFlowInstance);
-  reactFlowInstance.fitView();
-};
-
 export const OverviewFlow = () => {
-  const [elements, setElements] = useState(initialElements);
-
+  const [elements] = useState(initialElements);
   const flowRef = useRef<HTMLDivElement | null>(null);
   return (
     <div className='w-full h-100vh'>
       <ReactFlow
         ref={flowRef}
         nodes={elements}
-        onLoad={onLoad}
       >
-        <MiniMap
+        {/* <MiniMap
           nodeStrokeColor={(n) => {
             if (n.type === 'input') return '#0041d0';
             if (n.type === 'output') return '#ff0072';
@@ -103,10 +96,10 @@ export const OverviewFlow = () => {
             return '#eee';
           }}
           nodeColor={(n) => {
+            if (n.type === 'output') return '#ff0072';
             return '#fff';
           }}
-          nodeBorderRadius={2}
-        />
+        /> */}
         <Controls />
         <Background color="#aaa" gap={16} />
       </ReactFlow>

@@ -1,9 +1,6 @@
-import { useState } from 'react'
 import { OverviewFlow } from './components'
 import GitHubCorners from "@/components/GitHubCorners"
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function Home() {
   return (
     <>
       <div className='h-full w-full'>
@@ -13,5 +10,3 @@ function App() {
     </>
   )
 }
-
-export default App

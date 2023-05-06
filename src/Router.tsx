@@ -1,17 +1,13 @@
 import { lazy, Suspense } from 'react';
 import { RouteObject, useRoutes } from 'react-router-dom';
-import Loading from './components/Layout/Loading';
+// import Loading from './components/Layout/Loading';
 
 const Home = lazy(() => import('./pages/Home'));
 
 const routes: RouteObject[] = [
   {
     path: '/',
-    element: (
-      <Suspense fallback={<Loading />}>
-        <Home />
-      </Suspense>
-    ),
+    element: <Home />,
   },
   {
     path: '*',
