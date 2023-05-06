@@ -3,7 +3,7 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { createHtmlPlugin } from 'vite-plugin-html';
 import WindiCSS from 'vite-plugin-windicss';
-import ThemeColor from './src/theme';
+import ThemeColor from './theme';
 
 export default defineConfig(({ mode }) => {
   return {
