@@ -1,0 +1,94 @@
+{
+  "name": "reactflow-example",
+  "private": true,
+  "version": "0.0.1",
+  "description": "React Flow Example is an example project based on React Flow library, which demonstrates how to use React Flow to build flowchart applications.  ",
+  "type": "module",
+  "homepage": "https://reactflow-example.h7ml.cn",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview",
+    "commit": "git-cz",
+    "types": "npx swagger-typescript-api -p https://petstore.swagger.io/v2/swagger.json -o ./src/server -n api.ts",
+    "lint:ts": "tsc --noEmit -p ./tsconfig.json"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^4.29.5",
+    "@types/node": "^20.1.0",
+    "@types/qs": "^6.9.7",
+    "antd": "^5.4.7",
+    "classnames": "^2.3.2",
+    "less": "^4.1.3",
+    "qs": "^6.11.1",
+    "react": "^18.2.0",
+    "react-dnd": "^16.0.1",
+    "react-dnd-html5-backend": "^16.0.1",
+    "react-dom": "^18.2.0",
+    "react-flow-renderer": "^10.3.17",
+    "react-query": "^4.0.0",
+    "react-router-dom": "^6.11.1",
+    "react-use": "^17.4.0",
+    "recoil": "^0.7.7",
+    "swagger-typescript-api": "^12.0.4",
+    "vite-plugin-html": "^3.2.0",
+    "vite-plugin-windicss": "^1.8.10",
+    "windicss": "^3.5.6"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.5",
+    "@types/react-dom": "^18.0.11",
+    "@typescript-eslint/eslint-plugin": "^5.57.1",
+    "@typescript-eslint/parser": "^5.57.1",
+    "@vitejs/plugin-react": "^4.0.0",
+    "cz-git": "^1.6.1",
+    "eslint": "^8.38.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.3.4",
+    "typescript": "^5.0.2",
+    "vite": "^4.3.2"
+  },
+  "author": {
+    "name": "h7ml",
+    "mail": "h7ml@qq.com",
+    "github": "https://github.com/h7ml/reactflow-example"
+  },
+  "keywords": [
+    "react",
+    "reactflow",
+    "reactflow-example"
+  ],
+  "license": "Apache-2.0",
+  "licenses": [
+    {
+      "type": "Apache-2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0"
+    }
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/h7ml/reactflow-example.git"
+  },
+  "bugs": {
+    "url": "https://github.com/h7ml/reactflow-example/issues"
+  },
+  "engines": {
+    "npm": ">=9.6.5",
+    "node": ">=18.0.0"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-git"
+    }
+  },
+  "volta": {
+    "node": "18.0.0"
+  }
+}
