@@ -1,10 +1,31 @@
 {
+  "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
-    "composite": true,
+    "baseUrl": "./",
+    "outDir": "dist",
+    "target": "ES2015",
+    "experimentalDecorators": true,
+    "useDefineForClassFields": true,
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ESNext"
+    ],
+    "allowJs": true,
     "skipLibCheck": true,
+    "esModuleInterop": false,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "declaration": true,
+    "forceConsistentCasingInFileNames": true,
     "module": "ESNext",
-    "moduleResolution": "bundler",
-    "allowSyntheticDefaultImports": true
-  },
-  "include": ["vite.config.ts"]
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "types": [
+      "@types/node"
+    ]
+  }
 }

@@ -1,7 +1,8 @@
 import { Suspense } from 'react';
 import { RecoilRoot } from 'recoil';
 import { QueryClientProvider } from '@tanstack/react-query';
-import { ConfigProvider, message, theme, App as AntdApp } from 'antd';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import { ConfigProvider, message, App as AntdApp } from 'antd';
 import zhCN from 'antd/locale/zh_CN';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
@@ -18,17 +19,7 @@ export default function App() {
       <QueryClientProvider client={queryClient}>
         <ConfigProvider
           locale={zhCN}
-          autoInsertSpaceInButton={false}
-          theme={{
-            algorithm: theme.darkAlgorithm,
-            token: {
-              colorPrimary: '#7262FD',
-              fontSize: 12,
-              borderRadius: 2,
-              colorBgContainer: '#181b23',
-              colorText: '#b4b7c1',
-            },
-          }}>
+          autoInsertSpaceInButton={false} >
           <AntdApp className="h-full">
             <ReactFlowProvider>
               <DndProvider backend={HTML5Backend}>
@@ -39,6 +30,7 @@ export default function App() {
             </ReactFlowProvider>
           </AntdApp>
         </ConfigProvider>
+        <ReactQueryDevtools />
       </QueryClientProvider>
     </RecoilRoot>
   );
