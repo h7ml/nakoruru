@@ -9,8 +9,9 @@ import { HTML5Backend } from 'react-dnd-html5-backend';
 import { ReactFlowProvider } from 'react-flow-renderer';
 import { queryClient } from '@/plugins/ReactQuery';
 import Loading from '@/components/Layout/Loading';
+import GitHubCorners from "@/components/GitHubCorners"
 import Router from '@/router';
-import { Link } from 'react-router-dom';
+import Nav from './components/Layout/Nav';
 message.config({ maxCount: 3 });
 export default function App() {
   return (
@@ -23,20 +24,9 @@ export default function App() {
             <ReactFlowProvider>
               <DndProvider backend={HTML5Backend}>
                 <Suspense fallback={<Loading />}>
-                  <nav>
-                    <ul>
-                      <li>
-                        <Link to="/">Home</Link>
-                      </li>
-                      <li>
-                        <Link to="/About">About</Link>
-                      </li>
-                      <li>
-                        <Link to="/contact">Contact</Link>
-                      </li>
-                    </ul>
-                  </nav>
+                  <Nav />
                   <Router />
+                  <GitHubCorners />
                 </Suspense>
               </DndProvider>
             </ReactFlowProvider>
