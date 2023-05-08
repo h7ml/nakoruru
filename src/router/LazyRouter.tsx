@@ -1,18 +1,18 @@
 /**
  * @author        h7ml <h7ml@qq.com>
  * @date          2023-05-07 22:40:52
- * @lastModified  2023-05-07 22:40:53
+ * @lastModified  2023-05-08 10:38:22
  * Copyright © www.h7ml.cn All rights reserved
  */
 
-import Loading from "@/components/Layout/Loading"
+import { Loading } from "@/components"
 import { lazy, Suspense } from "react"
 
 /*
  * @Author: h7ml <h7ml@qq.com>
  * @Date: 2023-05-07 22:40:52
  * @LastEditors: h7ml <h7ml@qq.com>
- * @LastEditTime: 2023-05-07 22:45:47
+ * @LastEditTime: 2023-05-08 10:38:16
  * @FilePath: \reactflow-mind-map\src\router\LazyRouter.tsx
  * @Description: 
  * 

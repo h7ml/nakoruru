@@ -8,10 +8,8 @@ import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import { ReactFlowProvider } from 'react-flow-renderer';
 import { queryClient } from '@/plugins/ReactQuery';
-import Loading from '@/components/Layout/Loading';
-import GitHubCorners from "@/components/GitHubCorners"
+import { GitHubCorners, Loading, Nav } from "@/components"
 import Router from '@/router';
-import Nav from './components/Layout/Nav';
 message.config({ maxCount: 3 });
 export default function App() {
   return (

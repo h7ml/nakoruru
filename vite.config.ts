@@ -77,7 +77,7 @@ export default defineConfig(({ mode }) => {
     },
     server: {
       host: '127.0.0.1',
-      port: 8888,
+      port: 5432,
       proxy: {
         '/api': {
           target: 'http://cloud.twelvet.cn/',
