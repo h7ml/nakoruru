@@ -23,6 +23,10 @@ export default defineConfig({
       height: {
         inherit: 'inherit',
       },
+      display: {
+        none: 'none',
+        black: 'black'
+      }
     },
   },
 });
