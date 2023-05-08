@@ -1,14 +1,14 @@
 /**
  * @author        h7ml <h7ml@qq.com>
  * @date          2023-05-08 21:41:06
- * @lastModified  2023-05-08 23:11:12
+ * @lastModified  2023-05-08 23:33:28
  * Copyright © www.h7ml.cn All rights reserved
  */
 /*
  * @Author: h7ml <h7ml@qq.com>
  * @Date: 2023-05-08 21:41:06
  * @LastEditors: h7ml <h7ml@qq.com>
- * @LastEditTime: 2023-05-08 23:07:15
+ * @LastEditTime: 2023-05-08 23:33:28
  * @FilePath: \reactflow-mind-map\src\hooks\react-query\typicode.ts
  * @Description: 
  * 
@@ -16,8 +16,9 @@
  */
 
 
-import { useQuery } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { queryKeys } from '../query-keys';
+import { App } from "antd";
 export const UseTypicode = () => {
   type User = {
     id: number;
@@ -25,24 +26,34 @@ export const UseTypicode = () => {
     email: string;
   };
 
-  const fetchUsers = async (): Promise<User[]> => {
+  const fetchUsers = async (query: string): Promise<User[]> => {
     // 发送请求获取用户数据
-    const response = await fetch('https://jsonplaceholder.typicode.com/albums');
+    const response = await fetch(`https://jsonplaceholder.typicode.com/${query}`);
     const users = await response.json();
     return users;
   };
 
   const useUsersQuery = () => {
-    const ApiResponse = useQuery(<any>{
-      queryKey: queryKeys.userInfo(), // optional, defaults to a string based unique key for the query, e.g. "users" + user.id.to
-      queryFn: fetchUsers, // optional, the function to run to query data, defaults to using the default fetch function. Note: it can take a
-    })
-    console.log('%c [ ApiResponse ]-37', 'font-size:13px; background:pink; color:#bf2c9f;', ApiResponse)
-    return ApiResponse;
-  };
+    const queryClient = useQueryClient();
+    const { message } = App.useApp();
+
+    const { mutate } = useMutation({
+      mutationFn: (query: string) => {
+        return fetchUsers(query);
+      },
+      onSuccess: () => {
+        queryClient.invalidateQueries({ queryKey: queryKeys.userInfo() });
+      },
+      onError: (err: Error) => {
+        console.error(err.message);
+        message.error('新建失败');
+      },
+    });
+    return mutate;
+  }
 
 
   return {
     useUsersQuery,
   };
-};
+}
