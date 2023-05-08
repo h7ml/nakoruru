@@ -8,7 +8,7 @@ import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import { ReactFlowProvider } from 'react-flow-renderer';
 import { queryClient } from '@/plugins/ReactQuery';
-import { GitHubCorners, Loading, Nav } from "@/components"
+import { GitHubCorners, Loading, Nav, RecoilDevtools } from "@/components"
 import Router from '@/router';
 message.config({ maxCount: 3 });
 export default function App() {
@@ -22,6 +22,7 @@ export default function App() {
             <ReactFlowProvider>
               <DndProvider backend={HTML5Backend}>
                 <Suspense fallback={<Loading />}>
+                  <RecoilDevtools />
                   <Nav />
                   <Router />
                   <GitHubCorners />
