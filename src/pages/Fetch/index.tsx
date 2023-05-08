@@ -1,14 +1,14 @@
 /**
  * @author        h7ml <h7ml@qq.com>
  * @date          2023-05-08 20:45:23
- * @lastModified  2023-05-08 21:04:50
+ * @lastModified  2023-05-08 21:10:37
  * Copyright © www.h7ml.cn All rights reserved
  */
 /*
  * @Author: h7ml <h7ml@qq.com>
  * @Date: 2023-05-08 20:45:23
  * @LastEditors: h7ml <h7ml@qq.com>
- * @LastEditTime: 2023-05-08 21:04:47
+ * @LastEditTime: 2023-05-08 21:10:37
  * @FilePath: \reactflow-mind-map\src\pages\Fetch\index.tsx
  * @Description: 
  * 
@@ -18,8 +18,40 @@ import { useFetchData } from "@/hooks";
 import { Table, message } from "antd";
 import { useEffect } from "react";
 
-const Fetch = () => {
-  const { data, loading, error } = useFetchData('https://jsonplaceholder.typicode.com/posts');
+interface TableData {
+  userId: number;
+  id: number;
+  title: string;
+  body: string;
+}
+
+
+const columns = [
+  {
+    title: "User ID",
+    dataIndex: "userId",
+    key: "userId"
+  },
+  {
+    title: "ID",
+    dataIndex: "id",
+    key: "id"
+  },
+  {
+    title: "Title",
+    dataIndex: "title",
+    key: "title"
+  },
+  {
+    title: "Body",
+    dataIndex: "body",
+    key: "body"
+  }
+];
+
+
+const Fetch: React.FC = () => {
+  const { data, loading, error } = useFetchData<TableData[]>('https://jsonplaceholder.typicode.com/posts');
 
 
   useEffect(() => {
@@ -35,24 +67,13 @@ const Fetch = () => {
     message.error("Error fetching data, please try again!");
   }
 
-  const columns = [
-    {
-      title: "Title",
-      dataIndex: "title",
-      key: "title"
-    },
-    {
-      title: "Body",
-      dataIndex: "body",
-      key: "body"
-    }
-  ];
+
 
   return (
     <div>
       <h1>Fetch</h1>
       {data && (
-        <Table dataSource={data as Array<Object>} columns={columns} rowKey="id" />
+        <Table dataSource={data ?? []} columns={columns} rowKey="id" />
       )}
     </div>
   );
