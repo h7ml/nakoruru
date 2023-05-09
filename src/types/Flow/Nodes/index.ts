@@ -1,9 +1,11 @@
 /**
  * @author        h7ml <h7ml@qq.com>
  * @date          2023-05-06 23:15:22
- * @lastModified  2023-05-08 11:02:21
+ * @lastModified  2023-05-09 17:01:11
  * Copyright © www.h7ml.cn All rights reserved
  */
+import { EdgeTypes, Edge } from 'react-flow-renderer';
+
 type NodeType = 'input' | 'default' | 'output';
 
 export type Node = {
@@ -25,11 +27,17 @@ export type Node = {
   },
 };
 
+
 export const nodes: Node[] = [
   // nodes data
 ];
 
+export const edges: EdgeTypes[] = []
+
 
 export interface ReactFlowNodeProps {
-  initialNodes: Node[]
+  initialNodes: Node[],
+  initialEdges: Edge[],
+  onNodesChange: (nodes: Node[]) => void
+  onEdgesChange: (edges: Edge[]) => void
 }

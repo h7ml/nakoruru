@@ -1,15 +1,15 @@
 /**
  * @author        h7ml <h7ml@qq.com>
  * @date          2023-05-09 13:12:18
- * @lastModified  2023-05-09 13:33:44
+ * @lastModified  2023-05-09 16:37:35
  * Copyright © www.h7ml.cn All rights reserved
  */
 /*
  * @Author: h7ml <h7ml@qq.com>
  * @Date: 2023-05-09 13:12:18
  * @LastEditors: h7ml <h7ml@qq.com>
- * @LastEditTime: 2023-05-09 13:33:44
- * @FilePath: \nakoruru\src\components\Layout\SiderBar.tsx
+ * @LastEditTime: 2023-05-09 16:37:35
+ * @FilePath: \nakoruru\src\components\Layout\Main.tsx
  * @Description: 
  * 
  * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved. 
@@ -26,7 +26,7 @@ import { useRecoilValue } from 'recoil';
 import { navState } from '@/store';
 const { Header, Sider, Content } = Layout;
 
-export const SiderBar: React.FC = () => {
+export const Main: React.FC = () => {
   const history = useNavigate();
   const [collapsed, setCollapsed] = useState(false);
   const {
