@@ -1,21 +1,21 @@
 /**
  * @author        h7ml <h7ml@qq.com>
  * @date          2023-05-09 13:12:18
- * @lastModified  2023-05-09 17:18:33
+ * @lastModified  2023-05-09 19:32:00
  * Copyright © www.h7ml.cn All rights reserved
  */
 /*
  * @Author: h7ml <h7ml@qq.com>
  * @Date: 2023-05-09 13:12:18
  * @LastEditors: h7ml <h7ml@qq.com>
- * @LastEditTime: 2023-05-09 17:18:33
+ * @LastEditTime: 2023-05-09 20:05:27
  * @FilePath: \nakoruru\src\components\Layout\Main.tsx
  * @Description: 
  * 
  * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved. 
  */
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
@@ -25,7 +25,9 @@ import Router from '@/router';
 import { useRecoilValue } from 'recoil';
 import { navState } from '@/store';
 import classNames from 'classnames';
-const { Header, Sider, Content } = Layout;
+const { Header, Sider, Content, Footer } = Layout;
+import { repository } from '../../../package.json';
+
 
 export const Main: React.FC = () => {
   const history = useNavigate();
@@ -34,13 +36,17 @@ export const Main: React.FC = () => {
     token: { colorBgContainer },
   } = theme.useToken();
   const navStateValue = useRecoilValue(navState);
-
+  const location = useLocation();
+  const path = location.pathname;
+  const lastSlashIndex = path.lastIndexOf('/');
+  const param = path.substr(lastSlashIndex + 1);
+  const repo = repository as { url: string };
   const getNav = (navValue: any) => {
     const response = navValue.map((nav: { path: any; }) => {
       return {
         ...nav,
         key: nav.path,
-        label: nav.path
+        label: nav.path.substr(nav.path.lastIndexOf('/') + 1)
       };
     });
     return response;
@@ -55,7 +61,7 @@ export const Main: React.FC = () => {
         <Menu
           theme="dark"
           mode="inline"
-          defaultSelectedKeys={['/']}
+          defaultSelectedKeys={[param]}
           items={getNav(navStateValue)}
           onClick={(e) => { toggleMenu(e) }}
         />
@@ -81,6 +87,12 @@ export const Main: React.FC = () => {
         >
           <Router />
         </Content>
+        <Footer className={classNames('container mx-auto')}>
+          <div className='text-center'>
+            <span className='text-w-0-400' title='nakoruru 娜可露露 by h7ml'>©2023 Created by h7ml </span>
+            <a href={repo.url} target='_blank' rel='noreferrer' className='text-blue-400' title='nakoruru 娜可露露'>nakoruru</a>
+          </div>
+        </Footer>
       </Layout>
     </Layout>
   );

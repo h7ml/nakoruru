@@ -19,13 +19,13 @@ export default function App() {
           autoInsertSpaceInButton={false} >
           <AntdApp className="h-full">
             <ReactFlowProvider>
-              <DndProvider backend={HTML5Backend}>
-                <Suspense fallback={<Loading />}>
-                  <RecoilDevtools />
-                  <Main />
-                  <GitHubCorners />
-                </Suspense>
-              </DndProvider>
+              {/* <DndProvider backend={HTML5Backend}> */}
+              <Suspense fallback={<Loading />}>
+                <RecoilDevtools />
+                <Main />
+                <GitHubCorners />
+              </Suspense>
+              {/* </DndProvider> */}
             </ReactFlowProvider>
           </AntdApp>
         </ConfigProvider>
