@@ -12,7 +12,7 @@
     "preview": "vite preview",
     "commit": "git-cz",
     "types": "npx swagger-typescript-api -p https://petstore.swagger.io/v2/swagger.json -o ./src/server -n api.ts",
-    "updates": "ncu -u",
+    "updates": "ncu -u && pnpm install",
     "lint:ts": "tsc --noEmit -p ./tsconfig.json"
   },
   "dependencies": {
@@ -20,8 +20,6 @@
     "@emotion/css": "^11.11.0",
     "@tanstack/react-query": "^4.29.5",
     "@tanstack/react-query-devtools": "^4.29.6",
-    "@types/node": "^20.1.1",
-    "@types/qs": "^6.9.7",
     "@uiw/react-github-corners": "^1.5.15",
     "antd": "^5.4.7",
     "classnames": "^2.3.2",
@@ -45,10 +43,12 @@
     "recoil-devtools-logger": "^0.5.0",
     "swagger-typescript-api": "^12.0.4",
     "vite-plugin-html": "^3.2.0",
-    "vite-plugin-windicss": "^1.8.10",
+    "vite-plugin-windicss": "^1.9.0",
     "windicss": "^3.5.6"
   },
   "devDependencies": {
+    "@types/node": "^20.1.1",
+    "@types/qs": "^6.9.7",
     "@types/lodash-es": "^4.17.7",
     "@types/react": "^18.2.6",
     "@types/react-dom": "^18.2.4",
