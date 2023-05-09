@@ -19,7 +19,7 @@ export const RecoilDevtools = () => {
   );
   return (
     <>
-      <Button onClick={toggleVisibility}>Toggle Devtools Visibility</Button>
+      {/* <Button onClick={toggleVisibility}>Toggle Devtools Visibility</Button> */}
       <div className={classnames(
         isVisible ? "block" : 'hidden'
       )}>

@@ -8,8 +8,7 @@ import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import { ReactFlowProvider } from 'react-flow-renderer';
 import { queryClient } from '@/plugins/ReactQuery';
-import { GitHubCorners, Loading, Nav, RecoilDevtools } from "@/components"
-import Router from '@/router';
+import { GitHubCorners, Loading, RecoilDevtools, SiderBar } from "@/components"
 message.config({ maxCount: 3 });
 export default function App() {
   return (
@@ -23,8 +22,7 @@ export default function App() {
               <DndProvider backend={HTML5Backend}>
                 <Suspense fallback={<Loading />}>
                   <RecoilDevtools />
-                  <Nav />
-                  <Router />
+                  <SiderBar />
                   <GitHubCorners />
                 </Suspense>
               </DndProvider>
