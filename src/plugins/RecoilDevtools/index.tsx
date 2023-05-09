@@ -3,7 +3,6 @@ import { RecoilLogger } from 'recoil-devtools-logger'
 import LogMonitor from 'recoil-devtools-log-monitor'
 import DockMonitor from 'recoil-devtools-dock'
 import classnames from 'classnames';
-import { Button } from 'antd';
 import { useKey } from 'react-use';
 import { isCtrlKey } from '@/utils';
 export const RecoilDevtools = () => {
