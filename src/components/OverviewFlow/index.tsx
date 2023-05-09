@@ -82,7 +82,7 @@ export const OverviewFlow = () => {
   const [elements] = useState(initialElements);
   const flowRef = useRef<HTMLDivElement | null>(null);
   return (
-    <div className='w-full h-100vh'>
+    <div className='w-full h-full'>
       <ReactFlow
         ref={flowRef}
         nodes={elements}

@@ -1,14 +1,14 @@
 /**
  * @author        h7ml <h7ml@qq.com>
  * @date          2023-05-09 13:12:18
- * @lastModified  2023-05-09 16:37:35
+ * @lastModified  2023-05-09 17:18:33
  * Copyright © www.h7ml.cn All rights reserved
  */
 /*
  * @Author: h7ml <h7ml@qq.com>
  * @Date: 2023-05-09 13:12:18
  * @LastEditors: h7ml <h7ml@qq.com>
- * @LastEditTime: 2023-05-09 16:37:35
+ * @LastEditTime: 2023-05-09 17:18:33
  * @FilePath: \nakoruru\src\components\Layout\Main.tsx
  * @Description: 
  * 
@@ -24,6 +24,7 @@ import { Layout, Menu, Button, theme } from 'antd';
 import Router from '@/router';
 import { useRecoilValue } from 'recoil';
 import { navState } from '@/store';
+import classNames from 'classnames';
 const { Header, Sider, Content } = Layout;
 
 export const Main: React.FC = () => {
@@ -73,11 +74,8 @@ export const Main: React.FC = () => {
           />
         </Header>
         <Content
-          className='overflow-scroll'
+          className={('overflow-auto')}
           style={{
-            margin: '24px 16px',
-            padding: 24,
-            minHeight: 280,
             background: colorBgContainer,
           }}
         >

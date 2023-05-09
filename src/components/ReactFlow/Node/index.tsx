@@ -3,7 +3,7 @@ import { ReactFlowNodeProps } from '@/types';
 
 export const ReactFlowNode: React.FC<ReactFlowNodeProps> = function ({ initialNodes = [], initialEdges = [], onNodesChange = () => { }, onEdgesChange = () => { } }) {
   return (
-    <div className='w-full h-100vh'>
+    <div className='w-full h-[calc(100vh-64px)]'>
       <ReactFlow
         defaultNodes={initialNodes}
         className="react-flow-node-resizer-example"

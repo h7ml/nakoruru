@@ -1,12 +1,12 @@
 /**
  * @author        h7ml <h7ml@qq.com>
  * @date          2023-05-06 23:15:22
- * @lastModified  2023-05-09 17:01:11
+ * @lastModified  2023-05-09 17:13:38
  * Copyright © www.h7ml.cn All rights reserved
  */
 import { EdgeTypes, Edge } from 'react-flow-renderer';
 
-type NodeType = 'input' | 'default' | 'output';
+type NodeType = 'input' | 'default' | 'output' | undefined;
 
 export type Node = {
   id: string,
@@ -38,6 +38,6 @@ export const edges: EdgeTypes[] = []
 export interface ReactFlowNodeProps {
   initialNodes: Node[],
   initialEdges: Edge[],
-  onNodesChange: (nodes: Node[]) => void
-  onEdgesChange: (edges: Edge[]) => void
+  onNodesChange?: (nodes: Node[]) => void
+  onEdgesChange?: (edges: Edge[]) => void
 }
