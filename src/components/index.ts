@@ -9,7 +9,7 @@
  * @Date: 2023-05-08 10:33:26
  * @LastEditors: h7ml <h7ml@qq.com>
  * @LastEditTime: 2023-05-08 13:46:39
- * @FilePath: \reactflow-mind-map\src\components\index.ts
+ * @FilePath: \nakoruru\src\components\index.ts
  * @Description: 
  * 
  * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved. 

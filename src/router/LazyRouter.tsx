@@ -13,7 +13,7 @@ import { lazy, Suspense } from "react"
  * @Date: 2023-05-07 22:40:52
  * @LastEditors: h7ml <h7ml@qq.com>
  * @LastEditTime: 2023-05-08 20:53:34
- * @FilePath: \reactflow-mind-map\src\router\LazyRouter.tsx
+ * @FilePath: \nakoruru\src\router\LazyRouter.tsx
  * @Description: 
  * 
  * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved. 

@@ -1,10 +1,10 @@
 {
-  "name": "reactflow-example",
+  "name": "nakoruru",
   "private": true,
   "version": "0.0.1",
-  "description": "React Flow Example is an example project based on React Flow library, which demonstrates how to use React Flow to build flowchart applications.  ",
+  "description": "Nakoruru is a React Admin project that utilizes Antd and React 18 to provide a user-friendly and efficient interface for managing data. The project also makes use of Recoil for state management, allowing for a more streamlined and organized codebase. With Nakoruru, users can easily view, create, update, and delete data, all within a sleek and modern user interface. The project is highly customizable and can be easily adapted to suit individual needs, making it an excellent choice for businesses and organizations of all sizes. Whether you're managing a small team or a large enterprise, Nakoruru can help simplify and streamline your data management processes.",
   "type": "module",
-  "homepage": "https://reactflow-example.h7ml.cn",
+  "homepage": "https://nakoruru.h7ml.cn",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -66,12 +66,12 @@
   "author": {
     "name": "h7ml",
     "mail": "h7ml@qq.com",
-    "github": "https://github.com/h7ml/reactflow-example"
+    "github": "https://github.com/h7ml/nakoruru"
   },
   "keywords": [
     "react",
     "reactflow",
-    "reactflow-example"
+    "nakoruru"
   ],
   "license": "Apache-2.0",
   "licenses": [
@@ -85,10 +85,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/h7ml/reactflow-example.git"
+    "url": "https://github.com/h7ml/nakoruru.git"
   },
   "bugs": {
-    "url": "https://github.com/h7ml/reactflow-example/issues"
+    "url": "https://github.com/h7ml/nakoruru/issues"
   },
   "packageManager": "pnpm@7.26.3",
   "engines": {

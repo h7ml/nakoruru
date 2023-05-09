@@ -8,8 +8,8 @@
  * @Author: h7ml <h7ml@qq.com>
  * @Date: 2023-05-08 10:45:48
  * @LastEditors: h7ml <h7ml@qq.com>
- * @LastEditTime: 2023-05-08 10:54:57
- * @FilePath: \reactflow-mind-map\src\store\monaco.ts
+ * @LastEditTime: 2023-05-09 10:30:35
+ * @FilePath: \nakoruru\src\store\monaco.ts
  * @Description: 
  * 
  * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved. 
