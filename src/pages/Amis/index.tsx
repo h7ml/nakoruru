@@ -1,441 +1,98 @@
 /**
  * @author        h7ml <h7ml@qq.com>
  * @date          2023-05-10 10:27:01
- * @lastModified  2023-05-10 10:27:02
+ * @lastModified  2023-05-10 12:56:00
  * Copyright © www.h7ml.cn All rights reserved
  */
 /*
  * @Author: h7ml <h7ml@qq.com>
  * @Date: 2023-05-10 10:27:01
  * @LastEditors: h7ml <h7ml@qq.com>
- * @LastEditTime: 2023-05-10 10:39:55
+ * @LastEditTime: 2023-05-10 12:56:00
  * @FilePath: \nakoruru\src\pages\Amis\index.tsx
  * @Description: u
  * 
  * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved. 
  */
-import { MiniEditor } from "amis-editor";
-import 'amis/sdk/antd.css'
-import 'amis/lib/themes/antd.css'
-import 'amis/lib/themes/antd.css'
+import React, { useState } from 'react';
+import { Editor } from 'amis-editor';
+import { render as renderAmis } from 'amis';
+import { SchemaObject } from 'amis/lib/Schema'
+import 'amis/lib/themes/default.css';
+import 'amis/lib/helper.css';
+import 'amis/sdk/iconfont.css';
+import 'amis-editor-core/lib/style.css';
+import 'amis-ui/lib/themes/cxd.css'
 export function Amis() {
-  const schema = {
-    "type": "page",
-    "title": "选项卡示例",
-    "subTitle": "所有选项卡都在当前页面中，包括默认、line、card以及radio模式",
-    "body": [
-      {
-        "type": "tabs",
-        "tabs": [
-          {
-            "title": "选项卡1",
-            "hash": "tab1",
-            "body": "选项卡内容1"
-          },
-          {
-            "title": "选项卡2",
-            "hash": "tab2",
-            "body": {
-              "type": "form",
-              "panelClassName": "panel-primary",
-              "body": [
-                {
-                  "type": "input-text",
-                  "name": "a",
-                  "label": "文本"
-                }
-              ]
-            }
-          },
-          {
-            "title": "选项卡3",
-            "body": {
-              "type": "crud",
-              "api": "/amis/api/sample",
-              "filter": {
-                "title": "条件搜索",
-                "submitText": "",
-                "body": [
-                  {
-                    "type": "input-text",
-                    "name": "keywords",
-                    "placeholder": "通过关键字搜索",
-                    "clearable": true,
-                    "addOn": {
-                      "label": "搜索",
-                      "type": "submit"
-                    }
-                  },
-                  {
-                    "type": "plain",
-                    "text": "这里的表单项可以配置多个"
-                  }
-                ]
-              },
-              "columns": [
-                {
-                  "name": "id",
-                  "label": "ID",
-                  "width": 20
-                },
-                {
-                  "name": "engine",
-                  "label": "Rendering engine"
-                },
-                {
-                  "name": "browser",
-                  "label": "Browser"
-                },
-                {
-                  "name": "platform",
-                  "label": "Platform(s)"
-                },
-                {
-                  "name": "version",
-                  "label": "Engine version"
-                },
-                {
-                  "name": "grade",
-                  "label": "CSS grade"
-                },
-                {
-                  "type": "operation",
-                  "label": "操作",
-                  "width": 100,
-                  "buttons": []
-                }
-              ]
-            }
-          }
-        ]
-      },
-      {
-        "type": "divider"
-      },
-      {
-        "type": "tabs",
-        "mode": "line",
-        "tabs": [
-          {
-            "title": "选项卡1",
-            "body": "选项卡内容1"
-          },
-          {
-            "title": "选项卡2",
-            "body": "选项卡内容2"
-          },
-          {
-            "title": "选项卡3",
-            "body": "选项卡内容3"
-          }
-        ]
-      },
-      {
-        "type": "divider"
-      },
-      {
-        "type": "tabs",
-        "mode": "card",
-        "tabs": [
-          {
-            "title": "选项卡1",
-            "body": "选项卡内容1"
-          },
-          {
-            "title": "选项卡2",
-            "body": "选项卡内容2"
-          },
-          {
-            "title": "选项卡3",
-            "body": "选项卡内容3"
-          }
-        ]
-      },
-      {
-        "type": "divider"
-      },
-      {
-        "type": "tabs",
-        "mode": "chrome",
-        "tabs": [
-          {
-            "title": "选项卡1",
-            "body": "选项卡内容1"
-          },
-          {
-            "title": "选项卡2",
-            "body": "选项卡内容2"
-          },
-          {
-            "title": "选项卡3",
-            "body": "选项卡内容3"
-          }
-        ]
-      },
-      {
-        "type": "divider"
-      },
-      {
-        "type": "tabs",
-        "mode": "radio",
-        "tabs": [
-          {
-            "title": "选项卡1",
-            "body": "选项卡内容1"
-          },
-          {
-            "title": "选项卡2",
-            "body": "选项卡内容2"
-          },
-          {
-            "title": "选项卡3",
-            "body": "选项卡内容3"
-          }
-        ]
-      },
-      {
-        "type": "divider"
-      },
-      {
-        "type": "tabs",
-        "mode": "tiled",
-        "tabs": [
-          {
-            "title": "选项卡1",
-            "body": "选项卡内容1"
-          },
-          {
-            "title": "选项卡2",
-            "body": "选项卡内容2"
-          },
-          {
-            "title": "选项卡3",
-            "body": "选项卡内容3"
-          },
-          {
-            "title": "选项卡4",
-            "body": "选项卡内容4",
-            "icon": "fa fa-flag",
-            "iconPosition": "right"
-          }
-        ]
-      },
-      {
-        "type": "divider"
-      },
-      {
-        "type": "tabs",
-        "mode": "vertical",
-        "tabs": [
-          {
-            "title": "选项卡1",
-            "body": "选项卡内容1"
-          },
-          {
-            "title": "选项卡2",
-            "body": [
-              {
-                "type": "service",
-                "api": "/amis/api/mock2/crud/table?perPage=5",
-                "body": [
-                  {
-                    "type": "table",
-                    "title": "表格1",
-                    "source": "$rows",
-                    "columns": [
-                      {
-                        "name": "id",
-                        "label": "ID"
-                      },
-                      {
-                        "name": "engine",
-                        "label": "Rendering engine",
-                        "width": 300
-                      },
-                      {
-                        "name": "browser",
-                        "label": "Browser"
-                      },
-                      {
-                        "name": "browser",
-                        "label": "Browser"
-                      },
-                      {
-                        "name": "browser",
-                        "label": "Browser"
-                      },
-                      {
-                        "name": "browser",
-                        "label": "Browser"
-                      },
-                      {
-                        "name": "browser",
-                        "label": "Browser"
-                      },
-                      {
-                        "name": "browser",
-                        "label": "Browser"
-                      },
-                      {
-                        "name": "browser",
-                        "label": "Browser"
-                      },
-                      {
-                        "name": "browser",
-                        "label": "Browser"
-                      },
-                      {
-                        "name": "browser",
-                        "label": "Browser"
-                      },
-                      {
-                        "name": "browser",
-                        "label": "Browser"
-                      },
-                      {
-                        "name": "browser",
-                        "label": "Browser"
-                      },
-                      {
-                        "name": "browser",
-                        "label": "Browser"
-                      },
-                      {
-                        "name": "browser",
-                        "label": "Browser"
-                      },
-                      {
-                        "name": "browser",
-                        "label": "Browser"
-                      },
-                      {
-                        "name": "browser",
-                        "label": "Browser"
-                      },
-                      {
-                        "name": "browser",
-                        "label": "Browser"
-                      },
-                      {
-                        "name": "browser",
-                        "label": "Browser"
-                      },
-                      {
-                        "name": "browser",
-                        "label": "Browser"
-                      },
-                      {
-                        "name": "browser",
-                        "label": "Browser"
-                      },
-                      {
-                        "name": "browser",
-                        "label": "Browser"
-                      },
-                      {
-                        "name": "platform",
-                        "label": "Platform(s)"
-                      },
-                      {
-                        "name": "version",
-                        "label": "Engine version"
-                      },
-                      {
-                        "name": "grade",
-                        "label": "CSS grade"
-                      },
-                      {
-                        "type": "operation",
-                        "label": "操作",
-                        "buttons": [
-                          {
-                            "label": "详情",
-                            "type": "button",
-                            "level": "link",
-                            "actionType": "dialog",
-                            "dialog": {
-                              "title": "查看详情",
-                              "body": {
-                                "type": "form",
-                                "body": [
-                                  {
-                                    "type": "input-text",
-                                    "name": "engine",
-                                    "label": "Engine"
-                                  },
-                                  {
-                                    "type": "input-text",
-                                    "name": "browser",
-                                    "label": "Browser"
-                                  },
-                                  {
-                                    "type": "input-text",
-                                    "name": "platform",
-                                    "label": "platform"
-                                  },
-                                  {
-                                    "type": "input-text",
-                                    "name": "version",
-                                    "label": "version"
-                                  },
-                                  {
-                                    "type": "control",
-                                    "label": "grade",
-                                    "body": {
-                                      "type": "tag",
-                                      "label": "${grade}",
-                                      "displayMode": "normal",
-                                      "color": "active"
-                                    }
-                                  }
-                                ]
-                              }
-                            }
-                          },
-                          {
-                            "label": "删除",
-                            "type": "button",
-                            "level": "link",
-                            "className": "text-danger",
-                            "disabledOn": "this.grade === 'A'"
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "type": "form",
-                "debug": true,
-                "body": [
-                  {
-                    "type": "input-text",
-                    "name": "text",
-                    "label": "text"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "title": "选项卡3",
-            "body": "选项卡内容3"
-          },
-          {
-            "title": "选项卡4",
-            "body": "选项卡内容4"
-          },
-          {
-            "title": "选项卡5",
-            "body": "选项卡内容5"
-          }
-        ]
-      }
-    ]
-  }
+  const [mobile, setMobile] = useState(false)
+  const [preview, setPreview] = useState(false)
+  // @ts-ignore
+  const defaultSchema: SchemaObject = window["AMIS_JSON"] || {
+    type: "page",
+    body: "测试",
+    title: "标题"
+  };
+  const [schema, setSchema] = useState(defaultSchema)
+  //window["setSchema"] = setSchema;
+  let obj: any = defaultSchema;
+  const onChange = (value: any) => {
+    obj = value;
+    console.log("change", obj)
+  };
+  const onSave = () => {
+    console.log("保存", obj)
+    // @ts-ignore
+    window["saveAmis"] && window["saveAmis"](obj);
+  };
   return (
-    <MiniEditor value={schema} theme='antd' />
+    <div className={"jqp-amis-editor"}>
+      <div className={"jqp-amis-editor-header"}>
+        <div>
+          {renderAmis({
+            type: "form",
+            mode: "inline",
+            title: "",
+            wrapWithPanel: false,
+            body: [{
+              type: "plain",
+              text: "页面标题",
+              className: "page-name"
+            }, {
+              type: "switch",
+              option: "预览",
+              name: "preview",
+              onChange: function (v: any) {
+                setPreview(v);
+              }
+            }, {
+              type: "switch",
+              option: "移动端",
+              name: "mobile",
+              onChange: function (v: any) {
+                setMobile(v);
+              }
+            }, {
+              type: "button",
+              label: "保存",
+              level: "primary",
+              onClick: function () {
+                onSave();
+              }
+            }, {
+              type: "button",
+              label: "退出",
+              level: "danger",
+              onClick: function () {
+                if (window.confirm("确定退出?")) {
+                  window.close();
+                }
+              }
+            }]
+          })}
+        </div>
+      </div>
+      <Editor className={"jqp-amis-editor-body"} preview={preview} isMobile={mobile} onChange={onChange} value={schema} theme={"cxd"} onSave={onSave} />
+    </div>
   )
 }
 

@@ -16,6 +16,8 @@ specifiers:
   '@vitejs/plugin-react': ^4.0.0
   amis: ^3.0.0
   amis-editor: ^5.3.0
+  amis-editor-core: ^5.3.0
+  amis-ui: ^3.0.0
   antd: ^5.4.7
   classnames: ^2.3.2
   cz-git: ^1.6.1
@@ -24,6 +26,7 @@ specifiers:
   eslint-plugin-react-refresh: ^0.4.1
   less: ^4.1.3
   lodash-es: ^4.17.21
+  mobx: ^6.9.0
   monaco-editor: ^0.38.0
   npm-check-updates: ^16.10.12
   qs: ^6.11.1
@@ -54,12 +57,15 @@ dependencies:
   '@tanstack/react-query': 4.29.5_biqbaboplfbrettd7655fr4n2y
   '@tanstack/react-query-devtools': 4.29.6_6ufraba7zs65ngvban5jjen7be
   '@uiw/react-github-corners': 1.5.15_biqbaboplfbrettd7655fr4n2y
-  amis: 3.0.0_tqcjxml4rosq5qpg5cznikfcd4
-  amis-editor: 5.3.0_ul4yjlk2jetjpojmsqhgy6pkju
+  amis: 3.0.0_oj56c5guoxzipyl3fo425gex2y
+  amis-editor: 5.3.0_ntfawpppibcc76kc7ztsiu46je
+  amis-editor-core: 5.3.0_flrmtkobqfxfr5jpdmp2olcxra
+  amis-ui: 3.0.0_tqcjxml4rosq5qpg5cznikfcd4
   antd: 5.4.7_biqbaboplfbrettd7655fr4n2y
   classnames: 2.3.2
   less: 4.1.3
   lodash-es: 4.17.21
+  mobx: 6.9.0
   monaco-editor: 0.38.0
   qs: 6.11.1
   rc-field-form: 1.30.0_biqbaboplfbrettd7655fr4n2y
@@ -1659,7 +1665,7 @@ packages:
       - react-native
     dev: false
 
-  /amis-editor-core/5.3.0_jmoe22gf44kswgnjiojxbgdzpm:
+  /amis-editor-core/5.3.0_764bflvy5llxfvntrtg2vwxdza:
     resolution: {integrity: sha512-VvoU2Irwvr8hr0kpXEe5oeOmcce4nMremCmk1tKVEcu5hU+izZmvQpPE9qcGY24tQacVS4MR3VoZeOGKtkoqDg==}
     peerDependencies:
       amis: '*'
@@ -1671,7 +1677,8 @@ packages:
       react: '>=16.8.6'
       react-dom: '>=16.8.6'
     dependencies:
-      amis: 3.0.0_tqcjxml4rosq5qpg5cznikfcd4
+      amis: 3.0.0_oj56c5guoxzipyl3fo425gex2y
+      amis-ui: 3.0.0_tqcjxml4rosq5qpg5cznikfcd4
       axios: 0.21.1
       deep-diff: 1.0.2
       i18n-runtime: 0.0.23-beta.9
@@ -1691,7 +1698,39 @@ packages:
       - react-native
     dev: false
 
-  /amis-editor/5.3.0_ul4yjlk2jetjpojmsqhgy6pkju:
+  /amis-editor-core/5.3.0_flrmtkobqfxfr5jpdmp2olcxra:
+    resolution: {integrity: sha512-VvoU2Irwvr8hr0kpXEe5oeOmcce4nMremCmk1tKVEcu5hU+izZmvQpPE9qcGY24tQacVS4MR3VoZeOGKtkoqDg==}
+    peerDependencies:
+      amis: '*'
+      amis-core: '*'
+      amis-formula: '*'
+      amis-theme-editor-helper: '*'
+      amis-ui: '*'
+      i18n-runtime: '*'
+      react: '>=16.8.6'
+      react-dom: '>=16.8.6'
+    dependencies:
+      amis: 3.0.0_oj56c5guoxzipyl3fo425gex2y
+      amis-ui: 3.0.0_tqcjxml4rosq5qpg5cznikfcd4
+      axios: 0.21.1
+      deep-diff: 1.0.2
+      json-ast-comments: 1.1.0
+      lodash: 4.17.21
+      mobx: 4.15.7
+      mobx-react: 6.3.1_yizsexxdvi42s6cv4zcri3m7um
+      mobx-state-tree: 3.17.3_mobx@4.15.7
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      react-json-view: 1.21.3_tqcjxml4rosq5qpg5cznikfcd4
+      sortablejs: 1.15.0
+    transitivePeerDependencies:
+      - '@types/react'
+      - debug
+      - encoding
+      - react-native
+    dev: false
+
+  /amis-editor/5.3.0_ntfawpppibcc76kc7ztsiu46je:
     resolution: {integrity: sha512-97UwIiJ9xkjUa79bXewIHFyN5YfdTx3HXey977ipLefU3aUmEPvJJjy8fqpRIShU1iIl9I94wBnvDYjQh+kMIg==}
     peerDependencies:
       amis: '*'
@@ -1702,13 +1741,14 @@ packages:
       react-dom: '>=16.8.6'
     dependencies:
       '@webcomponents/webcomponentsjs': 2.8.0
-      amis: 3.0.0_tqcjxml4rosq5qpg5cznikfcd4
-      amis-editor-core: 5.3.0_jmoe22gf44kswgnjiojxbgdzpm
+      amis: 3.0.0_oj56c5guoxzipyl3fo425gex2y
+      amis-editor-core: 5.3.0_764bflvy5llxfvntrtg2vwxdza
       amis-postcss: 1.0.0
-      amis-theme-editor: 2.0.11-beta.2_7b6yfwpcjwzyiz4s6axfiz6l5e
+      amis-theme-editor: 2.0.11-beta.2_pihw3hvizu4lok4gyjtcxw2clu
+      amis-ui: 3.0.0_tqcjxml4rosq5qpg5cznikfcd4
       i18n-runtime: 0.0.23-beta.9
       lodash: 4.17.21
-      mobx-state-tree: 3.17.3
+      mobx-state-tree: 3.17.3_mobx@6.9.0
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
     transitivePeerDependencies:
@@ -1736,7 +1776,7 @@ packages:
     resolution: {integrity: sha512-LDIISb7qmCIlo/1/AKD3E2uCC4mXI5mFBhQ/WR1+3D0TAS5IMsbX2GevJnJIH12kvpi311EFN0m6QpdghFZxIw==}
     dev: false
 
-  /amis-theme-editor/2.0.11-beta.2_7b6yfwpcjwzyiz4s6axfiz6l5e:
+  /amis-theme-editor/2.0.11-beta.2_pihw3hvizu4lok4gyjtcxw2clu:
     resolution: {integrity: sha512-dYK8X6Zil4k9tIqZFnNMpLzWSO6aaFDiKp6EvTcxxG5EiWbLmZqxlCEi+RBfOnwBE/d751IvWovxWfQCU63icQ==}
     peerDependencies:
       amis: '*'
@@ -1744,8 +1784,9 @@ packages:
       amis-ui: '*'
       i18n-runtime: '*'
     dependencies:
-      amis: 3.0.0_tqcjxml4rosq5qpg5cznikfcd4
+      amis: 3.0.0_oj56c5guoxzipyl3fo425gex2y
       amis-theme-editor-helper: 2.0.11-beta.2
+      amis-ui: 3.0.0_tqcjxml4rosq5qpg5cznikfcd4
       i18n-runtime: 0.0.23-beta.9
     dev: false
 
@@ -1799,9 +1840,10 @@ packages:
       - react-native
     dev: false
 
-  /amis/3.0.0_tqcjxml4rosq5qpg5cznikfcd4:
+  /amis/3.0.0_oj56c5guoxzipyl3fo425gex2y:
     resolution: {integrity: sha512-yUDl6lXGG1lvlmyDrza7Kdui1i1g0+vXNND9vEFn8/Z/4himLogpO1/Pe1iM7xpi3f9zhr3U8va6VGLDLy0z7w==}
     peerDependencies:
+      amis-ui: '*'
       react: '>=16.8.6'
       react-dom: '>=16.8.6'
     dependencies:
@@ -4433,12 +4475,6 @@ packages:
       - react-native
     dev: false
 
-  /mobx-state-tree/3.17.3:
-    resolution: {integrity: sha512-ph4ee/Lh1qUJqHEGkfdWdBAUGdG+VAu7xZbYX/+4qem5hSSpdeZYAJOcN3bhtgEH8Wh/ZxRpQVOLM0aMFXfBSw==}
-    peerDependencies:
-      mobx: '>=4.8.0 <5.0.0 || >=5.8.0 <6.0.0'
-    dev: false
-
   /mobx-state-tree/3.17.3_mobx@4.15.7:
     resolution: {integrity: sha512-ph4ee/Lh1qUJqHEGkfdWdBAUGdG+VAu7xZbYX/+4qem5hSSpdeZYAJOcN3bhtgEH8Wh/ZxRpQVOLM0aMFXfBSw==}
     peerDependencies:
@@ -4447,8 +4483,20 @@ packages:
       mobx: 4.15.7
     dev: false
 
+  /mobx-state-tree/3.17.3_mobx@6.9.0:
+    resolution: {integrity: sha512-ph4ee/Lh1qUJqHEGkfdWdBAUGdG+VAu7xZbYX/+4qem5hSSpdeZYAJOcN3bhtgEH8Wh/ZxRpQVOLM0aMFXfBSw==}
+    peerDependencies:
+      mobx: '>=4.8.0 <5.0.0 || >=5.8.0 <6.0.0'
+    dependencies:
+      mobx: 6.9.0
+    dev: false
+
   /mobx/4.15.7:
     resolution: {integrity: sha512-X4uQvuf2zYKHVO5kRT5Utmr+J9fDnRgxWWnSqJ4oiccPTQU38YG+/O3nPmOhUy4jeHexl7XJJpWDBgEnEfp+8w==}
+    dev: false
+
+  /mobx/6.9.0:
+    resolution: {integrity: sha512-HdKewQEREEJgsWnErClfbFoVebze6rGazxFLU/XUyrII8dORfVszN1V0BMRnQSzcgsNNtkX8DHj3nC6cdWE9YQ==}
     dev: false
 
   /moment/2.29.4:
