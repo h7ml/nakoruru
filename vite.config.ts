@@ -45,7 +45,7 @@ export default defineConfig(({ mode }) => {
         brotliSize: true, // 
         emitFile: false,  // 发射文件
         filename: "dist/visualizer.html",  // 分析图生成的文件名
-        open:true  // 如果存在本地服务端口，将在打包后自动展示
+        open: true  // 如果存在本地服务端口，将在打包后自动展示
       }),
 
       license({  // 加载 rollup-plugin-license 插件用于生成软件版权信息
@@ -68,14 +68,14 @@ export default defineConfig(({ mode }) => {
     ],
 
     build: {
-      rollupOptions: {  
+      rollupOptions: {
         output: {
           chunkFileNames: 'js/[name]-[hash].js',  // 配置 chunk 引入文件名的名称
           entryFileNames: 'js/[name]-[hash].js',  // 配置包的入口文件名称
           assetFileNames: '[ext]/[name]-[hash].[ext]'  // 配置资源文件像字体，图片等的文件名
         }
       },
-      
+
       terserOptions: {  // 压缩选项
         compress: {
           //生产环境时移除console
@@ -89,7 +89,7 @@ export default defineConfig(({ mode }) => {
 
       // 关闭生成map文件 可以达到缩小打包体积
       sourcemap: false,  // 关闭 sourceMap，生产环境下不需要生成
-
+      maxAssetSize: 5242880
     },
 
     resolve: {
