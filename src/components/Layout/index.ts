@@ -8,7 +8,7 @@
  * @Author: h7ml <h7ml@qq.com>
  * @Date: 2023-05-09 12:59:11
  * @LastEditors: h7ml <h7ml@qq.com>
- * @LastEditTime: 2023-05-09 16:36:53
+ * @LastEditTime: 2023-05-11 14:17:40
  * @FilePath: \nakoruru\src\components\Layout\index.ts
  * @Description: 
  * 
@@ -16,3 +16,4 @@
  */
 export * from "./Loading"
 export * from "./Main"
+export * from "./ProMain"
