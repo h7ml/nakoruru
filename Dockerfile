@@ -14,7 +14,7 @@ RUN npm install -g pnpm increase-memory-limit --no-cache
 
 # RUN increase-memory-limit
 
-# RUN pnpm install --no-cache
+RUN pnpm install --no-cache
 
 # 将所有文件复制到工作目录
 COPY . .
