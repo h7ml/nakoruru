@@ -132,4 +132,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           EXPIRE_TIME: '12h'
         run: python run.py
-    needs: tencent
+    needs: surge
