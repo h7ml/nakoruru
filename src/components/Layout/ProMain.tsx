@@ -1,14 +1,14 @@
 /**
  * @author        h7ml <h7ml@qq.com>
  * @date          2023-05-11 14:17:33
- * @lastModified  2023-05-11 14:17:33
+ * @lastModified  2023-05-11 23:00:55
  * Copyright © www.h7ml.cn All rights reserved
  */
 /*
  * @Author: h7ml <h7ml@qq.com>
  * @Date: 2023-05-11 14:17:33
  * @LastEditors: h7ml <h7ml@qq.com>
- * @LastEditTime: 2023-05-11 14:50:14
+ * @LastEditTime: 2023-05-11 23:07:20
  * @FilePath: \nakoruru\src\components\Layout\ProMain.tsx
  * @Description: 
  * 
@@ -70,25 +70,6 @@ const Item: React.FC<{ children: React.ReactNode }> = (props) => {
   );
 };
 
-
-const MenuCard = () => {
-  const { token } = theme.useToken();
-  return (
-    <div
-      style={{
-        display: 'flex',
-        alignItems: 'center',
-      }}
-    >
-      <Divider
-        style={{
-          height: '1.5em',
-        }}
-        type="vertical"
-      />
-    </div>
-  );
-};
 
 const SearchInput = () => {
   const { token } = theme.useToken();
@@ -155,7 +136,7 @@ export const ProMain: React.FC = () => {
       };
     });
 
-    console.log('%c [ response ]-188', 'font-size:13px; background:pink; color:#bf2c9f;', response)
+
     return {
       path: '/',
       routes: response,
@@ -209,9 +190,9 @@ export const ProMain: React.FC = () => {
             collapsedShowGroupTitle: true,
           }}
           avatarProps={{
-            src: 'https://gw.alipayobjects.com/zos/antfincdn/efFD%24IOql2/weixintupian_20170331104822.jpg',
+            src: 'https://www.h7ml.cn/logo.png',
             size: 'small',
-            title: '七妮妮',
+            title: 'h7ml',
             render: (props, dom) => {
               return (
                 <Dropdown
@@ -255,7 +236,6 @@ export const ProMain: React.FC = () => {
             return (
               <>
                 {defaultDom}
-                <MenuCard />
               </>
             );
           }}
@@ -302,7 +282,7 @@ export const ProMain: React.FC = () => {
           >
             <ProCard
               style={{
-                height: '200vh',
+                height: '100vh',
                 minHeight: 800,
               }}
             >

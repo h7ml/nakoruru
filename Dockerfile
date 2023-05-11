@@ -23,10 +23,10 @@ COPY . .
 FROM nginx
 
 # 复制打包后的 dist 文件夹到默认的 Nginx 静态文件目录
-COPY --from=build /nakoruru/dist /usr/share/nginx/html
+COPY --from=build /dist /usr/share/nginx/html
 
 # 复制 Nginx 配置文件到默认的 Nginx 配置文件目录
-COPY --from=build /nakoruru/dist/nginx.conf /etc/nginx/conf.d/default.conf
+COPY --from=build /dist/nginx.conf /etc/nginx/conf.d/default.conf
 
 # 开启 gzip 压缩
 RUN sed -i 's/#gzip/gzip/' /etc/nginx/nginx.conf
