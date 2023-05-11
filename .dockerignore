@@ -1,0 +1,18 @@
+*node_modules
+npm-debug.log
+.git
+README.md
+.idea
+*.memory-card.json
+*.idea
+*.vscode
+*.iml
+*.DS_Store
+.idea/
+node_modules/
+h7ml/.vuepress/.cache/
+h7ml/.vuepress/.temp/
+.pnpm-debug.log
+*.log# Layer0 generated build directory
+.layer0
+.eslintcache
