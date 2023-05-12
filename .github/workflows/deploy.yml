@@ -163,7 +163,7 @@ jobs:
 
       - name: Install dependencies 🚀
         if: steps.pnpm-cache.outputs.cache-hit != 'true'
-        run: pnpm update && pnpm install --no-frozen-lockfile
+        run: pnpm install --no-frozen-lockfile && pnpm update
 
       - name: Setup Node.js 🚀
         uses: actions/setup-node@v3
