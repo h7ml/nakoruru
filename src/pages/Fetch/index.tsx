@@ -1,14 +1,14 @@
 /**
  * @author        h7ml <h7ml@qq.com>
  * @date          2023-05-08 20:45:23
- * @lastModified  2023-05-08 21:10:37
+ * @lastModified  2023-05-12 23:46:17
  * Copyright © www.h7ml.cn All rights reserved
  */
 /*
  * @Author: h7ml <h7ml@qq.com>
  * @Date: 2023-05-08 20:45:23
  * @LastEditors: h7ml <h7ml@qq.com>
- * @LastEditTime: 2023-05-08 21:10:37
+ * @LastEditTime: 2023-05-12 23:46:17
  * @FilePath: \nakoruru\src\pages\Fetch\index.tsx
  * @Description: 
  * 
@@ -30,7 +30,8 @@ const columns = [
   {
     title: "User ID",
     dataIndex: "userId",
-    key: "userId"
+    key: "userId",
+    width: 100,
   },
   {
     title: "ID",
@@ -71,7 +72,6 @@ const Fetch: React.FC = () => {
 
   return (
     <div>
-      <h1>Fetch</h1>
       {data && (
         <Table dataSource={data ?? []} columns={columns} rowKey="id" />
       )}
