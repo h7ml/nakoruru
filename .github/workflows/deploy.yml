@@ -17,7 +17,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-
       - name: Checkout 🚀
         uses: actions/checkout@v3
         with:
@@ -78,7 +77,6 @@ jobs:
   vercel:
     runs-on: ubuntu-latest
     steps:
-
       - name: Checkout 🚀
         uses: actions/checkout@v3
         with:
@@ -100,7 +98,6 @@ jobs:
   surge:
     runs-on: ubuntu-latest
     steps:
-
       - name: Checkout 🚀
         uses: actions/checkout@v3
         with:
@@ -121,7 +118,6 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 60
     steps:
-
       - name: Checkout 🚀
         uses: actions/checkout@v2
         with:
@@ -152,7 +148,6 @@ jobs:
   updates:
     runs-on: ubuntu-latest
     steps:
-
       - name: Checkout 🚀
         uses: actions/checkout@v3
         with:
@@ -181,6 +176,7 @@ jobs:
         run: |
           pnpm run updates && pnpm run build
 
+        if: ${{ success() }}
       - name: Commit and Push files 🚀
         id: commit_and_push
         run: |
@@ -189,7 +185,10 @@ jobs:
           git config --local user.name "h7ml"
           git commit --allow-empty -m "ci: Update today's hot rank on $(date)" -a
           git push origin ${{ github.ref }}
-
-      if: ${{ success() }}
+      - name: Push changes 🚀
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.ACCESS_TOKEN }}
+          branch: ${{ github.ref }}
 
     needs: clean
