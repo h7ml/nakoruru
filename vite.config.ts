@@ -75,7 +75,7 @@ export default defineConfig(({ mode }) => {
           assetFileNames: '[ext]/[name]-[hash].[ext]'  // 配置资源文件像字体，图片等的文件名
         }
       },
-
+      minify: 'terser',
       terserOptions: {  // 压缩选项
         compress: {
           //生产环境时移除console
@@ -83,10 +83,7 @@ export default defineConfig(({ mode }) => {
           drop_debugger: true,
         },
       },
-
-      minify: false,  // 是否压缩
       reportCompressedSize: false,
-
       // 关闭生成map文件 可以达到缩小打包体积
       sourcemap: false,  // 关闭 sourceMap，生产环境下不需要生成
       maxAssetSize: 5242880
