@@ -7,6 +7,7 @@ export function GitHubCorners() {
   return (
     <Corners
       position="right"
+      className='z=111'
       href={repo.url}
     />
   );

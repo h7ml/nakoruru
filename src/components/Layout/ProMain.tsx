@@ -1,14 +1,14 @@
 /**
  * @author        h7ml <h7ml@qq.com>
  * @date          2023-05-11 14:17:33
- * @lastModified  2023-05-11 23:00:55
+ * @lastModified  2023-05-12 23:39:34
  * Copyright © www.h7ml.cn All rights reserved
  */
 /*
  * @Author: h7ml <h7ml@qq.com>
  * @Date: 2023-05-11 14:17:33
  * @LastEditors: h7ml <h7ml@qq.com>
- * @LastEditTime: 2023-05-11 23:07:20
+ * @LastEditTime: 2023-05-12 23:39:34
  * @FilePath: \nakoruru\src\components\Layout\ProMain.tsx
  * @Description: 
  * 
@@ -24,7 +24,7 @@ import {
   SearchOutlined,
   SmileFilled,
 } from '@ant-design/icons';
-import type { ProSettings } from '@ant-design/pro-components';
+import { DefaultFooter, ProSettings } from '@ant-design/pro-components';
 import {
   PageContainer,
   ProCard,
@@ -117,9 +117,17 @@ export const ProMain: React.FC = () => {
   const history = useNavigate();
   const repo = repository as { url: string };
   const [settings, setSetting] = useState<Partial<ProSettings> | undefined>({
-    fixSiderbar: true,
-    layout: 'mix',
-    splitMenus: true,
+    // fixSiderbar: true,
+    // layout: 'mix',
+    // splitMenus: true,
+    "fixSiderbar": true,
+    "layout": "top",
+    "splitMenus": false,
+    "navTheme": "light",
+    "contentWidth": "Fluid",
+    "colorPrimary": "#1677FF",
+    "fixedHeader": true
+
   });
 
   const navStateValue = useRecoilValue(navState);
@@ -181,6 +189,12 @@ export const ProMain: React.FC = () => {
               width: '331px',
             },
           ]}
+          footerRender={() => (
+            <DefaultFooter
+              className=''
+              copyright={<span>©2023 Created by h7ml <a href={repo.url} target='_blank' rel='noreferrer' className='text-blue-400 h20' title='nakoruru 娜可露露'>nakoruru</a></span>}
+            />
+          )}
           route={getNav(navStateValue)}
           location={{
             pathname,
@@ -259,7 +273,6 @@ export const ProMain: React.FC = () => {
               onClick={() => {
                 setPathname(item.path || '/');
                 history(item.path)
-                console.log('%c [ item.path ]-319', 'font-size:13px; background:pink; color:#bf2c9f;', item.path)
               }}
             >
               {dom}
@@ -268,26 +281,21 @@ export const ProMain: React.FC = () => {
           {...settings}
         >
           <PageContainer
+            style={{
+              padding: 0,
+              margin: 0
+            }}
+            pageHeaderRender={false}
             token={{
               paddingInlinePageContainerContent: num,
             }}
-            footer={[
-              <footer className={classNames('container mx-auto')}>
-                <div className='text-center'>
-                  <span className='text-w-0-400' title='nakoruru 娜可露露 by h7ml'>©2023 Created by h7ml </span>
-                  <a href={repo.url} target='_blank' rel='noreferrer' className='text-blue-400' title='nakoruru 娜可露露'>nakoruru</a>
-                </div>
-              </footer>
-            ]}
           >
             <ProCard
               style={{
-                height: '100vh',
-                minHeight: 800,
+                minHeight: '90vh',
               }}
             >
               <Router />
-              <div />
             </ProCard>
           </PageContainer>
 
@@ -302,7 +310,7 @@ export const ProMain: React.FC = () => {
             disableUrlParams={false}
           />
         </ProLayout>
-      </ProConfigProvider>
-    </div>
+      </ProConfigProvider >
+    </div >
   );
 };
