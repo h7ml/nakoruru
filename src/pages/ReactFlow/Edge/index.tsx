@@ -10,15 +10,20 @@
  * @LastEditors: h7ml <h7ml@qq.com>
  * @LastEditTime: 2023-05-09 17:13:50
  * @FilePath: \nakoruru\src\pages\ReactFlow\Edge\index.tsx
- * @Description: 
- * 
- * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved. 
+ * @Description:
+ *
+ * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.
  */
-import { ReactFlowNode } from '@/components/ReactFlow/Node/index';
-import { nodes, edges } from './mock';
-console.log('%c [  nodes, edges ]-19', 'font-size:13px; background:pink; color:#bf2c9f;', nodes, edges)
+import { ReactFlowNode } from "@/components/ReactFlow/Node/index";
+import { nodes, edges } from "./mock";
+console.log(
+  "%c [  nodes, edges ]-19",
+  "font-size:13px; background:pink; color:#bf2c9f;",
+  nodes,
+  edges,
+);
 export function Edge() {
-  return <ReactFlowNode initialNodes={nodes} initialEdges={edges} />
+  return <ReactFlowNode initialNodes={nodes} initialEdges={edges} />;
 }
 
-export default Edge
+export default Edge;

@@ -10,14 +10,13 @@
  * @LastEditors: h7ml <h7ml@qq.com>
  * @LastEditTime: 2023-05-08 23:43:32
  * @FilePath: \nakoruru\src\hooks\react-query\typicode.ts
- * @Description: 
- * 
- * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved. 
+ * @Description:
+ *
+ * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.
  */
 
-
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { queryKeys } from '../query-keys';
+import { queryKeys } from "../query-keys";
 import { App } from "antd";
 export const UseTypicode = () => {
   type User = {
@@ -28,7 +27,9 @@ export const UseTypicode = () => {
 
   const fetchUsers = async (query: string): Promise<User[]> => {
     // 发送请求获取用户数据
-    const response = await fetch(`https://jsonplaceholder.typicode.com/${query}`);
+    const response = await fetch(
+      `https://jsonplaceholder.typicode.com/${query}`,
+    );
     const users = await response.json();
     return users;
   };
@@ -46,14 +47,13 @@ export const UseTypicode = () => {
       },
       onError: (err: Error) => {
         console.error(err.message);
-        message.error('新建失败');
+        message.error("新建失败");
       },
     });
     return mutate;
-  }
-
+  };
 
   return {
     useUsersQuery,
   };
-}
+};

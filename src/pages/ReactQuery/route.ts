@@ -10,12 +10,12 @@
  * @LastEditors: h7ml <h7ml@qq.com>
  * @LastEditTime: 2023-05-08 21:59:49
  * @FilePath: \nakoruru\src\pages\ReactQuery\route.ts
- * @Description: 
- * 
- * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved. 
+ * @Description:
+ *
+ * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.
  */
 export default {
   title: "ReactQuery",
   menuOrder: 0,
-  navigate: '/index'  // 设置重定向
-}
+  navigate: "/index", // 设置重定向
+};

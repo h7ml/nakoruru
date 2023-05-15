@@ -10,8 +10,8 @@
  * @LastEditors: h7ml <h7ml@qq.com>
  * @LastEditTime: 2023-05-08 21:57:20
  * @FilePath: \nakoruru\src\hooks\react-query\index.ts
- * @Description: 
- * 
- * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved. 
+ * @Description:
+ *
+ * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.
  */
-export * from "./typicode"
+export * from "./typicode";

@@ -10,11 +10,11 @@
  * @LastEditors: h7ml <h7ml@qq.com>
  * @LastEditTime: 2023-05-09 14:23:07
  * @FilePath: \nakoruru\src\components\index.ts
- * @Description: 
- * 
- * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved. 
+ * @Description:
+ *
+ * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.
  */
-export * from './GitHubCorners';
-export * from './CodeEditor';
-export * from './OverviewFlow';
-export * from './Layout';
+export * from "./GitHubCorners";
+export * from "./CodeEditor";
+export * from "./OverviewFlow";
+export * from "./Layout";

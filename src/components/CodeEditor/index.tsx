@@ -1,28 +1,28 @@
-import React from 'react';
-import classnames from 'classnames';
+import React from "react";
+import classnames from "classnames";
 
-import * as monaco from 'monaco-editor';
-import EditorWorker from 'monaco-editor/esm/vs/editor/editor.worker?worker';
-import JsonWorker from 'monaco-editor/esm/vs/language/json/json.worker?worker';
-import CssWorker from 'monaco-editor/esm/vs/language/css/css.worker?worker';
-import HtmlWorker from 'monaco-editor/esm/vs/language/html/html.worker?worker';
-import TsWorker from 'monaco-editor/esm/vs/language/typescript/ts.worker?worker';
+import * as monaco from "monaco-editor";
+import EditorWorker from "monaco-editor/esm/vs/editor/editor.worker?worker";
+import JsonWorker from "monaco-editor/esm/vs/language/json/json.worker?worker";
+import CssWorker from "monaco-editor/esm/vs/language/css/css.worker?worker";
+import HtmlWorker from "monaco-editor/esm/vs/language/html/html.worker?worker";
+import TsWorker from "monaco-editor/esm/vs/language/typescript/ts.worker?worker";
 
-import style from './style.module.less';
+import style from "./style.module.less";
 
 // eslint-disable-next-line no-restricted-globals
 (self as any).MonacoEnvironment = {
   getWorker(_: any, label: any) {
-    if (label === 'json') {
+    if (label === "json") {
       return new JsonWorker();
     }
-    if (label === 'css' || label === 'scss' || label === 'less') {
+    if (label === "css" || label === "scss" || label === "less") {
       return new CssWorker();
     }
-    if (label === 'html' || label === 'handlebars' || label === 'razor') {
+    if (label === "html" || label === "handlebars" || label === "razor") {
       return new HtmlWorker();
     }
-    if (label === 'typescript' || label === 'javascript') {
+    if (label === "typescript" || label === "javascript") {
       return new TsWorker();
     }
     return new EditorWorker();
@@ -39,7 +39,7 @@ export interface CodeEditorProp {
   onChange?: (value?: string) => void;
 }
 
-const codeEditorContainerId = 'ET_codeEditorContainerId';
+const codeEditorContainerId = "ET_codeEditorContainerId";
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
 let __prevent_trigger_change_event__: boolean = false;
@@ -48,21 +48,22 @@ export function CodeEditor({
   berforeRender,
   afterRender,
   value,
-  language = 'javascript',
-  height = '300px',
+  language = "javascript",
+  height = "300px",
   readOnly = false,
   onChange,
 }: CodeEditorProp) {
   const codeEditorRef = React.useRef<HTMLDivElement>(null);
-  const [editor, setEditor] = React.useState<monaco.editor.IStandaloneCodeEditor>();
+  const [editor, setEditor] =
+    React.useState<monaco.editor.IStandaloneCodeEditor>();
 
   React.useEffect(() => {
     if (!codeEditorRef.current) return;
 
     const editor = monaco.editor.create(codeEditorRef.current, {
-      value: '',
+      value: "",
       language,
-      theme: 'vs-dark',
+      theme: "vs-dark",
       readOnly,
       minimap: {
         enabled: false,
@@ -92,7 +93,7 @@ export function CodeEditor({
       [
         {
           range,
-          text: value || '',
+          text: value || "",
         },
       ],
       () => null,
@@ -115,9 +116,10 @@ export function CodeEditor({
   return (
     <div
       className={classnames(
-        'w-full flex flex-col gap-y-1 p-2 border border-borderColorMain bg-bgColorMain relative',
-        style['code-editor'],
-      )}>
+        "w-full flex flex-col gap-y-1 p-2 border border-borderColorMain bg-bgColorMain relative",
+        style["code-editor"],
+      )}
+    >
       {berforeRender}
       <div
         ref={codeEditorRef}

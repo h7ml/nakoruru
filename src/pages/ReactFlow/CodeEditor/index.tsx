@@ -10,18 +10,25 @@
  * @LastEditors: h7ml <h7ml@qq.com>
  * @LastEditTime: 2023-05-09 17:30:54
  * @FilePath: \nakoruru\src\pages\ReactFlow\CodeEditor\index.tsx
- * @Description: 
- * 
- * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved. 
+ * @Description:
+ *
+ * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.
  */
-import { CodeEditor } from '@/components';
-import { FlowJson } from "@/store"
-import { useRecoilState } from 'recoil';
-import { isPlainObject } from 'lodash-es';
+import { CodeEditor } from "@/components";
+import { FlowJson } from "@/store";
+import { useRecoilState } from "recoil";
+import { isPlainObject } from "lodash-es";
 export default function Home() {
   const [codeValue, setCodeValue] = useRecoilState(FlowJson);
 
-  return <CodeEditor height={`93vh`} language="json" value={JSON.stringify(codeValue, null, 2)} onChange={(e) => {
-    if (isPlainObject(e)) setCodeValue(JSON.parse(e))
-  }} />
+  return (
+    <CodeEditor
+      height={`93vh`}
+      language="json"
+      value={JSON.stringify(codeValue, null, 2)}
+      onChange={(e) => {
+        if (isPlainObject(e)) setCodeValue(JSON.parse(e));
+      }}
+    />
+  );
 }

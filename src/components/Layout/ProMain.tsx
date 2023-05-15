@@ -10,9 +10,9 @@
  * @LastEditors: h7ml <h7ml@qq.com>
  * @LastEditTime: 2023-05-12 23:39:34
  * @FilePath: \nakoruru\src\components\Layout\ProMain.tsx
- * @Description: 
- * 
- * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved. 
+ * @Description:
+ *
+ * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.
  */
 import {
   DoubleRightOutlined,
@@ -23,24 +23,24 @@ import {
   QuestionCircleFilled,
   SearchOutlined,
   SmileFilled,
-} from '@ant-design/icons';
-import { DefaultFooter, ProSettings } from '@ant-design/pro-components';
+} from "@ant-design/icons";
+import { DefaultFooter, ProSettings } from "@ant-design/pro-components";
 import {
   PageContainer,
   ProCard,
   ProConfigProvider,
   ProLayout,
   SettingDrawer,
-} from '@ant-design/pro-components';
-import { css } from '@emotion/css';
-import { Divider, Input, Dropdown, theme } from 'antd';
-import React, { useState } from 'react';
-import { repository } from '../../../package.json';
-import classNames from 'classnames';
-import Router from '@/router';
-import { navState } from '@/store';
-import { useRecoilValue } from 'recoil';
-import { useNavigate, useLocation } from 'react-router-dom';
+} from "@ant-design/pro-components";
+import { css } from "@emotion/css";
+import { Divider, Input, Dropdown, theme } from "antd";
+import React, { useState } from "react";
+import { repository } from "../../../package.json";
+import classNames from "classnames";
+import Router from "@/router";
+import { navState } from "@/store";
+import { useRecoilValue } from "recoil";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const Item: React.FC<{ children: React.ReactNode }> = (props) => {
   const { token } = theme.useToken();
@@ -57,7 +57,7 @@ const Item: React.FC<{ children: React.ReactNode }> = (props) => {
         }
       `}
       style={{
-        width: '33.33%',
+        width: "33.33%",
       }}
     >
       {props.children}
@@ -70,7 +70,6 @@ const Item: React.FC<{ children: React.ReactNode }> = (props) => {
   );
 };
 
-
 const SearchInput = () => {
   const { token } = theme.useToken();
   return (
@@ -78,8 +77,8 @@ const SearchInput = () => {
       key="SearchOutlined"
       aria-hidden
       style={{
-        display: 'flex',
-        alignItems: 'center',
+        display: "flex",
+        alignItems: "center",
         marginInlineEnd: 24,
       }}
       onMouseDown={(e) => {
@@ -120,42 +119,40 @@ export const ProMain: React.FC = () => {
     // fixSiderbar: true,
     // layout: 'mix',
     // splitMenus: true,
-    "fixSiderbar": true,
-    "layout": "top",
-    "splitMenus": false,
-    "navTheme": "light",
-    "contentWidth": "Fluid",
-    "colorPrimary": "#1677FF",
-    "fixedHeader": true
-
+    fixSiderbar: true,
+    layout: "top",
+    splitMenus: false,
+    navTheme: "light",
+    contentWidth: "Fluid",
+    colorPrimary: "#1677FF",
+    fixedHeader: true,
   });
 
   const navStateValue = useRecoilValue(navState);
   const getNav = (navValue: any) => {
-    const response = navValue.map((nav: { path: any; }) => {
+    const response = navValue.map((nav: { path: any }) => {
       return {
         ...nav,
         key: nav.path,
-        label: nav.path.substr(nav.path.lastIndexOf('/') + 1),
+        label: nav.path.substr(nav.path.lastIndexOf("/") + 1),
         path: nav.path,
         name: nav.path,
         icon: <SmileFilled />,
-        component: nav.path.substr(nav.path.lastIndexOf('/') + 1),
+        component: nav.path.substr(nav.path.lastIndexOf("/") + 1),
       };
     });
 
-
     return {
-      path: '/',
+      path: "/",
       routes: response,
       location: {
-        pathname: '/',
+        pathname: "/",
       },
     };
-  }
+  };
   const location = useLocation();
   const path = location.pathname;
-  const lastSlashIndex = path.lastIndexOf('/');
+  const lastSlashIndex = path.lastIndexOf("/");
   const param = path.substr(lastSlashIndex + 1);
   const [pathname, setPathname] = useState(param);
   const [num, setNum] = useState(40);
@@ -163,7 +160,7 @@ export const ProMain: React.FC = () => {
     <div
       id="test-pro-layout"
       style={{
-        height: '100vh',
+        height: "100vh",
       }}
     >
       <ProConfigProvider hashed={false}>
@@ -171,28 +168,41 @@ export const ProMain: React.FC = () => {
           prefixCls="my-prefix"
           bgLayoutImgList={[
             {
-              src: 'https://img.alicdn.com/imgextra/i2/O1CN01O4etvp1DvpFLKfuWq_!!6000000000279-2-tps-609-606.png',
+              src: "https://img.alicdn.com/imgextra/i2/O1CN01O4etvp1DvpFLKfuWq_!!6000000000279-2-tps-609-606.png",
               left: 85,
               bottom: 100,
-              height: '303px',
+              height: "303px",
             },
             {
-              src: 'https://img.alicdn.com/imgextra/i2/O1CN01O4etvp1DvpFLKfuWq_!!6000000000279-2-tps-609-606.png',
+              src: "https://img.alicdn.com/imgextra/i2/O1CN01O4etvp1DvpFLKfuWq_!!6000000000279-2-tps-609-606.png",
               bottom: -68,
               right: -45,
-              height: '303px',
+              height: "303px",
             },
             {
-              src: 'https://img.alicdn.com/imgextra/i3/O1CN018NxReL1shX85Yz6Cx_!!6000000005798-2-tps-884-496.png',
+              src: "https://img.alicdn.com/imgextra/i3/O1CN018NxReL1shX85Yz6Cx_!!6000000005798-2-tps-884-496.png",
               bottom: 0,
               left: 0,
-              width: '331px',
+              width: "331px",
             },
           ]}
           footerRender={() => (
             <DefaultFooter
-              className=''
-              copyright={<span>©2023 Created by h7ml <a href={repo.url} target='_blank' rel='noreferrer' className='text-blue-400 h20' title='nakoruru 娜可露露'>nakoruru</a></span>}
+              className=""
+              copyright={
+                <span>
+                  ©2023 Created by h7ml{" "}
+                  <a
+                    href={repo.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-blue-400 h20"
+                    title="nakoruru 娜可露露"
+                  >
+                    nakoruru
+                  </a>
+                </span>
+              }
             />
           )}
           route={getNav(navStateValue)}
@@ -204,18 +214,18 @@ export const ProMain: React.FC = () => {
             collapsedShowGroupTitle: true,
           }}
           avatarProps={{
-            src: 'https://www.h7ml.cn/logo.png',
-            size: 'small',
-            title: 'h7ml',
+            src: "https://www.h7ml.cn/logo.png",
+            size: "small",
+            title: "h7ml",
             render: (props, dom) => {
               return (
                 <Dropdown
                   menu={{
                     items: [
                       {
-                        key: 'logout',
+                        key: "logout",
                         icon: <LogoutOutlined />,
-                        label: '退出登录',
+                        label: "退出登录",
                       },
                     ],
                   }}
@@ -228,7 +238,7 @@ export const ProMain: React.FC = () => {
           actionsRender={(props) => {
             if (props.isMobile) return [];
             return [
-              props.layout !== 'side' && document.body.clientWidth > 1400 ? (
+              props.layout !== "side" && document.body.clientWidth > 1400 ? (
                 <SearchInput />
               ) : undefined,
               <InfoCircleFilled key="InfoCircleFilled" />,
@@ -247,18 +257,14 @@ export const ProMain: React.FC = () => {
               return defaultDom;
             }
             if (_.isMobile) return defaultDom;
-            return (
-              <>
-                {defaultDom}
-              </>
-            );
+            return <>{defaultDom}</>;
           }}
           menuFooterRender={(props) => {
             if (props?.collapsed) return undefined;
             return (
               <div
                 style={{
-                  textAlign: 'center',
+                  textAlign: "center",
                   paddingBlockStart: 12,
                 }}
               >
@@ -271,8 +277,8 @@ export const ProMain: React.FC = () => {
           menuItemRender={(item, dom) => (
             <div
               onClick={() => {
-                setPathname(item.path || '/');
-                history(item.path)
+                setPathname(item.path || "/");
+                history(item.path);
               }}
             >
               {dom}
@@ -283,7 +289,7 @@ export const ProMain: React.FC = () => {
           <PageContainer
             style={{
               padding: 0,
-              margin: 0
+              margin: 0,
             }}
             pageHeaderRender={false}
             token={{
@@ -292,7 +298,7 @@ export const ProMain: React.FC = () => {
           >
             <ProCard
               style={{
-                minHeight: '90vh',
+                minHeight: "90vh",
               }}
             >
               <Router />
@@ -302,7 +308,7 @@ export const ProMain: React.FC = () => {
           <SettingDrawer
             pathname={pathname}
             enableDarkTheme
-            getContainer={() => document.getElementById('test-pro-layout')}
+            getContainer={() => document.getElementById("test-pro-layout")}
             settings={settings}
             onSettingChange={(changeSetting) => {
               setSetting(changeSetting);
@@ -310,7 +316,7 @@ export const ProMain: React.FC = () => {
             disableUrlParams={false}
           />
         </ProLayout>
-      </ProConfigProvider >
-    </div >
+      </ProConfigProvider>
+    </div>
   );
 };

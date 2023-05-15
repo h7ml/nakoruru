@@ -13,6 +13,7 @@
   },
   "include": [
     "src",
-    "theme.ts"
+    "theme.ts",
+    "prettierrc.js"
   ],
 }
