@@ -13,7 +13,7 @@
     "stylelint": "stylelint '**/*.{tsx,less,postcss,css,scss --fix --cache --cache-location node_modules/.cache/stylelint/",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,scss,less,md}\"",
     "types": "npx swagger-typescript-api -p https://petstore.swagger.io/v2/swagger.json -o ./src/server -n api.ts",
-    "updates": "ncu -u && pnpm install",
+    "updates": "ncu -u && pnpm install --no-frozen-lockfile",
     "lint:ts": "tsc --noEmit -p ./tsconfig.json"
   },
   "dependencies": {
