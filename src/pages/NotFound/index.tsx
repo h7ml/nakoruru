@@ -10,12 +10,12 @@
  * @LastEditors: h7ml <h7ml@qq.com>
  * @LastEditTime: 2023-05-09 14:36:25
  * @FilePath: \nakoruru\src\pages\NotFound\index.tsx
- * @Description: 
- * 
- * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved. 
+ * @Description:
+ *
+ * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.
  */
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import { useNavigate } from "react-router-dom";
 import { Result, Button } from "antd";
 
 export const NotFound: React.FC = () => {
@@ -30,8 +30,13 @@ export const NotFound: React.FC = () => {
       status="404"
       title="404"
       subTitle="Sorry, the page you visited does not exist."
-      extra={<Button type="primary" onClick={handleClick}>Back Home</Button>}
-    />);
+      extra={
+        <Button type="primary" onClick={handleClick}>
+          Back Home
+        </Button>
+      }
+    />
+  );
 };
 
 export default NotFound;

@@ -10,12 +10,12 @@
  * @LastEditors: h7ml <h7ml@qq.com>
  * @LastEditTime: 2023-05-08 23:43:21
  * @FilePath: \nakoruru\src\pages\ReactQuery\index.tsx
- * @Description: 
- * 
- * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved. 
+ * @Description:
+ *
+ * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.
  */
 
-import { UseTypicode } from "@/hooks"
+import { UseTypicode } from "@/hooks";
 import { useState } from "react";
 
 function ReactQuery() {
@@ -24,17 +24,17 @@ function ReactQuery() {
 
   const createProjectReq = useUsersQuery();
   const handleCreateProjectClick = () => {
-    createProjectReq('albums',
-      {
-        onSuccess: (info) => {
-          SetDataInfo(info)
-        },
+    createProjectReq("albums", {
+      onSuccess: (info) => {
+        SetDataInfo(info);
       },
-    );
+    });
   };
   return (
     <div>
-      <button onClick={handleCreateProjectClick}>handleCreateProjectClick</button>
+      <button onClick={handleCreateProjectClick}>
+        handleCreateProjectClick
+      </button>
       {dataInfo?.map((user) => (
         <div key={user.userId}>
           <p>{user.title}</p>
@@ -42,7 +42,7 @@ function ReactQuery() {
         </div>
       ))}
     </div>
-  )
+  );
 }
 
-export default ReactQuery
+export default ReactQuery;

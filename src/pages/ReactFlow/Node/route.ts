@@ -4,9 +4,9 @@
  * @LastEditors: h7ml <h7ml@qq.com>
  * @LastEditTime: 2023-05-07 23:47:29
  * @FilePath: \nakoruru\src\pages\ReactFlow\Node\route.ts
- * @Description: 
- * 
- * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved. 
+ * @Description:
+ *
+ * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.
  */
 /**
  * @author        h7ml <h7ml@qq.com>
@@ -20,12 +20,12 @@
  * @LastEditors: h7ml <h7ml@qq.com>
  * @LastEditTime: 2023-05-07 22:19:42
  * @FilePath: \nakoruru\src\pages\About\route.ts
- * @Description: 
- * 
- * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved. 
+ * @Description:
+ *
+ * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.
  */
 export default {
   title: "Node",
   menuOrder: 0,
-  navigate: '/Node'  // 设置重定向
-}
+  navigate: "/Node", // 设置重定向
+};

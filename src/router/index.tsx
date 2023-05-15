@@ -10,22 +10,22 @@
  * @LastEditors: h7ml <h7ml@qq.com>
  * @LastEditTime: 2023-05-09 14:33:19
  * @FilePath: \nakoruru\src\router\index.tsx
- * @Description: 
- * 
- * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved. 
+ * @Description:
+ *
+ * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.
  */
-import { lazy, Suspense } from 'react';
-import { RouteObject, useRoutes } from 'react-router-dom';
-import { Loading } from '@/components';
-import LazyRouter from "./LazyRouter"
-import { useSetRecoilState } from 'recoil';
-import { navState } from '@/store';
-import NotFound from '@/pages/NotFound';
+import { lazy, Suspense } from "react";
+import { RouteObject, useRoutes } from "react-router-dom";
+import { Loading } from "@/components";
+import LazyRouter from "./LazyRouter";
+import { useSetRecoilState } from "recoil";
+import { navState } from "@/store";
+import NotFound from "@/pages/NotFound";
 
-const Home = lazy(() => import('@/pages/Home'));
+const Home = lazy(() => import("@/pages/Home"));
 const routes: RouteObject[] = [
   {
-    path: '/',
+    path: "/",
     element: (
       <Suspense fallback={<Loading />}>
         <Home />
@@ -34,7 +34,7 @@ const routes: RouteObject[] = [
   },
   ...LazyRouter(),
   {
-    path: '*',
+    path: "*",
     element: <NotFound />,
   },
 ];
@@ -42,6 +42,6 @@ const routes: RouteObject[] = [
 export default function Router() {
   const SetNavState = useSetRecoilState(navState);
   const element = useRoutes(routes);
-  SetNavState(routes)
+  SetNavState(routes);
   return element;
 }

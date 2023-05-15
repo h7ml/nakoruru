@@ -10,9 +10,9 @@
  * @LastEditors: h7ml <h7ml@qq.com>
  * @LastEditTime: 2023-05-08 21:51:53
  * @FilePath: \nakoruru\src\hooks\index.ts
- * @Description: 
- * 
- * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved. 
+ * @Description:
+ *
+ * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.
  */
-export * from "./fetch"
-export * from "./react-query"
+export * from "./fetch";
+export * from "./react-query";

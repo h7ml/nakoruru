@@ -10,21 +10,22 @@
  * @LastEditors: h7ml <h7ml@qq.com>
  * @LastEditTime: 2023-05-08 11:19:15
  * @FilePath: \nakoruru\src\pages\ReactFlow\Node\index.tsx
- * @Description: 
- * 
- * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved. 
+ * @Description:
+ *
+ * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.
  */
-import { ReactFlowNode } from '@/components/ReactFlow/Node/index';
-import { FlowJson } from '@/store';
-import { useRecoilValue } from 'recoil';
+import { ReactFlowNode } from "@/components/ReactFlow/Node/index";
+import { FlowJson } from "@/store";
+import { useRecoilValue } from "recoil";
 export default function Home() {
   const initialNodes = useRecoilValue(FlowJson);
   return (
     <>
-      {initialNodes ?
+      {initialNodes ? (
         <ReactFlowNode initialNodes={initialNodes} />
-        : <p>initialNodes is error</p>
-      }
+      ) : (
+        <p>initialNodes is error</p>
+      )}
     </>
   );
 }

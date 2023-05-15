@@ -10,11 +10,11 @@
  * @LastEditors: h7ml <h7ml@qq.com>
  * @LastEditTime: 2023-05-08 20:43:56
  * @FilePath: \nakoruru\src\hooks\fetch\index.tsx
- * @Description: 
- * 
- * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved. 
+ * @Description:
+ *
+ * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.
  */
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 interface FetchDataReturnType<T> {
   data: T | null; // 将data状态类型更改为T | null
@@ -22,7 +22,8 @@ interface FetchDataReturnType<T> {
   error: string | null | undefined; // 将error类型更改为T | null | undefined
 }
 
-export function useFetchData<T>(url: string): FetchDataReturnType<T> { // 定义泛型参数T
+export function useFetchData<T>(url: string): FetchDataReturnType<T> {
+  // 定义泛型参数T
   const [data, setData] = useState<T | null>(null); // 将data状态类型更改为T | null
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null | undefined>(null); // 将error类型更改为T | null | undefined

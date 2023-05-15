@@ -10,9 +10,9 @@
  * @LastEditors: h7ml <h7ml@qq.com>
  * @LastEditTime: 2023-05-12 23:46:17
  * @FilePath: \nakoruru\src\pages\Fetch\index.tsx
- * @Description: 
- * 
- * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved. 
+ * @Description:
+ *
+ * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.
  */
 import { useFetchData } from "@/hooks";
 import { Table, message } from "antd";
@@ -25,7 +25,6 @@ interface TableData {
   body: string;
 }
 
-
 const columns = [
   {
     title: "User ID",
@@ -36,24 +35,24 @@ const columns = [
   {
     title: "ID",
     dataIndex: "id",
-    key: "id"
+    key: "id",
   },
   {
     title: "Title",
     dataIndex: "title",
-    key: "title"
+    key: "title",
   },
   {
     title: "Body",
     dataIndex: "body",
-    key: "body"
-  }
+    key: "body",
+  },
 ];
 
-
 const Fetch: React.FC = () => {
-  const { data, loading, error } = useFetchData<TableData[]>('https://jsonplaceholder.typicode.com/posts');
-
+  const { data, loading, error } = useFetchData<TableData[]>(
+    "https://jsonplaceholder.typicode.com/posts",
+  );
 
   useEffect(() => {
     if (loading) {
@@ -61,20 +60,15 @@ const Fetch: React.FC = () => {
     } else {
       message.destroy(); // Close any existing message
     }
-  }, [loading])
-
+  }, [loading]);
 
   if (error) {
     message.error("Error fetching data, please try again!");
   }
 
-
-
   return (
     <div>
-      {data && (
-        <Table dataSource={data ?? []} columns={columns} rowKey="id" />
-      )}
+      {data && <Table dataSource={data ?? []} columns={columns} rowKey="id" />}
     </div>
   );
 };
