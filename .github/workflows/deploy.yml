@@ -184,7 +184,6 @@ jobs:
           git config --local user.email "h7ml@qq.com"
           git config --local user.name "h7ml"
           git commit --allow-empty -m "ci: Update today's hot rank on $(date)" -a
-          git push origin ${{ github.ref }}
       - name: Push changes 🚀
         uses: ad-m/github-push-action@master
         with:
