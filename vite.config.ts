@@ -1,38 +1,40 @@
-import { join } from 'path';  // 导入 path 中的 join 方法
-import { defineConfig } from 'vite';  // 导入 vite 的 defineConfig 方法
-import react from "@vitejs/plugin-react-swc";  // 导入插件 @vitejs/plugin-react-swc 用于编译 react jsx 语法
-import { createHtmlPlugin } from 'vite-plugin-html';  // 导入插件 vite-plugin-html 用于生成 html
-import WindiCSS from 'vite-plugin-windicss';  // 导入插件 vite-plugin-windicss 用于处理 css
-import ThemeColor from './theme';  // 导入 theme 文件用于处理主题色
+import { join } from 'path' // 导入 path 中的 join 方法
+import { defineConfig } from 'vite' // 导入 vite 的 defineConfig 方法
+import react from '@vitejs/plugin-react-swc' // 导入插件 @vitejs/plugin-react-swc 用于编译 react jsx 语法
+import { createHtmlPlugin } from 'vite-plugin-html' // 导入插件 vite-plugin-html 用于生成 html
+import WindiCSS from 'vite-plugin-windicss' // 导入插件 vite-plugin-windicss 用于处理 css
+import ThemeColor from './theme' // 导入 theme 文件用于处理主题色
 
 // import legacyPlugin from '@vitejs/plugin-legacy'
 
 // import Starter from 'unplugin-starter/vite'  // 导入插件 unplugin-starter/vite 用于生成自定义报告
 
-import license from 'rollup-plugin-license';  // 导入插件 rollup-plugin-license 用于生成软件版权信息
+import license from 'rollup-plugin-license' // 导入插件 rollup-plugin-license 用于生成软件版权信息
 
-import { visualizer } from 'rollup-plugin-visualizer'  // 导入插件 rollup-plugin-visualizer 用于构建可视化分析图
+import { visualizer } from 'rollup-plugin-visualizer' // 导入插件 rollup-plugin-visualizer 用于构建可视化分析图
 
-import viteCompression from 'vite-plugin-compression';  // 导入插件 vite-plugin-compression 用于压缩资源
+import viteCompression from 'vite-plugin-compression' // 导入插件 vite-plugin-compression 用于压缩资源
 
 export default defineConfig(({ mode }) => {
   return {
-    mode: process.env.NODE_ENV,  // 设置构建模式为当前环境下的模式
-    root: __dirname,  // 设置根目录为当前目录
+    mode: process.env.NODE_ENV, // 设置构建模式为当前环境下的模式
+    root: __dirname, // 设置根目录为当前目录
 
     plugins: [
-      react(),  // 加载 @vitejs/plugin-react-swc 插件
-      WindiCSS(),  // 加载 vite-plugin-windicss 插件用于处理 css
-      createHtmlPlugin({  // 调用 vite-plugin-html 插件创建 html
+      react(), // 加载 @vitejs/plugin-react-swc 插件
+      WindiCSS(), // 加载 vite-plugin-windicss 插件用于处理 css
+      createHtmlPlugin({
+        // 调用 vite-plugin-html 插件创建 html
         inject: {
-          data: { MODE: mode, HASH: Date.now() },  // 设置 HASH 为当前时间戳，以便浏览器可以强制刷新缓存
+          data: { MODE: mode, HASH: Date.now() }, // 设置 HASH 为当前时间戳，以便浏览器可以强制刷新缓存
         },
       }),
       // legacy({
       //   targets: ['defaults', 'not IE 11'],
       // }),,
 
-      viteCompression({  // 加载 vite-plugin-compression 插件用于压缩资源
+      viteCompression({
+        // 加载 vite-plugin-compression 插件用于压缩资源
         verbose: true, // 是否在控制台输出压缩结果
         disable: false, // 是否禁用,相当于开关在这里
         threshold: 10240, // 体积大于 threshold 才会被压缩,单位 b，1b=8B, 1B=1024KB  那我们这里相当于 9kb多吧，就会压缩
@@ -40,15 +42,17 @@ export default defineConfig(({ mode }) => {
         ext: '.gz', // 文件后缀
       }),
 
-      visualizer({  // 加载 rollup-plugin-visualizer 插件用于构建可视化分析图
+      visualizer({
+        // 加载 rollup-plugin-visualizer 插件用于构建可视化分析图
         gzipSize: true, // 开启gzip
-        brotliSize: true, // 
-        emitFile: false,  // 发射文件
-        filename: "dist/visualizer.html",  // 分析图生成的文件名
-        open: true  // 如果存在本地服务端口，将在打包后自动展示
+        brotliSize: true, //
+        emitFile: false, // 发射文件
+        filename: 'dist/visualizer.html', // 分析图生成的文件名
+        open: true, // 如果存在本地服务端口，将在打包后自动展示
       }),
 
-      license({  // 加载 rollup-plugin-license 插件用于生成软件版权信息
+      license({
+        // 加载 rollup-plugin-license 插件用于生成软件版权信息
         banner: `
             Copyright (c) 2023, h7ml
             All rights reserved.
@@ -56,27 +60,27 @@ export default defineConfig(({ mode }) => {
           `,
         thirdParty: {
           output: {
-            file: 'dist/licenses.txt',  //版权信息输出文件目录
+            file: 'dist/licenses.txt', //版权信息输出文件目录
           },
-        }
+        },
       }),
 
       // Starter({  // 加载 unplugin-starter/vite 插件用于生成自定义报告
       //   filename: 'my-report.html',  // 设置报告文件名
       // }),
-
     ],
 
     build: {
       rollupOptions: {
         output: {
-          chunkFileNames: 'js/[name]-[hash].js',  // 配置 chunk 引入文件名的名称
-          entryFileNames: 'js/[name]-[hash].js',  // 配置包的入口文件名称
-          assetFileNames: '[ext]/[name]-[hash].[ext]'  // 配置资源文件像字体，图片等的文件名
-        }
+          chunkFileNames: 'js/[name]-[hash].js', // 配置 chunk 引入文件名的名称
+          entryFileNames: 'js/[name]-[hash].js', // 配置包的入口文件名称
+          assetFileNames: '[ext]/[name]-[hash].[ext]', // 配置资源文件像字体，图片等的文件名
+        },
       },
       minify: 'terser',
-      terserOptions: {  // 压缩选项
+      terserOptions: {
+        // 压缩选项
         compress: {
           //生产环境时移除console
           drop_console: true,
@@ -85,20 +89,21 @@ export default defineConfig(({ mode }) => {
       },
       reportCompressedSize: false,
       // 关闭生成map文件 可以达到缩小打包体积
-      sourcemap: false,  // 关闭 sourceMap，生产环境下不需要生成
-      maxAssetSize: 5242880
+      sourcemap: false, // 关闭 sourceMap，生产环境下不需要生成
+      maxAssetSize: 5242880,
     },
 
     resolve: {
       alias: {
-        '@': join(__dirname, './src'),  // 配置了根目录下的 src 目录别名
-      }
+        '@': join(__dirname, './src'), // 配置了根目录下的 src 目录别名
+      },
     },
 
     css: {
-      preprocessorOptions: {  // 预处理选项
+      preprocessorOptions: {
+        // 预处理选项
         less: {
-          javascriptEnabled: true,  // 开启 javascript 解析
+          javascriptEnabled: true, // 开启 javascript 解析
           modifyVars: {
             // 主题色
             'primary-color': ThemeColor.base.primary,
@@ -155,20 +160,21 @@ export default defineConfig(({ mode }) => {
     },
 
     server: {
-      host: '127.0.0.1',  // 开启本地服务器，地址为 127.0.0.1
-      port: 5432,  // 本地服务器端口号
-      proxy: {  // 设置代理
+      host: '127.0.0.1', // 开启本地服务器，地址为 127.0.0.1
+      port: 5432, // 本地服务器端口号
+      proxy: {
+        // 设置代理
         '/api': {
-          target: 'http://cloud.twelvet.cn/',  // 代理地址
-          changeOrigin: true,  //是否跨域
-        }
+          target: 'https://nestjs.h7ml.cn/', // 代理地址
+          changeOrigin: true, //是否跨域
+        },
       },
-      open: true,  // 自动打开浏览器
+      open: true, // 自动打开浏览器
     },
 
-    esbuild: {  // esbuild 选项
-      drop: mode === 'production' ? ['console', 'debugger'] : [],  // 移除 console 和 debugger
+    esbuild: {
+      // esbuild 选项
+      drop: mode === 'production' ? ['console', 'debugger'] : [], // 移除 console 和 debugger
     },
-  };
-});
-
+  }
+})
