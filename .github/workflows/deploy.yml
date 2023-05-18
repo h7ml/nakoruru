@@ -8,11 +8,6 @@ on:
     branches:
       - master
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -196,10 +191,10 @@ jobs:
           git config --local user.email "h7ml@qq.com"
           git config --local user.name "h7ml"
           git commit --allow-empty -m "ci: updates dependencies today's hot rank on $(date)" -a
-      - name: Push changes 🚀
+      - name: Push changes  🚀
         uses: ad-m/github-push-action@master
         with:
-          github_token: ${{ secrets.ACCESS_TOKEN }}
+          github_token: ${{ secrets.GIT_TOKEN }}
           branch: ${{ github.ref }}
           force: true
       - name: dependabot 🚀
