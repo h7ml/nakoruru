@@ -14,7 +14,8 @@
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,scss,less,md}\"",
     "types": "npx swagger-typescript-api -p https://nestjs.h7ml.cn/swagger-json -o ./src/server -n api.ts",
     "updates": "ncu -u && pnpm install --no-frozen-lockfile",
-    "lint:ts": "tsc --noEmit -p ./tsconfig.json"
+    "lint:ts": "tsc --noEmit -p ./tsconfig.json",
+    "plop": "plop"
   },
   "dependencies": {
     "@ant-design/icons": "^5.1.0",
@@ -80,7 +81,10 @@
     "prettier": "3.0.0-alpha.7-for-vscode",
     "rollup-plugin-visualizer": "^5.9.0",
     "typescript": "^5.0.4",
-    "vite": "^4.3.8"
+    "vite": "^4.3.8",
+    "dayjs": "^1.10.7",
+    "fs-extra": "^10.0.0",
+    "plop": "^2.7.4"
   },
   "author": {
     "name": "h7ml",

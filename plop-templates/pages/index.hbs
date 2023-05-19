@@ -1,0 +1,13 @@
+{{#if style}}
+import styles from './index.module.scss';
+{{/if}}
+
+export const {{pascalCase fileName}} = () => {
+  return (
+    <div className={{#if style}}{styles["{{kebabCase fileName}}"]}{{else}}'{{kebabCase fileName}}'{{/if}}>
+      我是 {{kebabCase fileName}} 页面
+    </div>
+  );
+};
+
+export default {{pascalCase fileName}};
