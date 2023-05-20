@@ -7,4 +7,4 @@ services:
     volumes:
       - .:/nakoruru
     ports:
-      - '3000:3000'
+      - '3000:80'

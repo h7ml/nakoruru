@@ -1,4 +1,4 @@
-import { join } from 'path' // 导入 path 中的 join 方法
+import { join, resolve } from 'path' // 导入 path 中的 join 方法
 import { defineConfig } from 'vite' // 导入 vite 的 defineConfig 方法
 import react from '@vitejs/plugin-react-swc' // 导入插件 @vitejs/plugin-react-swc 用于编译 react jsx 语法
 import { createHtmlPlugin } from 'vite-plugin-html' // 导入插件 vite-plugin-html 用于生成 html
@@ -71,6 +71,7 @@ export default defineConfig(({ mode }) => {
     ],
 
     build: {
+      input: resolve(__dirname, 'index.html'),
       rollupOptions: {
         output: {
           chunkFileNames: 'js/[name]-[hash].js', // 配置 chunk 引入文件名的名称
