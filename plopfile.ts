@@ -52,11 +52,11 @@ module.exports = function (plop) {
           value =
             type.value === 'components' ? changeCase.pascalCase(value) : value
 
-          if (
-            fs.existsSync(
-              `${process.cwd()}/src/${type.value}/${value}/index.tsx`,
-            )
-          ) {
+          const filePath = `${process.cwd()}/src/${
+            type.value
+          }/${value}/index.tsx`
+
+          if (fs.existsSync(filePath)) {
             done(`${name}已存在`)
             return
           }
@@ -82,20 +82,20 @@ module.exports = function (plop) {
           path: isPages
             ? 'src/pages/{{pascalCase fileName}}/index.tsx'
             : 'src/components/{{pascalCase fileName}}/index.tsx',
-          templateFile: `plop-templates/{{type.value}}/index.hbs`,
+          templateFile: `src/plop-templates/{{type.value}}/index.hbs`,
         },
         // 修改路由 / 组件配置
         {
           type: 'modify',
-          path: isPages ? 'src/router/index.tsx' : 'src/components/index.tsx',
+          path: isPages ? 'src/router/plop.tsx' : 'src/components/plop.tsx',
           pattern: /(\/\* plop add \*\/)/g,
-          templateFile: `plop-templates/{{type.value}}/add.hbs`,
+          templateFile: `src/plop-templates/{{type.value}}/add.hbs`,
         },
         {
           type: 'modify',
-          path: isPages ? 'src/router/index.tsx' : 'src/components/index.tsx',
+          path: isPages ? 'src/router/plop.tsx' : 'src/components/plop.tsx',
           pattern: /(\/\* pages add \*\/)/g,
-          templateFile: `plop-templates/{{type.value}}/route.hbs`,
+          templateFile: `src/plop-templates/{{type.value}}/route.hbs`,
         },
       ]
 
@@ -106,7 +106,7 @@ module.exports = function (plop) {
           path: isPages
             ? 'src/pages/{{pascalCase fileName}}/ndex.module.scss'
             : 'src/components/{{pascalCase fileName}}/ndex.module.scss',
-          templateFile: `plop-templates/{{type.value}}/style.hbs`,
+          templateFile: `src/plop-templates/{{type.value}}/style.hbs`,
         })
       }
 
@@ -114,3 +114,4 @@ module.exports = function (plop) {
     },
   })
 }
+;``
