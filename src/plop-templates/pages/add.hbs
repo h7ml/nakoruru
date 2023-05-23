@@ -1,2 +1,9 @@
 $1
-const {{pascalCase fileName}} = lazy(() => import("@/pages/{{pascalCase fileName}}"));
+  {
+    path: '/{{kebabCase fileName}}',
+    element: (
+      <Suspense fallback={<Loading />}>
+        <{{ pascalCase fileName}} />
+      </Suspense>
+    )
+  },

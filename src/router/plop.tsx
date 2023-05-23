@@ -2,8 +2,8 @@
  * @Author: h7ml <h7ml@qq.com>
  * @Date: 2023-05-22 12:57:40
  * @LastEditors: h7ml <h7ml@qq.com>
- * @LastEditTime: 2023-05-22 13:26:17
- * @FilePath: /nakoruru/src/router/plop.tsx
+ * @LastEditTime: 2023-05-23 21:52:36
+ * @FilePath: \nakoruru\src\router\plop.tsx
  * @Description: 
  * 
  * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved. 
@@ -14,6 +14,7 @@ import { Loading } from "@/components";
 import LazyRouter from "./LazyRouter";
 import NotFound from "@/pages/NotFound";
 /* pages add */
+const Login = lazy(() => import("@/pages/Login"));
 const Tree = lazy(() => import("@/pages/Tree"));
 const Flow = lazy(() => import("@/pages/Flow"));
 const Home = lazy(() => import("@/pages/Home"));
@@ -28,6 +29,14 @@ export const routes: RouteObject[] = [
   },
   ...LazyRouter(),
   /* plop add */
+  {
+    path: '/login',
+    element: (
+      <Suspense fallback={<Loading />}>
+        <Login />
+      </Suspense>
+    )
+  },
   {
     path: '/tree',
     element: (

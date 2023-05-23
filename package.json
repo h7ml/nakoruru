@@ -15,7 +15,7 @@
     "types": "npx swagger-typescript-api -p https://nestjs.h7ml.cn/swagger-json -o ./src/server -n api.ts",
     "updates": "ncu -u && pnpm install --no-frozen-lockfile",
     "lint:ts": "tsc --noEmit -p ./tsconfig.json",
-    "plop": "plop"
+    "plop": "plop --plopfile ./plopfile.cjs"
   },
   "dependencies": {
     "@ant-design/icons": "^5.1.0",
@@ -56,6 +56,7 @@
     "stylelint-order": "^6.0.3",
     "stylelint-processor-styled-components": "^1.10.0",
     "swagger-typescript-api": "^12.0.4",
+    "ts-node": "^10.9.1",
     "unplugin-starter": "^0.1.0",
     "unplugin-visualizer": "^0.0.7",
     "vite-plugin-compression": "^0.5.1",
