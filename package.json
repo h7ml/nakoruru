@@ -48,6 +48,7 @@
     "recoil-devtools-dock": "^0.5.0",
     "recoil-devtools-log-monitor": "^0.5.0",
     "recoil-devtools-logger": "^0.5.0",
+    "recoil-persist": "^4.2.0",
     "reset-css": "^5.0.1",
     "rollup-plugin-license": "^3.0.1",
     "stylelint": "15.6.2",

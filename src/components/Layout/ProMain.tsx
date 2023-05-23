@@ -1,14 +1,14 @@
 /**
  * @author        h7ml <h7ml@qq.com>
  * @date          2023-05-11 14:17:33
- * @lastModified  2023-05-12 23:39:34
+ * @lastModified  2023-05-23 22:39:58
  * Copyright © www.h7ml.cn All rights reserved
  */
 /*
  * @Author: h7ml <h7ml@qq.com>
  * @Date: 2023-05-11 14:17:33
  * @LastEditors: h7ml <h7ml@qq.com>
- * @LastEditTime: 2023-05-12 23:39:34
+ * @LastEditTime: 2023-05-23 22:39:58
  * @FilePath: \nakoruru\src\components\Layout\ProMain.tsx
  * @Description:
  *
@@ -33,14 +33,14 @@ import {
   SettingDrawer,
 } from "@ant-design/pro-components";
 import { css } from "@emotion/css";
-import { Divider, Input, Dropdown, theme } from "antd";
+import { Input, Dropdown, theme } from "antd";
 import React, { useState } from "react";
 import { repository } from "../../../package.json";
-import classNames from "classnames";
 import Router from "@/router";
-import { navState } from "@/store";
+import { navState, useLoginStore } from "@/store";
 import { useRecoilValue } from "recoil";
 import { useNavigate, useLocation } from "react-router-dom";
+import { Handle } from 'react-flow-renderer';
 
 const Item: React.FC<{ children: React.ReactNode }> = (props) => {
   const { token } = theme.useToken();
@@ -156,6 +156,11 @@ export const ProMain: React.FC = () => {
   const param = path.substr(lastSlashIndex + 1);
   const [pathname, setPathname] = useState(param);
   const [num, setNum] = useState(40);
+  const { userInfo, setUserInfo } = useLoginStore();
+  const handleLogout = () => {
+    history('login');
+    setUserInfo(null)
+  }
   return (
     <div
       id="test-pro-layout"
@@ -216,7 +221,7 @@ export const ProMain: React.FC = () => {
           avatarProps={{
             src: "https://www.h7ml.cn/logo.png",
             size: "small",
-            title: "h7ml",
+            title: userInfo?.username ?? "h7ml",
             render: (props, dom) => {
               return (
                 <Dropdown
@@ -226,6 +231,7 @@ export const ProMain: React.FC = () => {
                         key: "logout",
                         icon: <LogoutOutlined />,
                         label: "退出登录",
+                        onClick: handleLogout,
                       },
                     ],
                   }}

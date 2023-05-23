@@ -5,6 +5,7 @@ import DockMonitor from "recoil-devtools-dock";
 import classnames from "classnames";
 import { useKey } from "react-use";
 import { isCtrlKey } from "@/utils";
+import { Affix, Button } from "antd";
 export const RecoilDevtools = () => {
   const [isVisible, setIsVisible] = useState(false);
   const toggleVisibility = () => {
@@ -16,9 +17,15 @@ export const RecoilDevtools = () => {
     undefined,
     [toggleVisibility],
   );
+  const [top, setTop] = useState(60);
+
   return (
     <>
-      {/* <Button onClick={toggleVisibility}>Toggle Devtools Visibility</Button> */}
+      <Affix offsetTop={top}>
+        <Button className="absolute" onClick={toggleVisibility}>Toggle Devtools Visibility</Button>
+      </Affix>
+
+
       <div className={classnames(isVisible ? "block" : "hidden")}>
         <RecoilLogger />
         <DockMonitor

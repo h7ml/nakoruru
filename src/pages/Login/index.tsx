@@ -16,7 +16,7 @@ import {
 } from "@ant-design/pro-components";
 import { Button, Divider, message, Space, Tabs } from "antd";
 import type { CSSProperties } from "react";
-// import { useLoginStore } from "@stores/index";
+import { useLoginStore } from "@/store";
 
 type LoginType = "phone" | "account";
 
@@ -33,12 +33,12 @@ function delay(ms: number) {
 
 const Login = () => {
   const [loginType, setLoginType] = useState<LoginType>("account");
-  // const { setUserInfo } = useLoginStore();
+  const { setUserInfo } = useLoginStore();
   const navigate = useNavigate();
   const onFinish = (values: any) => {
     return delay(1000).then(() => {
       message.success("登录成功🎉🎉🎉");
-      // setUserInfo(values);
+      setUserInfo(values);
       navigate("/", { replace: true });
     });
   };
