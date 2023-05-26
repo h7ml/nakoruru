@@ -34,7 +34,7 @@
     "mobx": "^6.9.0",
     "monaco-editor": "^0.38.0",
     "qs": "^6.11.2",
-    "rc-field-form": "1.31.0",
+    "rc-field-form": "1.32.0",
     "react": "^18.2.0",
     "react-dnd": "^16.0.1",
     "react-dnd-html5-backend": "^16.0.1",
@@ -67,7 +67,7 @@
   },
   "devDependencies": {
     "@types/lodash-es": "^4.17.7",
-    "@types/node": "^20.2.3",
+    "@types/node": "^20.2.4",
     "@types/qs": "^6.9.7",
     "@types/react": "^18.2.7",
     "@types/react-dom": "^18.2.4",
