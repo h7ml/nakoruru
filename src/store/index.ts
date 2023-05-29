@@ -8,7 +8,7 @@
  * @Author: h7ml <h7ml@qq.com>
  * @Date: 2023-05-08 10:45:34
  * @LastEditors: h7ml <h7ml@qq.com>
- * @LastEditTime: 2023-05-29 22:15:19
+ * @LastEditTime: 2023-05-29 22:30:55
  * @FilePath: \nakoruru\src\store\index.ts
  * @Description:
  *
@@ -21,3 +21,4 @@ export * from './user'
 export { default as useCounterStore } from './counter'
 export { default as useGlobalStore } from './global'
 export { default as VisibleState } from './setting'
+export { default as useUserInfoStore } from './userInfo'
