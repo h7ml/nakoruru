@@ -8,7 +8,7 @@
  * @Author: h7ml <h7ml@qq.com>
  * @Date: 2023-05-11 14:17:33
  * @LastEditors: h7ml <h7ml@qq.com>
- * @LastEditTime: 2023-05-23 22:39:58
+ * @LastEditTime: 2023-05-29 22:23:37
  * @FilePath: \nakoruru\src\components\Layout\ProMain.tsx
  * @Description:
  *
@@ -23,6 +23,7 @@ import {
   QuestionCircleFilled,
   SearchOutlined,
   SmileFilled,
+  AppstoreOutlined
 } from "@ant-design/icons";
 import { DefaultFooter, ProSettings } from "@ant-design/pro-components";
 import {
@@ -37,10 +38,9 @@ import { Input, Dropdown, theme } from "antd";
 import React, { useState } from "react";
 import { repository } from "../../../package.json";
 import Router from "@/router";
-import { navState, useLoginStore } from "@/store";
+import { VisibleState, navState, useLoginStore } from "@/store";
 import { useRecoilValue } from "recoil";
 import { useNavigate, useLocation } from "react-router-dom";
-import { Handle } from 'react-flow-renderer';
 
 const Item: React.FC<{ children: React.ReactNode }> = (props) => {
   const { token } = theme.useToken();
@@ -161,6 +161,7 @@ export const ProMain: React.FC = () => {
     history('login');
     setUserInfo(null)
   }
+  const toggleVisibility = VisibleState((state) => state.toggleVisibility)
   return (
     <div
       id="test-pro-layout"
@@ -250,6 +251,9 @@ export const ProMain: React.FC = () => {
               <InfoCircleFilled key="InfoCircleFilled" />,
               <QuestionCircleFilled key="QuestionCircleFilled" />,
               <GithubFilled key="GithubFilled" />,
+              <AppstoreOutlined key="AppstoreOutlined" onClick={() => {
+                toggleVisibility();
+              }} />,
             ];
           }}
           headerTitleRender={(logo, title, _) => {

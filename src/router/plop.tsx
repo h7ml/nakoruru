@@ -2,7 +2,7 @@
  * @Author: h7ml <h7ml@qq.com>
  * @Date: 2023-05-22 12:57:40
  * @LastEditors: h7ml <h7ml@qq.com>
- * @LastEditTime: 2023-05-23 21:52:36
+ * @LastEditTime: 2023-05-29 22:24:58
  * @FilePath: \nakoruru\src\router\plop.tsx
  * @Description: 
  * 
@@ -18,17 +18,26 @@ const Login = lazy(() => import("@/pages/Login"));
 const Tree = lazy(() => import("@/pages/Tree"));
 const Flow = lazy(() => import("@/pages/Flow"));
 const Home = lazy(() => import("@/pages/Home"));
+import Main from '@/components/Layout/Main'
+
 export const routes: RouteObject[] = [
   {
-    path: "/",
-    element: (
-      <Suspense fallback={<Loading />}>
-        <Home />
-      </Suspense>
-    ),
+    path: '/',
+    element: <Main />,
+    children: [
+      // {
+      //   path: "/",
+      //   element: (
+      //     <Suspense fallback={<Loading />}>
+      //       <Home />
+      //     </Suspense>
+      //   ),
+      // },
+      ...LazyRouter(),
+      /* plop add */
+
+    ]
   },
-  ...LazyRouter(),
-  /* plop add */
   {
     path: '/login',
     element: (

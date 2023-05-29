@@ -5,12 +5,10 @@ import DockMonitor from "recoil-devtools-dock";
 import classnames from "classnames";
 import { useKey } from "react-use";
 import { isCtrlKey } from "@/utils";
-import { Affix, Button } from "antd";
+import { VisibleState } from "@/store";
 export const RecoilDevtools = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const toggleVisibility = () => {
-    setIsVisible(!isVisible);
-  };
+  const visible = VisibleState((state) => state.visible)
+  const toggleVisibility = VisibleState((state) => state.toggleVisibility)
   useKey(
     (e) => isCtrlKey(e) && e.code === "KeyH",
     toggleVisibility,
@@ -21,12 +19,12 @@ export const RecoilDevtools = () => {
 
   return (
     <>
-      <Affix offsetTop={top}>
+      {/* <Affix offsetTop={top}>
         <Button className="absolute" onClick={toggleVisibility}>Toggle Devtools Visibility</Button>
-      </Affix>
+      </Affix> */}
 
 
-      <div className={classnames(isVisible ? "block" : "hidden")}>
+      <div className={classnames(visible ? "block" : "hidden")}>
         <RecoilLogger />
         <DockMonitor
           toggleVisibilityKey="ctrl-h"

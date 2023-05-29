@@ -9,6 +9,8 @@ import { HTML5Backend } from "react-dnd-html5-backend";
 import { ReactFlowProvider } from "react-flow-renderer";
 import { RecoilDevtools, queryClient } from "@/plugins";
 import { GitHubCorners, Loading, ProMain } from "@/components";
+import { RouterProvider } from "react-router-dom";
+// import router from './router'
 message.config({ maxCount: 3 });
 export default function App() {
   return (
@@ -21,6 +23,7 @@ export default function App() {
               <Suspense fallback={<Loading />}>
                 <RecoilDevtools />
                 <ProMain />
+                {/* <RouterProvider router={router} /> */}
                 <GitHubCorners />
               </Suspense>
               {/* </DndProvider> */}
