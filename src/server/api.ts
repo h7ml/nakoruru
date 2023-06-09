@@ -11,6 +11,22 @@
 
 export type User = object;
 
+export interface Menu {
+  id: number;
+  title: string;
+  path: string;
+  icon?: string;
+  parentId?: number;
+  parent?: Menu;
+  children?: string[];
+}
+
+export type Douban = object;
+
+export type CreateOrderDto = object;
+
+export type UpdateOrderDto = object;
+
 export type QueryParamsType = Record<string | number, any>;
 export type ResponseFormat = keyof Omit<Body, "body" | "bodyUsed">;
 
@@ -236,14 +252,158 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
     /**
      * No description
      *
-     * @tags girl
-     * @name GirlControllerGetGirls
-     * @request GET:/api/girl
+     * @tags system
+     * @name UserControllerFindAll
+     * @summary 获取所有用户
+     * @request GET:/api/system/users
      */
-    girlControllerGetGirls: (params: RequestParams = {}) =>
+    userControllerFindAll: (params: RequestParams = {}) =>
       this.request<void, void>({
-        path: `/api/girl`,
+        path: `/api/system/users`,
         method: "GET",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags system
+     * @name UserControllerCreate
+     * @summary 创建新用户
+     * @request POST:/api/system/users
+     */
+    userControllerCreate: (data: User, params: RequestParams = {}) =>
+      this.request<void, void>({
+        path: `/api/system/users`,
+        method: "POST",
+        body: data,
+        type: ContentType.Json,
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags system
+     * @name UserControllerFindOne
+     * @summary 获取单个用户
+     * @request GET:/api/system/users/{id}
+     */
+    userControllerFindOne: (id: number, params: RequestParams = {}) =>
+      this.request<void, void>({
+        path: `/api/system/users/${id}`,
+        method: "GET",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags system
+     * @name UserControllerUpdate
+     * @summary 更新用户信息
+     * @request PUT:/api/system/users/{id}
+     */
+    userControllerUpdate: (id: number, data: User, params: RequestParams = {}) =>
+      this.request<void, void>({
+        path: `/api/system/users/${id}`,
+        method: "PUT",
+        body: data,
+        type: ContentType.Json,
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags system
+     * @name UserControllerDelete
+     * @summary 删除用户
+     * @request DELETE:/api/system/users/{id}
+     */
+    userControllerDelete: (id: number, params: RequestParams = {}) =>
+      this.request<void, void>({
+        path: `/api/system/users/${id}`,
+        method: "DELETE",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags system
+     * @name MenuControllerFindAll
+     * @summary 获取所有菜单
+     * @request GET:/api/system/menu
+     */
+    menuControllerFindAll: (params: RequestParams = {}) =>
+      this.request<void, void>({
+        path: `/api/system/menu`,
+        method: "GET",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags system
+     * @name MenuControllerCreate
+     * @summary 创建新菜单
+     * @request POST:/api/system/menu
+     */
+    menuControllerCreate: (data: Menu, params: RequestParams = {}) =>
+      this.request<void, void>({
+        path: `/api/system/menu`,
+        method: "POST",
+        body: data,
+        type: ContentType.Json,
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags system
+     * @name MenuControllerFindOne
+     * @summary 获取单个菜单
+     * @request GET:/api/system/menu/{id}
+     */
+    menuControllerFindOne: (id: number, params: RequestParams = {}) =>
+      this.request<void, void>({
+        path: `/api/system/menu/${id}`,
+        method: "GET",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags system
+     * @name MenuControllerUpdate
+     * @summary 更新菜单
+     * @request PUT:/api/system/menu/{id}
+     */
+    menuControllerUpdate: (id: number, data: Menu, params: RequestParams = {}) =>
+      this.request<void, void>({
+        path: `/api/system/menu/${id}`,
+        method: "PUT",
+        body: data,
+        type: ContentType.Json,
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags system
+     * @name MenuControllerDelete
+     * @summary 删除菜单
+     * @request DELETE:/api/system/menu/{id}
+     */
+    menuControllerDelete: (id: number, params: RequestParams = {}) =>
+      this.request<void, void>({
+        path: `/api/system/menu/${id}`,
+        method: "DELETE",
         ...params,
       }),
 
@@ -253,11 +413,11 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @tags 稀土掘金
      * @name JuejinControllerGetJuejin
      * @summary 获取稀土掘金热榜
-     * @request GET:/api/juejin
+     * @request GET:/api/hotapi/juejin
      */
     juejinControllerGetJuejin: (params: RequestParams = {}) =>
       this.request<void, void>({
-        path: `/api/juejin`,
+        path: `/api/hotapi/juejin`,
         method: "GET",
         ...params,
       }),
@@ -268,11 +428,11 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @tags 稀土掘金
      * @name JuejinControllerGetNewJuejin
      * @summary 获取最新稀土掘金热榜
-     * @request GET:/api/juejin/new
+     * @request GET:/api/hotapi/juejin/new
      */
     juejinControllerGetNewJuejin: (params: RequestParams = {}) =>
       this.request<void, void>({
-        path: `/api/juejin/new`,
+        path: `/api/hotapi/juejin/new`,
         method: "GET",
         ...params,
       }),
@@ -283,11 +443,11 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @tags 36氪
      * @name KrControllerGetKr
      * @summary 获取36氪热榜
-     * @request GET:/api/36kr
+     * @request GET:/api/hotapi/36kr
      */
     krControllerGetKr: (params: RequestParams = {}) =>
       this.request<void, void>({
-        path: `/api/36kr`,
+        path: `/api/hotapi/36kr`,
         method: "GET",
         ...params,
       }),
@@ -298,11 +458,11 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @tags 36氪
      * @name KrControllerGetNewKr
      * @summary 获取最新36氪热榜
-     * @request GET:/api/36kr/new
+     * @request GET:/api/hotapi/36kr/new
      */
     krControllerGetNewKr: (params: RequestParams = {}) =>
       this.request<void, void>({
-        path: `/api/36kr/new`,
+        path: `/api/hotapi/36kr/new`,
         method: "GET",
         ...params,
       }),
@@ -313,11 +473,11 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @tags 百度热搜
      * @name BaiduControllerGetBaidu
      * @summary 获取百度热搜榜
-     * @request GET:/api/baidu
+     * @request GET:/api/hotapi/baidu
      */
     baiduControllerGetBaidu: (params: RequestParams = {}) =>
       this.request<void, any>({
-        path: `/api/baidu`,
+        path: `/api/hotapi/baidu`,
         method: "GET",
         ...params,
       }),
@@ -328,12 +488,87 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @tags 百度热搜
      * @name BaiduControllerGetNewBaidu
      * @summary 获取百度热搜榜的最新数据
-     * @request GET:/api/baidu/new
+     * @request GET:/api/hotapi/baidu/new
      */
     baiduControllerGetNewBaidu: (params: RequestParams = {}) =>
       this.request<void, any>({
-        path: `/api/baidu/new`,
+        path: `/api/hotapi/baidu/new`,
         method: "GET",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags 百度开发者热搜
+     * @name HotControllerGetHotNews
+     * @summary 百度开发者热搜
+     * @request GET:/api/hotapi/baidu/hot
+     */
+    hotControllerGetHotNews: (
+      query?: {
+        pageSize?: number;
+        pageNum?: number;
+      },
+      params: RequestParams = {},
+    ) =>
+      this.request<void, void>({
+        path: `/api/hotapi/baidu/hot`,
+        method: "GET",
+        query: query,
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags 百度开发者github
+     * @name GithubControllerGetGithubData
+     * @summary 百度开发者github
+     * @request GET:/api/hotapi/baidu/github
+     */
+    githubControllerGetGithubData: (
+      query?: {
+        optionLanguage?:
+          | "语言不限"
+          | "Python"
+          | "C"
+          | "Java"
+          | "C++"
+          | "C#"
+          | "JavaScript"
+          | "PHP"
+          | "Go"
+          | "Swift"
+          | "Ruby"
+          | "Visual Basic"
+          | "Assembly"
+          | "SQL"
+          | "Pascal"
+          | "R"
+          | "Objective-C"
+          | "Perl"
+          | "Lua"
+          | "MATLAB"
+          | "Kotlin"
+          | "Rust"
+          | "SAS"
+          | "Fortran"
+          | "COBOL"
+          | "Ada"
+          | "Prolog"
+          | "PowerShell"
+          | "Julia"
+          | "Dart"
+          | "Vue";
+        optionSince?: "DAILY" | "MONTHLY" | "WEEKLY";
+      },
+      params: RequestParams = {},
+    ) =>
+      this.request<void, void>({
+        path: `/api/hotapi/baidu/github`,
+        method: "GET",
+        query: query,
         ...params,
       }),
 
@@ -343,11 +578,11 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @tags 哔哩哔哩
      * @name BilibiliControllerGetBilibili
      * @summary 获取哔哩哔哩热门榜
-     * @request GET:/api/bilibili
+     * @request GET:/api/hotapi/bilibili
      */
     bilibiliControllerGetBilibili: (params: RequestParams = {}) =>
       this.request<void, void>({
-        path: `/api/bilibili`,
+        path: `/api/hotapi/bilibili`,
         method: "GET",
         ...params,
       }),
@@ -358,11 +593,11 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @tags 知乎
      * @name ZhihuControllerGetZhihuHot
      * @summary 获取知乎热榜
-     * @request GET:/api/zhihu
+     * @request GET:/api/hotapi/zhihu
      */
     zhihuControllerGetZhihuHot: (params: RequestParams = {}) =>
       this.request<void, void>({
-        path: `/api/zhihu`,
+        path: `/api/hotapi/zhihu`,
         method: "GET",
         ...params,
       }),
@@ -373,11 +608,11 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @tags 知乎
      * @name ZhihuControllerGetZhihuHotNew
      * @summary 获取最新的知乎热榜
-     * @request GET:/api/zhihu/new
+     * @request GET:/api/hotapi/zhihu/new
      */
     zhihuControllerGetZhihuHotNew: (params: RequestParams = {}) =>
       this.request<void, void>({
-        path: `/api/zhihu/new`,
+        path: `/api/hotapi/zhihu/new`,
         method: "GET",
         ...params,
       }),
@@ -388,11 +623,11 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @tags 百度贴吧
      * @name TiebaControllerGetTieba
      * @summary 获取贴吧热议榜
-     * @request GET:/api/tieba
+     * @request GET:/api/hotapi/tieba
      */
     tiebaControllerGetTieba: (params: RequestParams = {}) =>
       this.request<void, void>({
-        path: `/api/tieba`,
+        path: `/api/hotapi/tieba`,
         method: "GET",
         ...params,
       }),
@@ -403,11 +638,11 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @tags 百度贴吧
      * @name TiebaControllerGetNewTieba
      * @summary 获取最新的贴吧热议榜
-     * @request GET:/api/tieba/new
+     * @request GET:/api/hotapi/tieba/new
      */
     tiebaControllerGetNewTieba: (params: RequestParams = {}) =>
       this.request<void, void>({
-        path: `/api/tieba/new`,
+        path: `/api/hotapi/tieba/new`,
         method: "GET",
         ...params,
       }),
@@ -418,11 +653,11 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @tags 澎湃
      * @name ThePaperControllerGetThePaper
      * @summary 获取澎湃热榜
-     * @request GET:/api/thepaper
+     * @request GET:/api/hotapi/thepaper/thepaper
      */
     thePaperControllerGetThePaper: (params: RequestParams = {}) =>
       this.request<void, any>({
-        path: `/api/thepaper`,
+        path: `/api/hotapi/thepaper/thepaper`,
         method: "GET",
         ...params,
       }),
@@ -433,11 +668,11 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @tags 澎湃
      * @name ThePaperControllerGetNewThePaper
      * @summary 获取澎湃热榜 - 最新数据
-     * @request GET:/api/thepaper/new
+     * @request GET:/api/hotapi/thepaper/thepaper/new
      */
     thePaperControllerGetNewThePaper: (params: RequestParams = {}) =>
       this.request<void, any>({
-        path: `/api/thepaper/new`,
+        path: `/api/hotapi/thepaper/thepaper/new`,
         method: "GET",
         ...params,
       }),
@@ -448,11 +683,11 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @tags 微博
      * @name WeiboControllerGetWeibo
      * @summary 获取微博热搜
-     * @request GET:/api/weibo
+     * @request GET:/api/hotapi/weibo/weibo
      */
     weiboControllerGetWeibo: (params: RequestParams = {}) =>
       this.request<void, any>({
-        path: `/api/weibo`,
+        path: `/api/hotapi/weibo/weibo`,
         method: "GET",
         ...params,
       }),
@@ -463,41 +698,11 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @tags 微博
      * @name WeiboControllerGetNewWeibo
      * @summary 获取微博热搜 - 最新数据
-     * @request GET:/api/weibo/new
+     * @request GET:/api/hotapi/weibo/weibo/new
      */
     weiboControllerGetNewWeibo: (params: RequestParams = {}) =>
       this.request<void, any>({
-        path: `/api/weibo/new`,
-        method: "GET",
-        ...params,
-      }),
-
-    /**
-     * No description
-     *
-     * @tags 少数派
-     * @name SspaiControllerGetSspai
-     * @summary 获取少数派热榜
-     * @request GET:/api/sspai
-     */
-    sspaiControllerGetSspai: (params: RequestParams = {}) =>
-      this.request<void, void>({
-        path: `/api/sspai`,
-        method: "GET",
-        ...params,
-      }),
-
-    /**
-     * No description
-     *
-     * @tags 少数派
-     * @name SspaiControllerGetNewSspai
-     * @summary 获取少数派热榜 - 最新数据
-     * @request GET:/api/sspai/new
-     */
-    sspaiControllerGetNewSspai: (params: RequestParams = {}) =>
-      this.request<void, void>({
-        path: `/api/sspai/new`,
+        path: `/api/hotapi/weibo/weibo/new`,
         method: "GET",
         ...params,
       }),
@@ -508,11 +713,11 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @tags 腾讯新闻
      * @name NewsqqControllerGetNewsqq
      * @summary 获取腾讯热点榜
-     * @request GET:/api/newsqq
+     * @request GET:/api/hotapi/newsqq
      */
     newsqqControllerGetNewsqq: (params: RequestParams = {}) =>
       this.request<void, void>({
-        path: `/api/newsqq`,
+        path: `/api/hotapi/newsqq`,
         method: "GET",
         ...params,
       }),
@@ -523,11 +728,11 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @tags 腾讯新闻
      * @name NewsqqControllerGetNewNewsqq
      * @summary 获取腾讯热点榜 - 最新数据
-     * @request GET:/api/newsqq/new
+     * @request GET:/api/hotapi/newsqq/new
      */
     newsqqControllerGetNewNewsqq: (params: RequestParams = {}) =>
       this.request<void, void>({
-        path: `/api/newsqq/new`,
+        path: `/api/hotapi/newsqq/new`,
         method: "GET",
         ...params,
       }),
@@ -538,11 +743,11 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @tags 今日头条
      * @name ToutiaoControllerGetToutiao
      * @summary 获取头条热榜
-     * @request GET:/api/toutiao
+     * @request GET:/api/hotapi/toutiao
      */
     toutiaoControllerGetToutiao: (params: RequestParams = {}) =>
       this.request<void, void>({
-        path: `/api/toutiao`,
+        path: `/api/hotapi/toutiao`,
         method: "GET",
         ...params,
       }),
@@ -553,11 +758,11 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @tags 今日头条
      * @name ToutiaoControllerGetNewToutiao
      * @summary 获取头条热榜 - 最新数据
-     * @request GET:/api/toutiao/new
+     * @request GET:/api/hotapi/toutiao/new
      */
     toutiaoControllerGetNewToutiao: (params: RequestParams = {}) =>
       this.request<void, void>({
-        path: `/api/toutiao/new`,
+        path: `/api/hotapi/toutiao/new`,
         method: "GET",
         ...params,
       }),
@@ -565,14 +770,14 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
     /**
      * No description
      *
-     * @tags 娜可露露
-     * @name UserControllerFindAll
-     * @summary 获取所有用户
-     * @request GET:/api/users
+     * @tags 少数派
+     * @name SspaiControllerGetSspai
+     * @summary 获取少数派热榜
+     * @request GET:/api/hotapi/sspai
      */
-    userControllerFindAll: (params: RequestParams = {}) =>
+    sspaiControllerGetSspai: (params: RequestParams = {}) =>
       this.request<void, void>({
-        path: `/api/users`,
+        path: `/api/hotapi/sspai`,
         method: "GET",
         ...params,
       }),
@@ -580,14 +785,73 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
     /**
      * No description
      *
-     * @tags 娜可露露
-     * @name UserControllerCreate
-     * @summary 创建新用户
-     * @request POST:/api/users
+     * @tags 少数派
+     * @name SspaiControllerGetNewSspai
+     * @summary 获取少数派热榜 - 最新数据
+     * @request GET:/api/hotapi/sspai/new
      */
-    userControllerCreate: (data: User, params: RequestParams = {}) =>
+    sspaiControllerGetNewSspai: (params: RequestParams = {}) =>
       this.request<void, void>({
-        path: `/api/users`,
+        path: `/api/hotapi/sspai/new`,
+        method: "GET",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags v2ex
+     * @name V2ExControllerGetV2Ex
+     * @summary 获取 V2EX 热门话题
+     * @request GET:/api/hotapi/v2ex
+     */
+    v2ExControllerGetV2Ex: (params: RequestParams = {}) =>
+      this.request<void, void>({
+        path: `/api/hotapi/v2ex`,
+        method: "GET",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags douban
+     * @name DoubanControllerGetDouban
+     * @summary 获取豆瓣热门话题
+     * @request GET:/api/iotapi/douban
+     */
+    doubanControllerGetDouban: (params: RequestParams = {}) =>
+      this.request<Douban, void>({
+        path: `/api/iotapi/douban`,
+        method: "GET",
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags hupu
+     * @name HupuControllerGetHuPu
+     * @summary 获取虎扑热门话题
+     * @request GET:/api/hotapi/hupu
+     */
+    hupuControllerGetHuPu: (params: RequestParams = {}) =>
+      this.request<void, void>({
+        path: `/api/hotapi/hupu`,
+        method: "GET",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @name OrderControllerCreate
+     * @request POST:/api/order
+     */
+    orderControllerCreate: (data: CreateOrderDto, params: RequestParams = {}) =>
+      this.request<void, any>({
+        path: `/api/order`,
         method: "POST",
         body: data,
         type: ContentType.Json,
@@ -597,14 +861,12 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
     /**
      * No description
      *
-     * @tags 娜可露露
-     * @name UserControllerFindOne
-     * @summary 获取单个用户
-     * @request GET:/api/users/{id}
+     * @name OrderControllerFindAll
+     * @request GET:/api/order
      */
-    userControllerFindOne: (id: number, params: RequestParams = {}) =>
-      this.request<void, void>({
-        path: `/api/users/${id}`,
+    orderControllerFindAll: (params: RequestParams = {}) =>
+      this.request<void, any>({
+        path: `/api/order`,
         method: "GET",
         ...params,
       }),
@@ -612,15 +874,26 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
     /**
      * No description
      *
-     * @tags 娜可露露
-     * @name UserControllerUpdate
-     * @summary 更新用户信息
-     * @request PUT:/api/users/{id}
+     * @name OrderControllerFindOne
+     * @request GET:/api/order/{id}
      */
-    userControllerUpdate: (id: number, data: User, params: RequestParams = {}) =>
-      this.request<void, void>({
-        path: `/api/users/${id}`,
-        method: "PUT",
+    orderControllerFindOne: (id: string, params: RequestParams = {}) =>
+      this.request<void, any>({
+        path: `/api/order/${id}`,
+        method: "GET",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @name OrderControllerUpdate
+     * @request PATCH:/api/order/{id}
+     */
+    orderControllerUpdate: (id: string, data: UpdateOrderDto, params: RequestParams = {}) =>
+      this.request<void, any>({
+        path: `/api/order/${id}`,
+        method: "PATCH",
         body: data,
         type: ContentType.Json,
         ...params,
@@ -629,14 +902,12 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
     /**
      * No description
      *
-     * @tags 娜可露露
-     * @name UserControllerDelete
-     * @summary 删除用户
-     * @request DELETE:/api/users/{id}
+     * @name OrderControllerRemove
+     * @request DELETE:/api/order/{id}
      */
-    userControllerDelete: (id: number, params: RequestParams = {}) =>
-      this.request<void, void>({
-        path: `/api/users/${id}`,
+    orderControllerRemove: (id: string, params: RequestParams = {}) =>
+      this.request<void, any>({
+        path: `/api/order/${id}`,
         method: "DELETE",
         ...params,
       }),

@@ -168,7 +168,10 @@ jobs:
 
       - name: Install dependencies 🚀
         if: steps.pnpm-cache.outputs.cache-hit != 'true'
-        run: pnpm install --no-frozen-lockfile && pnpm update
+        run: |
+          pnpm install --no-frozen-lockfile
+          pnpm types 
+          pnpm updates 
 
       - name: Setup Node.js 🚀
         uses: actions/setup-node@v3
@@ -179,7 +182,7 @@ jobs:
         env:
           NODE_OPTIONS: --max_old_space_size=4096
         run: |
-          pnpm run updates 
+          pnpm run format 
           pnpm run build
 
         if: ${{ success() }}
