@@ -1,14 +1,14 @@
 /**
  * @author        h7ml <h7ml@qq.com>
  * @date          2023-05-11 14:17:33
- * @lastModified  2023-05-23 22:39:58
+ * @lastModified  2023-06-10 10:37:48
  * Copyright © www.h7ml.cn All rights reserved
  */
 /*
  * @Author: h7ml <h7ml@qq.com>
  * @Date: 2023-05-11 14:17:33
  * @LastEditors: h7ml <h7ml@qq.com>
- * @LastEditTime: 2023-05-29 22:23:37
+ * @LastEditTime: 2023-06-10 10:55:01
  * @FilePath: \nakoruru\src\components\Layout\ProMain.tsx
  * @Description:
  *
@@ -41,6 +41,7 @@ import Router from "@/router";
 import { VisibleState, navState, useLoginStore } from "@/store";
 import { useRecoilValue } from "recoil";
 import { useNavigate, useLocation } from "react-router-dom";
+import { processChildren } from "@/utils/menu";
 
 const Item: React.FC<{ children: React.ReactNode }> = (props) => {
   const { token } = theme.useToken();
@@ -130,17 +131,7 @@ export const ProMain: React.FC = () => {
 
   const navStateValue = useRecoilValue(navState);
   const getNav = (navValue: any) => {
-    const response = navValue.map((nav: { path: any }) => {
-      return {
-        ...nav,
-        key: nav.path,
-        label: nav.path.substr(nav.path.lastIndexOf("/") + 1),
-        path: nav.path,
-        name: nav.path,
-        icon: <SmileFilled />,
-        component: nav.path.substr(nav.path.lastIndexOf("/") + 1),
-      };
-    });
+    const response = processChildren(navValue);
 
     return {
       path: "/",
@@ -211,7 +202,7 @@ export const ProMain: React.FC = () => {
               }
             />
           )}
-          route={getNav(navStateValue)}
+          // route={getNav(navStateValue)}
           location={{
             pathname,
           }}
