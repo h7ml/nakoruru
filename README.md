@@ -12,8 +12,11 @@
   <a href="https://github.com/h7ml/nakoruru/blob/master/LICENSE" target="_blank">
     <img alt="License: Apache--2.0" src="https://img.shields.io/github/license/h7ml/nakoruru" />
   </a>
-    <a href="https://hub.docker.com/repository/docker/h7ml/nakoruru/general" target="_blank">
-    <img alt="docker: nakoruru" src="https://img.shields.io/docker/automated/h7ml/nakoruru" />
+  <a href="https://hub.docker.com/repository/docker/h7ml/nakoruru/general" target="_blank">
+    <img alt="docker: nakoruru" src="https://img.shields.io/docker/v/h7ml/nakoruru" />
+  </a>
+  <a href="https://hub.docker.com/repository/docker/h7ml/nestjs-nakoruru/general" target="_blank">
+    <img alt="docker: nakoruru" src="https://img.shields.io/docker/v/h7ml/nestjs-nakoruru" />
   </a>
 </p>
 
