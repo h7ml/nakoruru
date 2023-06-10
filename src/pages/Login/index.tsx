@@ -62,7 +62,8 @@ const Login = () => {
             backgroundColor: "#1677FF",
           },
           title: "Nakoruru",
-          subTitle: "Nakoruru is a React Admin project that utilizes Antd and React 18 to provide a user-friendly and efficient interface for managing data. The project also makes use of Recoil for state management, allowing for a more streamlined and organized codebase.",
+          subTitle:
+            "Nakoruru is a React Admin project that utilizes Antd and React 18 to provide a user-friendly and efficient interface for managing data. The project also makes use of Recoil for state management, allowing for a more streamlined and organized codebase.",
           action: (
             <Button
               size="large"

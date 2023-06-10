@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useState } from "react";
 
 type TreeNodeProps = {
   id: string;
@@ -19,9 +19,7 @@ const TreeNode: FC<TreeNodeProps> = ({ id, name, children }) => {
 
   return (
     <div>
-      <span onClick={handleCollapse}>
-        {collapsed ? '+' : '-'}
-      </span>
+      <span onClick={handleCollapse}>{collapsed ? "+" : "-"}</span>
       <span>{name}</span>
       {children && !collapsed && (
         <div>

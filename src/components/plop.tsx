@@ -10,11 +10,11 @@
  * @LastEditors: h7ml <h7ml@qq.com>
  * @LastEditTime: 2023-05-22 13:25:48
  * @FilePath: /nakoruru/src/components/plop.tsx
- * @Description: 
- * 
- * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved. 
+ * @Description:
+ *
+ * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.
  */
 
-export { default as Tree } from './Tree'
+export { default as Tree } from "./Tree";
 
 /* plop add */

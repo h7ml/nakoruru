@@ -23,7 +23,7 @@ interface ColumnsData {
   email: string;
 }
 interface TableData {
-  statusCode: number,
+  statusCode: number;
   data: ColumnsData[];
 }
 
@@ -46,9 +46,8 @@ const columns = [
 ];
 
 const Fetch: React.FC = () => {
-  const { data, loading, error } = useFetchData<TableData[]>(
-    "api/system/users",
-  );
+  const { data, loading, error } =
+    useFetchData<TableData[]>("api/system/users");
 
   useEffect(() => {
     if (loading) {

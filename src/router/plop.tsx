@@ -4,9 +4,9 @@
  * @LastEditors: h7ml <h7ml@qq.com>
  * @LastEditTime: 2023-06-10 09:39:06
  * @FilePath: \nakoruru\src\router\plop.tsx
- * @Description: 
- * 
- * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved. 
+ * @Description:
+ *
+ * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.
  */
 import { lazy, Suspense } from "react";
 import { RouteObject } from "react-router-dom";
@@ -19,12 +19,12 @@ const Login = lazy(() => import("@/pages/Login"));
 const Tree = lazy(() => import("@/pages/Tree"));
 const Flow = lazy(() => import("@/pages/Flow"));
 const Home = lazy(() => import("@/pages/Home"));
-import Main from '@/components/Layout/Main';
+import Main from "@/components/Layout/Main";
 type ExtendedRouteObject = RouteObject & { hidden?: boolean };
 
 export const routes: ExtendedRouteObject[] = [
   {
-    path: '/',
+    path: "/",
     element: <Main />,
     children: [
       // {
@@ -37,40 +37,40 @@ export const routes: ExtendedRouteObject[] = [
       // },
       ...LazyRouter(),
       {
-        path: '/tree',
+        path: "/tree",
         element: (
           <Suspense fallback={<Loading />}>
             <Tree />
           </Suspense>
-        )
+        ),
       },
       {
-        path: '/flow',
+        path: "/flow",
         element: (
           <Suspense fallback={<Loading />}>
             <Flow />
           </Suspense>
-        )
+        ),
       },
       /* plop add */
       {
-        path: '/hotapi',
+        path: "/hotapi",
         element: (
           <Suspense fallback={<Loading />}>
             <Hotapi />
           </Suspense>
-        )
+        ),
       },
-    ]
+    ],
   },
   {
-    path: '/login',
+    path: "/login",
     hidden: true,
     element: (
       <Suspense fallback={<Loading />}>
         <Login />
       </Suspense>
-    )
+    ),
   },
   {
     path: "*",

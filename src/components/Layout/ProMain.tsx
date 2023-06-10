@@ -23,7 +23,7 @@ import {
   QuestionCircleFilled,
   SearchOutlined,
   SmileFilled,
-  AppstoreOutlined
+  AppstoreOutlined,
 } from "@ant-design/icons";
 import { DefaultFooter, ProSettings } from "@ant-design/pro-components";
 import {
@@ -146,13 +146,13 @@ export const ProMain: React.FC = () => {
   const param = path.substr(lastSlashIndex + 1);
   const [pathname, setPathname] = useState(param);
   const [num, setNum] = useState(40);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const { userInfo, setUserInfo } = useLoginStore();
   const handleLogout = () => {
-    navigate('/login')
-    setUserInfo({ username: '', password: '' })
-  }
-  const toggleVisibility = VisibleState((state) => state.toggleVisibility)
+    navigate("/login");
+    setUserInfo({ username: "", password: "" });
+  };
+  const toggleVisibility = VisibleState((state) => state.toggleVisibility);
   return (
     <div
       id="test-pro-layout"
@@ -242,9 +242,12 @@ export const ProMain: React.FC = () => {
               <InfoCircleFilled key="InfoCircleFilled" />,
               <QuestionCircleFilled key="QuestionCircleFilled" />,
               <GithubFilled key="GithubFilled" />,
-              <AppstoreOutlined key="AppstoreOutlined" onClick={() => {
-                toggleVisibility();
-              }} />,
+              <AppstoreOutlined
+                key="AppstoreOutlined"
+                onClick={() => {
+                  toggleVisibility();
+                }}
+              />,
             ];
           }}
           headerTitleRender={(logo, title, _) => {

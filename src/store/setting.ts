@@ -14,16 +14,16 @@
  *
  * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.
  */
-import { create } from 'zustand'
+import { create } from "zustand";
 
 interface VisibleState {
-  visible: boolean
-  toggleVisibility: () => void
+  visible: boolean;
+  toggleVisibility: () => void;
 }
 
 const useVisibleState = create<VisibleState>()((set) => ({
   visible: false,
   toggleVisibility: () => set((state) => ({ visible: !state.visible })),
-}))
+}));
 
-export default useVisibleState
+export default useVisibleState;

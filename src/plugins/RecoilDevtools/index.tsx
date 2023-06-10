@@ -7,8 +7,8 @@ import { useKey } from "react-use";
 import { isCtrlKey } from "@/utils";
 import { VisibleState } from "@/store";
 export const RecoilDevtools = () => {
-  const visible = VisibleState((state) => state.visible)
-  const toggleVisibility = VisibleState((state) => state.toggleVisibility)
+  const visible = VisibleState((state) => state.visible);
+  const toggleVisibility = VisibleState((state) => state.toggleVisibility);
   useKey(
     (e) => isCtrlKey(e) && e.code === "KeyH",
     toggleVisibility,
@@ -22,7 +22,6 @@ export const RecoilDevtools = () => {
       {/* <Affix offsetTop={top}>
         <Button className="absolute" onClick={toggleVisibility}>Toggle Devtools Visibility</Button>
       </Affix> */}
-
 
       <div className={classnames(visible ? "block" : "hidden")}>
         <RecoilLogger />
