@@ -1,14 +1,14 @@
 /**
  * @author        h7ml <h7ml@qq.com>
  * @date          2023-05-09 13:12:18
- * @lastModified  2023-06-10 11:29:47
+ * @lastModified  2023-06-10 11:46:05
  * Copyright © www.h7ml.cn All rights reserved
  */
 /*
  * @Author: h7ml <h7ml@qq.com>
  * @Date: 2023-05-09 13:12:18
  * @LastEditors: h7ml <h7ml@qq.com>
- * @LastEditTime: 2023-06-10 11:30:52
+ * @LastEditTime: 2023-06-10 11:46:05
  * @FilePath: \nakoruru\src\components\Layout\Main.tsx
  * @Description:
  *
@@ -32,9 +32,8 @@ const Main = () => {
 
   const { userInfo } = useLoginStore();
   useEffect(() => {
-    const { username = '', password = '' } = userInfo
-    if (!username || !password) {
-      navigate('/login')
+    if (!userInfo || !userInfo.username || !userInfo.password) {
+      navigate('/login');
     }
   }, [userInfo])
   useEffect(() => {

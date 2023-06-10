@@ -87,7 +87,10 @@ jobs:
           vercel-org-id: ${{ secrets.ORG_ID}}
           vercel-project-id: ${{ secrets.PROJECT_ID}}
           working-directory: ./
-
+          github-comment: false
+          alias-domains: |
+            nakoruru.h7ml.cn
+            reactflow-example.h7ml.cn
       - name: Deploy to reactflow-example 🚀
         uses: amondnet/vercel-action@master
         with:
@@ -97,7 +100,9 @@ jobs:
           github-token: ${{ secrets.GIT_TOKEN }}
           vercel-project-id: prj_Q6U8E1z1WgLrZprWmukpAPxD4SP6
           path: public
-
+          github-comment: false
+          alias-domains: |
+            nakoruru.vercel.app
     needs: deploy
 
   surge:
