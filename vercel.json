@@ -1,11 +1,24 @@
 {
   "rewrites": [
     {
-      "source": "/api/(.*)",
-      "destination": "https://nestjs.h7ml.cn/api/:splat",
-      "headers": {
-        "host": "nestjs.h7ml.cn"
-      }
+      "source": "/proxy/:match/:url*",
+      "destination": "https://:match/:url*"
+    },
+    {
+      "source": "/proxy/:match/:url*/",
+      "destination": "https://:match/:url*/"
+    },
+    {
+      "source": "/httpproxy/:match/:url*",
+      "destination": "http://:match/:url*"
+    },
+    {
+      "source": "/httpproxy/:match/:url*/",
+      "destination": "http://:match/:url*/"
+    },
+    {
+      "source": "/api/*",
+      "destination": "https://nestjs.h7ml.cn/api/*"
     }
   ],
   "headers": [
