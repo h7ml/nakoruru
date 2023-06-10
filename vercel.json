@@ -17,8 +17,8 @@
       "destination": "http://:match/:url*/"
     },
     {
-      "source": "/api/*",
-      "destination": "https://nestjs.h7ml.cn/api/*"
+      "source": "/api/:match/:url*",
+      "destination": "https://nestjs.h7ml.cn/api/:match/:url*"
     }
   ],
   "headers": [
