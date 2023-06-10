@@ -2,7 +2,10 @@
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "/api/nakoruru/index"
+      "destination": "https://nestjs.h7ml.cn/api/:splat",
+      "headers": {
+        "host": "nestjs.h7ml.cn"
+      }
     }
   ],
   "headers": [

@@ -1,14 +1,14 @@
 /**
  * @author        h7ml <h7ml@qq.com>
  * @date          2023-05-09 13:12:18
- * @lastModified  2023-06-10 10:42:32
+ * @lastModified  2023-06-10 11:29:47
  * Copyright © www.h7ml.cn All rights reserved
  */
 /*
  * @Author: h7ml <h7ml@qq.com>
  * @Date: 2023-05-09 13:12:18
  * @LastEditors: h7ml <h7ml@qq.com>
- * @LastEditTime: 2023-06-10 10:30:26
+ * @LastEditTime: 2023-06-10 11:30:52
  * @FilePath: \nakoruru\src\components\Layout\Main.tsx
  * @Description:
  *
@@ -22,18 +22,21 @@ import { navState } from '@/store'
 import { useRecoilValue } from 'recoil'
 import { MenuItem, NavItem, processChildren } from '@/utils/menu'
 import { ArrowLeftOutlined, ArrowRightOutlined } from '@ant-design/icons'
-
+import { useLoginStore } from "@/store";
 const { Header, Sider, Content } = Layout
-
-
-
 const Main = () => {
   const navigate = useNavigate()
   const { pathname } = useLocation()
   const [items, setItems] = useState<MenuProps['items']>([])
   const navstatevalue = useRecoilValue<RouteObject[]>(navState) as NavItem[];
 
-
+  const { userInfo } = useLoginStore();
+  useEffect(() => {
+    const { username = '', password = '' } = userInfo
+    if (!username || !password) {
+      navigate('/login')
+    }
+  }, [userInfo])
   useEffect(() => {
     const item: MenuItem[] = processChildren(navstatevalue)
     setItems(item);

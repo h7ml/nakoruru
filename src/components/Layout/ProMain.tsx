@@ -8,7 +8,7 @@
  * @Author: h7ml <h7ml@qq.com>
  * @Date: 2023-05-11 14:17:33
  * @LastEditors: h7ml <h7ml@qq.com>
- * @LastEditTime: 2023-06-10 10:55:01
+ * @LastEditTime: 2023-06-10 11:34:42
  * @FilePath: \nakoruru\src\components\Layout\ProMain.tsx
  * @Description:
  *
@@ -132,7 +132,6 @@ export const ProMain: React.FC = () => {
   const navStateValue = useRecoilValue(navState);
   const getNav = (navValue: any) => {
     const response = processChildren(navValue);
-
     return {
       path: "/",
       routes: response,
@@ -147,10 +146,11 @@ export const ProMain: React.FC = () => {
   const param = path.substr(lastSlashIndex + 1);
   const [pathname, setPathname] = useState(param);
   const [num, setNum] = useState(40);
+  const navigate = useNavigate()
   const { userInfo, setUserInfo } = useLoginStore();
   const handleLogout = () => {
-    history('login');
-    setUserInfo(null)
+    navigate('/login')
+    setUserInfo({ username: '', password: '' })
   }
   const toggleVisibility = VisibleState((state) => state.toggleVisibility)
   return (
@@ -202,7 +202,7 @@ export const ProMain: React.FC = () => {
               }
             />
           )}
-          // route={getNav(navStateValue)}
+          route={getNav(navStateValue)}
           location={{
             pathname,
           }}
