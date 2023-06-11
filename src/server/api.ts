@@ -962,5 +962,35 @@ export class Api<
         method: "DELETE",
         ...params,
       }),
+
+    /**
+     * No description
+     *
+     * @tags react flow nodes
+     * @name NodesControllerGetNodes
+     * @summary Get react flow nodes
+     * @request GET:/api/react-flow/nodes
+     */
+    nodesControllerGetNodes: (params: RequestParams = {}) =>
+      this.request<void, void>({
+        path: `/api/react-flow/nodes`,
+        method: "GET",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags react flow edges
+     * @name EdgesControllerGetEdges
+     * @summary react flow edges
+     * @request GET:/api/react-flow/edges
+     */
+    edgesControllerGetEdges: (params: RequestParams = {}) =>
+      this.request<void, void>({
+        path: `/api/react-flow/edges`,
+        method: "GET",
+        ...params,
+      }),
   };
 }
