@@ -104,8 +104,8 @@ module.exports = function (plop) {
         actions.push({
           type: 'add',
           path: isPages
-            ? 'src/pages/{{pascalCase fileName}}/ndex.module.scss'
-            : 'src/components/{{pascalCase fileName}}/ndex.module.scss',
+            ? 'src/pages/{{pascalCase fileName}}/index.module.scss'
+            : 'src/components/{{pascalCase fileName}}/index.module.scss',
           templateFile: `src/plop-templates/{{type.value}}/style.hbs`,
         })
       }

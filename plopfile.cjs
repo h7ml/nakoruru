@@ -52,9 +52,8 @@ module.exports = function (plop) {
           value =
             type.value === 'components' ? changeCase.pascalCase(value) : value
 
-          const filePath = `${process.cwd()}/src/${
-            type.value
-          }/${value}/index.tsx`
+          const filePath = `${process.cwd()}/src/${type.value
+            }/${value}/index.tsx`
 
           if (fs.existsSync(filePath)) {
             done(`${name}已存在`)
@@ -104,8 +103,8 @@ module.exports = function (plop) {
         actions.push({
           type: 'add',
           path: isPages
-            ? 'src/pages/{{pascalCase fileName}}/ndex.module.scss'
-            : 'src/components/{{pascalCase fileName}}/ndex.module.scss',
+            ? 'src/pages/{{pascalCase fileName}}/index.module.scss'
+            : 'src/components/{{pascalCase fileName}}/index.module.scss',
           templateFile: `src/plop-templates/{{type.value}}/style.hbs`,
         })
       }

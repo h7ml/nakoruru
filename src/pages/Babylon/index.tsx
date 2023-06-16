@@ -1,14 +1,11 @@
 import { useRef } from "react";
-import {
-  Engine,
-  Scene,
-} from 'react-babylonjs'
+import { Engine, Scene } from 'react-babylonjs'
 import { Vector3, Nullable, CannonJSPlugin, Mesh, PhysicsImpostor } from '@babylonjs/core'
-import * as CANNON from 'cannon';
+import "@babylonjs/core/Lights/Shadows/shadowGeneratorSceneComponent";
 
+import * as CANNON from 'cannon';
 window.CANNON = CANNON;
 
-import "@babylonjs/core/Lights/Shadows/shadowGeneratorSceneComponent";
 export const Babylon = () => {
   const sphereRef = useRef<Nullable<Mesh>>(null);
   const gravityVector = new Vector3(0, -9.81, 0);
@@ -47,7 +44,7 @@ export const Babylon = () => {
               <rectangle name="rect-1" height={0.5} width={1} thickness={12} cornerRadius={12}>
                 <rectangle>
                   <babylon-button name="close-icon" background="green" onPointerDownObservable={onButtonClicked}>
-                    <textBlock text={'\uf00d click me'} fontFamily="FontAwesome" fontStyle="bold" fontSize={200} color="white" />
+                    <textBlock text={'\uf00d click h7ml'} fontFamily="FontAwesome" fontStyle="bold" fontSize={200} color="white" />
                   </babylon-button>
                 </rectangle>
               </rectangle>
