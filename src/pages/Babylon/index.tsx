@@ -3,19 +3,19 @@ import {
   Engine,
   Scene,
 } from 'react-babylonjs'
-import { Vector3, Color3, CannonJSPlugin, Mesh ,PhysicsImpostor} from '@babylonjs/core'
+import { Vector3, Nullable, CannonJSPlugin, Mesh, PhysicsImpostor } from '@babylonjs/core'
 import * as CANNON from 'cannon';
 
 window.CANNON = CANNON;
 
 import "@babylonjs/core/Lights/Shadows/shadowGeneratorSceneComponent";
 export const Babylon = () => {
-  let sphereRef = useRef<Nullable<Mesh>>(null);
+  const sphereRef = useRef<Nullable<Mesh>>(null);
   const gravityVector = new Vector3(0, -9.81, 0);
 
   const onButtonClicked = () => {
     if (sphereRef.current) {
-      sphereRef.current.physicsImpostor!.applyImpulse(
+      sphereRef.current.physicsImpostor?.applyImpulse(
         Vector3.Up().scale(10),
         sphereRef.current.getAbsolutePosition()
       );
