@@ -14,6 +14,7 @@ import { Loading } from "@/components";
 import LazyRouter from "./LazyRouter";
 import NotFound from "@/pages/NotFound";
 /* pages add */
+const Babylon = lazy(() => import("@/pages/Babylon"));
 const Hotapi = lazy(() => import("@/pages/Hotapi"));
 const Login = lazy(() => import("@/pages/Login"));
 const Tree = lazy(() => import("@/pages/Tree"));
@@ -53,6 +54,14 @@ export const routes: ExtendedRouteObject[] = [
         ),
       },
       /* plop add */
+  {
+    path: '/babylon',
+    element: (
+      <Suspense fallback={<Loading />}>
+        <Babylon />
+      </Suspense>
+    )
+  },
       {
         path: "/hotapi",
         element: (
