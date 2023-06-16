@@ -54,14 +54,14 @@ export const routes: ExtendedRouteObject[] = [
         ),
       },
       /* plop add */
-  {
-    path: '/babylon',
-    element: (
-      <Suspense fallback={<Loading />}>
-        <Babylon />
-      </Suspense>
-    )
-  },
+      {
+        path: "/babylon",
+        element: (
+          <Suspense fallback={<Loading />}>
+            <Babylon />
+          </Suspense>
+        ),
+      },
       {
         path: "/hotapi",
         element: (
