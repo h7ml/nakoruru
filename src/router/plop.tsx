@@ -56,12 +56,12 @@ export const routes: ExtendedRouteObject[] = [
       },
       /* plop add */
       {
-        path: '/three-scene',
+        path: "/three-scene",
         element: (
           <Suspense fallback={<Loading />}>
             <ThreeScene />
           </Suspense>
-        )
+        ),
       },
       {
         path: "/babylon",

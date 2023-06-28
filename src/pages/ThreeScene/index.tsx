@@ -1,10 +1,10 @@
-import styles from './index.module.scss';
-import React, { useRef, useEffect, useState } from 'react';
-import * as THREE from 'three';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-import { TrackballControls } from 'three/examples/jsm/controls/TrackballControls';
-import { FirstPersonControls } from 'three/examples/jsm/controls/FirstPersonControls';
-import { FlyControls } from 'three/examples/jsm/controls/FlyControls';
+import styles from "./index.module.scss";
+import React, { useRef, useEffect, useState } from "react";
+import * as THREE from "three";
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+import { TrackballControls } from "three/examples/jsm/controls/TrackballControls";
+import { FirstPersonControls } from "three/examples/jsm/controls/FirstPersonControls";
+import { FlyControls } from "three/examples/jsm/controls/FlyControls";
 
 export const ThreeScene = () => {
   const sceneRef = useRef<HTMLDivElement>(null);
@@ -33,14 +33,14 @@ export const ThreeScene = () => {
       }
     };
 
-    window.addEventListener('mousedown', handleMouseDown);
-    window.addEventListener('mouseup', handleMouseUp);
-    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener("mousedown", handleMouseDown);
+    window.addEventListener("mouseup", handleMouseUp);
+    window.addEventListener("mousemove", handleMouseMove);
 
     return () => {
-      window.removeEventListener('mousedown', handleMouseDown);
-      window.removeEventListener('mouseup', handleMouseUp);
-      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener("mousedown", handleMouseDown);
+      window.removeEventListener("mouseup", handleMouseUp);
+      window.removeEventListener("mousemove", handleMouseMove);
     };
   }, [isMouseDown]);
 
@@ -54,7 +54,7 @@ export const ThreeScene = () => {
         75, // 视角
         window.innerWidth / window.innerHeight, // 宽高比
         0.1, // 近截面
-        1000 // 远截面
+        1000, // 远截面
       );
       camera.position.z = 5;
       sceneRef.current.camera = camera;
@@ -75,7 +75,10 @@ export const ThreeScene = () => {
       controls.enableDamping = true;
 
       // 添加 TrackballControls 控件
-      const trackballControls = new TrackballControls(camera, renderer.domElement);
+      const trackballControls = new TrackballControls(
+        camera,
+        renderer.domElement,
+      );
       trackballControls.rotateSpeed = 2.0;
 
       // 添加 FlyControls 控件
@@ -83,9 +86,11 @@ export const ThreeScene = () => {
       flyControls.movementSpeed = 10;
       flyControls.rollSpeed = Math.PI / 24;
 
-
       // 添加 FirstPersonControls 控件
-      const firstPersonControls = new FirstPersonControls(camera, renderer.domElement);
+      const firstPersonControls = new FirstPersonControls(
+        camera,
+        renderer.domElement,
+      );
       // firstPersonControls.lookSpeed = 0.4; // 鼠标移动速度
       // firstPersonControls.movementSpeed = 20; //相机移动速度
       // firstPersonControls.lookVertical = true; //开启垂直
@@ -122,11 +127,11 @@ export const ThreeScene = () => {
         renderer.setSize(window.innerWidth, window.innerHeight);
       };
 
-      window.addEventListener('resize', handleWindowResize);
+      window.addEventListener("resize", handleWindowResize);
 
       // 清理函数
       return () => {
-        window.removeEventListener('resize', handleWindowResize);
+        window.removeEventListener("resize", handleWindowResize);
         if (sceneRef.current) {
           sceneRef.current.removeChild(renderer.domElement);
         }

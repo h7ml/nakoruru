@@ -15,32 +15,32 @@
  * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.
  */
 
-import { useRef } from 'react'
-import { Engine, Scene } from 'react-babylonjs'
+import { useRef } from "react";
+import { Engine, Scene } from "react-babylonjs";
 import {
   Vector3,
   Nullable,
   CannonJSPlugin,
   Mesh,
   PhysicsImpostor,
-} from '@babylonjs/core'
-import '@babylonjs/core/Lights/Shadows/shadowGeneratorSceneComponent'
+} from "@babylonjs/core";
+import "@babylonjs/core/Lights/Shadows/shadowGeneratorSceneComponent";
 
-import * as CANNON from 'cannon'
-window.CANNON = CANNON
+import * as CANNON from "cannon";
+window.CANNON = CANNON;
 
 export const BabylonScene = () => {
-  const sphereRef = useRef<Nullable<Mesh>>(null)
-  const gravityVector = new Vector3(0, -9.81, 0)
+  const sphereRef = useRef<Nullable<Mesh>>(null);
+  const gravityVector = new Vector3(0, -9.81, 0);
 
   const onButtonClicked = () => {
     if (sphereRef.current) {
       sphereRef.current.physicsImpostor?.applyImpulse(
         Vector3.Up().scale(10),
         sphereRef.current.getAbsolutePosition(),
-      )
+      );
     }
-  }
+  };
 
   return (
     <Engine antialias={true} adaptToDeviceRatio={true} canvasId="sample-canvas">
@@ -75,7 +75,7 @@ export const BabylonScene = () => {
             mapSize={1024}
             useBlurExponentialShadowMap={true}
             blurKernel={32}
-            shadowCasters={['sphere1', 'dialog']}
+            shadowCasters={["sphere1", "dialog"]}
             forceBackFacesOnly={true}
             depthScale={100}
           />
@@ -116,7 +116,7 @@ export const BabylonScene = () => {
                     onPointerDownObservable={onButtonClicked}
                   >
                     <textBlock
-                      text={'\uf00d click h7ml'}
+                      text={"\uf00d click h7ml"}
                       fontFamily="FontAwesome"
                       fontStyle="bold"
                       fontSize={200}
@@ -150,7 +150,7 @@ export const BabylonScene = () => {
         />
       </Scene>
     </Engine>
-  )
-}
+  );
+};
 
-export default BabylonScene
+export default BabylonScene;

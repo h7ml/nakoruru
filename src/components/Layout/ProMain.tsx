@@ -253,7 +253,11 @@ export const ProMain: React.FC = () => {
           headerTitleRender={(logo, title, _) => {
             const defaultDom = (
               <a className="wini-rounded-3xl wini-bg-blue-500 wini-text-white wini-flex wini-items-center wini-p-4 wini-transition-all hover:wini-bg-blue-600">
-                <img height={50} width={50} src="https://www.h7ml.cn/logo.png" />
+                <img
+                  height={50}
+                  width={50}
+                  src="https://www.h7ml.cn/logo.png"
+                />
                 <span style={{ marginLeft: 10 }}>nakoruru</span>
               </a>
             );
@@ -261,7 +265,7 @@ export const ProMain: React.FC = () => {
               return defaultDom;
             }
             if (_.isMobile) return defaultDom;
-            return defaultDom;;
+            return defaultDom;
           }}
           menuFooterRender={(props) => {
             if (props?.collapsed) return undefined;

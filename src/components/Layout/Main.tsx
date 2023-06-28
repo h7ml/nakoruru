@@ -93,7 +93,10 @@ const Main = () => {
           {menuItems}
         </Menu>
       </Sider>
-      <Layout style={{ display: "flex", flexDirection: "column" }} className="relative">
+      <Layout
+        style={{ display: "flex", flexDirection: "column" }}
+        className="relative"
+      >
         <Header style={{ background: "#fff", padding: 0 }} className="absolute">
           {!collapsed && (
             <ArrowLeftOutlined onClick={() => setCollapsed(true)} />
