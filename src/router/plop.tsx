@@ -2,8 +2,8 @@
  * @Author: h7ml <h7ml@qq.com>
  * @Date: 2023-05-22 12:57:40
  * @LastEditors: h7ml <h7ml@qq.com>
- * @LastEditTime: 2023-06-10 09:39:06
- * @FilePath: \nakoruru\src\router\plop.tsx
+ * @LastEditTime: 2023-06-28 17:16:24
+ * @FilePath: /nakoruru/src/router/plop.tsx
  * @Description:
  *
  * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.
@@ -55,14 +55,14 @@ export const routes: ExtendedRouteObject[] = [
         ),
       },
       /* plop add */
-  {
-    path: '/three-scene',
-    element: (
-      <Suspense fallback={<Loading />}>
-        <ThreeScene />
-      </Suspense>
-    )
-  },
+      {
+        path: '/three-scene',
+        element: (
+          <Suspense fallback={<Loading />}>
+            <ThreeScene />
+          </Suspense>
+        )
+      },
       {
         path: "/babylon",
         element: (

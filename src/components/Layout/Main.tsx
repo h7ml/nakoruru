@@ -1,15 +1,15 @@
 /**
  * @author        h7ml <h7ml@qq.com>
  * @date          2023-05-09 13:12:18
- * @lastModified  2023-06-10 11:46:05
+ * @lastModified  2023-06-28 17:27:17
  * Copyright © www.h7ml.cn All rights reserved
  */
 /*
  * @Author: h7ml <h7ml@qq.com>
  * @Date: 2023-05-09 13:12:18
  * @LastEditors: h7ml <h7ml@qq.com>
- * @LastEditTime: 2023-06-10 11:46:05
- * @FilePath: \nakoruru\src\components\Layout\Main.tsx
+ * @LastEditTime: 2023-06-28 17:27:17
+ * @FilePath: /nakoruru/src/components/Layout/Main.tsx
  * @Description:
  *
  * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.
@@ -93,8 +93,8 @@ const Main = () => {
           {menuItems}
         </Menu>
       </Sider>
-      <Layout style={{ display: "flex", flexDirection: "column" }}>
-        <Header style={{ background: "#fff", padding: 0 }}>
+      <Layout style={{ display: "flex", flexDirection: "column" }} className="relative">
+        <Header style={{ background: "#fff", padding: 0 }} className="absolute">
           {!collapsed && (
             <ArrowLeftOutlined onClick={() => setCollapsed(true)} />
           )}
