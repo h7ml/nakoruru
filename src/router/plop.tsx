@@ -14,6 +14,7 @@ import { Loading } from "@/components";
 import LazyRouter from "./LazyRouter";
 import NotFound from "@/pages/NotFound";
 /* pages add */
+const ThreeScene = lazy(() => import("@/pages/ThreeScene"));
 const Babylon = lazy(() => import("@/pages/Babylon"));
 const Hotapi = lazy(() => import("@/pages/Hotapi"));
 const Login = lazy(() => import("@/pages/Login"));
@@ -54,6 +55,14 @@ export const routes: ExtendedRouteObject[] = [
         ),
       },
       /* plop add */
+  {
+    path: '/three-scene',
+    element: (
+      <Suspense fallback={<Loading />}>
+        <ThreeScene />
+      </Suspense>
+    )
+  },
       {
         path: "/babylon",
         element: (

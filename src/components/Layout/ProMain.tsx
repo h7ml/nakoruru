@@ -1,15 +1,15 @@
 /**
  * @author        h7ml <h7ml@qq.com>
  * @date          2023-05-11 14:17:33
- * @lastModified  2023-06-10 10:37:48
+ * @lastModified  2023-06-28 17:07:21
  * Copyright © www.h7ml.cn All rights reserved
  */
 /*
  * @Author: h7ml <h7ml@qq.com>
  * @Date: 2023-05-11 14:17:33
  * @LastEditors: h7ml <h7ml@qq.com>
- * @LastEditTime: 2023-06-10 11:34:42
- * @FilePath: \nakoruru\src\components\Layout\ProMain.tsx
+ * @LastEditTime: 2023-06-28 17:07:21
+ * @FilePath: /nakoruru/src/components/Layout/ProMain.tsx
  * @Description:
  *
  * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.
@@ -252,16 +252,16 @@ export const ProMain: React.FC = () => {
           }}
           headerTitleRender={(logo, title, _) => {
             const defaultDom = (
-              <a>
-                {logo}
-                {title}
+              <a className="wini-rounded-3xl wini-bg-blue-500 wini-text-white wini-flex wini-items-center wini-p-4 wini-transition-all hover:wini-bg-blue-600">
+                <img height={50} width={50} src="https://www.h7ml.cn/logo.png" />
+                <span style={{ marginLeft: 10 }}>nakoruru</span>
               </a>
             );
             if (document.body.clientWidth < 1400) {
               return defaultDom;
             }
             if (_.isMobile) return defaultDom;
-            return <>{defaultDom}</>;
+            return defaultDom;;
           }}
           menuFooterRender={(props) => {
             if (props?.collapsed) return undefined;
