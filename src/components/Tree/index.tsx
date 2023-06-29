@@ -19,7 +19,7 @@ const TreeNode: FC<TreeNodeProps> = ({ id, name, children }) => {
   }
 
   return (
-    <div>
+    <div data-id={id}>
       <span onClick={handleCollapse}>{collapsed ? '+' : '-'}</span>
       <span>{name}</span>
       {children && !collapsed && (

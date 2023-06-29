@@ -1,10 +1,10 @@
 /**
  * @author        h7ml <h7ml@qq.com>
  * @date          2023-05-06 23:15:22
- * @lastModified  2023-06-29 12:42:08
+ * @lastModified  2023-06-29 13:19:35
  * Copyright © www.h7ml.cn All rights reserved
  */
-import type { Edge, EdgeTypes } from 'react-flow-renderer'
+import type { Edge } from 'react-flow-renderer'
 
 type NodeType = 'input' | 'default' | 'output' | undefined
 
@@ -30,8 +30,6 @@ export interface Node {
 export const nodes: Node[] = [
   // nodes data
 ]
-
-const edges: EdgeTypes[] = []
 
 export interface ReactFlowNodeProps {
   initialNodes: Node[]

@@ -1,10 +1,7 @@
 // index.js
 import { useRef, useState } from 'react'
 
-import ReactFlow, { // 缩略图
-  Controls, // 画布缩放大小控制
-  Background,
-} from 'react-flow-renderer'
+import ReactFlow, { Background, Controls } from 'react-flow-renderer'
 import type { Node as Nodes } from '@/types'
 
 const initialElements: Nodes[] = [

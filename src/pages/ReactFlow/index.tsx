@@ -1,14 +1,14 @@
 /**
  * @author        h7ml <h7ml@qq.com>
  * @date          2023-05-08 22:17:24
- * @lastModified  2023-06-29 12:47:01
+ * @lastModified  2023-06-29 13:06:38
  * Copyright © www.h7ml.cn All rights reserved
  */
 /*
  * @Author: h7ml <h7ml@qq.com>
  * @Date: 2023-05-08 22:17:24
  * @LastEditors: h7ml <h7ml@qq.com>
- * @LastEditTime: 2023-06-29 12:46:59
+ * @LastEditTime: 2023-06-29 13:06:38
  * @FilePath: /nakoruru/src/pages/ReactFlow/index.tsx
  * @Description:
  *
@@ -39,7 +39,7 @@ export default function ReactFlowInfo() {
   const onConnect = useCallback(
     (params: Edge<any> | Connection) =>
       setEdges((eds) => addEdge({ ...params, markerEnd: { type: MarkerType.Arrow } }, eds)),
-    [],
+    [setEdges],
   )
   const onDragOver = useCallback(
     (event: { preventDefault: () => void; dataTransfer: { dropEffect: string } }) => {
@@ -97,18 +97,20 @@ export default function ReactFlowInfo() {
             maxZoom={1.5}
           >
             <MiniMap
-              nodeStrokeColor={(n) => {
-                if (n.type === 'input') return '#0041d0'
-                if (n.type === 'default') return 'pink'
-                if (n.type === 'output') return '#ff0072'
-                return '#eee'
-              }}
-              nodeColor={(n) => {
-                if (n.type === 'input') return '#0041d0'
-                if (n.type === 'default') return 'pink'
-                if (n.type === 'output') return '#ff0072'
-                return '#eee'
-              }}
+              nodeStrokeColor={(n) =>
+                ({
+                  input: '#0041d0',
+                  default: 'pink',
+                  output: '#ff0072',
+                }[n.type] || '#eee')
+              }
+              nodeColor={(n) =>
+                ({
+                  input: '#0041d0',
+                  default: 'pink',
+                  output: '#ff0072',
+                }[n.type] || '#eee')
+              }
             />
             <Background variant={BackgroundVariant.Dots} />
             <Controls />

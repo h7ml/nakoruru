@@ -12,7 +12,9 @@ module.exports = {
   parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
   plugins: ['react-refresh'],
   rules: {
-    'react-refresh/only-export-components': 'warn',
+    'react-refresh/only-export-components': 'off',
     'yml/no-empty-mapping-value': 'off',
+    'react/no-unknown-property': 'off',
+    'no-console': process.env.NODE_ENV === 'production' ? 'on' : 'off',
   },
 }

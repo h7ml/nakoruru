@@ -1,15 +1,15 @@
 /**
  * @author        h7ml <h7ml@qq.com>
  * @date          2023-05-08 10:42:48
- * @lastModified  2023-05-09 17:30:54
+ * @lastModified  2023-06-29 13:11:05
  * Copyright © www.h7ml.cn All rights reserved
  */
 /*
  * @Author: h7ml <h7ml@qq.com>
  * @Date: 2023-05-08 10:42:48
  * @LastEditors: h7ml <h7ml@qq.com>
- * @LastEditTime: 2023-05-09 17:30:54
- * @FilePath: \nakoruru\src\pages\ReactFlow\CodeEditor\index.tsx
+ * @LastEditTime: 2023-06-29 13:11:00
+ * @FilePath: /nakoruru/src/pages/ReactFlow/CodeEditor/index.tsx
  * @Description:
  *
  * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.
@@ -28,7 +28,9 @@ export default function Home() {
       language="json"
       value={JSON.stringify(codeValue, null, 2)}
       onChange={(e) => {
-        if (isPlainObject(e)) setCodeValue(JSON.parse(e))
+        if (e && isPlainObject(e)) {
+          setCodeValue(JSON.parse(e))
+        }
       }}
     />
   )

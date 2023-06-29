@@ -1,14 +1,14 @@
 /**
  * @author        h7ml <h7ml@qq.com>
  * @date          2023-05-11 14:17:33
- * @lastModified  2023-06-28 17:07:21
+ * @lastModified  2023-06-29 13:27:49
  * Copyright © www.h7ml.cn All rights reserved
  */
 /*
  * @Author: h7ml <h7ml@qq.com>
  * @Date: 2023-05-11 14:17:33
  * @LastEditors: h7ml <h7ml@qq.com>
- * @LastEditTime: 2023-06-28 17:07:21
+ * @LastEditTime: 2023-06-29 13:27:46
  * @FilePath: /nakoruru/src/components/Layout/ProMain.tsx
  * @Description:
  *
@@ -16,7 +16,6 @@
  */
 import {
   AppstoreOutlined,
-  DoubleRightOutlined,
   GithubFilled,
   InfoCircleFilled,
   LogoutOutlined,
@@ -33,7 +32,6 @@ import {
   ProLayout,
   SettingDrawer,
 } from '@ant-design/pro-components'
-import { css } from '@emotion/css'
 import { Dropdown, Input, theme } from 'antd'
 import React, { useState } from 'react'
 import { useRecoilValue } from 'recoil'
@@ -42,34 +40,6 @@ import { repository } from '../../../package.json'
 import Router from '@/router'
 import { VisibleState, navState, useLoginStore } from '@/store'
 import { processChildren } from '@/utils/menu'
-
-const Item: React.FC<{ children: React.ReactNode }> = (props) => {
-  const { token } = theme.useToken()
-  return (
-    <div
-      className={css`
-        color: ${token.colorTextSecondary};
-        font-size: 14px;
-        cursor: pointer;
-        line-height: 22px;
-        margin-bottom: 8px;
-        &:hover {
-          color: ${token.colorPrimary};
-        }
-      `}
-      style={{
-        width: '33.33%',
-      }}
-    >
-      {props.children}
-      <DoubleRightOutlined
-        style={{
-          marginInlineStart: 4,
-        }}
-      />
-    </div>
-  )
-}
 
 function SearchInput() {
   const { token } = theme.useToken()
@@ -145,7 +115,7 @@ export const ProMain: React.FC = () => {
   const lastSlashIndex = path.lastIndexOf('/')
   const param = path.substr(lastSlashIndex + 1)
   const [pathname, setPathname] = useState(param)
-  const [num, setNum] = useState(40)
+  const [num] = useState(40)
   const navigate = useNavigate()
   const { userInfo, setUserInfo } = useLoginStore()
   const handleLogout = () => {
@@ -233,9 +203,13 @@ export const ProMain: React.FC = () => {
               )
             },
           }}
-          actionsRender={(props) => {
-            if (props.isMobile) return []
+          actionsRender={(props: any) => {
+            // eslint-disable-next-line react/prop-types
+            if (props.isMobile) {
+              return []
+            }
             return [
+              // eslint-disable-next-line react/prop-types
               props.layout !== 'side' && document.body.clientWidth > 1400 ? (
                 <SearchInput />
               ) : undefined,
@@ -260,11 +234,16 @@ export const ProMain: React.FC = () => {
             if (document.body.clientWidth < 1400) {
               return defaultDom
             }
-            if (_.isMobile) return defaultDom
+            if (_.isMobile) {
+              return defaultDom
+            }
             return defaultDom
           }}
           menuFooterRender={(props) => {
-            if (props?.collapsed) return undefined
+            // eslint-disable-next-line react/prop-types
+            if (props?.collapsed) {
+              return undefined
+            }
             return (
               <div
                 style={{

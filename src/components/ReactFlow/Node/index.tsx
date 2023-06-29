@@ -34,4 +34,11 @@ export const ReactFlowNode: React.FC<ReactFlowNodeProps> = function ({
   )
 }
 
+ReactFlowNode.propTypes = {
+  initialNodes: PropTypes.arrayOf(PropTypes.object),
+  initialEdges: PropTypes.arrayOf(PropTypes.object),
+  onNodesChange: PropTypes.func,
+  onEdgesChange: PropTypes.func,
+}
+
 export default ReactFlowNode

@@ -2,14 +2,13 @@ import React, { useEffect, useRef, useState } from 'react'
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import { TrackballControls } from 'three/examples/jsm/controls/TrackballControls'
-import { FirstPersonControls } from 'three/examples/jsm/controls/FirstPersonControls'
 import { FlyControls } from 'three/examples/jsm/controls/FlyControls'
 
 export function ThreeScene() {
   const sceneRef = useRef<HTMLDivElement>(null)
   const [isMouseDown, setIsMouseDown] = useState(false)
-  const [mouseX, setMouseX] = useState(0)
-  const [mouseY, setMouseY] = useState(0)
+  // const [mouseX, setMouseX] = useState(0)
+  // const [mouseY, setMouseY] = useState(0)
 
   useEffect(() => {
     const handleMouseDown = () => {
@@ -83,7 +82,7 @@ export function ThreeScene() {
       flyControls.rollSpeed = Math.PI / 24
 
       // 添加 FirstPersonControls 控件
-      const firstPersonControls = new FirstPersonControls(camera, renderer.domElement)
+      // const firstPersonControls = new FirstPersonControls(camera, renderer.domElement)
       // firstPersonControls.lookSpeed = 0.4; // 鼠标移动速度
       // firstPersonControls.movementSpeed = 20; //相机移动速度
       // firstPersonControls.lookVertical = true; //开启垂直
@@ -95,7 +94,7 @@ export function ThreeScene() {
       // 动画循环
       const animate = () => {
         requestAnimationFrame(animate)
-        const clock = new THREE.Clock()
+        // const clock = new THREE.Clock()
 
         // 更新相机控制器状态
         controls.update()
@@ -126,6 +125,7 @@ export function ThreeScene() {
       return () => {
         window.removeEventListener('resize', handleWindowResize)
         if (sceneRef.current) {
+          // eslint-disable-next-line react-hooks/exhaustive-deps
           sceneRef.current.removeChild(renderer.domElement)
         }
       }

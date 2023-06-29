@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { RecoilLogger } from 'recoil-devtools-logger'
 import LogMonitor from 'recoil-devtools-log-monitor'
 import DockMonitor from 'recoil-devtools-dock'
@@ -11,7 +11,7 @@ export function RecoilDevtools() {
   const visible = VisibleState((state) => state.visible)
   const toggleVisibility = VisibleState((state) => state.toggleVisibility)
   useKey((e) => isCtrlKey(e) && e.code === 'KeyH', toggleVisibility, undefined, [toggleVisibility])
-  const [top, setTop] = useState(60)
+  // const [top, setTop] = useState(60)
 
   return (
     <>

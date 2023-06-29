@@ -6,7 +6,7 @@ export const queryClient = new QueryClient({
       refetchOnWindowFocus: false,
       retryOnMount: false,
       retry: false,
-      staleTime: Infinity,
+      staleTime: Number.POSITIVE_INFINITY,
     },
     mutations: {
       retry: false,
