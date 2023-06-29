@@ -11,7 +11,6 @@ import HtmlWorker from 'monaco-editor/esm/vs/language/html/html.worker?worker'
 import TsWorker from 'monaco-editor/esm/vs/language/typescript/ts.worker?worker'
 
 import style from './style.module.less'
-
 ;(self as any).MonacoEnvironment = {
   getWorker(_: any, label: any) {
     if (label === 'json') {

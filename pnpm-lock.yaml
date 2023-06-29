@@ -25,6 +25,9 @@ dependencies:
   '@types/cannon':
     specifier: ^0.1.8
     version: 0.1.8
+  '@types/prop-types':
+    specifier: ^15.7.5
+    version: 15.7.5
   '@types/three':
     specifier: ^0.152.1
     version: 0.152.1
@@ -67,6 +70,9 @@ dependencies:
   monaco-editor:
     specifier: ^0.39.0
     version: 0.39.0
+  prop-types:
+    specifier: ^15.8.1
+    version: 15.8.1
   qs:
     specifier: ^6.11.2
     version: 6.11.2
@@ -10891,7 +10897,7 @@ packages:
       is-yarn-global: 0.4.1
       latest-version: 7.0.0
       pupa: 3.1.0
-      semver: 7.5.1
+      semver: 7.5.3
       semver-diff: 4.0.0
       xdg-basedir: 5.1.0
     dev: true
