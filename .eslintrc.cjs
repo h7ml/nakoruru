@@ -17,4 +17,12 @@ module.exports = {
     'react/no-unknown-property': 'off',
     'no-console': process.env.NODE_ENV === 'production' ? 'on' : 'off',
   },
+  overrides: [
+    {
+      files: ['index.html'],
+      rules: {
+        'no-undef': 'off',
+      },
+    },
+  ],
 }

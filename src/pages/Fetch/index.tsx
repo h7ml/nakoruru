@@ -61,7 +61,7 @@ const Fetch: React.FC = () => {
     message.error('Error fetching data, please try again!')
   }
 
-  return <div>{data && <Table dataSource={data.data} columns={columns} rowKey="id" />}</div>
+  return <div>{data && <Table dataSource={data} columns={columns} rowKey="id" />}</div>
 }
 
 export default Fetch

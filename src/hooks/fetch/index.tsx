@@ -32,10 +32,10 @@ export function useFetchData<T>(url: string): FetchDataReturnType<T> {
     async function fetchData() {
       try {
         const response = await fetch(url)
-        const jsonData: T = await response.json() // 将获取到的JSON数据解析为T类型
-        setData(jsonData)
-      } catch (error) {
-        setError(error.message)
+        const jsonData: any = await response.json()
+        setData(jsonData?.response?.data || jsonData || null)
+      } catch (error: any) {
+        setError(error?.message)
       } finally {
         setLoading(false)
       }
