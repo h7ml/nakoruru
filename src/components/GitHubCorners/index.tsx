@@ -3,6 +3,6 @@ import { repository } from '../../../package.json'
 
 export function GitHubCorners() {
   const repo = repository as { url: string }
-
-  return <Corners position="right" className="z=111" href={repo.url} />
+  const zIndex = 666
+  return <Corners position="right" zIndex={zIndex} href={repo.url} />
 }
