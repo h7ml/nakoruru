@@ -35,7 +35,7 @@
     "commit": "git-cz",
     "stylelint": "stylelint '**/*.{tsx,less,postcss,css,scss --fix --cache --cache-location node_modules/.cache/stylelint/",
     "format": "prettier --write .",
-    "types": "npx swagger-typescript-api -p https://nestjs.h7ml.cn/swagger-json -o ./src/server -n api.ts",
+    "types": "npx swagger-typescript-api -p https://nestjs.h7ml.cn/api/swagger-json -o ./src/server -n api.ts",
     "updates": "ncu -u && pnpm install --no-frozen-lockfile",
     "lint:ts": "tsc --noEmit -p ./tsconfig.json",
     "plop": "plop --plopfile ./plopfile.cjs",
