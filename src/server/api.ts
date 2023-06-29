@@ -1,4 +1,4 @@
-// eslint-disable
+/* eslint-disable */
 /* tslint:disable */
 /*
  * ---------------------------------------------------------------
@@ -75,7 +75,7 @@ export enum ContentType {
 }
 
 export class HttpClient<SecurityDataType = unknown> {
-  public baseUrl = ''
+  public baseUrl: string = ''
   private securityData: SecurityDataType | null = null
   private securityWorker?: ApiConfig<SecurityDataType>['securityWorker']
   private abortControllers = new Map<CancelToken, AbortController>()
@@ -112,7 +112,7 @@ export class HttpClient<SecurityDataType = unknown> {
 
   protected toQueryString(rawQuery?: QueryParamsType): string {
     const query = rawQuery || {}
-    const keys = Object.keys(query).filter((key) => typeof query[key] !== 'undefined')
+    const keys = Object.keys(query).filter((key) => 'undefined' !== typeof query[key])
     return keys
       .map((key) =>
         Array.isArray(query[key])
@@ -527,7 +527,7 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
       this.request<void, void>({
         path: `/api/hotapi/baidu/hot`,
         method: 'GET',
-        query,
+        query: query,
         ...params,
       }),
 
@@ -580,7 +580,7 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
       this.request<void, void>({
         path: `/api/hotapi/baidu/github`,
         method: 'GET',
-        query,
+        query: query,
         ...params,
       }),
 
