@@ -10,11 +10,11 @@
  */
 const Settings = {
   fixSiderbar: true,
-  layout: "top",
+  layout: 'top',
   splitMenus: false,
-  navTheme: "light",
-  contentWidth: "Fluid",
-  colorPrimary: "#1677FF",
+  navTheme: 'light',
+  contentWidth: 'Fluid',
+  colorPrimary: '#1677FF',
   fixedHeader: true,
-};
-export default Settings;
+}
+export default Settings

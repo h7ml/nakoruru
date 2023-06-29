@@ -8,5 +8,5 @@ export function Loading() {
         }}
       />
     </div>
-  );
+  )
 }

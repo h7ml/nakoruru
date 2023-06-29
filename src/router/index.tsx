@@ -14,14 +14,14 @@
  *
  * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.
  */
-import { useSetRecoilState } from "recoil";
-import { useRoutes } from "react-router-dom";
-import { navState } from "@/store";
-import { routes } from "./plop";
+import { useSetRecoilState } from 'recoil'
+import { useRoutes } from 'react-router-dom'
+import { routes } from './plop'
+import { navState } from '@/store'
 
 export default function Router() {
-  const SetNavState = useSetRecoilState(navState);
-  const element = useRoutes(routes);
-  SetNavState(routes);
-  return element;
+  const SetNavState = useSetRecoilState(navState)
+  const element = useRoutes(routes)
+  SetNavState(routes)
+  return element
 }

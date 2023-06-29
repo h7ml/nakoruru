@@ -6,11 +6,7 @@
     "target": "ES2015",
     "experimentalDecorators": true,
     "useDefineForClassFields": true,
-    "lib": [
-      "DOM",
-      "DOM.Iterable",
-      "ESNext"
-    ],
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": false,
@@ -24,8 +20,6 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "types": [
-      "@types/node"
-    ]
+    "types": ["@types/node"]
   }
 }

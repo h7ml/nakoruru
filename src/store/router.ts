@@ -15,15 +15,15 @@
  * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.
  */
 
-import { RouteObject } from "react-router-dom";
-import { atom } from "recoil";
+import type { RouteObject } from 'react-router-dom'
+import { atom } from 'recoil'
 
 export const selectedTabState = atom({
-  key: "selectedTabState",
-  default: "/",
-});
+  key: 'selectedTabState',
+  default: '/',
+})
 
 export const navState = atom<RouteObject[]>({
-  key: "navState",
+  key: 'navState',
   default: [],
-});
+})

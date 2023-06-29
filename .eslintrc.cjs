@@ -13,5 +13,6 @@ module.exports = {
   plugins: ['react-refresh'],
   rules: {
     'react-refresh/only-export-components': 'warn',
+    'yml/no-empty-mapping-value': 'off',
   },
 }

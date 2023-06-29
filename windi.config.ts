@@ -1,5 +1,5 @@
-import { defineConfig } from 'windicss/helpers';
-import ThemeColor from './theme';
+import { defineConfig } from 'windicss/helpers'
+import ThemeColor from './theme'
 
 export default defineConfig({
   theme: {
@@ -25,8 +25,8 @@ export default defineConfig({
       },
       display: {
         none: 'none',
-        black: 'black'
-      }
+        black: 'black',
+      },
     },
   },
-});
+})

@@ -83,7 +83,7 @@ jobs:
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           github-token: ${{ secrets.ACCESS_TOKEN }}
-          vercel-args: '--prod' #Optional
+          vercel-args: --prod # Optional
           vercel-org-id: ${{ secrets.ORG_ID}}
           vercel-project-id: ${{ secrets.PROJECT_ID}}
           working-directory: ./
@@ -96,7 +96,7 @@ jobs:
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-          vercel-args: '--prod' #Optional
+          vercel-args: --prod # Optional
           github-token: ${{ secrets.GIT_TOKEN }}
           vercel-project-id: prj_Q6U8E1z1WgLrZprWmukpAPxD4SP6
           path: public
@@ -117,8 +117,8 @@ jobs:
       - name: Deploy to surge 🚀
         uses: dswistowski/surge-sh-action@v1
         with:
-          domain: 'nakoruru.surge.sh'
-          project: './'
+          domain: nakoruru.surge.sh
+          project: ./
           login: ${{ secrets.surge_login }}
           token: ${{ secrets.surge_token }}
 
@@ -131,7 +131,7 @@ jobs:
       - name: Checkout 🚀
         uses: actions/checkout@v2
         with:
-          repository: 'Apocalypsor/Workflows-Cleaner'
+          repository: Apocalypsor/Workflows-Cleaner
 
       - name: Set up Python 🚀
         uses: actions/setup-python@v2
@@ -148,9 +148,9 @@ jobs:
 
       - name: Clean 🚀
         env:
-          GITHUB_REPO: 'h7ml/nakoruru'
+          GITHUB_REPO: h7ml/nakoruru
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          EXPIRE_TIME: '12h'
+          EXPIRE_TIME: 12h
         run: python run.py
 
     needs: surge
@@ -176,7 +176,7 @@ jobs:
         run: |
           pnpm install --no-frozen-lockfile
           pnpm types 
-          pnpm updates 
+          pnpm updates
 
       - name: Setup Node.js 🚀
         uses: actions/setup-node@v3

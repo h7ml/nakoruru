@@ -14,12 +14,12 @@
  *
  * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.
  */
-import { create } from "zustand";
-import { persist } from "zustand/middleware";
+import { create } from 'zustand'
+import { persist } from 'zustand/middleware'
 
 interface userInfoState {
-  userInfo: Record<string, any> | null;
-  setUserInfo: (info: userInfoState["userInfo"]) => void;
+  userInfo: Record<string, any> | null
+  setUserInfo: (info: userInfoState['userInfo']) => void
 }
 
 const useUserInfoStore = create<userInfoState>()(
@@ -28,8 +28,8 @@ const useUserInfoStore = create<userInfoState>()(
       userInfo: null,
       setUserInfo: (userInfo) => set(() => ({ userInfo })),
     }),
-    { name: "userInfo" },
+    { name: 'userInfo' },
   ),
-);
+)
 
-export default useUserInfoStore;
+export default useUserInfoStore

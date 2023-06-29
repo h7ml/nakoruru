@@ -25,7 +25,7 @@
  * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.
  */
 export default {
-  title: "Node",
+  title: 'Node',
   menuOrder: 0,
-  navigate: "/Node", // 设置重定向
-};
+  navigate: '/Node', // 设置重定向
+}

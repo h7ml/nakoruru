@@ -15,7 +15,7 @@
  * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.
  */
 export default {
-  title: "ReactQuery",
+  title: 'ReactQuery',
   menuOrder: 0,
-  navigate: "/index", // 设置重定向
-};
+  navigate: '/index', // 设置重定向
+}

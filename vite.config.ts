@@ -1,9 +1,18 @@
-import { join, resolve } from 'path' // 导入 path 中的 join 方法
-import { defineConfig } from 'vite' // 导入 vite 的 defineConfig 方法
-import react from '@vitejs/plugin-react-swc' // 导入插件 @vitejs/plugin-react-swc 用于编译 react jsx 语法
-import { createHtmlPlugin } from 'vite-plugin-html' // 导入插件 vite-plugin-html 用于生成 html
-import WindiCSS from 'vite-plugin-windicss' // 导入插件 vite-plugin-windicss 用于处理 css
-import ThemeColor from './theme' // 导入 theme 文件用于处理主题色
+import { join, resolve } from 'node:path'
+
+// 导入 path 中的 join 方法
+import { defineConfig } from 'vite'
+
+// 导入 vite 的 defineConfig 方法
+import react from '@vitejs/plugin-react-swc'
+
+// 导入插件 @vitejs/plugin-react-swc 用于编译 react jsx 语法
+import { createHtmlPlugin } from 'vite-plugin-html'
+
+// 导入插件 vite-plugin-html 用于生成 html
+import WindiCSS from 'vite-plugin-windicss'
+
+// 导入插件 vite-plugin-windicss 用于处理 css
 
 // import legacyPlugin from '@vitejs/plugin-legacy'
 
@@ -13,7 +22,10 @@ import license from 'rollup-plugin-license' // 导入插件 rollup-plugin-licens
 
 import { visualizer } from 'rollup-plugin-visualizer' // 导入插件 rollup-plugin-visualizer 用于构建可视化分析图
 
-import viteCompression from 'vite-plugin-compression' // 导入插件 vite-plugin-compression 用于压缩资源
+import viteCompression from 'vite-plugin-compression'
+
+// 导入插件 vite-plugin-compression 用于压缩资源
+import ThemeColor from './theme' // 导入 theme 文件用于处理主题色
 
 export default defineConfig(({ mode }) => {
   return {
@@ -60,7 +72,7 @@ export default defineConfig(({ mode }) => {
           `,
         thirdParty: {
           output: {
-            file: 'dist/licenses.txt', //版权信息输出文件目录
+            file: 'dist/licenses.txt', // 版权信息输出文件目录
           },
         },
       }),
@@ -83,7 +95,7 @@ export default defineConfig(({ mode }) => {
       terserOptions: {
         // 压缩选项
         compress: {
-          //生产环境时移除console
+          // 生产环境时移除console
           drop_console: true,
           drop_debugger: true,
         },
@@ -167,7 +179,7 @@ export default defineConfig(({ mode }) => {
         // 设置代理
         '/api': {
           target: 'https://nestjs.h7ml.cn/', // 代理地址
-          changeOrigin: true, //是否跨域
+          changeOrigin: true, // 是否跨域
         },
       },
       open: true, // 自动打开浏览器

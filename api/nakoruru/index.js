@@ -10,9 +10,9 @@
  * @LastEditors: h7ml <h7ml@qq.com>
  * @LastEditTime: 2023-05-16 09:54:46
  * @FilePath: \nakoruru\api\nakoruru\index.js
- * @Description: 
- * 
- * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved. 
+ * @Description:
+ *
+ * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.
  */
 // 该服务为 vercel serve跨域处理
 const { createProxyMiddleware } = require('http-proxy-middleware')
@@ -27,7 +27,7 @@ module.exports = (req, res) => {
     target,
     changeOrigin: true,
     pathRewrite: {
-      '^/api/': '/'
-    }
+      '^/api/': '/',
+    },
   })(req, res)
 }

@@ -5,28 +5,28 @@
  * Copyright © www.h7ml.cn All rights reserved
  */
 
-import { MarkerType } from "react-flow-renderer";
+import type { MarkerType } from 'react-flow-renderer'
 
-export type Edge = {
-  id: string;
-  source: string;
-  target: string;
-  animated?: boolean;
-  label?: string;
-  type?: string;
+export interface Edge {
+  id: string
+  source: string
+  target: string
+  animated?: boolean
+  label?: string
+  type?: string
   style?: {
-    stroke?: string;
-  };
+    stroke?: string
+  }
   labelStyle?: {
-    fill?: string;
-    fontWeight?: number;
-  };
+    fill?: string
+    fontWeight?: number
+  }
   markerEnd?: {
-    type: MarkerType;
+    type: MarkerType
     // other options
-  };
-};
+  }
+}
 
 export const edges: Edge[] = [
   // edges data
-];
+]

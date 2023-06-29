@@ -14,16 +14,16 @@
  *
  * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.
  */
-import React from "react";
-import { useNavigate } from "react-router-dom";
-import { Result, Button } from "antd";
+import React from 'react'
+import { useNavigate } from 'react-router-dom'
+import { Button, Result } from 'antd'
 
 export const NotFound: React.FC = () => {
-  const history = useNavigate();
+  const history = useNavigate()
 
   const handleClick = () => {
-    history("/");
-  };
+    history('/')
+  }
 
   return (
     <Result
@@ -36,7 +36,7 @@ export const NotFound: React.FC = () => {
         </Button>
       }
     />
-  );
-};
+  )
+}
 
-export default NotFound;
+export default NotFound

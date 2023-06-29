@@ -1,10 +1,8 @@
-const fs = require('fs-extra')
-const dayjs = require('dayjs')
-const changeCase = require('change-case')
+import fs from 'fs-extra'
 
-// 获取当前时间的年月日信息
-const currentTime = dayjs().format('YYYY-MM-DD HH:mm:ss')
+import changeCase from 'change-case'
 
+// eslint-disable-next-line antfu/no-cjs-exports
 module.exports = function (plop) {
   plop.setGenerator('page', {
     description: '基础页面生成',
@@ -49,12 +47,9 @@ module.exports = function (plop) {
             return
           }
 
-          value =
-            type.value === 'components' ? changeCase.pascalCase(value) : value
+          value = type.value === 'components' ? changeCase.pascalCase(value) : value
 
-          const filePath = `${process.cwd()}/src/${
-            type.value
-          }/${value}/index.tsx`
+          const filePath = `${process.cwd()}/src/${type.value}/${value}/index.tsx`
 
           if (fs.existsSync(filePath)) {
             done(`${name}已存在`)

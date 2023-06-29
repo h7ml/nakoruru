@@ -14,12 +14,12 @@
  *
  * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.
  */
-const Test = () => {
+function Test() {
   return (
     <div>
       <h1>My App</h1>
     </div>
-  );
-};
+  )
+}
 
-export default Test;
+export default Test

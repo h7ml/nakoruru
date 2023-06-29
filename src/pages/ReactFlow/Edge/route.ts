@@ -15,7 +15,7 @@
  * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.
  */
 export default {
-  title: "Edge",
+  title: 'Edge',
   menuOrder: 0,
-  navigate: "/Edge", // 设置重定向
-};
+  navigate: '/Edge', // 设置重定向
+}

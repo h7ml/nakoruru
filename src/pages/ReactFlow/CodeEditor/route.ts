@@ -9,7 +9,7 @@
  * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.
  */
 export default {
-  title: "CodeEditor",
+  title: 'CodeEditor',
   menuOrder: 0,
-  navigate: "/CodeEditor", // 设置重定向
-};
+  navigate: '/CodeEditor', // 设置重定向
+}

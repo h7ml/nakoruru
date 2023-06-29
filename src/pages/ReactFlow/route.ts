@@ -15,7 +15,7 @@
  * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.
  */
 export default {
-  title: "ReactFlow",
+  title: 'ReactFlow',
   menuOrder: 0,
-  navigate: "/ReactFlow/Node", // 设置重定向
-};
+  navigate: '/ReactFlow/Node', // 设置重定向
+}

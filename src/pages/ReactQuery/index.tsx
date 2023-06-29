@@ -15,26 +15,24 @@
  * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.
  */
 
-import { UseTypicode } from "@/hooks";
-import { useState } from "react";
+import { useState } from 'react'
+import { UseTypicode } from '@/hooks'
 
 function ReactQuery() {
-  const { useUsersQuery } = UseTypicode();
-  const [dataInfo, SetDataInfo] = useState<[]>([]); // 用户数据信息, 可以从数据库获取。 这可以在页面
+  const { useUsersQuery } = UseTypicode()
+  const [dataInfo, SetDataInfo] = useState<[]>([]) // 用户数据信息, 可以从数据库获取。 这可以在页面
 
-  const createProjectReq = useUsersQuery();
+  const createProjectReq = useUsersQuery()
   const handleCreateProjectClick = () => {
-    createProjectReq("albums", {
+    createProjectReq('albums', {
       onSuccess: (info) => {
-        SetDataInfo(info);
+        SetDataInfo(info)
       },
-    });
-  };
+    })
+  }
   return (
     <div>
-      <button onClick={handleCreateProjectClick}>
-        handleCreateProjectClick
-      </button>
+      <button onClick={handleCreateProjectClick}>handleCreateProjectClick</button>
       {dataInfo?.map((user) => (
         <div key={user.userId}>
           <p>{user.title}</p>
@@ -42,7 +40,7 @@ function ReactQuery() {
         </div>
       ))}
     </div>
-  );
+  )
 }
 
-export default ReactQuery;
+export default ReactQuery

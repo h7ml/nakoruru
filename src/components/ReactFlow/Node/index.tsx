@@ -1,10 +1,5 @@
-import ReactFlow, {
-  MiniMap,
-  Background,
-  BackgroundVariant,
-  Controls,
-} from "react-flow-renderer";
-import { ReactFlowNodeProps } from "@/types";
+import ReactFlow, { Background, BackgroundVariant, Controls, MiniMap } from 'react-flow-renderer'
+import type { ReactFlowNodeProps } from '@/types'
 
 export const ReactFlowNode: React.FC<ReactFlowNodeProps> = function ({
   initialNodes = [],
@@ -22,20 +17,12 @@ export const ReactFlowNode: React.FC<ReactFlowNodeProps> = function ({
         nodes={initialNodes}
         edges={initialEdges}
         onNodesChange={(e) => {
-          console.log(
-            "%c [ e ]-15",
-            "font-size:13px; background:pink; color:#bf2c9f;",
-            e,
-          );
-          onNodesChange(e);
+          console.log('%c [ e ]-15', 'font-size:13px; background:pink; color:#bf2c9f;', e)
+          onNodesChange(e)
         }}
         onEdgesChange={(e) => {
-          console.log(
-            "%c [ e ]-19",
-            "font-size:13px; background:pink; color:#bf2c9f;",
-            e,
-          );
-          onEdgesChange(e);
+          console.log('%c [ e ]-19', 'font-size:13px; background:pink; color:#bf2c9f;', e)
+          onEdgesChange(e)
         }}
         fitView
       >
@@ -44,7 +31,7 @@ export const ReactFlowNode: React.FC<ReactFlowNodeProps> = function ({
         <Controls />
       </ReactFlow>
     </div>
-  );
-};
+  )
+}
 
-export default ReactFlowNode;
+export default ReactFlowNode

@@ -15,45 +15,39 @@
  * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.
  */
 export interface MenuItem {
-  key: string;
-  icon?: React.ReactNode | null; // icon 属性为可选的
-  label: string;
-  hidden?: boolean;
-  name: string;
-  children?: MenuItem[];
-  component?: string;
+  key: string
+  icon?: React.ReactNode | null // icon 属性为可选的
+  label: string
+  hidden?: boolean
+  name: string
+  children?: MenuItem[]
+  component?: string
 }
 
 export interface NavItem {
-  path: string;
-  hidden?: boolean;
-  children?: NavItem[];
+  path: string
+  hidden?: boolean
+  children?: NavItem[]
 }
-export const processChildren = (children?: NavItem[]): MenuItem[] => {
+export function processChildren(children?: NavItem[]): MenuItem[] {
   if (!children) {
-    return [];
+    return []
   }
 
   return children.map((child) => {
     const processedChild: MenuItem = {
-      key: child.path || "",
+      key: child.path || '',
       icon: null,
-      name: child.path || "",
+      name: child.path || '',
       hidden: child.hidden || false,
-      label:
-        child.path === "/"
-          ? "首页"
-          : child.path.substr(child.path.lastIndexOf("/") + 1),
-      component:
-        child.path === "/"
-          ? "/"
-          : child.path.substr(child.path.lastIndexOf("/") + 1),
-    };
-
-    if (child.children && child.children.length > 0) {
-      processedChild.children = processChildren(child.children); // 递归处理子项的 children
+      label: child.path === '/' ? '首页' : child.path.substr(child.path.lastIndexOf('/') + 1),
+      component: child.path === '/' ? '/' : child.path.substr(child.path.lastIndexOf('/') + 1),
     }
 
-    return processedChild;
-  });
-};
+    if (child.children && child.children.length > 0) {
+      processedChild.children = processChildren(child.children) // 递归处理子项的 children
+    }
+
+    return processedChild
+  })
+}

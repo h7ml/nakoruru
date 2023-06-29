@@ -15,6 +15,6 @@
  * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.
  */
 
-export { default as Tree } from "./Tree";
+export { default as Tree } from './Tree'
 
 /* plop add */

@@ -14,5 +14,5 @@
  *
  * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.
  */
-export * from "./ReactQuery";
-export * from "./RecoilDevtools";
+export * from './ReactQuery'
+export * from './RecoilDevtools'

@@ -1,29 +1,25 @@
-import { useRef } from "react";
-import { Engine, Scene } from "react-babylonjs";
-import {
-  Vector3,
-  Nullable,
-  CannonJSPlugin,
-  Mesh,
-  PhysicsImpostor,
-} from "@babylonjs/core";
-import "@babylonjs/core/Lights/Shadows/shadowGeneratorSceneComponent";
+import { useRef } from 'react'
+import { Engine, Scene } from 'react-babylonjs'
+import type { Mesh, Nullable } from '@babylonjs/core'
+import { CannonJSPlugin, PhysicsImpostor, Vector3 } from '@babylonjs/core'
+import '@babylonjs/core/Lights/Shadows/shadowGeneratorSceneComponent'
 
-import * as CANNON from "cannon";
-window.CANNON = CANNON;
+import * as CANNON from 'cannon'
 
-export const Babylon = () => {
-  const sphereRef = useRef<Nullable<Mesh>>(null);
-  const gravityVector = new Vector3(0, -9.81, 0);
+window.CANNON = CANNON
+
+export function Babylon() {
+  const sphereRef = useRef<Nullable<Mesh>>(null)
+  const gravityVector = new Vector3(0, -9.81, 0)
 
   const onButtonClicked = () => {
     if (sphereRef.current) {
       sphereRef.current.physicsImpostor?.applyImpulse(
         Vector3.Up().scale(10),
         sphereRef.current.getAbsolutePosition(),
-      );
+      )
     }
-  };
+  }
 
   return (
     <Engine antialias={true} adaptToDeviceRatio={true} canvasId="sample-canvas">
@@ -40,11 +36,7 @@ export const Babylon = () => {
           upperRadiusLimit={20}
           upperBetaLimit={Math.PI / 2}
         />
-        <hemisphericLight
-          name="hemi"
-          direction={new Vector3(0, -1, 0)}
-          intensity={0.8}
-        />
+        <hemisphericLight name="hemi" direction={new Vector3(0, -1, 0)} intensity={0.8} />
         <directionalLight
           name="shadow-light"
           setDirectionToTarget={[Vector3.Zero()]}
@@ -58,7 +50,7 @@ export const Babylon = () => {
             mapSize={1024}
             useBlurExponentialShadowMap={true}
             blurKernel={32}
-            shadowCasters={["sphere1", "dialog"]}
+            shadowCasters={['sphere1', 'dialog']}
             forceBackFacesOnly={true}
             depthScale={100}
           />
@@ -85,13 +77,7 @@ export const Babylon = () => {
               createForParentMesh={true}
               hasAlpha={true}
             >
-              <rectangle
-                name="rect-1"
-                height={0.5}
-                width={1}
-                thickness={12}
-                cornerRadius={12}
-              >
+              <rectangle name="rect-1" height={0.5} width={1} thickness={12} cornerRadius={12}>
                 <rectangle>
                   <babylon-button
                     name="close-icon"
@@ -99,7 +85,7 @@ export const Babylon = () => {
                     onPointerDownObservable={onButtonClicked}
                   >
                     <textBlock
-                      text={"\uf00d click h7ml"}
+                      text={'\uF00D click h7ml'}
                       fontFamily="FontAwesome"
                       fontStyle="bold"
                       fontSize={200}
@@ -112,13 +98,7 @@ export const Babylon = () => {
           </plane>
         </sphere>
 
-        <ground
-          name="ground1"
-          width={10}
-          height={10}
-          subdivisions={2}
-          receiveShadows={true}
-        >
+        <ground name="ground1" width={10} height={10} subdivisions={2} receiveShadows={true}>
           <physicsImpostor
             type={PhysicsImpostor.BoxImpostor}
             _options={{
@@ -133,7 +113,7 @@ export const Babylon = () => {
         />
       </Scene>
     </Engine>
-  );
-};
+  )
+}
 
-export default Babylon;
+export default Babylon

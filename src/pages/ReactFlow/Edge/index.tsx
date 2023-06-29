@@ -14,16 +14,17 @@
  *
  * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.
  */
-import { ReactFlowNode } from "@/components/ReactFlow/Node/index";
-import { nodes, edges } from "./mock";
+import { edges, nodes } from './mock'
+import { ReactFlowNode } from '@/components/ReactFlow/Node/index'
+
 console.log(
-  "%c [  nodes, edges ]-19",
-  "font-size:13px; background:pink; color:#bf2c9f;",
+  '%c [  nodes, edges ]-19',
+  'font-size:13px; background:pink; color:#bf2c9f;',
   nodes,
   edges,
-);
+)
 export function Edge() {
-  return <ReactFlowNode initialNodes={nodes} initialEdges={edges} />;
+  return <ReactFlowNode initialNodes={nodes} initialEdges={edges} />
 }
 
-export default Edge;
+export default Edge

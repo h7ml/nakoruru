@@ -14,12 +14,13 @@
  *
  * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.
  */
-import { CodeEditor } from "@/components";
-import { FlowJson } from "@/store";
-import { useRecoilState } from "recoil";
-import { isPlainObject } from "lodash-es";
+import { useRecoilState } from 'recoil'
+import { isPlainObject } from 'lodash-es'
+import { CodeEditor } from '@/components'
+import { FlowJson } from '@/store'
+
 export default function Home() {
-  const [codeValue, setCodeValue] = useRecoilState(FlowJson);
+  const [codeValue, setCodeValue] = useRecoilState(FlowJson)
 
   return (
     <CodeEditor
@@ -27,8 +28,8 @@ export default function Home() {
       language="json"
       value={JSON.stringify(codeValue, null, 2)}
       onChange={(e) => {
-        if (isPlainObject(e)) setCodeValue(JSON.parse(e));
+        if (isPlainObject(e)) setCodeValue(JSON.parse(e))
       }}
     />
-  );
+  )
 }

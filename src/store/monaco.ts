@@ -15,10 +15,11 @@
  * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.
  */
 
-import { atom } from "recoil";
-const storeName = "Monaco";
+import { atom } from 'recoil'
+
+const storeName = 'Monaco'
 
 export const FlowJson = atom<[]>({
   key: `${storeName}_FlowJson`,
   default: [],
-});
+})

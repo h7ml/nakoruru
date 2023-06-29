@@ -15,6 +15,7 @@
  * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.
  */
 import {
+  AppstoreOutlined,
   DoubleRightOutlined,
   GithubFilled,
   InfoCircleFilled,
@@ -22,29 +23,28 @@ import {
   PlusCircleFilled,
   QuestionCircleFilled,
   SearchOutlined,
-  SmileFilled,
-  AppstoreOutlined,
-} from "@ant-design/icons";
-import { DefaultFooter, ProSettings } from "@ant-design/pro-components";
+} from '@ant-design/icons'
+import type { ProSettings } from '@ant-design/pro-components'
 import {
+  DefaultFooter,
   PageContainer,
   ProCard,
   ProConfigProvider,
   ProLayout,
   SettingDrawer,
-} from "@ant-design/pro-components";
-import { css } from "@emotion/css";
-import { Input, Dropdown, theme } from "antd";
-import React, { useState } from "react";
-import { repository } from "../../../package.json";
-import Router from "@/router";
-import { VisibleState, navState, useLoginStore } from "@/store";
-import { useRecoilValue } from "recoil";
-import { useNavigate, useLocation } from "react-router-dom";
-import { processChildren } from "@/utils/menu";
+} from '@ant-design/pro-components'
+import { css } from '@emotion/css'
+import { Dropdown, Input, theme } from 'antd'
+import React, { useState } from 'react'
+import { useRecoilValue } from 'recoil'
+import { useLocation, useNavigate } from 'react-router-dom'
+import { repository } from '../../../package.json'
+import Router from '@/router'
+import { VisibleState, navState, useLoginStore } from '@/store'
+import { processChildren } from '@/utils/menu'
 
 const Item: React.FC<{ children: React.ReactNode }> = (props) => {
-  const { token } = theme.useToken();
+  const { token } = theme.useToken()
   return (
     <div
       className={css`
@@ -58,7 +58,7 @@ const Item: React.FC<{ children: React.ReactNode }> = (props) => {
         }
       `}
       style={{
-        width: "33.33%",
+        width: '33.33%',
       }}
     >
       {props.children}
@@ -68,23 +68,23 @@ const Item: React.FC<{ children: React.ReactNode }> = (props) => {
         }}
       />
     </div>
-  );
-};
+  )
+}
 
-const SearchInput = () => {
-  const { token } = theme.useToken();
+function SearchInput() {
+  const { token } = theme.useToken()
   return (
     <div
       key="SearchOutlined"
       aria-hidden
       style={{
-        display: "flex",
-        alignItems: "center",
+        display: 'flex',
+        alignItems: 'center',
         marginInlineEnd: 24,
       }}
       onMouseDown={(e) => {
-        e.stopPropagation();
-        e.preventDefault();
+        e.stopPropagation()
+        e.preventDefault()
       }}
     >
       <Input
@@ -110,54 +110,54 @@ const SearchInput = () => {
         }}
       />
     </div>
-  );
-};
+  )
+}
 
 export const ProMain: React.FC = () => {
-  const history = useNavigate();
-  const repo = repository as { url: string };
+  const history = useNavigate()
+  const repo = repository as { url: string }
   const [settings, setSetting] = useState<Partial<ProSettings> | undefined>({
     // fixSiderbar: true,
     // layout: 'mix',
     // splitMenus: true,
     fixSiderbar: true,
-    layout: "top",
+    layout: 'top',
     splitMenus: false,
-    navTheme: "light",
-    contentWidth: "Fluid",
-    colorPrimary: "#1677FF",
+    navTheme: 'light',
+    contentWidth: 'Fluid',
+    colorPrimary: '#1677FF',
     fixedHeader: true,
-  });
+  })
 
-  const navStateValue = useRecoilValue(navState);
+  const navStateValue = useRecoilValue(navState)
   const getNav = (navValue: any) => {
-    const response = processChildren(navValue);
+    const response = processChildren(navValue)
     return {
-      path: "/",
+      path: '/',
       routes: response,
       location: {
-        pathname: "/",
+        pathname: '/',
       },
-    };
-  };
-  const location = useLocation();
-  const path = location.pathname;
-  const lastSlashIndex = path.lastIndexOf("/");
-  const param = path.substr(lastSlashIndex + 1);
-  const [pathname, setPathname] = useState(param);
-  const [num, setNum] = useState(40);
-  const navigate = useNavigate();
-  const { userInfo, setUserInfo } = useLoginStore();
+    }
+  }
+  const location = useLocation()
+  const path = location.pathname
+  const lastSlashIndex = path.lastIndexOf('/')
+  const param = path.substr(lastSlashIndex + 1)
+  const [pathname, setPathname] = useState(param)
+  const [num, setNum] = useState(40)
+  const navigate = useNavigate()
+  const { userInfo, setUserInfo } = useLoginStore()
   const handleLogout = () => {
-    navigate("/login");
-    setUserInfo({ username: "", password: "" });
-  };
-  const toggleVisibility = VisibleState((state) => state.toggleVisibility);
+    navigate('/login')
+    setUserInfo({ username: '', password: '' })
+  }
+  const toggleVisibility = VisibleState((state) => state.toggleVisibility)
   return (
     <div
       id="test-pro-layout"
       style={{
-        height: "100vh",
+        height: '100vh',
       }}
     >
       <ProConfigProvider hashed={false}>
@@ -165,22 +165,22 @@ export const ProMain: React.FC = () => {
           prefixCls="my-prefix"
           bgLayoutImgList={[
             {
-              src: "https://img.alicdn.com/imgextra/i2/O1CN01O4etvp1DvpFLKfuWq_!!6000000000279-2-tps-609-606.png",
+              src: 'https://img.alicdn.com/imgextra/i2/O1CN01O4etvp1DvpFLKfuWq_!!6000000000279-2-tps-609-606.png',
               left: 85,
               bottom: 100,
-              height: "303px",
+              height: '303px',
             },
             {
-              src: "https://img.alicdn.com/imgextra/i2/O1CN01O4etvp1DvpFLKfuWq_!!6000000000279-2-tps-609-606.png",
+              src: 'https://img.alicdn.com/imgextra/i2/O1CN01O4etvp1DvpFLKfuWq_!!6000000000279-2-tps-609-606.png',
               bottom: -68,
               right: -45,
-              height: "303px",
+              height: '303px',
             },
             {
-              src: "https://img.alicdn.com/imgextra/i3/O1CN018NxReL1shX85Yz6Cx_!!6000000005798-2-tps-884-496.png",
+              src: 'https://img.alicdn.com/imgextra/i3/O1CN018NxReL1shX85Yz6Cx_!!6000000005798-2-tps-884-496.png',
               bottom: 0,
               left: 0,
-              width: "331px",
+              width: '331px',
             },
           ]}
           footerRender={() => (
@@ -188,7 +188,7 @@ export const ProMain: React.FC = () => {
               className=""
               copyright={
                 <span>
-                  ©2023 Created by h7ml{" "}
+                  ©2023 Created by h7ml{' '}
                   <a
                     href={repo.url}
                     target="_blank"
@@ -211,18 +211,18 @@ export const ProMain: React.FC = () => {
             collapsedShowGroupTitle: true,
           }}
           avatarProps={{
-            src: "https://www.h7ml.cn/logo.png",
-            size: "small",
-            title: userInfo?.username ?? "h7ml",
+            src: 'https://www.h7ml.cn/logo.png',
+            size: 'small',
+            title: userInfo?.username ?? 'h7ml',
             render: (props, dom) => {
               return (
                 <Dropdown
                   menu={{
                     items: [
                       {
-                        key: "logout",
+                        key: 'logout',
                         icon: <LogoutOutlined />,
-                        label: "退出登录",
+                        label: '退出登录',
                         onClick: handleLogout,
                       },
                     ],
@@ -230,13 +230,13 @@ export const ProMain: React.FC = () => {
                 >
                   {dom}
                 </Dropdown>
-              );
+              )
             },
           }}
           actionsRender={(props) => {
-            if (props.isMobile) return [];
+            if (props.isMobile) return []
             return [
-              props.layout !== "side" && document.body.clientWidth > 1400 ? (
+              props.layout !== 'side' && document.body.clientWidth > 1400 ? (
                 <SearchInput />
               ) : undefined,
               <InfoCircleFilled key="InfoCircleFilled" />,
@@ -245,48 +245,44 @@ export const ProMain: React.FC = () => {
               <AppstoreOutlined
                 key="AppstoreOutlined"
                 onClick={() => {
-                  toggleVisibility();
+                  toggleVisibility()
                 }}
               />,
-            ];
+            ]
           }}
           headerTitleRender={(logo, title, _) => {
             const defaultDom = (
               <a className="wini-rounded-3xl wini-bg-blue-500 wini-text-white wini-flex wini-items-center wini-p-4 wini-transition-all hover:wini-bg-blue-600">
-                <img
-                  height={50}
-                  width={50}
-                  src="https://www.h7ml.cn/logo.png"
-                />
+                <img height={50} width={50} src="https://www.h7ml.cn/logo.png" />
                 <span style={{ marginLeft: 10 }}>nakoruru</span>
               </a>
-            );
+            )
             if (document.body.clientWidth < 1400) {
-              return defaultDom;
+              return defaultDom
             }
-            if (_.isMobile) return defaultDom;
-            return defaultDom;
+            if (_.isMobile) return defaultDom
+            return defaultDom
           }}
           menuFooterRender={(props) => {
-            if (props?.collapsed) return undefined;
+            if (props?.collapsed) return undefined
             return (
               <div
                 style={{
-                  textAlign: "center",
+                  textAlign: 'center',
                   paddingBlockStart: 12,
                 }}
               >
                 <div>© 2021 Made with love</div>
                 <div>by Ant Design</div>
               </div>
-            );
+            )
           }}
           onMenuHeaderClick={(e) => console.log(e)}
           menuItemRender={(item, dom) => (
             <div
               onClick={() => {
-                setPathname(item.path || "/");
-                history(item.path);
+                setPathname(item.path || '/')
+                history(item.path)
               }}
             >
               {dom}
@@ -306,7 +302,7 @@ export const ProMain: React.FC = () => {
           >
             <ProCard
               style={{
-                minHeight: "90vh",
+                minHeight: '90vh',
               }}
             >
               <Router />
@@ -316,15 +312,15 @@ export const ProMain: React.FC = () => {
           <SettingDrawer
             pathname={pathname}
             enableDarkTheme
-            getContainer={() => document.getElementById("test-pro-layout")}
+            getContainer={() => document.getElementById('test-pro-layout')}
             settings={settings}
             onSettingChange={(changeSetting) => {
-              setSetting(changeSetting);
+              setSetting(changeSetting)
             }}
             disableUrlParams={false}
           />
         </ProLayout>
       </ProConfigProvider>
     </div>
-  );
-};
+  )
+}

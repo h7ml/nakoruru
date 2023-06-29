@@ -3,17 +3,9 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "@/*": [
-        "./src/*"
-      ]
+      "@/*": ["./src/*"]
     },
-    "types": [
-      "vite/client"
-    ],
+    "types": ["vite/client"]
   },
-  "include": [
-    "src",
-    "theme.ts",
-    "prettierrc.js"
-  ],
+  "include": ["src", "theme.ts", "prettierrc.js"]
 }

@@ -53,4 +53,4 @@ export default {
 
     flowNodeTitleBgColor: 'rgba(0, 0, 0, 0.32)',
   },
-};
+}

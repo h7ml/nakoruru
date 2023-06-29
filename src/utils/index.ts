@@ -14,21 +14,21 @@
  *
  * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.
  */
-const { userAgent } = window.navigator;
+const { userAgent } = window.navigator
 
-export const isMac = userAgent.includes("Mac");
-export const isWin = userAgent.includes("Windows");
+export const isMac = userAgent.includes('Mac')
+export const isWin = userAgent.includes('Windows')
 
-export const ctrlKeyStr = isMac ? "⌘" : "ctrl";
-export const shiftKeyStr = isMac ? "⇧" : "shift";
+export const ctrlKeyStr = isMac ? '⌘' : 'ctrl'
+export const shiftKeyStr = isMac ? '⇧' : 'shift'
 
-export const isCtrlKey = (e: KeyboardEvent): boolean =>
-  isMac ? e.metaKey : e.ctrlKey;
-export const isInputTag = (el: HTMLElement): boolean =>
-  el.tagName === "INPUT" || el.tagName === "TEXTAREA";
+export const isCtrlKey = (e: KeyboardEvent): boolean => (isMac ? e.metaKey : e.ctrlKey)
+export function isInputTag(el: HTMLElement): boolean {
+  return el.tagName === 'INPUT' || el.tagName === 'TEXTAREA'
+}
 export function uuid() {
-  const temp_url = URL.createObjectURL(new Blob());
-  const uuid = temp_url.toString();
-  URL.revokeObjectURL(temp_url);
-  return uuid.substr(uuid.lastIndexOf("/") + 1);
+  const temp_url = URL.createObjectURL(new Blob())
+  const uuid = temp_url.toString()
+  URL.revokeObjectURL(temp_url)
+  return uuid.substr(uuid.lastIndexOf('/') + 1)
 }

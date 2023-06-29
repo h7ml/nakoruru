@@ -2,31 +2,32 @@
  * @Author: h7ml <h7ml@qq.com>
  * @Date: 2023-05-22 12:57:40
  * @LastEditors: h7ml <h7ml@qq.com>
- * @LastEditTime: 2023-06-28 17:16:24
+ * @LastEditTime: 2023-06-29 11:16:22
  * @FilePath: /nakoruru/src/router/plop.tsx
  * @Description:
  *
  * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.
  */
-import { lazy, Suspense } from "react";
-import { RouteObject } from "react-router-dom";
-import { Loading } from "@/components";
-import LazyRouter from "./LazyRouter";
-import NotFound from "@/pages/NotFound";
+import { Suspense, lazy } from 'react'
+import type { RouteObject } from 'react-router-dom'
+import LazyRouter from './LazyRouter'
+import { Loading } from '@/components'
+import NotFound from '@/pages/NotFound'
+import Main from '@/components/Layout/Main'
+
 /* pages add */
-const ThreeScene = lazy(() => import("@/pages/ThreeScene"));
-const Babylon = lazy(() => import("@/pages/Babylon"));
-const Hotapi = lazy(() => import("@/pages/Hotapi"));
-const Login = lazy(() => import("@/pages/Login"));
-const Tree = lazy(() => import("@/pages/Tree"));
-const Flow = lazy(() => import("@/pages/Flow"));
-const Home = lazy(() => import("@/pages/Home"));
-import Main from "@/components/Layout/Main";
-type ExtendedRouteObject = RouteObject & { hidden?: boolean };
+const ThreeScene = lazy(() => import('@/pages/ThreeScene'))
+const Babylon = lazy(() => import('@/pages/Babylon'))
+const Hotapi = lazy(() => import('@/pages/Hotapi'))
+const Login = lazy(() => import('@/pages/Login'))
+const Tree = lazy(() => import('@/pages/Tree'))
+const Flow = lazy(() => import('@/pages/Flow'))
+const Home = lazy(() => import('@/pages/Home'))
+type ExtendedRouteObject = RouteObject & { hidden?: boolean }
 
 export const routes: ExtendedRouteObject[] = [
   {
-    path: "/",
+    path: '/',
     element: <Main />,
     children: [
       // {
@@ -39,7 +40,7 @@ export const routes: ExtendedRouteObject[] = [
       // },
       ...LazyRouter(),
       {
-        path: "/tree",
+        path: '/tree',
         element: (
           <Suspense fallback={<Loading />}>
             <Tree />
@@ -47,7 +48,7 @@ export const routes: ExtendedRouteObject[] = [
         ),
       },
       {
-        path: "/flow",
+        path: '/flow',
         element: (
           <Suspense fallback={<Loading />}>
             <Flow />
@@ -56,7 +57,7 @@ export const routes: ExtendedRouteObject[] = [
       },
       /* plop add */
       {
-        path: "/three-scene",
+        path: '/three-scene',
         element: (
           <Suspense fallback={<Loading />}>
             <ThreeScene />
@@ -64,7 +65,7 @@ export const routes: ExtendedRouteObject[] = [
         ),
       },
       {
-        path: "/babylon",
+        path: '/babylon',
         element: (
           <Suspense fallback={<Loading />}>
             <Babylon />
@@ -72,7 +73,7 @@ export const routes: ExtendedRouteObject[] = [
         ),
       },
       {
-        path: "/hotapi",
+        path: '/hotapi',
         element: (
           <Suspense fallback={<Loading />}>
             <Hotapi />
@@ -82,7 +83,7 @@ export const routes: ExtendedRouteObject[] = [
     ],
   },
   {
-    path: "/login",
+    path: '/login',
     hidden: true,
     element: (
       <Suspense fallback={<Loading />}>
@@ -91,8 +92,8 @@ export const routes: ExtendedRouteObject[] = [
     ),
   },
   {
-    path: "*",
+    path: '*',
     hidden: true,
     element: <NotFound />,
   },
-];
+]

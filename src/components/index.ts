@@ -14,7 +14,7 @@
  *
  * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.
  */
-export * from "./GitHubCorners";
-export * from "./CodeEditor";
-export * from "./OverviewFlow";
-export * from "./Layout";
+export * from './GitHubCorners'
+export * from './CodeEditor'
+export * from './OverviewFlow'
+export * from './Layout'

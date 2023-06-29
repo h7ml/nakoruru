@@ -1,25 +1,26 @@
-import React, { FC, useState } from "react";
+import type { FC } from 'react'
+import React, { useState } from 'react'
 
-type TreeNodeProps = {
-  id: string;
-  name: string;
-  children?: TreeNodeProps[];
-};
+interface TreeNodeProps {
+  id: string
+  name: string
+  children?: TreeNodeProps[]
+}
 
-type Props = {
-  data: TreeNodeProps[];
-};
+interface Props {
+  data: TreeNodeProps[]
+}
 
 const TreeNode: FC<TreeNodeProps> = ({ id, name, children }) => {
-  const [collapsed, setCollapsed] = useState<boolean>(false);
+  const [collapsed, setCollapsed] = useState<boolean>(false)
 
   const handleCollapse = () => {
-    setCollapsed(!collapsed);
-  };
+    setCollapsed(!collapsed)
+  }
 
   return (
     <div>
-      <span onClick={handleCollapse}>{collapsed ? "+" : "-"}</span>
+      <span onClick={handleCollapse}>{collapsed ? '+' : '-'}</span>
       <span>{name}</span>
       {children && !collapsed && (
         <div>
@@ -29,8 +30,8 @@ const TreeNode: FC<TreeNodeProps> = ({ id, name, children }) => {
         </div>
       )}
     </div>
-  );
-};
+  )
+}
 
 export const Tree: FC<Props> = ({ data }) => {
   return (
@@ -39,7 +40,7 @@ export const Tree: FC<Props> = ({ data }) => {
         <TreeNode key={node.id} {...node} />
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default Tree;
+export default Tree

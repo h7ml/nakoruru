@@ -14,27 +14,23 @@
  *
  * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.
  */
-import React from "react";
-import ReactFlow, { Handle } from "react-flow-renderer";
+import React from 'react'
+import { Handle } from 'react-flow-renderer'
 
-export const ImageNode = ({ data }) => {
-  console.log(
-    "%c [ data ]-21",
-    "font-size:13px; background:pink; color:#bf2c9f;",
-    data,
-  );
+export function ImageNode({ data }) {
+  console.log('%c [ data ]-21', 'font-size:13px; background:pink; color:#bf2c9f;', data)
 
   const clicked = () => {
-    window.open(data.link, "_blank"); //to open new page
-  };
+    window.open(data.link, '_blank') // to open new page
+  }
 
   return (
     <div
       style={{
         borderRadius: 16,
-        backgroundImage: "url(" + data.imagePath + ")",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
+        backgroundImage: `url(${data.imagePath})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
         height: data.height,
         width: data.width,
       }}
@@ -44,7 +40,7 @@ export const ImageNode = ({ data }) => {
       {data.label ? (
         <div
           style={{
-            backgroundColor: "rgba(255, 255, 255, 0.5)",
+            backgroundColor: 'rgba(255, 255, 255, 0.5)',
             padding: 16,
             fontWeight: 700,
           }}
@@ -53,14 +49,9 @@ export const ImageNode = ({ data }) => {
           {data.link ? <span> 🔗</span> : null}
         </div>
       ) : null}
-      <Handle
-        type="source"
-        position="right"
-        id="b"
-        style={{ borderRadius: 0 }}
-      />
+      <Handle type="source" position="right" id="b" style={{ borderRadius: 0 }} />
     </div>
-  );
-};
+  )
+}
 
-export default ImageNode;
+export default ImageNode

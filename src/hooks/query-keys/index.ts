@@ -15,5 +15,5 @@
  * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.
  */
 export const queryKeys = {
-  userInfo: (query?: string) => ["userInfo", query],
-};
+  userInfo: (query?: string) => ['userInfo', query],
+}

@@ -14,6 +14,6 @@
  *
  * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.
  */
-export * from "./Loading";
-export * from "./Main";
-export * from "./ProMain";
+export * from './Loading'
+export * from './Main'
+export * from './ProMain'

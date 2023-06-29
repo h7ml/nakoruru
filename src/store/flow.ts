@@ -14,10 +14,11 @@
  *
  * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.
  */
-import { atom } from "recoil";
-const EdgesName = "edges";
+import { atom } from 'recoil'
+
+const EdgesName = 'edges'
 
 export const edgesJson = atom<[]>({
   key: `${EdgesName}_Json`,
   default: [],
-});
+})
