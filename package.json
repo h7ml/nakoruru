@@ -8,14 +8,16 @@
   "scripts": {
     "dev": "vite",
     "build": "node --max_old_space_size=4096 ./node_modules/vite/bin/vite.js build",
-    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint": "eslint .",
     "commit": "git-cz",
     "stylelint": "stylelint '**/*.{tsx,less,postcss,css,scss --fix --cache --cache-location node_modules/.cache/stylelint/",
-    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,scss,less,md}\"",
+    "format": "prettier --write .",
     "types": "npx swagger-typescript-api -p https://nestjs.h7ml.cn/swagger-json -o ./src/server -n api.ts",
     "updates": "ncu -u && pnpm install --no-frozen-lockfile",
     "lint:ts": "tsc --noEmit -p ./tsconfig.json",
-    "plop": "plop --plopfile ./plopfile.cjs"
+    "plop": "plop --plopfile ./plopfile.cjs",
+    "lint:fix": "eslint . --fix",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@ant-design/icons": "^5.1.4",
@@ -77,6 +79,10 @@
     "zustand": "^4.3.8"
   },
   "devDependencies": {
+    "@antfu/eslint-config": "^0.39.3",
+    "@antfu/eslint-config-react": "^0.39.3",
+    "@femm/prettier": "^1.1.0",
+    "@femm/verify-commit": "^1.0.1",
     "@types/lodash-es": "^4.17.7",
     "@types/node": "^20.3.2",
     "@types/qs": "^6.9.7",
@@ -87,14 +93,17 @@
     "@vitejs/plugin-react": "^4.0.1",
     "cz-git": "^1.6.1",
     "dayjs": "^1.11.8",
-    "eslint": "^8.43.0",
+    "eslint": "^8.41.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.1",
     "fs-extra": "^11.1.1",
+    "husky": "^8.0.3",
     "lint-staged": "^13.2.2",
     "npm-check-updates": "^16.10.13",
     "plop": "^3.1.2",
-    "prettier": "3.0.0-alpha.7-for-vscode",
+    "prettier": "^2.8.8",
     "rollup-plugin-visualizer": "^5.9.2",
     "typescript": "^5.1.5",
     "vite": "^4.3.9"
