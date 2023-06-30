@@ -8,15 +8,15 @@
  * @Author: h7ml <h7ml@qq.com>
  * @Date: 2023-05-08 21:59:23
  * @LastEditors: h7ml <h7ml@qq.com>
- * @LastEditTime: 2023-05-08 23:43:21
- * @FilePath: \nakoruru\src\pages\ReactQuery\index.tsx
+ * @LastEditTime: 2023-06-30 17:51:37
+ * @FilePath: /Users/dtstack/Desktop/yunhu/nakoruru/src/pages/ReactQuery/index.tsx
  * @Description:
  *
  * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.
  */
 
 import { useState } from 'react'
-import { UseTypicode } from '@/hooks/useRequest'
+import { UseTypicode } from '@/hooks'
 
 function ReactQuery() {
   const { useUsersQuery } = UseTypicode()
