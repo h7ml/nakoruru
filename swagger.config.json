@@ -1,0 +1,5 @@
+{
+  "url": "https://nest.h7ml.cn/api/swagger-json",
+  "rootDir": "./src/server",
+  "slicePath": "2"
+}

@@ -16,7 +16,7 @@
  */
 
 import { useState } from 'react'
-import { UseTypicode } from '@/hooks'
+import { UseTypicode } from '@/hooks/useRequest'
 
 function ReactQuery() {
   const { useUsersQuery } = UseTypicode()

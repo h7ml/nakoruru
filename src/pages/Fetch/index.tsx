@@ -16,7 +16,7 @@
  */
 import { Table, message } from 'antd'
 import { useEffect } from 'react'
-import { useFetchData } from '@/hooks'
+import { useFetchData } from '@/hooks/useRequest'
 
 interface ColumnsData {
   id: number

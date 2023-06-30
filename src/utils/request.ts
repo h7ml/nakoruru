@@ -1,110 +1,127 @@
-/**
- * @author        h7ml <h7ml@qq.com>
- * @date          2023-05-29 22:29:00
- * @lastModified  2023-06-29 11:16:01
- * Copyright © www.h7ml.cn All rights reserved
- */
-/*
- * @Author: h7ml <h7ml@qq.com>
- * @Date: 2023-05-29 22:29:00
- * @LastEditors: h7ml <h7ml@qq.com>
- * @LastEditTime: 2023-06-29 11:15:49
- * @FilePath: /nakoruru/src/utils/request.ts
- * @Description:
- *
- * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.
- */
-import axios from 'axios'
-import type {
-  AxiosInstance,
-  AxiosRequestConfig,
-  AxiosResponse,
-  CreateAxiosDefaults,
-  InternalAxiosRequestConfig,
-} from 'axios'
-import { useUserInfoStore } from '@/stores'
+import qs from 'qs'
+import { message } from 'antd'
+import { author, homepage, license, name, repository, version } from '../../package.json'
+import type { ApiMaps } from '@/server/api.types'
 
-class Request {
-  private instance: AxiosInstance
-  // 存放取消请求控制器Map
-  private abortControllerMap: Map<string, AbortController>
+export interface RequestOptions extends Omit<RequestInit, 'body'> {
+  params?: Record<string, any>
+  query?: Record<string, any>
+  body?: FormData | Record<string, any> | string
+  hideError?: boolean
+  noSpaceId?: boolean
+}
 
-  constructor(config: CreateAxiosDefaults) {
-    this.instance = axios.create(config)
+interface ResponseData {
+  success: boolean
+  data?: any
+  message?: string
+  code?: number
+}
 
-    this.abortControllerMap = new Map()
-
-    // 请求拦截器
-    this.instance.interceptors.request.use((config: InternalAxiosRequestConfig) => {
-      if (config.url !== '/login') {
-        const token = useUserInfoStore.getState().userInfo?.token
-        if (token) {
-          config.headers!['x-token'] = token
-        }
-      }
-
-      const controller = new AbortController()
-      const url = config.url || ''
-      config.signal = controller.signal
-      this.abortControllerMap.set(url, controller)
-
-      return config
-    }, Promise.reject)
-
-    // 响应拦截器
-    this.instance.interceptors.response.use(
-      (response: AxiosResponse) => {
-        const url = response.config.url || ''
-        this.abortControllerMap.delete(url)
-
-        if (response.data.code !== 1000) {
-          return Promise.reject(response.data)
-        }
-
-        return response.data
-      },
-      (err) => {
-        if (err.response?.status === 401) {
-          useUserInfoStore.setState({ userInfo: null })
-          window.location.href = `/login?redirect=${window.location.pathname}`
-        }
-
-        return Promise.reject(err)
-      },
-    )
-  }
-
-  // 取消全部请求
-  cancelAllRequest() {
-    for (const [, controller] of this.abortControllerMap) {
-      controller.abort()
+function checkStatus(response: Response) {
+  switch (response.status) {
+    case 418: {
+      return Promise.reject(new Error('用户未登录'))
     }
-    this.abortControllerMap.clear()
-  }
-
-  // 取消指定的请求
-  cancelRequest(url: string | string[]) {
-    const urlList = Array.isArray(url) ? url : [url]
-    for (const _url of urlList) {
-      this.abortControllerMap.get(_url)?.abort()
-      this.abortControllerMap.delete(_url)
+    case 403: {
+      return Promise.reject(new Error('暂无权限'))
     }
-  }
-
-  request<T>(config: AxiosRequestConfig): Promise<T> {
-    return this.instance.request(config)
-  }
-
-  get<T>(url: string, config?: AxiosRequestConfig): Promise<T> {
-    return this.instance.get(url, config)
-  }
-
-  post<T>(url: string, data?: any, config?: AxiosRequestConfig): Promise<T> {
-    return this.instance.post(url, data, config)
+    case 420: {
+      return Promise.reject(new Error('用户已经在其他地方登录'))
+    }
+    case 500:
+      return Promise.reject(new Error('服务器端错误'))
+    case 200:
+    default: {
+      return response.json()
+    }
   }
 }
 
-export const httpClient = new Request({
-  timeout: 20 * 1000,
-  baseURL: import.meta.env.VITE_API_URL,
-})
+function handleSuccess(response: any) {
+  if (response) {
+    return response.response.data || response.data || response
+  }
+
+  if (response.code) {
+    return Promise.reject(response)
+  }
+
+  return Promise.reject(new Error(response.message))
+}
+
+export async function request<T extends keyof ApiMaps, U extends ApiMaps[T]>(
+  url: T,
+  options?: RequestOptions,
+): Promise<U['response']> {
+  let [method, path] = url.split(' ')
+  if (!method) {
+    path = method
+    method = 'GET'
+  }
+
+  const {
+    query = {},
+    params = {},
+    headers = {},
+    hideError,
+    noSpaceId,
+  } = (options || {}) as RequestOptions
+  let { body } = (options || {}) as RequestOptions
+
+  Object.keys(params).forEach((key) => {
+    path = path.replace(`{${key}}`, params[key])
+  })
+
+  if (qs.stringify(query)) {
+    path += `${path.includes('?') ? '&' : '?'}${qs.stringify(query)}`
+  }
+
+  if (!(body instanceof FormData) && typeof body !== 'string') {
+    body = JSON.stringify(body)
+  }
+
+  const locationQuery = qs.parse(window.location.search.slice(1))
+
+  const defaultHeaders: { [k: string]: string } = {
+    name,
+    version,
+    'author.name': author.name,
+    'author.mail': author.mail,
+    'author.github': author.github,
+    license,
+    homepage,
+    repository: repository.url,
+  }
+
+  if (!noSpaceId && locationQuery.sid) {
+    defaultHeaders['space-id'] = locationQuery.sid as string
+  }
+
+  function handleError(error: Error) {
+    if (error?.name !== 'AbortError') {
+      if (!hideError) {
+        message.error(error.message)
+      }
+
+      return Promise.reject(error)
+    }
+    return Promise.resolve('')
+  }
+
+  return fetch(path, {
+    ...options,
+    method,
+    body,
+    headers: {
+      ...defaultHeaders,
+      ...(body instanceof FormData ? {} : { 'content-type': 'application/json' }),
+      ...headers,
+    },
+  })
+    .then(checkStatus)
+    .then(handleSuccess)
+    .catch(handleError)
+}
+
+export default {}
