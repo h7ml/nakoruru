@@ -5,7 +5,7 @@
  * Copyright © www.h7ml.cn All rights reserved
  */
 
-import { MarkerType } from 'react-flow-renderer'
+import { MarkerType } from 'reactflow'
 
 /*
  * @Author: h7ml <h7ml@qq.com>

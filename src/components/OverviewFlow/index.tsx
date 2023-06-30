@@ -1,7 +1,7 @@
 // index.js
 import { useRef, useState } from 'react'
 
-import ReactFlow, { Background, Controls } from 'react-flow-renderer'
+import ReactFlow, { Background, Controls } from 'reactflow'
 import type { Node as Nodes } from '@/types'
 
 const initialElements: Nodes[] = [

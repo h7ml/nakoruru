@@ -1,0 +1,32 @@
+.controls-button {
+  :global {
+    .react-flow__controls-button {
+      background-color: @background-color-base;
+      color: @text-color;
+      border-color: @background-color-base;
+
+      svg {
+        fill: currentColor;
+      }
+
+      &:hover {
+        color: @primary-color;
+      }
+    }
+  }
+}
+
+.mini-map {
+  border: 0;
+  // background: #12131b;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.flow {
+  :global {
+    .react-flow__attribution {
+      display: none;
+    }
+  }
+}

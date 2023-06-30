@@ -4,7 +4,7 @@
  * @lastModified  2023-06-29 14:26:42
  * Copyright © www.h7ml.cn All rights reserved
  */
-import type { Edge } from 'react-flow-renderer'
+import type { Edge } from 'reactflow'
 
 type NodeType = 'input' | 'default' | 'output' | undefined
 

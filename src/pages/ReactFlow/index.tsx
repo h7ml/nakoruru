@@ -15,7 +15,7 @@
  * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.
  */
 import { useCallback, useRef, useState } from 'react'
-import type { Connection, Edge } from 'react-flow-renderer'
+import type { Connection, Edge } from 'reactflow'
 import ReactFlow, {
   Background,
   BackgroundVariant,
@@ -26,7 +26,7 @@ import ReactFlow, {
   addEdge,
   useEdgesState,
   useNodesState,
-} from 'react-flow-renderer'
+} from 'reactflow'
 import { Sidebar } from './components'
 import { uuid } from '@/utils'
 

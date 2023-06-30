@@ -5,6 +5,7 @@ import 'virtual:windi.css'
 import '@/styles/global.less'
 import '@/styles/antd.less'
 import 'reset-css'
+import 'reactflow/dist/style.css'
 
 createRoot(document.getElementById('root') as Element).render(
   <HashRouter basename="/">

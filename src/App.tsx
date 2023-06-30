@@ -4,7 +4,7 @@ import { QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { App as AntdApp, ConfigProvider, message } from 'antd'
 import zhCN from 'antd/locale/zh_CN'
-import { ReactFlowProvider } from 'react-flow-renderer'
+import { ReactFlowProvider } from 'reactflow'
 import { RecoilDevtools, queryClient } from '@/plugins'
 import { GitHubCorners, Loading, ProMain } from '@/components'
 

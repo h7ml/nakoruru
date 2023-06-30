@@ -5,7 +5,7 @@
  * Copyright © www.h7ml.cn All rights reserved
  */
 
-import type { MarkerType } from 'react-flow-renderer'
+import type { MarkerType } from 'reactflow'
 
 export interface Edge {
   id: string

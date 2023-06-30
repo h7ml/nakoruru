@@ -1,4 +1,4 @@
-import ReactFlow, { Background, BackgroundVariant, Controls, MiniMap } from 'react-flow-renderer'
+import ReactFlow, { Background, BackgroundVariant, Controls, MiniMap } from 'reactflow'
 import PropTypes from 'prop-types'
 import type { ReactFlowNodeProps } from '@/types'
 
