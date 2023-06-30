@@ -8,7 +8,7 @@
  * @Author: h7ml <h7ml@qq.com>
  * @Date: 2023-06-30 11:41:10
  * @LastEditors: h7ml <h7ml@qq.com>
- * @LastEditTime: 2023-06-30 11:41:11
+ * @LastEditTime: 2023-06-30 13:48:35
  * @FilePath: /EasyTwin/Users/dtstack/Desktop/yunhu/nakoruru/src/hooks/react-query/ReactFlow/Nodes/node.type.ts
  * @Description:
  *
@@ -34,11 +34,11 @@ export interface Daum {
   position: Position
 }
 
-export interface Data {
+interface Data {
   label: string
 }
 
-export interface Position {
+interface Position {
   x: number
   y: number
 }

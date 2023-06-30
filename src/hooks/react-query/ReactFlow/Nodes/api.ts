@@ -9,7 +9,7 @@
  * @Date: 2023-06-30 11:18:43
  * @LastEditors: h7ml <h7ml@qq.com>
  * @LastEditTime: 2023-06-30 11:43:13
- * @FilePath: /EasyTwin/Users/dtstack/Desktop/yunhu/nakoruru/src/hooks/react-query/ReactFlow/Nodes/api.ts
+ * @FilePath: nakoruru/src/hooks/react-query/ReactFlow/Nodes/api.ts
  * @Description:
  *
  * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.

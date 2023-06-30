@@ -9,7 +9,7 @@
  * @Date: 2023-05-09 16:38:57
  * @LastEditors: h7ml <h7ml@qq.com>
  * @LastEditTime: 2023-06-30 13:41:43
- * @FilePath: /EasyTwin/Users/dtstack/Desktop/yunhu/nakoruru/src/pages/ReactFlow/Edge/index.tsx
+ * @FilePath: nakoruru/src/pages/ReactFlow/Edge/index.tsx
  * @Description:
  *
  * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.

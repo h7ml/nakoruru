@@ -8,37 +8,56 @@
  * @Author: h7ml <h7ml@qq.com>
  * @Date: 2023-06-30 11:41:10
  * @LastEditors: h7ml <h7ml@qq.com>
- * @LastEditTime: 2023-06-30 11:41:11
- * @FilePath: /EasyTwin/Users/dtstack/Desktop/yunhu/nakoruru/src/hooks/react-query/ReactFlow/Nodes/node.type.ts
+ * @LastEditTime: 2023-06-30 13:46:54
+ * @FilePath: nakoruru/src/hooks/react-query/ReactFlow/Edges/edge.type.ts
  * @Description:
  *
  * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.
  */
-export interface Root {
+export interface EdgeRoot {
   success: boolean
   cmd: string
   response: Response
   responseTime: string
 }
 
-export interface Response {
+export interface EdgeResponse {
   code: number
-  data: Daum[]
+  data: EdgeDaum[]
   message: string
 }
 
-export interface Daum {
+export interface EdgeDaum {
   id: string
-  type: string
-  data: Data
-  position: Position
-}
-
-export interface Data {
+  source: string
+  target: string
   label: string
+  className: string
+  type: string
+  animated: boolean
+  style: Style
+  labelStyle: LabelStyle
+  markerEnd: MarkerEnd
+  labelBgPadding: number[]
+  labelBgBorderRadius: number
+  labelBgStyle: LabelBgStyle
 }
 
-export interface Position {
-  x: number
-  y: number
+interface Style {
+  stroke: string
+}
+
+interface LabelStyle {
+  fill: string
+  fontWeight: number
+}
+
+interface MarkerEnd {
+  type: string
+}
+
+interface LabelBgStyle {
+  fill: string
+  color: string
+  fillOpacity: number
 }

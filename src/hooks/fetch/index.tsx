@@ -9,7 +9,7 @@
  * @Date: 2023-05-08 20:41:35
  * @LastEditors: h7ml <h7ml@qq.com>
  * @LastEditTime: 2023-06-30 11:12:54
- * @FilePath: /EasyTwin/Users/dtstack/Desktop/yunhu/nakoruru/src/hooks/fetch/index.tsx
+ * @FilePath: nakoruru/src/hooks/fetch/index.tsx
  * @Description:
  *
  * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.
