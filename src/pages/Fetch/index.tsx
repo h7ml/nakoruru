@@ -8,15 +8,15 @@
  * @Author: h7ml <h7ml@qq.com>
  * @Date: 2023-05-08 20:45:23
  * @LastEditors: h7ml <h7ml@qq.com>
- * @LastEditTime: 2023-06-10 10:24:42
- * @FilePath: \nakoruru\src\pages\Fetch\index.tsx
+ * @LastEditTime: 2023-06-30 17:48:40
+ * @FilePath: /Users/dtstack/Desktop/yunhu/nakoruru/src/pages/Fetch/index.tsx
  * @Description:
  *
  * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.
  */
 import { Table, message } from 'antd'
 import { useEffect } from 'react'
-import { useFetchData } from '@/hooks/useRequest'
+import { useFetchData } from '@/hooks'
 
 interface ColumnsData {
   id: number
