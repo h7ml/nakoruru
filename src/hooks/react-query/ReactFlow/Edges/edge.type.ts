@@ -8,8 +8,8 @@
  * @Author: h7ml <h7ml@qq.com>
  * @Date: 2023-06-30 11:41:10
  * @LastEditors: h7ml <h7ml@qq.com>
- * @LastEditTime: 2023-06-30 13:46:54
- * @FilePath: nakoruru/src/hooks/react-query/ReactFlow/Edges/edge.type.ts
+ * @LastEditTime: 2023-06-30 13:57:53
+ * @FilePath: /Users/dtstack/Desktop/yunhu/nakoruru/src/hooks/react-query/ReactFlow/Edges/edge.type.ts
  * @Description:
  *
  * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.
