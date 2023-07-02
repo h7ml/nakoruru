@@ -1,47 +1,54 @@
-import type { CreateOrderDto, Douban, Menu, UpdateOrderDto, User } from './api.swagger-schema-types'
+import type {
+  CreateReactflowDto,
+  CreateUserDto,
+  Douban,
+  Menu,
+  UpdateReactflowDto,
+  UpdateUserDto,
+} from './api.swagger-schema-types'
 
 interface ApiMaps {
   /** undefined */
-  'GET /api/system/users': {
+  'POST /api/system/user': {
+    request: {
+      body: CreateUserDto
+    }
+    response: boolean
+  }
+
+  /** undefined */
+  'GET /api/system/user': {
     request: {}
     response: boolean
   }
 
   /** undefined */
-  'POST /api/system/users': {
-    request: {
-      body: User
-    }
-    response: boolean
-  }
-
-  /** undefined */
-  'GET /api/system/users/{id}': {
+  'GET /api/system/user/{id}': {
     request: {
       params: {
-        id: number
+        id: string
       }
     }
     response: boolean
   }
 
   /** undefined */
-  'PUT /api/system/users/{id}': {
+  'PATCH /api/system/user/{id}': {
     request: {
       params: {
-        id: number
+        id: string
       }
 
-      body: User
+      body: UpdateUserDto
     }
     response: boolean
   }
 
   /** undefined */
-  'DELETE /api/system/users/{id}': {
+  'DELETE /api/system/user/{id}': {
     request: {
       params: {
-        id: number
+        id: string
       }
     }
     response: boolean
@@ -213,25 +220,25 @@ interface ApiMaps {
   }
 
   /** undefined */
-  'GET /api/hotapi/thepaper/thepaper': {
+  'GET /api/hotapi/thepaper': {
     request: {}
     response: boolean
   }
 
   /** undefined */
-  'GET /api/hotapi/thepaper/thepaper/new': {
+  'GET /api/hotapi/thepaper/new': {
     request: {}
     response: boolean
   }
 
   /** undefined */
-  'GET /api/hotapi/weibo/weibo': {
+  'GET /api/hotapi/weibo': {
     request: {}
     response: boolean
   }
 
   /** undefined */
-  'GET /api/hotapi/weibo/weibo/new': {
+  'GET /api/hotapi/weibo/new': {
     request: {}
     response: boolean
   }
@@ -279,7 +286,7 @@ interface ApiMaps {
   }
 
   /** undefined */
-  'GET /api/iotapi/douban': {
+  'GET /api/hotapi/douban': {
     request: {}
     response: Douban
   }
@@ -291,21 +298,21 @@ interface ApiMaps {
   }
 
   /** undefined */
-  'POST /api/order': {
+  'POST /api/reactflow': {
     request: {
-      body: CreateOrderDto
+      body: CreateReactflowDto
     }
     response: boolean
   }
 
   /** undefined */
-  'GET /api/order': {
+  'GET /api/reactflow': {
     request: {}
     response: boolean
   }
 
   /** undefined */
-  'GET /api/order/{id}': {
+  'GET /api/reactflow/{id}': {
     request: {
       params: {
         id: string
@@ -315,19 +322,19 @@ interface ApiMaps {
   }
 
   /** undefined */
-  'PATCH /api/order/{id}': {
+  'PATCH /api/reactflow/{id}': {
     request: {
       params: {
         id: string
       }
 
-      body: UpdateOrderDto
+      body: UpdateReactflowDto
     }
     response: boolean
   }
 
   /** undefined */
-  'DELETE /api/order/{id}': {
+  'DELETE /api/reactflow/{id}': {
     request: {
       params: {
         id: string

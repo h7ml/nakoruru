@@ -40,7 +40,7 @@ function checkStatus(response: Response) {
 
 function handleSuccess(response: any) {
   if (response) {
-    return response.response.data || response.data || response
+    return response.response?.data ?? response.response ?? response.data ?? response
   }
 
   if (response.code) {

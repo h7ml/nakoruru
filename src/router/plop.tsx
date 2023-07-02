@@ -15,7 +15,7 @@ import { Loading } from '@/components'
 import NotFound from '@/pages/NotFound'
 import Main from '@/components/Layout/Main'
 
-/* pages add */
+/* pages add */ const User = lazy(() => import('@/pages/User'))
 const ThreeScene = lazy(() => import('@/pages/ThreeScene'))
 const Babylon = lazy(() => import('@/pages/Babylon'))
 const Hotapi = lazy(() => import('@/pages/Hotapi'))
@@ -56,6 +56,14 @@ export const routes: ExtendedRouteObject[] = [
         ),
       },
       /* plop add */
+      {
+        path: '/user',
+        element: (
+          <Suspense fallback={<Loading />}>
+            <User />
+          </Suspense>
+        ),
+      },
       {
         path: '/three-scene',
         element: (

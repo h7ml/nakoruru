@@ -8,7 +8,61 @@
  * ---------------------------------------------------------------
  */
 
-export type User = object
+export interface CreateUserDto {
+  /**
+   * 名字
+   * @example "John"
+   */
+  firstName: string
+  /**
+   * 姓
+   * @example "Doe"
+   */
+  lastName: string
+  /**
+   * 电子邮件地址
+   * @example "john.doe@example.com"
+   */
+  email: string
+  /**
+   * 部门
+   * @example "IT"
+   */
+  department: string
+  /**
+   * 状态
+   * @example "Active"
+   */
+  status: string
+}
+
+export interface UpdateUserDto {
+  /**
+   * 名字
+   * @example "John"
+   */
+  firstName: string
+  /**
+   * 姓
+   * @example "Doe"
+   */
+  lastName: string
+  /**
+   * 电子邮件地址
+   * @example "john.doe@example.com"
+   */
+  email: string
+  /**
+   * 部门
+   * @example "IT"
+   */
+  department: string
+  /**
+   * 状态
+   * @example "Active"
+   */
+  status: string
+}
 
 export interface Menu {
   id: number
@@ -22,6 +76,6 @@ export interface Menu {
 
 export type Douban = object
 
-export type CreateOrderDto = object
+export type CreateReactflowDto = object
 
-export type UpdateOrderDto = object
+export type UpdateReactflowDto = object

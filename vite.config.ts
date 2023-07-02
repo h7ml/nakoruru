@@ -174,7 +174,7 @@ export default defineConfig(({ mode }) => {
 
     server: {
       host: '127.0.0.1', // 开启本地服务器，地址为 127.0.0.1
-      port: 5432, // 本地服务器端口号
+      port: 8888, // 本地服务器端口号
       proxy: {
         // 设置代理
         '/api': {
