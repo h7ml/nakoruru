@@ -1,30 +1,40 @@
-/**
- * @author        h7ml <h7ml@qq.com>
- * @date          2023-07-03 05:10:21
- * @lastModified  2023-07-03 05:14:08
- * Copyright © www.h7ml.cn All rights reserved
- */
-/*
- * @Author: h7ml <h7ml@qq.com>
- * @Date: 2023-07-03 05:10:21
- * @LastEditors: h7ml <h7ml@qq.com>
- * @LastEditTime: 2023-07-03 13:30:43
- * @FilePath: /Users/dtstack/Desktop/yunhu/nakoruru/src/hooks/react-query/User/api.ts
- * @Description:
- *
- * Copyright (c) 2023 by h7ml<h7ml@qq.com>, All Rights Reserved.
- */
 import { request } from '@/utils/request'
 import apis from '@/server/constants/api.swagger-constants'
-async function getUserList() {
+import { CreateUserDto, UpdateUserDto } from '@/server/types/api.swagger-types'
+/**
+ * 获取用户列表
+ * @returns
+ */
+async function userList() {
   return request('GET /api/system/user')
 }
-async function editUser(id: number, params: any) {
+
+/**
+ * 更新用户信息
+ * @param id 用户id
+ * @param params  用户信息
+ * @returns
+ */
+async function userEdit(id: number, params: UpdateUserDto) {
   return request(apis.apiSystemUserPatch, { params: { id }, body: params })
 }
 
-async function deleteUser(id: number) {
+/**
+ * 删除用户
+ * @param id 用户id
+ * @returns
+ */
+async function userDelete(id: number) {
   return request(apis.apiSystemUserDelete, { params: { id } })
 }
 
-export const UserApi = { getUserList, editUser, deleteUser }
+/**
+ * 新增用户
+ * @param params 用户信息
+ * @returns
+ */
+async function userCreate(params: CreateUserDto) {
+  return request(apis.apiSystemUserPost, { body: params })
+}
+
+export const UserApi = { userList, userEdit, userDelete, userCreate }
