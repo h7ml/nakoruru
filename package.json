@@ -58,7 +58,7 @@
     "@vitejs/plugin-legacy": "^4.0.5",
     "@vitejs/plugin-react-swc": "^3.3.2",
     "ahooks": "^3.7.8",
-    "antd": "^5.6.3",
+    "antd": "^5.6.4",
     "axios": "^1.4.0",
     "babylonjs": "^6.10.0",
     "cannon": "^0.6.2",
