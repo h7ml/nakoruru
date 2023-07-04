@@ -36,6 +36,20 @@ export interface CreateUserDto {
   status: string
 }
 
+export interface UserDto {
+  id: number
+  firstName: string
+  lastName: string
+  email: string
+  department: string
+  status: string
+}
+
+export interface PaginatedUserDto {
+  data: UserDto[]
+  total: number
+}
+
 export interface UpdateUserDto {
   /**
    * 名字

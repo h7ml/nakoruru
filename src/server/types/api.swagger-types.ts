@@ -3,6 +3,7 @@ import type {
   CreateUserDto,
   Douban,
   Menu,
+  PaginatedUserDto,
   UpdateReactflowDto,
   UpdateUserDto,
 } from './api.swagger-schema-types'
@@ -18,8 +19,21 @@ interface ApiMaps {
 
   /** undefined */
   'GET /api/system/user': {
-    request: {}
-    response: boolean
+    request: {
+      query: {
+        /**
+         * 页码
+         * @example 1
+         */
+        page?: number
+        /**
+         * 每页数量
+         * @example 50
+         */
+        limit?: number
+      }
+    }
+    response: PaginatedUserDto
   }
 
   /** undefined */
