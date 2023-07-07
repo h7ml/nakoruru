@@ -89,7 +89,7 @@
     "reset-css": "^5.0.1",
     "rollup-plugin-license": "^3.0.1",
     "sass": "^1.63.6",
-    "stylelint": "15.9.0",
+    "stylelint": "15.10.1",
     "stylelint-config-recommended": "^12.0.0",
     "stylelint-config-styled-components": "^0.1.1",
     "stylelint-order": "^6.0.3",
