@@ -22,7 +22,7 @@
 
 # Nakoruru
 
-Nakoruru is a React Admin project that utilizes Antd and React 18 to provide a user-friendly and efficient interface for managing data. The project also makes use of Recoil for state management, allowing for a more streamlined and organized codebase.
+Nakoruru is a React Admin project that utilizes Antd and React 18 to provide a user-friendly and efficient interface for managing data. The project also makes use of zustand for state management, allowing for a more streamlined and organized codebase.
 
 With Nakoruru, users can easily view, create, update, and delete data, all within a sleek and modern user interface. The project is highly customizable and can be easily adapted to suit individual needs, making it an excellent choice for businesses and organizations of all sizes.
 
@@ -30,7 +30,7 @@ With Nakoruru, users can easily view, create, update, and delete data, all withi
 
 - User-friendly and efficient interface for managing data
 - Utilizes Antd and React 18 for a modern and sleek UI
-- Makes use of Recoil for streamlined and organized state management
+- Makes use of zustand for streamlined and organized state management
 - Highly customizable and easily adaptable to suit individual needs
 
 ## Installation

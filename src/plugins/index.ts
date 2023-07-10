@@ -8,11 +8,10 @@
  * @Author: h7ml <h7ml@qq.com>
  * @Date: 2023-05-09 14:24:04
  * @LastEditors: h7ml <h7ml@qq.com>
- * @LastEditTime: 2023-05-09 14:24:39
- * @FilePath: \nakoruru\src\plugins\index.ts
+ * @LastEditTime: 2023-07-10 20:29:47
+ * @FilePath: \src\plugins\index.ts
  * @Description:
  *
  * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.
  */
 export * from './ReactQuery'
-export * from './RecoilDevtools'
