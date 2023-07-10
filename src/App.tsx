@@ -5,7 +5,9 @@ import { App as AntdApp, ConfigProvider, message } from 'antd'
 import zhCN from 'antd/locale/zh_CN'
 import { ReactFlowProvider } from 'reactflow'
 import { queryClient } from '@/plugins'
-import { GitHubCorners, Loading, ProMain } from '@/components'
+import { GitHubCorners, Loading, Main } from '@/components'
+import Router from './router';
+
 
 // import router from './router'
 message.config({ maxCount: 3 })
@@ -17,8 +19,8 @@ export default function App() {
           <ReactFlowProvider>
             {/* <DndProvider backend={HTML5Backend}> */}
             <Suspense fallback={<Loading />}>
-              <ProMain />
-              {/* <RouterProvider router={router} /> */}
+              {/* <Main /> */}
+              <Router />
               <GitHubCorners />
             </Suspense>
             {/* </DndProvider> */}

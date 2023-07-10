@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Outlet, useLocation, useNavigate } from 'react-router-dom'
+import { Outlet, Route, Routes, useLocation, useNavigate } from 'react-router-dom'
 import { Layout, Menu } from 'antd'
 import type { MenuProps } from 'antd'
 import { ArrowLeftOutlined, ArrowRightOutlined } from '@ant-design/icons'
@@ -13,7 +13,6 @@ export function Main() {
   const { pathname } = useLocation()
   const [items, setItems] = useState<MenuProps['items']>([])
   const { navState } = useAppRouter()
-  console.log('%c [ navState ]-16', 'font-size:13px; background:pink; color:#bf2c9f;', navState)
 
   const { userInfo } = useLoginStore()
   useEffect(() => {
@@ -23,7 +22,6 @@ export function Main() {
   }, [navigate, userInfo])
   useEffect(() => {
     const item: MenuItem[] = processChildren(navState)
-    console.log('%c [ navState ]-25', 'font-size:13px; background:pink; color:#bf2c9f;', navState)
     console.log('%c [ item ]-25', 'font-size:13px; background:pink; color:#bf2c9f;', item)
     setItems(item)
   }, [navState])
@@ -64,7 +62,7 @@ export function Main() {
           mode="inline"
           defaultSelectedKeys={[pathname]}
           onClick={handleMenuClick}
-          defaultOpenKeys={['/']}
+          defaultOpenKeys={[pathname]}
         >
           {menuItems}
         </Menu>

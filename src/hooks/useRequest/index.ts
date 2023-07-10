@@ -1,34 +1,80 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import type { RequestOptions } from '@/utils/request'
 import { request } from '@/utils/request'
 import type { ApiMaps } from '@/server/api.types'
+import { AxiosResponse } from 'axios'
+export type Response<T> = Promise<[boolean, T, AxiosResponse<T>]>
+
+interface RequestResponse<T> {
+  loading: boolean
+  data: T | undefined
+  error: Error | null
+  run(...params: any): void
+  runAsync(...params: any): Response<T>
+  refresh(): void
+}
 
 export function useRequest<T extends keyof ApiMaps, U extends ApiMaps[T]>(
-  url: T,
+  urlOrServiceMethod: T | ((...args: any) => Response<U['response']>),
   options?: RequestOptions,
-) {
-  const [loading, setLoading] = useState(false)
-  const [data, setData] = useState<U['response'] | null>(null)
+): RequestResponse<U['response']> {
+  const [loading, setLoading] = useState<boolean>(false)
+  const [data, setData] = useState<U['response']>()
   const [error, setError] = useState<Error | null>(null)
+  const paramsRef = useRef<any[]>([])
+
+  const resolveData = useCallback(async () => {
+    setLoading(true)
+    let response
+    if (typeof urlOrServiceMethod === 'string') {
+      response = await request(urlOrServiceMethod, options)
+    } else {
+      response = await urlOrServiceMethod(...paramsRef.current)
+    }
+    setLoading(false)
+    setData(response)
+  }, [urlOrServiceMethod, options])
+
+  const runAsync = useCallback(
+    async (...params: any) => {
+      paramsRef.current = params
+      setLoading(true)
+      let response
+      if (typeof urlOrServiceMethod === 'string') {
+        response = await request(urlOrServiceMethod, options)
+      } else {
+        response = await urlOrServiceMethod(...params)
+      }
+      setLoading(false)
+      setData(response)
+      return response
+    },
+    [urlOrServiceMethod, options],
+  )
+
+  const run = useCallback(
+    async (...params: any) => {
+      await runAsync(...params)
+    },
+    [runAsync],
+  )
+
+  const refresh = useCallback(() => {
+    runAsync(...paramsRef.current)
+  }, [runAsync])
 
   useEffect(() => {
-    setLoading(true)
-    request(url, options)
-      .then((res) => {
-        console.log('%c [ res ]-18', 'font-size:13px; background:pink; color:#bf2c9f;', res)
-        setLoading(false)
-        setData(res)
-      })
-      .catch((error) => {
-        setLoading(false)
-        setError(error)
-      })
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [url, JSON.stringify(options)])
+    if (!options?.manual) {
+      resolveData()
+    }
+  }, [options, resolveData])
 
   return {
+    loading,
     data,
     error,
-    loading,
+    run,
+    runAsync,
+    refresh,
   }
 }

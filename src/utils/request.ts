@@ -1,6 +1,13 @@
 import qs from 'qs'
 import { message } from 'antd'
-import { author, homepage, license, name, repository, version } from '../../package.json'
+import {
+  author,
+  homepage,
+  license,
+  name,
+  repository,
+  version,
+} from '../../package.json'
 import type { ApiMaps } from '@/server/api.types'
 
 export interface RequestOptions extends Omit<RequestInit, 'body'> {
@@ -9,6 +16,8 @@ export interface RequestOptions extends Omit<RequestInit, 'body'> {
   body?: FormData | Record<string, any> | string
   hideError?: boolean
   noSpaceId?: boolean
+  manual?: boolean
+  defaultParams?: any[]
 }
 
 interface ResponseData {
@@ -40,7 +49,9 @@ function checkStatus(response: Response) {
 
 function handleSuccess(response: any) {
   if (response) {
-    return response.response?.data ?? response.response ?? response.data ?? response
+    return (
+      response.response?.data ?? response.response ?? response.data ?? response
+    )
   }
 
   if (response.code) {
@@ -115,7 +126,9 @@ export async function request<T extends keyof ApiMaps, U extends ApiMaps[T]>(
     body,
     headers: {
       ...defaultHeaders,
-      ...(body instanceof FormData ? {} : { 'content-type': 'application/json' }),
+      ...(body instanceof FormData
+        ? {}
+        : { 'content-type': 'application/json' }),
       ...headers,
     },
   })
