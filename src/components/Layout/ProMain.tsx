@@ -1,15 +1,15 @@
 /**
  * @author        h7ml <h7ml@qq.com>
  * @date          2023-05-11 14:17:33
- * @lastModified  2023-06-29 13:27:49
+ * @lastModified  2023-07-10 13:13:33
  * Copyright © www.h7ml.cn All rights reserved
  */
 /*
  * @Author: h7ml <h7ml@qq.com>
  * @Date: 2023-05-11 14:17:33
  * @LastEditors: h7ml <h7ml@qq.com>
- * @LastEditTime: 2023-06-29 13:27:46
- * @FilePath: /nakoruru/src/components/Layout/ProMain.tsx
+ * @LastEditTime: 2023-07-10 13:13:31
+ * @FilePath: /Users/dtstack/Desktop/yunhu/nakoruru/src/components/Layout/ProMain.tsx
  * @Description:
  *
  * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.
@@ -33,16 +33,23 @@ import {
   SettingDrawer,
 } from '@ant-design/pro-components'
 import { Dropdown, Input, theme } from 'antd'
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { useRecoilValue } from 'recoil'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { repository } from '../../../package.json'
 import Router from '@/router'
 import { VisibleState, navState, useLoginStore } from '@/store'
 import { processChildren } from '@/utils/menu'
+import { useClickAway } from 'ahooks';
 
 function SearchInput() {
   const { token } = theme.useToken()
+  const toggleVisibility = VisibleState((state) => state.toggleVisibility)
+  const ref = useRef<HTMLDivElement>(null);
+  useClickAway(() => {
+    console.error('click away')
+    toggleVisibility()
+  }, ref);
   return (
     <div
       key="SearchOutlined"
@@ -65,6 +72,7 @@ function SearchInput() {
         }}
         prefix={
           <SearchOutlined
+            ref={ref}
             style={{
               color: token.colorTextLightSolid,
             }}
