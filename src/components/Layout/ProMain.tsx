@@ -1,15 +1,15 @@
 /**
  * @author        h7ml <h7ml@qq.com>
  * @date          2023-05-11 14:17:33
- * @lastModified  2023-07-10 13:13:33
+ * @lastModified  2023-07-10 20:29:11
  * Copyright © www.h7ml.cn All rights reserved
  */
 /*
  * @Author: h7ml <h7ml@qq.com>
  * @Date: 2023-05-11 14:17:33
  * @LastEditors: h7ml <h7ml@qq.com>
- * @LastEditTime: 2023-07-10 13:13:31
- * @FilePath: /Users/dtstack/Desktop/yunhu/nakoruru/src/components/Layout/ProMain.tsx
+ * @LastEditTime: 2023-07-10 21:09:45
+ * @FilePath: \src\components\Layout\ProMain.tsx
  * @Description:
  *
  * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.
@@ -30,26 +30,24 @@ import {
   ProCard,
   ProConfigProvider,
   ProLayout,
-  SettingDrawer,
 } from '@ant-design/pro-components'
 import { Dropdown, Input, theme } from 'antd'
 import React, { useRef, useState } from 'react'
-import { useRecoilValue } from 'recoil'
 import { useLocation, useNavigate } from 'react-router-dom'
+import { useClickAway } from 'ahooks'
 import { repository } from '../../../package.json'
 import Router from '@/router'
-import { VisibleState, navState, useLoginStore } from '@/store'
+import { useAppRouter, useLoginStore, useVisibleState } from '@/store'
 import { processChildren } from '@/utils/menu'
-import { useClickAway } from 'ahooks';
 
 function SearchInput() {
+  const { visible, toggleVisibility } = useVisibleState()
   const { token } = theme.useToken()
-  const toggleVisibility = VisibleState((state) => state.toggleVisibility)
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLDivElement>(null)
   useClickAway(() => {
     console.error('click away')
     toggleVisibility()
-  }, ref);
+  }, ref)
   return (
     <div
       key="SearchOutlined"
@@ -92,6 +90,7 @@ function SearchInput() {
 }
 
 export const ProMain: React.FC = () => {
+  const { navState } = useAppRouter()
   const history = useNavigate()
   const repo = repository as { url: string }
   const [settings, setSetting] = useState<Partial<ProSettings> | undefined>({
@@ -107,7 +106,6 @@ export const ProMain: React.FC = () => {
     fixedHeader: true,
   })
 
-  const navStateValue = useRecoilValue(navState)
   const getNav = (navValue: any) => {
     const response = processChildren(navValue)
     return {
@@ -130,7 +128,7 @@ export const ProMain: React.FC = () => {
     navigate('/login')
     setUserInfo({ username: '', password: '' })
   }
-  const toggleVisibility = VisibleState((state) => state.toggleVisibility)
+  const { visible, toggleVisibility } = useVisibleState()
   return (
     <div
       id="test-pro-layout"
@@ -180,7 +178,7 @@ export const ProMain: React.FC = () => {
               }
             />
           )}
-          route={getNav(navStateValue)}
+          route={getNav(navState)}
           location={{
             pathname,
           }}

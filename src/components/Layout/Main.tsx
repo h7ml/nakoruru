@@ -1,12 +1,10 @@
 import { useEffect, useState } from 'react'
-import type { RouteObject } from 'react-router-dom'
 import { Outlet, useLocation, useNavigate } from 'react-router-dom'
 import { Layout, Menu } from 'antd'
 import type { MenuProps } from 'antd'
-import { useRecoilValue } from 'recoil'
 import { ArrowLeftOutlined, ArrowRightOutlined } from '@ant-design/icons'
-import { navState, useLoginStore } from '@/store'
-import type { MenuItem, NavItem } from '@/utils/menu'
+import { useAppRouter, useLoginStore } from '@/store'
+import type { MenuItem } from '@/utils/menu'
 import { processChildren } from '@/utils/menu'
 
 const { Header, Sider, Content } = Layout
@@ -14,7 +12,8 @@ export function Main() {
   const navigate = useNavigate()
   const { pathname } = useLocation()
   const [items, setItems] = useState<MenuProps['items']>([])
-  const navstatevalue = useRecoilValue<RouteObject[]>(navState) as NavItem[]
+  const { navState } = useAppRouter()
+  console.log('%c [ navState ]-16', 'font-size:13px; background:pink; color:#bf2c9f;', navState)
 
   const { userInfo } = useLoginStore()
   useEffect(() => {
@@ -23,9 +22,11 @@ export function Main() {
     }
   }, [navigate, userInfo])
   useEffect(() => {
-    const item: MenuItem[] = processChildren(navstatevalue)
+    const item: MenuItem[] = processChildren(navState)
+    console.log('%c [ navState ]-25', 'font-size:13px; background:pink; color:#bf2c9f;', navState)
+    console.log('%c [ item ]-25', 'font-size:13px; background:pink; color:#bf2c9f;', item)
     setItems(item)
-  }, [navstatevalue])
+  }, [navState])
   const [collapsed, setCollapsed] = useState(false)
 
   const handleMenuClick = ({ key }: { key: string }) => {
