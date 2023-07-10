@@ -1,7 +1,7 @@
 /*
  * @author        h7ml <h7ml@qq.com>
  * @date          2023-05-12 23:29:07
- * @lastModified  2023-06-10 10:47:24
+ * @lastModified  2023-07-10 12:45:12
  * Copyright © www.h7ml.cn All rights reserved
  */
 .ant-pro-global-footer,
@@ -16,12 +16,17 @@
   line-height: 50px;
 }
 
-// .ant-pro-page-container-children-container,
-// .ant-pro-card-body,
-// .ant-pro-card {
-//   padding: 0;
-//   margin: 0;
-//   overflow-y: auto;
-//   display: flex;
-//   flex: 1;
-// }
+.ant-pro-page-container-children-container,
+.ant-pro-card-body,
+.ant-pro-card,
+.ant-pro-card .ant-pro-card-body {
+  padding: 0;
+  margin: 0;
+  overflow-y: auto;
+  display: flex;
+  flex: 1;
+}
+
+.ant-pro-grid-content-wide {
+  max-width: 100% !important;
+}

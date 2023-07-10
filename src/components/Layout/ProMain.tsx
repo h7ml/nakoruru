@@ -288,7 +288,7 @@ export const ProMain: React.FC = () => {
             </ProCard>
           </PageContainer>
 
-          <SettingDrawer
+          {/* <SettingDrawer
             pathname={pathname}
             enableDarkTheme
             getContainer={() => document.getElementById('test-pro-layout')}
@@ -297,7 +297,7 @@ export const ProMain: React.FC = () => {
               setSetting(changeSetting)
             }}
             disableUrlParams={false}
-          />
+          /> */}
         </ProLayout>
       </ProConfigProvider>
     </div>

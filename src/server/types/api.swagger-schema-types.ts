@@ -1,3 +1,4 @@
+/* eslint-disable */
 /* tslint:disable */
 /*
  * ---------------------------------------------------------------
@@ -93,3 +94,9 @@ export type Douban = object
 export type CreateReactflowDto = object
 
 export type UpdateReactflowDto = object
+
+export type CreateDatabaseDto = object
+
+export type Database = object
+
+export type UpdateDatabaseDto = object
