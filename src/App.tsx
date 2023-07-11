@@ -6,8 +6,9 @@ import zhCN from 'antd/locale/zh_CN'
 import { ReactFlowProvider } from 'reactflow'
 import { queryClient } from '@/plugins'
 import { GitHubCorners, Loading, Main } from '@/components'
-import Router from './router';
-
+// import Router from './router';
+import { RouterProvider } from 'react-router-dom'
+import { routes } from './router/plop'
 
 // import router from './router'
 message.config({ maxCount: 3 })
@@ -20,7 +21,8 @@ export default function App() {
             {/* <DndProvider backend={HTML5Backend}> */}
             <Suspense fallback={<Loading />}>
               {/* <Main /> */}
-              <Router />
+              {/* <Router /> */}
+              <RouterProvider router={routes} />
               <GitHubCorners />
             </Suspense>
             {/* </DndProvider> */}

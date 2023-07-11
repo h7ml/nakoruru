@@ -8,7 +8,7 @@
  * @Author: h7ml <h7ml@qq.com>
  * @Date: 2023-07-10 22:56:39
  * @LastEditors: h7ml <h7ml@qq.com>
- * @LastEditTime: 2023-07-11 07:41:41
+ * @LastEditTime: 2023-07-11 21:05:11
  * @FilePath: \src\components\Layout\BasicLayout.tsx
  * @Description: 
  * 
@@ -23,8 +23,8 @@ import Slide from './slide';
 import Header from './header';
 import Content from './content';
 import { useUserStore } from '@/store';
-// import { Menu } from '@/pages/user/service';
-// import { components } from '@/config/routes';
+import { Menu } from '@/pages/user/service';
+import { components } from '@/config/routes';
 import { routes } from '@/router/plop'
 import { replaceRoutes } from '@/router';
 import Result404 from '@/pages/404';
@@ -293,82 +293,82 @@ const BasicLayout: React.FC = () => {
   }
 
 
-  useEffect(() => {
-    if (!refreshToken) {
-      navigate('/login');
-      return;
-    }
-    getCurrentUserDetail();
-  }, [refreshToken, getCurrentUserDetail, navigate]);
+  // useEffect(() => {
+  //   if (!refreshToken) {
+  //     navigate('/login');
+  //     return;
+  //   }
+  //   getCurrentUserDetail();
+  // }, [refreshToken, getCurrentUserDetail, navigate]);
 
-  useEffect(() => {
-    if (!currentUserDetail) return;
+  // useEffect(() => {
+  //   if (!currentUserDetail) return;
 
-    const { menus = [] } = currentUserDetail;
+  //   const { menus = [] } = currentUserDetail;
 
-    const menuGroup = menus.reduce<Record<string, Menu[]>>((prev, menu) => {
-      if (!menu.parentId) {
-        return prev;
-      }
+  //   const menuGroup = menus.reduce<Record<string, Menu[]>>((prev, menu) => {
+  //     if (!menu.parentId) {
+  //       return prev;
+  //     }
 
-      if (!prev[menu.parentId]) {
-        prev[menu.parentId] = [];
-      }
+  //     if (!prev[menu.parentId]) {
+  //       prev[menu.parentId] = [];
+  //     }
 
-      prev[menu.parentId].push(menu);
-      return prev;
-    }, {});
+  //     prev[menu.parentId].push(menu);
+  //     return prev;
+  //   }, {});
 
-    const routes: Menu[] = [];
+  //   const routes: Menu[] = [];
 
-    currentUserDetail.menus = formatMenus(menus.filter(o => !o.parentId), menuGroup, routes);
+  //   currentUserDetail.menus = formatMenus(menus.filter(o => !o.parentId), menuGroup, routes);
 
-    replaceRoutes('*', [...routes.map(menu => ({
-      path: `/*${menu.path}`,
-      Component: menu.filePath ? lazy(components[menu.filePath]) : null,
-      id: `/*${menu.path}`,
-      handle: {
-        parentPaths: menu.parentPaths,
-        path: menu.path,
-      },
-    })), {
-      id: '*',
-      path: '*',
-      Component: Result404,
-    }, {
-      id: '/*/',
-      path: '/*/',
-      element: (
-        <Navigate to="/dashboard" />
-      ),
-    }]);
+  //   replaceRoutes('*', [...routes.map(menu => ({
+  //     path: `/*${menu.path}`,
+  //     Component: menu.filePath ? lazy(components[menu.filePath]) : null,
+  //     id: `/*${menu.path}`,
+  //     handle: {
+  //       parentPaths: menu.parentPaths,
+  //       path: menu.path,
+  //     },
+  //   })), {
+  //     id: '*',
+  //     path: '*',
+  //     Component: Result404,
+  //   }, {
+  //     id: '/*/',
+  //     path: '/*/',
+  //     element: (
+  //       <Navigate to="/dashboard" />
+  //     ),
+  //   }]);
 
-    setCurrentUser(currentUserDetail);
-    setLoading(false);
+  //   setCurrentUser(currentUserDetail);
+  //   setLoading(false);
 
-    // replace一下当前路由，为了触发路由匹配
-    routes.navigate(`${location.pathname}${location.search}`, { replace: true });
-  }, [currentUserDetail, setCurrentUser]);
+  //   // replace一下当前路由，为了触发路由匹配
+  //   routes.navigate(`${location.pathname}${location.search}`, { replace: true });
+  // }, [currentUserDetail, setCurrentUser]);
 
-  useEffect(() => {
-    function storageChange(e: StorageEvent) {
-      if (e.key === useGlobalStore.persist.getOptions().name) {
-        useGlobalStore.persist.rehydrate();
-      }
-    }
+  // useEffect(() => {
+  //   function storageChange(e: StorageEvent) {
+  //     if (e.key === useGlobalStore.persist.getOptions().name) {
+  //       useGlobalStore.persist.rehydrate();
+  //     }
+  //   }
 
-    window.addEventListener<'storage'>('storage', storageChange);
+  //   window.addEventListener<'storage'>('storage', storageChange);
 
-    return () => {
-      window.removeEventListener<'storage'>('storage', storageChange);
-    }
-  }, []);
+  //   return () => {
+  //     window.removeEventListener<'storage'>('storage', storageChange);
+  //   }
+  // }, []);
 
-  if (loading || !currentUser) {
-    return (
-      <GloablLoading />
-    )
-  }
+  // if (loading || !currentUser) {
+  //   return (
+  //     <GloablLoading />
+  //   )
+  // }
 
   return (
     <div key={lang} className='bg-primary overflow-hidden'>

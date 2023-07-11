@@ -8,7 +8,7 @@
  * @Author: h7ml <h7ml@qq.com>
  * @Date: 2023-07-10 22:57:42
  * @LastEditors: h7ml <h7ml@qq.com>
- * @LastEditTime: 2023-07-11 07:26:02
+ * @LastEditTime: 2023-07-11 22:45:20
  * @FilePath: \src\components\Layout\header\index.tsx
  * @Description: 
  * 
@@ -27,6 +27,7 @@ import { useGlobalStore, useUserStore } from '@/store';
 import { i18n, t } from '@/utils/i18n';
 import { BellOutlined, MenuOutlined, SettingOutlined } from '@ant-design/icons';
 import { useRequest } from '@/hooks';
+import { useNavigate } from 'react-router-dom';
 // import loginService from '@/pages/login/service';
 
 const Header = () => {
@@ -42,12 +43,10 @@ const Header = () => {
 
   const { currentUser } = useUserStore();
 
-  // const { runAsync } = useRequest(loginService.logout, { manual: true });
+  const navigate = useNavigate()
 
   const logout = async () => {
-    // const [error] = await runAsync();
-    // if (error) return;
-
+    navigate('/login', { replace: true })
     useGlobalStore.setState({
       token: '',
       refreshToken: ''
@@ -62,7 +61,7 @@ const Header = () => {
       <div style={{ width: defaultSetting.slideWidth }} className="<lg:hidden flex justify-between items-center">
         <div className='flex items-center gap-[4px] text-[20px] px-[24px] pr-0'>
           <IconBuguang className="text-blue-500" />
-          <h1 className='text-primary font-bold text-[22px]'>fluxy-admin</h1>
+          <h1 className='text-primary font-bold text-[22px]'>nakoruru</h1>
         </div>
         <div
           className='btn-icon'

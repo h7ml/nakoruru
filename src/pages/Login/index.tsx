@@ -14,7 +14,7 @@ import {
   ProFormCheckbox,
   ProFormText,
 } from '@ant-design/pro-components'
-import { Button, Divider, Space, Tabs, message } from 'antd'
+import { Button, Divider, Space, Tabs, App } from 'antd'
 import type { CSSProperties } from 'react'
 import { useLoginStore } from '@/store'
 
@@ -32,6 +32,7 @@ function delay(ms: number) {
 }
 
 function Login() {
+  const {message} = App.useApp();
   const [loginType, setLoginType] = useState<LoginType>('account')
   const { setUserInfo } = useLoginStore()
   const navigate = useNavigate()
@@ -39,7 +40,7 @@ function Login() {
     return delay(1000).then(() => {
       message.success('登录成功🎉🎉🎉')
       setUserInfo(values)
-      navigate('/', { replace: true })
+      navigate('/tree', { replace: true })
     })
   }
   return (

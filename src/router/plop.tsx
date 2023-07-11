@@ -2,7 +2,7 @@
  * @Author: h7ml <h7ml@qq.com>
  * @Date: 2023-05-22 12:57:40
  * @LastEditors: h7ml <h7ml@qq.com>
- * @LastEditTime: 2023-07-11 07:43:51
+ * @LastEditTime: 2023-07-11 22:49:32
  * @FilePath: \src\router\plop.tsx
  * @Description:
  *
@@ -27,93 +27,93 @@ const Home = lazy(() => import('@/pages/Home'))
 type ExtendedRouteObject = RouteObject & { hidden?: boolean }
 
 export const routes: ExtendedRouteObject[] =
-  // createBrowserRouter(
-  [
-    {
-      path: '/',
-      element: <BasicLayout />,
-      children: [
-        {
-          path: '/',
-          element: (
-            <Suspense fallback={<Loading />}>
-              <Home />
-            </Suspense>
-          ),
-        },
-        ...LazyRouter(),
-        {
-          path: '/tree',
-          element: (
-            <Suspense fallback={<Loading />}>
-              <Tree />
-            </Suspense>
-          ),
-        },
-        {
-          path: '/flow',
-          element: (
-            <Suspense fallback={<Loading />}>
-              <Flow />
-            </Suspense>
-          ),
-        },
-        /* plop add */
-        {
-          path: '/table',
-          element: (
-            <Suspense fallback={<Loading />}>
-              <Table />
-            </Suspense>
-          ),
-        },
-        {
-          path: '/user',
-          element: (
-            <Suspense fallback={<Loading />}>
-              <User />
-            </Suspense>
-          ),
-        },
-        {
-          path: '/three-scene',
-          element: (
-            <Suspense fallback={<Loading />}>
-              <ThreeScene />
-            </Suspense>
-          ),
-        },
-        {
-          path: '/babylon',
-          element: (
-            <Suspense fallback={<Loading />}>
-              <Babylon />
-            </Suspense>
-          ),
-        },
-        {
-          path: '/hotapi',
-          element: (
-            <Suspense fallback={<Loading />}>
-              <Hotapi />
-            </Suspense>
-          ),
-        },
-      ],
-    },
-    {
-      path: '/login',
-      hidden: true,
-      element: (
-        <Suspense fallback={<Loading />}>
-          <Login />
-        </Suspense>
-      ),
-    },
-    {
-      path: '*',
-      hidden: true,
-      element: <NotFound />,
-    },
-  ]
-// )
+  createBrowserRouter(
+    [
+      {
+        path: '/',
+        element: <BasicLayout />,
+        children: [
+          // {
+          //   path: '/',
+          //   element: (
+          //     <Suspense fallback={<Loading />}>
+          //       <Home />
+          //     </Suspense>
+          //   ),
+          // },
+          ...LazyRouter(),
+          {
+            path: '/tree',
+            element: (
+              <Suspense fallback={<Loading />}>
+                <Tree />
+              </Suspense>
+            ),
+          },
+          {
+            path: '/flow',
+            element: (
+              <Suspense fallback={<Loading />}>
+                <Flow />
+              </Suspense>
+            ),
+          },
+          /* plop add */
+          {
+            path: '/table',
+            element: (
+              <Suspense fallback={<Loading />}>
+                <Table />
+              </Suspense>
+            ),
+          },
+          {
+            path: '/user',
+            element: (
+              <Suspense fallback={<Loading />}>
+                <User />
+              </Suspense>
+            ),
+          },
+          {
+            path: '/three-scene',
+            element: (
+              <Suspense fallback={<Loading />}>
+                <ThreeScene />
+              </Suspense>
+            ),
+          },
+          {
+            path: '/babylon',
+            element: (
+              <Suspense fallback={<Loading />}>
+                <Babylon />
+              </Suspense>
+            ),
+          },
+          {
+            path: '/hotapi',
+            element: (
+              <Suspense fallback={<Loading />}>
+                <Hotapi />
+              </Suspense>
+            ),
+          },
+        ],
+      },
+      {
+        path: '/login',
+        hidden: true,
+        element: (
+          <Suspense fallback={<Loading />}>
+            <Login />
+          </Suspense>
+        ),
+      },
+      {
+        path: '*',
+        hidden: true,
+        element: <NotFound />,
+      },
+    ]
+  )

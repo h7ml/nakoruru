@@ -8,7 +8,7 @@
  * @Author: h7ml <h7ml@qq.com>
  * @Date: 2023-07-10 22:58:42
  * @LastEditors: h7ml <h7ml@qq.com>
- * @LastEditTime: 2023-07-11 07:23:40
+ * @LastEditTime: 2023-07-11 22:59:51
  * @FilePath: \src\components\Layout\slide\menus.tsx
  * @Description: 
  * 
@@ -19,7 +19,7 @@ import { Menu } from 'antd';
 import type { ItemType } from 'antd/es/menu/hooks/useItems';
 import { Link, useMatches } from 'react-router-dom';
 
-import { useGlobalStore, useUserStore } from '@/store';
+import { useAppRouter, useGlobalStore, useUserStore } from '@/store';
 import { antdIcons } from '@/assets/antd-icons';
 export interface MenuType {
   id: string;
@@ -54,18 +54,20 @@ const SlideMenu = () => {
 
   useEffect(() => {
     if (collapsed) {
-      setOpenKeys([]);
+      setOpenKeys(['/']);
     } else {
       const [match] = matches || [];
       if (match) {
         // 获取当前匹配的路由，默认为最后一个
         const route = matches.at(-1);
+        setOpenKeys(['/']);
         // 从匹配的路由中取出自定义参数
-        const handle = route?.handle as any;
+        // const handle = route?.pathname as any;
+        // console.log('%c [ handle ]-65', 'font-size:13px; background:pink; color:#bf2c9f;', handle)
         // 从自定义参数中取出上级path，让菜单自动展开
-        setOpenKeys(handle?.parentPaths || []);
-        // 让当前菜单和所有上级菜单高亮显示
-        setSelectKeys([...(handle?.parentPaths || []), handle?.path] || []);
+        // setOpenKeys([route.pathname] || []);
+        // // 让当前菜单和所有上级菜单高亮显示
+        // setSelectKeys([...([route?.pathname ?? '/'] || []), route?.pathname ?? '/'] || []);
       }
     }
   }, [
@@ -74,18 +76,15 @@ const SlideMenu = () => {
   ]);
 
   const getMenuTitle = (menu: MenuType) => {
-    if (menu?.children?.filter(menu => menu.show)?.length) {
-      return menu.name;
-    }
     return (
-      <Link to={menu.path}>{menu.name}</Link>
+      menu.hidden ? null : <Link to={menu.path}>{menu.path}</Link>
     );
   }
 
   const treeMenuData = useCallback((menus: MenuType[]): ItemType[] => {
-    return (menus)
+    const result: ItemType[] = menus
       .map((menu: MenuType) => {
-        const children = menu?.children?.filter(menu => menu.show) || [];
+        const children = menu?.children || [];
         return {
           key: menu.path,
           label: getMenuTitle(menu),
@@ -93,23 +92,23 @@ const SlideMenu = () => {
           children: children.length ? treeMenuData(children || []) : null,
         };
       })
+    return result
   }, []);
 
-
+  const { navState } = useAppRouter()
   const menuData = useMemo(() => {
-    return treeMenuData(currentUser?.menus?.filter(menu => menu.show) || []);
-  }, [currentUser]);
-
-
+    return treeMenuData(navState.routes || []);;
+  }, [navState]);
   return (
     <Menu
       className='bg-primary color-transition'
       mode="inline"
+      defaultOpenKeys={['/']}
       selectedKeys={selectKeys}
       style={{ height: '100%', borderRight: 0 }}
       items={menuData}
       inlineCollapsed={collapsed}
-      openKeys={openKeys}
+      openKeys={['/']}
       onOpenChange={setOpenKeys}
     />
   )
