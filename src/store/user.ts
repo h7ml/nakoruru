@@ -31,8 +31,7 @@ export const useUserStore = create<State & Action>()(
     (set) => {
       return {
         currentUser: null,
-        setCurrentUser: (currentUser: State['currentUser']) =>
-          set({ currentUser }),
+        setCurrentUser: (currentUser: State['currentUser']) => set({ currentUser }),
       }
     },
     { name: 'globalUserStore' },

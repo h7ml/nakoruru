@@ -102,14 +102,14 @@ export default function ReactFlowInfo() {
                   input: '#0041d0',
                   default: 'pink',
                   output: '#ff0072',
-                }[n.type] || '#eee')
+                })[n.type] || '#eee'
               }
               nodeColor={(n) =>
                 ({
                   input: '#0041d0',
                   default: 'pink',
                   output: '#ff0072',
-                }[n.type] || '#eee')
+                })[n.type] || '#eee'
               }
             />
             <Background variant={BackgroundVariant.Dots} />

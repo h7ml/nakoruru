@@ -10,57 +10,52 @@
  * @LastEditors: h7ml <h7ml@qq.com>
  * @LastEditTime: 2023-07-11 22:59:51
  * @FilePath: \src\components\Layout\slide\menus.tsx
- * @Description: 
- * 
- * Copyright (c) 2023 by h7ml<h7ml@qq.com>, All Rights Reserved. 
+ * @Description:
+ *
+ * Copyright (c) 2023 by h7ml<h7ml@qq.com>, All Rights Reserved.
  */
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { Menu } from 'antd';
-import type { ItemType } from 'antd/es/menu/hooks/useItems';
-import { Link, useMatches } from 'react-router-dom';
+import React, { useCallback, useEffect, useMemo, useState } from 'react'
+import { Menu } from 'antd'
+import type { ItemType } from 'antd/es/menu/hooks/useItems'
+import { Link, useMatches } from 'react-router-dom'
 
-import { useAppRouter, useGlobalStore, useUserStore } from '@/store';
-import { antdIcons } from '@/assets/antd-icons';
+import { useAppRouter, useGlobalStore, useUserStore } from '@/store'
+import { antdIcons } from '@/assets/antd-icons'
 export interface MenuType {
-  id: string;
-  parentId?: string;
-  name?: string;
-  icon?: string;
-  type?: number;
-  route?: string;
-  filePath?: string;
-  orderNumber?: number;
-  url?: string;
-  show?: boolean;
-  children?: MenuType[];
-  path: string;
-  Component?: any;
-  parentPaths?: string[];
+  id: string
+  parentId?: string
+  name?: string
+  icon?: string
+  type?: number
+  route?: string
+  filePath?: string
+  orderNumber?: number
+  url?: string
+  show?: boolean
+  children?: MenuType[]
+  path: string
+  Component?: any
+  parentPaths?: string[]
 }
 const SlideMenu = () => {
+  const matches = useMatches()
 
-  const matches = useMatches();
+  const [openKeys, setOpenKeys] = useState<string[]>([])
+  const [selectKeys, setSelectKeys] = useState<string[]>([])
 
-  const [openKeys, setOpenKeys] = useState<string[]>([]);
-  const [selectKeys, setSelectKeys] = useState<string[]>([]);
+  const { collapsed } = useGlobalStore()
 
-  const {
-    collapsed,
-  } = useGlobalStore();
-
-  const {
-    currentUser,
-  } = useUserStore();
+  const { currentUser } = useUserStore()
 
   useEffect(() => {
     if (collapsed) {
-      setOpenKeys(['/']);
+      setOpenKeys(['/'])
     } else {
-      const [match] = matches || [];
+      const [match] = matches || []
       if (match) {
         // 获取当前匹配的路由，默认为最后一个
-        const route = matches.at(-1);
-        setOpenKeys(['/']);
+        const route = matches.at(-1)
+        setOpenKeys(['/'])
         // 从匹配的路由中取出自定义参数
         // const handle = route?.pathname as any;
         // console.log('%c [ handle ]-65', 'font-size:13px; background:pink; color:#bf2c9f;', handle)
@@ -70,38 +65,32 @@ const SlideMenu = () => {
         // setSelectKeys([...([route?.pathname ?? '/'] || []), route?.pathname ?? '/'] || []);
       }
     }
-  }, [
-    matches,
-    collapsed,
-  ]);
+  }, [matches, collapsed])
 
   const getMenuTitle = (menu: MenuType) => {
-    return (
-      menu.hidden ? null : <Link to={menu.path}>{menu.path}</Link>
-    );
+    return menu.hidden ? null : <Link to={menu.path}>{menu.path}</Link>
   }
 
   const treeMenuData = useCallback((menus: MenuType[]): ItemType[] => {
-    const result: ItemType[] = menus
-      .map((menu: MenuType) => {
-        const children = menu?.children || [];
-        return {
-          key: menu.path,
-          label: getMenuTitle(menu),
-          icon: menu.icon && antdIcons[menu.icon] && React.createElement(antdIcons[menu.icon]),
-          children: children.length ? treeMenuData(children || []) : null,
-        };
-      })
+    const result: ItemType[] = menus.map((menu: MenuType) => {
+      const children = menu?.children || []
+      return {
+        key: menu.path,
+        label: getMenuTitle(menu),
+        icon: menu.icon && antdIcons[menu.icon] && React.createElement(antdIcons[menu.icon]),
+        children: children.length ? treeMenuData(children || []) : null,
+      }
+    })
     return result
-  }, []);
+  }, [])
 
   const { navState } = useAppRouter()
   const menuData = useMemo(() => {
-    return treeMenuData(navState.routes || []);;
-  }, [navState]);
+    return treeMenuData(navState.routes || [])
+  }, [navState])
   return (
     <Menu
-      className='bg-primary color-transition'
+      className="bg-primary color-transition"
       mode="inline"
       defaultOpenKeys={['/']}
       selectedKeys={selectKeys}
@@ -114,4 +103,4 @@ const SlideMenu = () => {
   )
 }
 
-export default SlideMenu;
+export default SlideMenu

@@ -17,45 +17,43 @@
 import { RouteObject, useRoutes } from 'react-router-dom'
 import { routes } from './plop'
 
-
 function findNodeByPath(routes: RouteObject[], path: string) {
   for (let i = 0; i < routes.length; i += 1) {
-    const element = routes[i];
+    const element = routes[i]
 
-    if (element.path === path) return element;
+    if (element.path === path) return element
 
-    findNodeByPath(element.children || [], path);
+    findNodeByPath(element.children || [], path)
   }
 }
 
 export const addRoutes = (parentPath: string, routes: RouteObject[]) => {
   if (!parentPath) {
-    routes.push(...routes as any);
-    return;
+    routes.push(...(routes as any))
+    return
   }
 
-  const curNode = findNodeByPath(routes, parentPath);
+  const curNode = findNodeByPath(routes, parentPath)
 
   if (curNode?.children) {
-    curNode?.children.push(...routes);
+    curNode?.children.push(...routes)
   } else if (curNode) {
-    curNode.children = routes;
+    curNode.children = routes
   }
 }
 
 export const replaceRoutes = (parentPath: string, routes: RouteObject[]) => {
   if (!parentPath) {
-    routes.push(...routes as any);
-    return;
+    routes.push(...(routes as any))
+    return
   }
 
-  const curNode = findNodeByPath(routes, parentPath);
+  const curNode = findNodeByPath(routes, parentPath)
 
   if (curNode) {
-    curNode.children = routes;
+    curNode.children = routes
   }
 }
-
 
 export default function Router() {
   const element = useRoutes(routes)

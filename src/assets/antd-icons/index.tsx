@@ -421,7 +421,6 @@ import {
   WomanOutlined,
 } from '@ant-design/icons'
 
-
 export const antdIcons: any = {
   StepBackwardOutlined,
   StepForwardOutlined,
@@ -843,4 +842,4 @@ export const antdIcons: any = {
   WhatsAppOutlined,
   WifiOutlined,
   WomanOutlined,
-};
+}

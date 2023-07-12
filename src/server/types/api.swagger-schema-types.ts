@@ -100,3 +100,5 @@ export type CreateDatabaseDto = object
 export type Database = object
 
 export type UpdateDatabaseDto = object
+
+export type Fenglou7 = object

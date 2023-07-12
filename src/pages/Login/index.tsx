@@ -32,7 +32,7 @@ function delay(ms: number) {
 }
 
 function Login() {
-  const {message} = App.useApp();
+  const { message } = App.useApp()
   const [loginType, setLoginType] = useState<LoginType>('account')
   const { setUserInfo } = useLoginStore()
   const navigate = useNavigate()

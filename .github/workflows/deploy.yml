@@ -197,7 +197,7 @@ jobs:
           git add package.json pnpm-lock.yaml src/server/
           git config --local user.email "h7ml@qq.com"
           git config --local user.name "h7ml"
-          git commit --allow-empty -m "ci: updates dependencies today's hot rank on $(date)" -a
+          git commit --allow-empty -m "ci: updates dependencies today's hot rank on $(date)" -n
       - name: Push changes  🚀
         uses: ad-m/github-push-action@master
         with:

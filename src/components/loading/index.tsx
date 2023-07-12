@@ -10,27 +10,26 @@
  * @LastEditors: h7ml <h7ml@qq.com>
  * @LastEditTime: 2023-07-10 23:02:55
  * @FilePath: \src\components\loading\index.tsx
- * @Description: 
- * 
- * Copyright (c) 2023 by h7ml<h7ml@qq.com>, All Rights Reserved. 
+ * @Description:
+ *
+ * Copyright (c) 2023 by h7ml<h7ml@qq.com>, All Rights Reserved.
  */
-import { Spin } from 'antd';
-import NProgress from 'nprogress';
-import { useEffect } from 'react';
+import { Spin } from 'antd'
+import NProgress from 'nprogress'
+import { useEffect } from 'react'
 
 export const Loading = () => {
   useEffect(() => {
-
-    NProgress.start();
+    NProgress.start()
 
     return () => {
-      NProgress.done();
+      NProgress.done()
     }
   }, [])
 
   return (
-    <div className='flex justify-center'>
+    <div className="flex justify-center">
       <Spin />
     </div>
-  );
+  )
 }

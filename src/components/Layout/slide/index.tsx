@@ -10,44 +10,36 @@
  * @LastEditors: h7ml <h7ml@qq.com>
  * @LastEditTime: 2023-07-11 07:19:46
  * @FilePath: \src\components\Layout\slide\index.tsx
- * @Description: 
- * 
- * Copyright (c) 2023 by h7ml<h7ml@qq.com>, All Rights Reserved. 
+ * @Description:
+ *
+ * Copyright (c) 2023 by h7ml<h7ml@qq.com>, All Rights Reserved.
  */
-import { memo } from 'react';
-import { Drawer } from 'antd';
-import { useUpdateEffect } from 'react-use';
+import { memo } from 'react'
+import { Drawer } from 'antd'
+import { useUpdateEffect } from 'react-use'
 
-import { IconBuguang } from '@/assets/icons/buguang';
-import { useGlobalStore } from '@/store';
-import { usePCScreen } from '@/hooks';
-import { defaultSetting } from '@/default-setting';
+import { IconBuguang } from '@/assets/icons/buguang'
+import { useGlobalStore } from '@/store'
+import { usePCScreen } from '@/hooks'
+import { defaultSetting } from '@/default-setting'
 
-import SlideMenu from './menus';
+import SlideMenu from './menus'
 
 const SlideIndex = () => {
+  const isPC = usePCScreen()
 
-  const isPC = usePCScreen();
-
-  const {
-    collapsed,
-    setCollapsed,
-  } = useGlobalStore();
-
+  const { collapsed, setCollapsed } = useGlobalStore()
 
   useUpdateEffect(() => {
     if (!isPC) {
-      setCollapsed(true);
+      setCollapsed(true)
     } else {
-      setCollapsed(false);
+      setCollapsed(false)
     }
-  }, [isPC]);
-
+  }, [isPC])
 
   function renderMenu() {
-    return (
-      <SlideMenu />
-    )
+    return <SlideMenu />
   }
 
   if (!isPC) {
@@ -60,19 +52,19 @@ const SlideIndex = () => {
         className="bg-primary"
         zIndex={10001}
         closable={false}
-        title={(
+        title={
           <div
-            className='flex items-center gap-[4px] text-[20px] justify-center'
+            className="flex items-center gap-[4px] text-[20px] justify-center"
             style={{ width: defaultSetting.slideWidth }}
           >
             <IconBuguang className="text-blue-500" />
-            <h1 className='text-primary font-bold text-[22px]'>nakoruru</h1>
+            <h1 className="text-primary font-bold text-[22px]">nakoruru</h1>
           </div>
-        )}
+        }
         headerStyle={{ padding: '24px 0', border: 'none' }}
         bodyStyle={{ padding: '0 16px' }}
         onClose={() => {
-          setCollapsed(true);
+          setCollapsed(true)
         }}
       >
         {renderMenu()}
@@ -90,4 +82,4 @@ const SlideIndex = () => {
   )
 }
 
-export default memo(SlideIndex);
+export default memo(SlideIndex)

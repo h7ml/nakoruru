@@ -6,19 +6,19 @@ import '@/styles/global.less'
 import '@/styles/antd.less'
 import 'reset-css'
 import 'reactflow/dist/style.css'
-import NProgress from 'nprogress';
-import 'nprogress/nprogress.css';
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css'
 
 NProgress.configure({
   minimum: 0.3,
   easing: 'ease',
   speed: 800,
   showSpinner: false,
-  parent: '#root'
-});
+  parent: '#root',
+})
 
 createRoot(document.getElementById('root') as Element).render(
   // <HashRouter basename="/">
-  <App />
+  <App />,
   // </HashRouter>,
 )

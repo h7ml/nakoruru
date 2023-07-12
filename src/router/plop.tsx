@@ -26,94 +26,91 @@ const Flow = lazy(() => import('@/pages/Flow'))
 const Home = lazy(() => import('@/pages/Home'))
 type ExtendedRouteObject = RouteObject & { hidden?: boolean }
 
-export const routes: ExtendedRouteObject[] =
-  createBrowserRouter(
-    [
+export const routes: ExtendedRouteObject[] = createBrowserRouter([
+  {
+    path: '/',
+    element: <BasicLayout />,
+    children: [
+      // {
+      //   path: '/',
+      //   element: (
+      //     <Suspense fallback={<Loading />}>
+      //       <Home />
+      //     </Suspense>
+      //   ),
+      // },
+      ...LazyRouter(),
       {
-        path: '/',
-        element: <BasicLayout />,
-        children: [
-          // {
-          //   path: '/',
-          //   element: (
-          //     <Suspense fallback={<Loading />}>
-          //       <Home />
-          //     </Suspense>
-          //   ),
-          // },
-          ...LazyRouter(),
-          {
-            path: '/tree',
-            element: (
-              <Suspense fallback={<Loading />}>
-                <Tree />
-              </Suspense>
-            ),
-          },
-          {
-            path: '/flow',
-            element: (
-              <Suspense fallback={<Loading />}>
-                <Flow />
-              </Suspense>
-            ),
-          },
-          /* plop add */
-          {
-            path: '/table',
-            element: (
-              <Suspense fallback={<Loading />}>
-                <Table />
-              </Suspense>
-            ),
-          },
-          {
-            path: '/user',
-            element: (
-              <Suspense fallback={<Loading />}>
-                <User />
-              </Suspense>
-            ),
-          },
-          {
-            path: '/three-scene',
-            element: (
-              <Suspense fallback={<Loading />}>
-                <ThreeScene />
-              </Suspense>
-            ),
-          },
-          {
-            path: '/babylon',
-            element: (
-              <Suspense fallback={<Loading />}>
-                <Babylon />
-              </Suspense>
-            ),
-          },
-          {
-            path: '/hotapi',
-            element: (
-              <Suspense fallback={<Loading />}>
-                <Hotapi />
-              </Suspense>
-            ),
-          },
-        ],
-      },
-      {
-        path: '/login',
-        hidden: true,
+        path: '/tree',
         element: (
           <Suspense fallback={<Loading />}>
-            <Login />
+            <Tree />
           </Suspense>
         ),
       },
       {
-        path: '*',
-        hidden: true,
-        element: <NotFound />,
+        path: '/flow',
+        element: (
+          <Suspense fallback={<Loading />}>
+            <Flow />
+          </Suspense>
+        ),
       },
-    ]
-  )
+      /* plop add */
+      {
+        path: '/table',
+        element: (
+          <Suspense fallback={<Loading />}>
+            <Table />
+          </Suspense>
+        ),
+      },
+      {
+        path: '/user',
+        element: (
+          <Suspense fallback={<Loading />}>
+            <User />
+          </Suspense>
+        ),
+      },
+      {
+        path: '/three-scene',
+        element: (
+          <Suspense fallback={<Loading />}>
+            <ThreeScene />
+          </Suspense>
+        ),
+      },
+      {
+        path: '/babylon',
+        element: (
+          <Suspense fallback={<Loading />}>
+            <Babylon />
+          </Suspense>
+        ),
+      },
+      {
+        path: '/hotapi',
+        element: (
+          <Suspense fallback={<Loading />}>
+            <Hotapi />
+          </Suspense>
+        ),
+      },
+    ],
+  },
+  {
+    path: '/login',
+    hidden: true,
+    element: (
+      <Suspense fallback={<Loading />}>
+        <Login />
+      </Suspense>
+    ),
+  },
+  {
+    path: '*',
+    hidden: true,
+    element: <NotFound />,
+  },
+])
