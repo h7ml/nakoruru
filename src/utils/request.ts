@@ -13,13 +13,6 @@ export interface RequestOptions extends Omit<RequestInit, 'body'> {
   defaultParams?: any[]
 }
 
-interface ResponseData {
-  success: boolean
-  data?: any
-  message?: string
-  code?: number
-}
-
 function checkStatus(response: Response) {
   switch (response.status) {
     case 418: {
