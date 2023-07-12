@@ -1,18 +1,24 @@
-import { Suspense } from 'react'
+import { Suspense, useEffect } from 'react'
 import { QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { App as AntdApp, ConfigProvider, message } from 'antd'
 import zhCN from 'antd/locale/zh_CN'
 import { ReactFlowProvider } from 'reactflow'
-import { queryClient } from '@/plugins'
-import { GitHubCorners, Loading, Main } from '@/components'
-// import Router from './router';
 import { RouterProvider } from 'react-router-dom'
 import { routes } from './router/plop'
+import { queryClient } from '@/plugins'
+import { GitHubCorners, Loading } from '@/components'
+import { useAppRouter } from '@/store'
+
+// import Router from './router';
 
 // import router from './router'
 message.config({ maxCount: 3 })
 export default function App() {
+  const { setNavState } = useAppRouter()
+  useEffect(() => {
+    setNavState(routes)
+  }, [setNavState])
   return (
     <QueryClientProvider client={queryClient}>
       <ConfigProvider locale={zhCN} autoInsertSpaceInButton={false}>

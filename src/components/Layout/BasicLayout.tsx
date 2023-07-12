@@ -14,20 +14,14 @@
  *
  * Copyright (c) 2023 by h7ml<h7ml@qq.com>, All Rights Reserved.
  */
-import { Navigate, Outlet, useLocation, useNavigate } from 'react-router-dom'
-import { useGlobalStore } from '@/store'
-import { lazy, useEffect, useState } from 'react'
-import GloablLoading from '@/components/global-loading'
+import { Outlet, useLocation, useNavigate } from 'react-router-dom'
+import { useState } from 'react'
 
 import Slide from './slide'
 import Header from './header'
 import Content from './content'
-import { useUserStore } from '@/store'
-import { Menu } from '@/pages/user/service'
-import { components } from '@/config/routes'
-import { routes } from '@/router/plop'
-import { replaceRoutes } from '@/router'
-import Result404 from '@/pages/404'
+import { useGlobalStore, useUserStore } from '@/store'
+import type { Menu } from '@/pages/user/service'
 
 const BasicLayout: React.FC = () => {
   const [loading, setLoading] = useState(true)

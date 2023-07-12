@@ -18,14 +18,13 @@ import { memo } from 'react'
 import { Drawer } from 'antd'
 import { useUpdateEffect } from 'react-use'
 
+import SlideMenu from './menus'
 import { IconBuguang } from '@/assets/icons/buguang'
 import { useGlobalStore } from '@/store'
 import { usePCScreen } from '@/hooks'
 import { defaultSetting } from '@/default-setting'
 
-import SlideMenu from './menus'
-
-const SlideIndex = () => {
+function SlideIndex() {
   const isPC = usePCScreen()
 
   const { collapsed, setCollapsed } = useGlobalStore()

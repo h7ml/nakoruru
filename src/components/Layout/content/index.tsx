@@ -14,11 +14,12 @@
  *
  * Copyright (c) 2023 by h7ml<h7ml@qq.com>, All Rights Reserved.
  */
+import type { FC } from 'react'
+import { Suspense } from 'react'
 import { Loading } from '@/components/loading'
 import { defaultSetting } from '@/default-setting'
 import { usePCScreen } from '@/hooks'
 import { useGlobalStore } from '@/store'
-import { FC, Suspense } from 'react'
 
 const Content: FC<any> = ({ children }) => {
   const isPC = usePCScreen()

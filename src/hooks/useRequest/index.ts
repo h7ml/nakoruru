@@ -1,8 +1,9 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
+import type { AxiosResponse } from 'axios'
 import type { RequestOptions } from '@/utils/request'
 import { request } from '@/utils/request'
 import type { ApiMaps } from '@/server/api.types'
-import { AxiosResponse } from 'axios'
+
 export type Response<T> = Promise<[boolean, T, AxiosResponse<T>]>
 
 interface RequestResponse<T> {
@@ -20,7 +21,7 @@ export function useRequest<T extends keyof ApiMaps, U extends ApiMaps[T]>(
 ): RequestResponse<U['response']> {
   const [loading, setLoading] = useState<boolean>(false)
   const [data, setData] = useState<U['response']>()
-  const [error, setError] = useState<Error | null>(null)
+  const [error] = useState<Error | null>(null)
   const paramsRef = useRef<any[]>([])
 
   const resolveData = useCallback(async () => {

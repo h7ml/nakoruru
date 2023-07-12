@@ -8,7 +8,7 @@
  * @Author: h7ml <h7ml@qq.com>
  * @Date: 2023-05-11 14:17:33
  * @LastEditors: h7ml <h7ml@qq.com>
- * @LastEditTime: 2023-07-10 21:09:45
+ * @LastEditTime: 2023-07-12 08:25:45
  * @FilePath: \src\components\Layout\ProMain.tsx
  * @Description:
  *
@@ -41,7 +41,7 @@ import { useAppRouter, useLoginStore, useVisibleState } from '@/store'
 import { processChildren } from '@/utils/menu'
 
 function SearchInput() {
-  const { visible, toggleVisibility } = useVisibleState()
+  const { toggleVisibility } = useVisibleState()
   const { token } = theme.useToken()
   const ref = useRef<HTMLDivElement>(null)
   useClickAway(() => {
@@ -93,7 +93,7 @@ export const ProMain: React.FC = () => {
   const { navState } = useAppRouter()
   const history = useNavigate()
   const repo = repository as { url: string }
-  const [settings, setSetting] = useState<Partial<ProSettings> | undefined>({
+  const [settings] = useState<Partial<ProSettings> | undefined>({
     // fixSiderbar: true,
     // layout: 'mix',
     // splitMenus: true,
@@ -128,7 +128,7 @@ export const ProMain: React.FC = () => {
     navigate('/login')
     setUserInfo({ username: '', password: '' })
   }
-  const { visible, toggleVisibility } = useVisibleState()
+  const { toggleVisibility } = useVisibleState()
   return (
     <div
       id="test-pro-layout"

@@ -2,3 +2,6 @@ api.ts
 *.yml
 plopfile.ts
 src/components/CodeEditor/index.tsx
+src/server/types/api.swagger-types.ts
+src/components/Layout/BasicLayout.tsx
+src/pages/Table/index.tsx

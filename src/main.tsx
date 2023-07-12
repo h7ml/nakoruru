@@ -1,12 +1,11 @@
 import { createRoot } from 'react-dom/client'
-import { HashRouter } from 'react-router-dom'
+import NProgress from 'nprogress'
 import App from './App'
 import 'virtual:windi.css'
 import '@/styles/global.less'
 import '@/styles/antd.less'
 import 'reset-css'
 import 'reactflow/dist/style.css'
-import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 
 NProgress.configure({

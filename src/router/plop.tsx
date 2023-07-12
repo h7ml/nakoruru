@@ -2,14 +2,14 @@
  * @Author: h7ml <h7ml@qq.com>
  * @Date: 2023-05-22 12:57:40
  * @LastEditors: h7ml <h7ml@qq.com>
- * @LastEditTime: 2023-07-11 22:49:32
+ * @LastEditTime: 2023-07-12 08:31:57
  * @FilePath: \src\router\plop.tsx
  * @Description:
  *
  * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.
  */
 import { Suspense, lazy } from 'react'
-import { createBrowserRouter, type RouteObject } from 'react-router-dom'
+import { type RouteObject, createBrowserRouter } from 'react-router-dom'
 import LazyRouter from './LazyRouter'
 import { Loading } from '@/components'
 import NotFound from '@/pages/NotFound'
@@ -23,7 +23,7 @@ const Hotapi = lazy(() => import('@/pages/Hotapi'))
 const Login = lazy(() => import('@/pages/Login'))
 const Tree = lazy(() => import('@/pages/Tree'))
 const Flow = lazy(() => import('@/pages/Flow'))
-const Home = lazy(() => import('@/pages/Home'))
+// const Home = lazy(() => import('@/pages/Home'))
 type ExtendedRouteObject = RouteObject & { hidden?: boolean }
 
 export const routes: ExtendedRouteObject[] = createBrowserRouter([
@@ -113,4 +113,4 @@ export const routes: ExtendedRouteObject[] = createBrowserRouter([
     hidden: true,
     element: <NotFound />,
   },
-])
+]) as unknown as ExtendedRouteObject[]

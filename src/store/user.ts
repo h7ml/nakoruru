@@ -14,9 +14,9 @@
  *
  * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.
  */
-import { User } from '@/pages/User/service'
 import { create } from 'zustand'
 import { devtools } from 'zustand/middleware'
+import type { User } from '@/pages/User/service'
 
 interface State {
   currentUser: User | null

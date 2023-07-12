@@ -1,15 +1,14 @@
-import {
-  CreateUserDto,
-  PaginatedUserDto,
-  UpdateUserDto,
-  Menu,
-  Douban,
-  CreateReactflowDto,
-  UpdateReactflowDto,
+import type {
   CreateDatabaseDto,
+  CreateReactflowDto,
+  CreateUserDto,
   Database,
+  Douban,
+  Menu,
+  PaginatedUserDto,
   UpdateDatabaseDto,
-  Fenglou,
+  UpdateReactflowDto,
+  UpdateUserDto,
 } from './api.swagger-schema-types'
 
 interface ApiMaps {

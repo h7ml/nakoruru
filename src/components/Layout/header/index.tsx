@@ -17,6 +17,8 @@
 import { memo } from 'react'
 import { Avatar, Button, Dropdown, Input } from 'antd'
 
+import { BellOutlined, MenuOutlined, SettingOutlined } from '@ant-design/icons'
+import { useNavigate } from 'react-router-dom'
 import { Icon3 } from '@/assets/icons/3'
 import { IconBuguang } from '@/assets/icons/buguang'
 import { IconFangdajing } from '@/assets/icons/fangdajing'
@@ -25,12 +27,10 @@ import { IconShuyi_fanyi36 } from '@/assets/icons/shuyi_fanyi-36'
 import { defaultSetting } from '@/default-setting'
 import { useGlobalStore, useUserStore } from '@/store'
 import { i18n, t } from '@/utils/i18n'
-import { BellOutlined, MenuOutlined, SettingOutlined } from '@ant-design/icons'
-import { useRequest } from '@/hooks'
-import { useNavigate } from 'react-router-dom'
+
 // import loginService from '@/pages/login/service';
 
-const Header = () => {
+function Header() {
   const { darkMode, collapsed, setCollapsed, setDarkMode, setLang, lang } = useGlobalStore()
 
   const { currentUser } = useUserStore()

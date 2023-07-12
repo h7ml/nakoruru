@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Button, Col, Form, Input, Row, Select, Table } from 'antd'
 import { clearCache, useAntdTable } from 'ahooks'
 
@@ -19,7 +19,7 @@ interface Result {
 }
 
 function getTableData(
-  { current, pageSize, sorter, filters, extra },
+  { current = '', pageSize = '', sorter = '', filters = '', extra = '' },
   formData: Object,
 ): Promise<Result> {
   console.log(sorter, filters, extra)
@@ -40,7 +40,6 @@ function getTableData(
 
 function UserList() {
   const [form] = Form.useForm()
-
   const { tableProps, search, params } = useAntdTable(getTableData, {
     defaultPageSize: 5,
     form,

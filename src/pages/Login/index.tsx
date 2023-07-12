@@ -14,7 +14,7 @@ import {
   ProFormCheckbox,
   ProFormText,
 } from '@ant-design/pro-components'
-import { Button, Divider, Space, Tabs, App } from 'antd'
+import { App, Button, Divider, Space, Tabs } from 'antd'
 import type { CSSProperties } from 'react'
 import { useLoginStore } from '@/store'
 

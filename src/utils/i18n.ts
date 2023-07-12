@@ -29,7 +29,7 @@ i18n.init({
   },
 })
 
-export const t = (key: string) => {
+export function t(key: string) {
   return i18n.t(key) || key
 }
 

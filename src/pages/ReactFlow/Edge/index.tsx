@@ -8,7 +8,7 @@
  * @Author: h7ml <h7ml@qq.com>
  * @Date: 2023-05-09 16:38:57
  * @LastEditors: h7ml <h7ml@qq.com>
- * @LastEditTime: 2023-06-30 17:39:05
+ * @LastEditTime: 2023-07-12 08:50:49
  * @Description:
  *
  * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.
@@ -29,21 +29,27 @@ import style from './style.module.less'
 import { useFlowNodesApi } from '@/hooks/query-server/ReactFlowServer'
 
 export function Edge() {
-  const NODE_COLORS = {
-    input: 'blue',
-    output: 'green',
-    default: 'red',
-  }
   const connectionLineStyle = { stroke: '#fff' }
   const dragged = useRef(false)
   const { FlowNodes, refreshFlowEdges } = useFlowNodesApi()
   const [nodes, setNodes, onNodesChange] = useNodesState([])
-  const [edges, setEdges, onEdgesChange] = useEdgesState([])
+  const [edges, onEdgesChange] = useEdgesState([])
   const [selectFlowNodes, setSelectFlowNodes] = useState<any>([])
+  console.log(
+    '%c [ selectFlowNodes ]-43',
+    'font-size:13px; background:pink; color:#bf2c9f;',
+    selectFlowNodes,
+  )
   const [selecteFlowEdge, setSelecteFlowEdge] = useState<any>()
+  console.log(
+    '%c [ selecteFlowEdge ]-45',
+    'font-size:13px; background:pink; color:#bf2c9f;',
+    selecteFlowEdge,
+  )
   const getMiniMapNodeColor = useCallback((node: { type: 'blue' | 'green' | 'red' }) => {
-    return NODE_COLORS[node.type] || '#eee'
+    return node.type || '#eee'
   }, [])
+
   useEffect(() => {
     if (FlowNodes) {
       const nodes = FlowNodes?.map((nd: any) => {

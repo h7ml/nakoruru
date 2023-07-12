@@ -2,13 +2,12 @@
  * @Author: h7ml <h7ml@qq.com>
  * @Date: 2023-07-11 06:37:29
  * @LastEditors: h7ml <h7ml@qq.com>
- * @LastEditTime: 2023-07-11 06:42:31
+ * @LastEditTime: 2023-07-12 08:20:51
  * @FilePath: \src\pages\User\service.ts
  * @Description:
  *
  * Copyright (c) 2023 by h7ml<h7ml@qq.com>, All Rights Reserved.
  */
-import { PageData } from '@/interface'
 import { request } from '@/utils/request'
 
 export interface Menu {
@@ -58,7 +57,8 @@ const userService = {
     })
 
     if (error) {
-      return Promise.reject()
+      console.log('%c [ error ]-60', 'font-size:13px; background:pink; color:#bf2c9f;', error)
+      return error
     }
 
     return {

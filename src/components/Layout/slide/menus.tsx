@@ -8,7 +8,7 @@
  * @Author: h7ml <h7ml@qq.com>
  * @Date: 2023-07-10 22:58:42
  * @LastEditors: h7ml <h7ml@qq.com>
- * @LastEditTime: 2023-07-11 22:59:51
+ * @LastEditTime: 2023-07-12 08:49:18
  * @FilePath: \src\components\Layout\slide\menus.tsx
  * @Description:
  *
@@ -19,8 +19,9 @@ import { Menu } from 'antd'
 import type { ItemType } from 'antd/es/menu/hooks/useItems'
 import { Link, useMatches } from 'react-router-dom'
 
-import { useAppRouter, useGlobalStore, useUserStore } from '@/store'
+import { useAppRouter, useGlobalStore } from '@/store'
 import { antdIcons } from '@/assets/antd-icons'
+
 export interface MenuType {
   id: string
   parentId?: string
@@ -37,15 +38,13 @@ export interface MenuType {
   Component?: any
   parentPaths?: string[]
 }
-const SlideMenu = () => {
+function SlideMenu() {
   const matches = useMatches()
 
   const [openKeys, setOpenKeys] = useState<string[]>([])
   const [selectKeys, setSelectKeys] = useState<string[]>([])
 
   const { collapsed } = useGlobalStore()
-
-  const { currentUser } = useUserStore()
 
   useEffect(() => {
     if (collapsed) {
@@ -62,7 +61,7 @@ const SlideMenu = () => {
         // 从自定义参数中取出上级path，让菜单自动展开
         // setOpenKeys([route.pathname] || []);
         // // 让当前菜单和所有上级菜单高亮显示
-        // setSelectKeys([...([route?.pathname ?? '/'] || []), route?.pathname ?? '/'] || []);
+        setSelectKeys([...([route?.pathname ?? '/'] || []), route?.pathname ?? '/'] || [])
       }
     }
   }, [matches, collapsed])
@@ -86,18 +85,18 @@ const SlideMenu = () => {
 
   const { navState } = useAppRouter()
   const menuData = useMemo(() => {
-    return treeMenuData(navState.routes || [])
-  }, [navState])
+    return treeMenuData(navState?.routes || [])
+  }, [navState, treeMenuData])
   return (
     <Menu
       className="bg-primary color-transition"
       mode="inline"
-      defaultOpenKeys={['/']}
+      defaultOpenKeys={openKeys}
       selectedKeys={selectKeys}
       style={{ height: '100%', borderRight: 0 }}
       items={menuData}
       inlineCollapsed={collapsed}
-      openKeys={['/']}
+      openKeys={openKeys}
       onOpenChange={setOpenKeys}
     />
   )
