@@ -21,4 +21,5 @@ export const queryKeys = {
   uses: (query?: string) => ['uses', query],
   userList: (query?: string) => ['userList', query],
   user: (id?: number, params?: any) => ['user', id, params],
+  captcha: (query?: string) => ['captcha', query],
 }
