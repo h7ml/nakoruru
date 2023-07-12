@@ -8,8 +8,8 @@
  * @Author: h7ml <h7ml@qq.com>
  * @Date: 2023-05-08 20:45:23
  * @LastEditors: h7ml <h7ml@qq.com>
- * @LastEditTime: 2023-06-30 17:48:40
- * @FilePath: /Users/dtstack/Desktop/yunhu/nakoruru/src/pages/Fetch/index.tsx
+ * @LastEditTime: 2023-07-12 08:56:25
+ * @FilePath: \src\pages\Fetch\index.tsx
  * @Description:
  *
  * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.
@@ -47,7 +47,7 @@ const columns = [
 ]
 
 const Fetch: React.FC = () => {
-  const { data, loading, error } = useFetchData<TableData[]>('api/system/users')
+  const { data, loading, error } = useFetchData<TableData[]>('api/system/user')
 
   useEffect(() => {
     if (loading) {
