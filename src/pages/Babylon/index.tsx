@@ -22,7 +22,7 @@ export function Babylon() {
   }
 
   return (
-    <div className='h-100vh'>
+    <div className="h-100vh">
       <Engine antialias={true} adaptToDeviceRatio={true} canvasId="sample-canvas">
         <Scene enablePhysics={[gravityVector, new CannonJSPlugin()]}>
           <arcRotateCamera

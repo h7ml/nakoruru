@@ -8,8 +8,8 @@
  * @Author: h7ml <h7ml@qq.com>
  * @Date: 2023-05-08 10:33:26
  * @LastEditors: h7ml <h7ml@qq.com>
- * @LastEditTime: 2023-05-09 14:23:07
- * @FilePath: \nakoruru\src\components\index.ts
+ * @LastEditTime: 2023-07-13 01:35:41
+ * @FilePath: \src\components\index.ts
  * @Description:
  *
  * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.
@@ -18,3 +18,4 @@ export * from './GitHubCorners'
 export * from './CodeEditor'
 export * from './OverviewFlow'
 export * from './Layout'
+export * from './Icon'

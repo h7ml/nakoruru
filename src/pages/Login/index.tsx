@@ -6,6 +6,7 @@ import {
   TaobaoOutlined,
   UserOutlined,
   WeiboOutlined,
+  YuqueOutlined,
 } from '@ant-design/icons'
 import { useNavigate } from 'react-router-dom'
 import {
@@ -14,9 +15,11 @@ import {
   ProFormCheckbox,
   ProFormText,
 } from '@ant-design/pro-components'
-import { App, Button, Divider, Space, Tabs } from 'antd'
+import { App, Button, Divider, Input, Space, Tabs } from 'antd'
 import type { CSSProperties } from 'react'
 import { useLoginStore } from '@/store'
+import { useSystem } from '@/hooks/query-server'
+import RenderSVG from '@/components/Icon/RenderSVG'
 
 type LoginType = 'phone' | 'account'
 
@@ -32,6 +35,7 @@ function delay(ms: number) {
 }
 
 function Login() {
+  const { captcha, refreshCaptcha } = useSystem()
   const { message } = App.useApp()
   const [loginType, setLoginType] = useState<LoginType>('account')
   const { setUserInfo } = useLoginStore()
@@ -43,6 +47,7 @@ function Login() {
       navigate('/tree', { replace: true })
     })
   }
+
   return (
     <div
       style={{
@@ -146,7 +151,7 @@ function Login() {
           onChange={(activeKey) => setLoginType(activeKey as LoginType)}
         >
           <Tabs.TabPane key={'account'} tab={'账号密码登录'} />
-          <Tabs.TabPane key={'phone'} tab={'手机号登录'} />
+          {/* <Tabs.TabPane key={'phone'} tab={'手机号登录'} /> */}
         </Tabs>
         {loginType === 'account' && (
           <>
@@ -178,6 +183,20 @@ function Login() {
                 },
               ]}
             />
+            <Space.Compact>
+              <Input
+                className="h-40px"
+                maxLength={4}
+                size="large"
+                prefix={<YuqueOutlined className={'prefixIcon'} />}
+                defaultValue=""
+                suffix={
+                  <Space onClick={refreshCaptcha} className="cursor-pointer">
+                    <RenderSVG svgContent={captcha} />
+                  </Space>
+                }
+              />
+            </Space.Compact>
           </>
         )}
         {loginType === 'phone' && (
