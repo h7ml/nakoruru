@@ -17,7 +17,7 @@ NProgress.configure({
 })
 
 createRoot(document.getElementById('root') as Element).render(
-  // <HashRouter basename="/">
+  //   <HashRouter basename="/">
   <App />,
   // </HashRouter>,
 )

@@ -33,7 +33,7 @@ export function Main() {
 
   const renderMenuItem = (item: MenuItem) => {
     if (item.hidden) {
-      return null // 如果 hidden 为 true，返回 null，表示不渲染该项
+      return false // 如果 hidden 为 true，返回 null，表示不渲染该项
     }
 
     if (item.children) {

@@ -2,10 +2,13 @@
  * @Author: h7ml <h7ml@qq.com>
  * @Date: 2023-05-22 12:57:40
  * @LastEditors: h7ml <h7ml@qq.com>
- * @LastEditTime: 2023-07-12 08:31:57
+ * @LastEditTime: 2023-07-14 00:28:20
  * @FilePath: \src\router\plop.tsx
  * @Description:
- *
+ * @doc https://www.pipipi.net/27853.html 手把手教你React-Router6【万字详细长文】
+
+ * @doc  https://zhuanlan.zhihu.com/p/431389907  react-router-dom使用指南（最新V6.0.1）
+
  * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.
  */
 import { Suspense, lazy } from 'react'
@@ -45,6 +48,24 @@ export const routes: ExtendedRouteObject[] = createBrowserRouter([
         element: (
           <Suspense fallback={<Loading />}>
             <Tree />
+          </Suspense>
+        ),
+        children: [
+          {
+            path: '/tree/page1',
+            element: (
+              <Suspense fallback={<Loading />}>
+                <div>this is page1</div>
+              </Suspense>
+            ),
+          },
+        ],
+      },
+      {
+        path: '/tree/page1/:id',
+        element: (
+          <Suspense fallback={<Loading />}>
+            <div>this is page1 </div>
           </Suspense>
         ),
       },
