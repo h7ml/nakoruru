@@ -1,0 +1,1 @@
+import{bj as s}from"./index-358769bd.js";const e=s.useSyncExternalStore;function u(s,e){return"function"==typeof s?s(...e):!!s}const t={userInfo:s=>["userInfo",s],useNodes:s=>["useNodes",s],useEdges:s=>["useEdges",s],uses:s=>["uses",s],userList:s=>["userList",s],user:(s,e)=>["user",s,e],captcha:s=>["captcha",s]};export{t as q,u as s,e as u};
