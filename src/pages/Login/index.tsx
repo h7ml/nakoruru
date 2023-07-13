@@ -11,15 +11,16 @@ import {
 import { useNavigate } from 'react-router-dom'
 import {
   LoginFormPage,
+  ProForm,
   ProFormCaptcha,
   ProFormCheckbox,
   ProFormText,
 } from '@ant-design/pro-components'
-import { App, Button, Divider, Input, Space, Tabs } from 'antd'
+import { App, Button, Divider, Space, Tabs } from 'antd'
 import type { CSSProperties } from 'react'
 import { useLoginStore } from '@/store'
 import { useSystem } from '@/hooks/query-server'
-import RenderSVG from '@/components/Icon/RenderSVG'
+import { RenderSVG } from '@/components'
 
 type LoginType = 'phone' | 'account'
 
@@ -35,12 +36,18 @@ function delay(ms: number) {
 }
 
 function Login() {
-  const { captcha, refreshCaptcha } = useSystem()
+  const { captcha, captchaCode, refreshCaptcha } = useSystem()
   const { message } = App.useApp()
   const [loginType, setLoginType] = useState<LoginType>('account')
   const { setUserInfo } = useLoginStore()
   const navigate = useNavigate()
   const onFinish = (values: any) => {
+    if (values.captcha) {
+      if (values.captcha !== captchaCode) {
+        message.error('验证码错误')
+        return false
+      }
+    }
     return delay(1000).then(() => {
       message.success('登录成功🎉🎉🎉')
       setUserInfo(values)
@@ -183,24 +190,35 @@ function Login() {
                 },
               ]}
             />
-            <Space.Compact>
-              <Input
-                className="h-40px"
-                maxLength={4}
-                size="large"
-                prefix={<YuqueOutlined className={'prefixIcon'} />}
-                defaultValue=""
-                suffix={
-                  <Space onClick={refreshCaptcha} className="cursor-pointer">
-                    <RenderSVG svgContent={captcha} />
-                  </Space>
-                }
+            {captcha && (
+              <ProFormText
+                name="captcha"
+                fieldProps={{
+                  maxLength: 4,
+                  placeholder: '请输入验证码',
+                  size: 'middle',
+                  prefix: <YuqueOutlined className={'prefixIcon'} />,
+                  defaultValue: '',
+                  suffix: (
+                    <Space onClick={refreshCaptcha} className="cursor-pointer ml-10px">
+                      <RenderSVG svgContent={captcha} />
+                    </Space>
+                  ),
+                }}
+                rules={[
+                  {
+                    required: true,
+                    message: '请输入验证码！',
+                    max: 4,
+                    min: 4,
+                  },
+                ]}
               />
-            </Space.Compact>
+            )}
           </>
         )}
         {loginType === 'phone' && (
-          <>
+          <ProForm>
             <ProFormText
               fieldProps={{
                 size: 'large',
@@ -245,7 +263,7 @@ function Login() {
                 message.success('获取验证码成功！验证码为：1234')
               }}
             />
-          </>
+          </ProForm>
         )}
         <div
           style={{
@@ -256,6 +274,9 @@ function Login() {
             自动登录
           </ProFormCheckbox>
           <a
+            onClick={() => {
+              message.info('暂未开放')
+            }}
             style={{
               float: 'right',
             }}

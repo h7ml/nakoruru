@@ -2,7 +2,7 @@
  * @Author: h7ml <h7ml@qq.com>
  * @Date: 2023-07-13 00:57:34
  * @LastEditors: h7ml <h7ml@qq.com>
- * @LastEditTime: 2023-07-13 01:27:04
+ * @LastEditTime: 2023-07-13 22:29:34
  * @FilePath: \src\hooks\query-server\System\index.ts
  * @Description:
  *
@@ -25,7 +25,8 @@ export function useSystem() {
     captcha.refetch()
   }, [captcha])
   return {
-    captcha: captcha.data,
+    captcha: captcha?.data?.data,
+    captchaCode: captcha?.data?.captcha,
     refreshCaptcha,
   }
 }

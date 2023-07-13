@@ -2,7 +2,7 @@
  * @Author: h7ml <h7ml@qq.com>
  * @Date: 2023-07-13 01:04:15
  * @LastEditors: h7ml <h7ml@qq.com>
- * @LastEditTime: 2023-07-13 01:26:37
+ * @LastEditTime: 2023-07-13 21:01:19
  * @FilePath: \src\hooks\react-query\System\index.ts
  * @Description:
  *
@@ -11,6 +11,10 @@
 
 export async function getCaptcha() {
   const response = await fetch('api/system/captcha')
+  // 获取头部信息
+  const headers = response.headers
+  const captchaText = headers.get('captcha-text')
+
   const stream = response.body
   let jsonData
 
@@ -51,5 +55,5 @@ export async function getCaptcha() {
     jsonData = await response.json()
   }
 
-  return jsonData
+  return { data: jsonData, captcha: captchaText }
 }
