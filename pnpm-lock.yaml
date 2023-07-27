@@ -6,7 +6,7 @@ specifiers:
   '@emotion/css': ^11.11.0
   '@tanstack/react-query': ^4.29.12
   '@tanstack/react-query-devtools': ^4.29.12
-  '@types/lodash-es': ^4.17.7
+  '@types/lodash-es': ^4.17.8
   '@types/node': ^20.2.5
   '@types/qs': ^6.9.7
   '@types/react': ^18.2.9
@@ -122,7 +122,7 @@ dependencies:
   zustand: 4.3.8_react@18.2.0
 
 devDependencies:
-  '@types/lodash-es': 4.17.7
+  '@types/lodash-es': 4.17.8
   '@types/node': 20.2.5
   '@types/qs': 6.9.7
   '@types/react': 18.2.9
@@ -2841,8 +2841,8 @@ packages:
       '@types/node': 20.2.5
     dev: true
 
-  /@types/lodash-es/4.17.7:
-    resolution: {integrity: sha512-z0ptr6UI10VlU6l5MYhGwS4mC8DZyYer2mCoyysZtSF7p26zOX8UpbrV0YpNYLGS8K4PUFIyEr62IMFFjveSiQ==}
+  /@types/lodash-es/4.17.8:
+    resolution: {integrity: sha512-euY3XQcZmIzSy7YH5+Unb3b2X12Wtk54YWINBvvGQ5SmMvwb11JQskGsfkH/5HXK77Kr8GF0wkVDIxzAisWtog==}
     dependencies:
       '@types/lodash': 4.14.195
     dev: true
@@ -5313,7 +5313,7 @@ packages:
     engines: {node: '>= 4'}
 
   /image-size/0.5.5:
-    resolution: {integrity: sha1-Cd/Uq50g4p6xw+gLiZA3jfnjy5w=}
+    resolution: {integrity: sha512-6TDAlDPZxUFCv+fuOkIoXT/V/f3Qbq8e37p+YOiYrUv3v9cc3/6x78VdfPgFVaB9dZYeLUfKgHRebpkm/oP2VQ==}
     engines: {node: '>=0.10.0'}
     hasBin: true
     requiresBuild: true
