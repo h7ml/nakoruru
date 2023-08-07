@@ -88,7 +88,7 @@
     "prettier": "3.0.0",
     "rollup-plugin-visualizer": "^5.9.2",
     "typescript": "^5.1.6",
-    "vite": "^4.4.7"
+    "vite": "^4.4.8"
   },
   "author": {
     "name": "h7ml",
