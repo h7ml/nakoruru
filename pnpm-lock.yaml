@@ -15,7 +15,7 @@ specifiers:
   '@typescript-eslint/parser': ^6.2.0
   '@uiw/react-github-corners': ^1.5.15
   '@vitejs/plugin-legacy': ^4.1.1
-  '@vitejs/plugin-react': ^4.0.3
+  '@vitejs/plugin-react': ^4.0.4
   '@vitejs/plugin-react-swc': ^3.3.2
   antd: ^5.7.3
   axios: ^1.4.0
@@ -129,7 +129,7 @@ devDependencies:
   '@types/react-dom': 18.2.7
   '@typescript-eslint/eslint-plugin': 6.2.0_idzvfmj5qli4h3jfxnf522w3fe
   '@typescript-eslint/parser': 6.2.0_7haavtekmro7ptbnqmctjaodju
-  '@vitejs/plugin-react': 4.0.3_vite@4.4.7
+  '@vitejs/plugin-react': 4.0.4_vite@4.4.7
   cz-git: 1.7.0
   dayjs: 1.11.9
   eslint: 8.46.0
@@ -3057,8 +3057,8 @@ packages:
       - '@swc/helpers'
     dev: false
 
-  /@vitejs/plugin-react/4.0.3_vite@4.4.7:
-    resolution: {integrity: sha512-pwXDog5nwwvSIzwrvYYmA2Ljcd/ZNlcsSG2Q9CNDBwnsd55UGAyr2doXtB5j+2uymRCnCfExlznzzSFbBRcoCg==}
+  /@vitejs/plugin-react/4.0.4_vite@4.4.7:
+    resolution: {integrity: sha512-7wU921ABnNYkETiMaZy7XqpueMnpu5VxvVps13MjmCo+utBdD79sZzrApHawHtVX66cCJQQTXFcjH0y9dSUK8g==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       vite: ^4.2.0
