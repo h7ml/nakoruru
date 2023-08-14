@@ -59,7 +59,7 @@ specifiers:
   stylelint-config-styled-components: ^0.1.1
   stylelint-order: ^6.0.3
   stylelint-processor-styled-components: ^1.10.0
-  swagger-typescript-api: ^13.0.2
+  swagger-typescript-api: ^13.0.3
   ts-node: ^10.9.1
   typescript: ^5.1.6
   unplugin-starter: ^0.1.0
@@ -111,7 +111,7 @@ dependencies:
   stylelint-config-styled-components: 0.1.1
   stylelint-order: 6.0.3_stylelint@15.10.2
   stylelint-processor-styled-components: 1.10.0
-  swagger-typescript-api: 13.0.2
+  swagger-typescript-api: 13.0.3
   ts-node: 10.9.1_jch25vbq34sbabk3unb5q5rkqi
   unplugin-starter: 0.1.0_vite@4.4.8
   unplugin-visualizer: 0.0.7_vite@4.4.8
@@ -8823,8 +8823,8 @@ packages:
     resolution: {integrity: sha512-rCC0NWGKr/IJhtRuPq/t37qvZHI/mH4I4sxflVM+qgVe5Z2uOCivzWaVbuioJaB61kvm5UvB7b49E+oBY0M8jA==}
     dev: false
 
-  /swagger-typescript-api/13.0.2:
-    resolution: {integrity: sha512-QThM5kEdsye5bGz+bBYaXe3hbz2rRzn/OTikOLcNusq3suYtH8kiehzFZoBwBZ/Ug7zDRZh+6aV+aLlEjn80Ig==}
+  /swagger-typescript-api/13.0.3:
+    resolution: {integrity: sha512-774ndLpGm2FNpUZpDugfoOO2pIcvSW9nlcqwLVSH9ju4YKCi1Gd83jPly7upcljOvZ8KO/edIUx+9eYViDYglg==}
     hasBin: true
     dependencies:
       '@types/swagger-schema-official': 2.0.22
