@@ -20,7 +20,7 @@ specifiers:
   antd: ^5.8.2
   axios: ^1.4.0
   classnames: ^2.3.2
-  cz-git: ^1.7.0
+  cz-git: ^1.7.1
   dayjs: ^1.11.9
   eslint: ^8.47.0
   eslint-plugin-react-hooks: ^4.6.0
@@ -130,7 +130,7 @@ devDependencies:
   '@typescript-eslint/eslint-plugin': 6.2.1_dqrpukatvft4d4airwd34ucpta
   '@typescript-eslint/parser': 6.2.1_qj3u6ezxe2airdzjq3nyoxe24m
   '@vitejs/plugin-react': 4.0.4_vite@4.4.8
-  cz-git: 1.7.0
+  cz-git: 1.7.1
   dayjs: 1.11.9
   eslint: 8.47.0
   eslint-plugin-react-hooks: 4.6.0_eslint@8.47.0
@@ -4022,8 +4022,8 @@ packages:
   /csstype/3.1.2:
     resolution: {integrity: sha512-I7K1Uu0MBPzaFKg4nI5Q7Vs2t+3gWWW648spaF+Rg7pI9ds18Ugn+lvg4SHczUdKlHI5LWBXyqfS8+DufyBsgQ==}
 
-  /cz-git/1.7.0:
-    resolution: {integrity: sha512-A9ix8zJtRfuj7aXrlS2K6SqrFy/9VcoHOeZKEYM0qG4h++9p4/vkeEjHpwxHN0S2ARtbmlKypjrhVkFtFnBG1Q==}
+  /cz-git/1.7.1:
+    resolution: {integrity: sha512-NMe4REukCS7op1YA1jixRXOgII8Um2/Ii8TeyFEOISgp2ZzeobzkMOP8dXSrTQ3bvmm7YpPOdr2301yJkOJcbA==}
     engines: {node: '>=v12.20.0'}
     dev: true
 
