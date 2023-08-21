@@ -32,7 +32,7 @@ specifiers:
   lodash-es: ^4.17.21
   mobx: ^6.10.0
   monaco-editor: ^0.41.0
-  npm-check-updates: ^16.11.1
+  npm-check-updates: ^16.12.2
   plop: ^3.1.2
   prettier: 3.0.1
   qs: ^6.11.2
@@ -137,7 +137,7 @@ devDependencies:
   eslint-plugin-react-refresh: 0.4.3_eslint@8.47.0
   fs-extra: 11.1.1
   lint-staged: 14.0.0
-  npm-check-updates: 16.11.1
+  npm-check-updates: 16.12.2
   plop: 3.1.2
   prettier: 3.0.1
   rollup-plugin-visualizer: 5.9.2
@@ -6353,8 +6353,8 @@ packages:
       npm-normalize-package-bin: 3.0.1
     dev: true
 
-  /npm-check-updates/16.11.1:
-    resolution: {integrity: sha512-FgfhQc/LpY1u2BZpg+Y/FVoa8XxTjTpnAuSGdHM6CRqOO9pSPFrQ618HS9zf71ox7hPUQqpPvTaIuCpa4px38Q==}
+  /npm-check-updates/16.12.2:
+    resolution: {integrity: sha512-N0jeEcak3/+PS1O5JzwJ2+fvmQVv+084O4iRnDtcMBLcr9S7vPOBxwWgsEuNfj3shKFZRYOuh4NHB9nMenCHXA==}
     engines: {node: '>=14.14'}
     hasBin: true
     dependencies:
@@ -6372,6 +6372,7 @@ packages:
       json-parse-helpfulerror: 1.0.3
       jsonlines: 0.1.1
       lodash: 4.17.21
+      make-fetch-happen: 11.1.1
       minimatch: 9.0.3
       p-map: 4.0.0
       pacote: 15.2.0
