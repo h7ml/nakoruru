@@ -34,7 +34,7 @@ specifiers:
   monaco-editor: ^0.41.0
   npm-check-updates: ^16.11.1
   plop: ^3.1.2
-  prettier: 3.0.1
+  prettier: 3.0.2
   qs: ^6.11.2
   rc-field-form: 1.37.0
   react: ^18.2.0
@@ -139,7 +139,7 @@ devDependencies:
   lint-staged: 14.0.0
   npm-check-updates: 16.11.1
   plop: 3.1.2
-  prettier: 3.0.1
+  prettier: 3.0.2
   rollup-plugin-visualizer: 5.9.2
   typescript: 5.1.6
   vite: 4.4.9_uuqmdj5lz2g45u22t34hpz6mly
@@ -6950,8 +6950,8 @@ packages:
     hasBin: true
     dev: false
 
-  /prettier/3.0.1:
-    resolution: {integrity: sha512-fcOWSnnpCrovBsmFZIGIy9UqK2FaI7Hqax+DIO0A9UxeVoY4iweyaFjS5TavZN97Hfehph0nhsZnjlVKzEQSrQ==}
+  /prettier/3.0.2:
+    resolution: {integrity: sha512-o2YR9qtniXvwEZlOKbveKfDQVyqxbEIWn48Z8m3ZJjBjcCmUy3xZGIv+7AkaeuaTr6yPXJjwv07ZWlsWbEy1rQ==}
     engines: {node: '>=14'}
     hasBin: true
     dev: true
