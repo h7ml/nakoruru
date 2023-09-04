@@ -30,7 +30,7 @@ specifiers:
   less: ^4.2.0
   lint-staged: ^14.0.1
   lodash-es: ^4.17.21
-  mobx: ^6.10.0
+  mobx: ^6.10.2
   monaco-editor: ^0.41.0
   npm-check-updates: ^16.13.2
   plop: ^3.1.2
@@ -86,7 +86,7 @@ dependencies:
   http-proxy-middleware: 2.0.6
   less: 4.2.0
   lodash-es: 4.17.21
-  mobx: 6.10.0
+  mobx: 6.10.2
   monaco-editor: 0.41.0
   qs: 6.11.2
   rc-field-form: 1.37.0_biqbaboplfbrettd7655fr4n2y
@@ -6126,8 +6126,8 @@ packages:
     hasBin: true
     dev: false
 
-  /mobx/6.10.0:
-    resolution: {integrity: sha512-WMbVpCMFtolbB8swQ5E2YRrU+Yu8iLozCVx3CdGjbBKlP7dFiCSuiG06uea3JCFN5DnvtAX7+G5Bp82e2xu0ww==}
+  /mobx/6.10.2:
+    resolution: {integrity: sha512-B1UGC3ieK3boCjnMEcZSwxqRDMdzX65H/8zOHbuTY8ZhvrIjTUoLRR2TP2bPqIgYRfb3+dUigu8yMZufNjn0LQ==}
     dev: false
 
   /moment/2.29.4:
