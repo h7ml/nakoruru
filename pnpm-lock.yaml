@@ -52,7 +52,7 @@ specifiers:
   recoil-devtools-logger: ^0.5.0
   recoil-persist: ^5.1.0
   reset-css: ^5.0.2
-  rollup-plugin-license: ^3.0.1
+  rollup-plugin-license: ^3.1.0
   rollup-plugin-visualizer: ^5.9.2
   stylelint: 15.10.3
   stylelint-config-recommended: ^13.0.0
@@ -105,7 +105,7 @@ dependencies:
   recoil-devtools-logger: 0.5.0_react@18.2.0+recoil@0.7.7
   recoil-persist: 5.1.0_recoil@0.7.7
   reset-css: 5.0.2
-  rollup-plugin-license: 3.0.1
+  rollup-plugin-license: 3.1.0
   stylelint: 15.10.3
   stylelint-config-recommended: 13.0.0_stylelint@15.10.3
   stylelint-config-styled-components: 0.1.1
@@ -5886,13 +5886,6 @@ packages:
     engines: {node: '>=12'}
     dev: true
 
-  /magic-string/0.26.7:
-    resolution: {integrity: sha512-hX9XH3ziStPoPhJxLq1syWuZMxbDvGNbVchfrdCtanC7D13888bMFow61x8axrx+GfHLtVeAx2kxL7tTGRl+Ow==}
-    engines: {node: '>=12'}
-    dependencies:
-      sourcemap-codec: 1.4.8
-    dev: false
-
   /magic-string/0.30.1:
     resolution: {integrity: sha512-mbVKXPmS0z0G4XqFDCTllmDQ6coZzn94aMlb0o/A4HEHJCKcanlDZwYJgwnkmgD3jyWhUgj9VsPrfd972yPffA==}
     engines: {node: '>=12'}
@@ -6167,6 +6160,13 @@ packages:
     resolution: {integrity: sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==}
     engines: {node: '>=10'}
     hasBin: true
+    dev: true
+
+  /mkdirp/3.0.1:
+    resolution: {integrity: sha512-+NsyUUAZDmo6YVHzL/stxSu3t9YS1iljliy3BSDrXJ/dkn1KYdmtZODGGjLcc9XLgVVpH4KshHB8XmZgMhaBXg==}
+    engines: {node: '>=10'}
+    hasBin: true
+    dev: false
 
   /mobx/6.10.0:
     resolution: {integrity: sha512-WMbVpCMFtolbB8swQ5E2YRrU+Yu8iLozCVx3CdGjbBKlP7dFiCSuiG06uea3JCFN5DnvtAX7+G5Bp82e2xu0ww==}
@@ -8172,8 +8172,8 @@ packages:
       glob: 10.3.3
     dev: true
 
-  /rollup-plugin-license/3.0.1:
-    resolution: {integrity: sha512-/lec6Y94Y3wMfTDeYTO/jSXII0GQ/XkDZCiqkMKxyU5D5nGPaxr/2JNYvAgYsoCYuOLGOanKDPjCCQiTT96p7A==}
+  /rollup-plugin-license/3.1.0:
+    resolution: {integrity: sha512-Cny2H2hJ7K+VdcJkH1pNcYRVhqIhZNu/fPusedW53fNZQOIwpXiznJ220EFvDkJbFUEkLqIDsDB5bEr/N9qfqw==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
       rollup: ^1.0.0 || ^2.0.0 || ^3.0.0
@@ -8181,8 +8181,8 @@ packages:
       commenting: 1.1.0
       glob: 7.2.3
       lodash: 4.17.21
-      magic-string: 0.26.7
-      mkdirp: 1.0.4
+      magic-string: 0.30.1
+      mkdirp: 3.0.1
       moment: 2.29.4
       package-name-regex: 2.0.6
       spdx-expression-validate: 2.0.0
