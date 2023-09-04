@@ -68,7 +68,7 @@
     "zustand": "^4.4.1"
   },
   "devDependencies": {
-    "@types/lodash-es": "^4.17.8",
+    "@types/lodash-es": "^4.17.9",
     "@types/node": "^20.5.7",
     "@types/qs": "^6.9.7",
     "@types/react": "^18.2.21",
