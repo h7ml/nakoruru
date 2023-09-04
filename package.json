@@ -51,7 +51,7 @@
     "recoil-devtools-logger": "^0.5.0",
     "recoil-persist": "^5.1.0",
     "reset-css": "^5.0.2",
-    "rollup-plugin-license": "^3.0.1",
+    "rollup-plugin-license": "^3.1.0",
     "stylelint": "15.10.3",
     "stylelint-config-recommended": "^13.0.0",
     "stylelint-config-styled-components": "^0.1.1",
