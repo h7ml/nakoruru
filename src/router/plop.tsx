@@ -14,6 +14,7 @@ import { Loading } from "@/components";
 import LazyRouter from "./LazyRouter";
 import NotFound from "@/pages/NotFound";
 /* pages add */
+const Live = lazy(() => import("@/pages/Live"));
 const Hotapi = lazy(() => import("@/pages/Hotapi"));
 const Login = lazy(() => import("@/pages/Login"));
 const Tree = lazy(() => import("@/pages/Tree"));
@@ -53,6 +54,14 @@ export const routes: ExtendedRouteObject[] = [
         )
       },
       /* plop add */
+  {
+    path: '/live',
+    element: (
+      <Suspense fallback={<Loading />}>
+        <Live />
+      </Suspense>
+    )
+  },
       {
         path: '/hotapi',
         element: (
