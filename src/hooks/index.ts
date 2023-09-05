@@ -14,5 +14,6 @@
  *
  * Copyright (c) 2022 by h7ml<h7ml@qq.com>, All Rights Reserved.
  */
-export * from "./fetch";
-export * from "./react-query";
+export * from './fetch'
+export * from './react-query'
+export * from './useMultiStreamsMixer'
