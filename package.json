@@ -71,7 +71,7 @@
   },
   "devDependencies": {
     "@types/lodash-es": "^4.17.9",
-    "@types/node": "^20.6.5",
+    "@types/node": "^20.8.0",
     "@types/qs": "^6.9.8",
     "@types/react": "^18.2.22",
     "@types/react-dom": "^18.2.8",
