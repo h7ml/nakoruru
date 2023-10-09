@@ -71,7 +71,7 @@ specifiers:
   vite-plugin-html: ^3.2.0
   vite-plugin-windicss: ^1.9.1
   windicss: ^3.5.6
-  zustand: ^4.4.1
+  zustand: ^4.4.3
 
 dependencies:
   '@ant-design/icons': 5.2.6_biqbaboplfbrettd7655fr4n2y
@@ -123,7 +123,7 @@ dependencies:
   vite-plugin-html: 3.2.0_vite@4.4.9
   vite-plugin-windicss: 1.9.1_vite@4.4.9
   windicss: 3.5.6
-  zustand: 4.4.1_qplb6sntkpqlhms5ct4t6n64ve
+  zustand: 4.4.3_qplb6sntkpqlhms5ct4t6n64ve
 
 devDependencies:
   '@types/lodash-es': 4.17.9
@@ -9782,8 +9782,8 @@ packages:
       react: 18.2.0
     dev: false
 
-  /zustand/4.4.1_qplb6sntkpqlhms5ct4t6n64ve:
-    resolution: {integrity: sha512-QCPfstAS4EBiTQzlaGP1gmorkh/UL1Leaj2tdj+zZCZ/9bm0WS7sI2wnfD5lpOszFqWJ1DcPnGoY8RDL61uokw==}
+  /zustand/4.4.3_qplb6sntkpqlhms5ct4t6n64ve:
+    resolution: {integrity: sha512-oRy+X3ZazZvLfmv6viIaQmtLOMeij1noakIsK/Y47PWYhT8glfXzQ4j0YcP5i0P0qI1A4rIB//SGROGyZhx91A==}
     engines: {node: '>=12.7.0'}
     peerDependencies:
       '@types/react': '>=16.8'
