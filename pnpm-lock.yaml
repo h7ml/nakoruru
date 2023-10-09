@@ -13,7 +13,7 @@ specifiers:
   '@types/react-dom': ^18.2.11
   '@typescript-eslint/eslint-plugin': ^6.7.4
   '@typescript-eslint/parser': ^6.7.3
-  '@uiw/react-github-corners': ^1.5.15
+  '@uiw/react-github-corners': ^1.5.16
   '@vitejs/plugin-legacy': ^4.1.1
   '@vitejs/plugin-react': ^4.1.0
   '@vitejs/plugin-react-swc': ^3.4.0
@@ -79,7 +79,7 @@ dependencies:
   '@emotion/css': 11.11.2
   '@tanstack/react-query': 4.32.0_biqbaboplfbrettd7655fr4n2y
   '@tanstack/react-query-devtools': 4.32.0_xzqwv52z3lkencxda3hsqynkyy
-  '@uiw/react-github-corners': 1.5.15_biqbaboplfbrettd7655fr4n2y
+  '@uiw/react-github-corners': 1.5.16_biqbaboplfbrettd7655fr4n2y
   '@vitejs/plugin-legacy': 4.1.1_vite@4.4.11
   '@vitejs/plugin-react-swc': 3.4.0_vite@4.4.11
   ahooks: 3.7.8_react@18.2.0
@@ -3173,17 +3173,17 @@ packages:
       eslint-visitor-keys: 3.4.3
     dev: true
 
-  /@uiw/github-corners/1.5.15:
-    resolution: {integrity: sha512-L7CxmxFxYRhy0Q2ofo8+TB+bpwG0xbeS0kQ6fzmvUWSuzCQ1XlX0f0I9DCQz31rYD9Q05Y3zOoiEi3d6Rsbbhw==}
+  /@uiw/github-corners/1.5.16:
+    resolution: {integrity: sha512-XelD5IePslpUBvT0S9jsIGKnnxSkqs6peZH2+rh42x+N1cQ0eQMbTfeWPbJtl4TiZEawywZclXlt55+Ur4CFVA==}
     dev: false
 
-  /@uiw/react-github-corners/1.5.15_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-roqwlA3oG73SMYj/LUv0twsuEH2M8ScYYUt/iukiLCl8de9PQwI+j1XwvwbLtQ1TaaEI0YS3WxNyScP6i0404Q==}
+  /@uiw/react-github-corners/1.5.16_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-t2oWv3Pboxuy03OVcn13kuQit1X+AUYqP+NhhDlCZmIUZKoRSMeB7IOQo4FBVvRbPO0teOnDDid7xaWAtVsugg==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
     dependencies:
-      '@uiw/github-corners': 1.5.15
+      '@uiw/github-corners': 1.5.16
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
     dev: false
