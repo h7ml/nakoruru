@@ -32,7 +32,7 @@ specifiers:
   lint-staged: ^14.0.1
   lodash-es: ^4.17.21
   mobx: ^6.10.2
-  monaco-editor: ^0.43.0
+  monaco-editor: ^0.44.0
   multistreamsmixer: ^1.2.2
   npm-check-updates: ^16.14.4
   plop: ^4.0.0
@@ -90,7 +90,7 @@ dependencies:
   less: 4.2.0
   lodash-es: 4.17.21
   mobx: 6.10.2
-  monaco-editor: 0.43.0
+  monaco-editor: 0.44.0
   multistreamsmixer: 1.2.2
   qs: 6.11.2
   rc-field-form: 1.38.2_biqbaboplfbrettd7655fr4n2y
@@ -6353,8 +6353,8 @@ packages:
     resolution: {integrity: sha512-5LC9SOxjSc2HF6vO2CyuTDNivEdoz2IvyJJGj6X8DJ0eFyfszE0QiEd+iXmBvUP3WHxSjFH/vIsA0EN00cgr8w==}
     dev: false
 
-  /monaco-editor/0.43.0:
-    resolution: {integrity: sha512-cnoqwQi/9fml2Szamv1XbSJieGJ1Dc8tENVMD26Kcfl7xGQWp7OBKMjlwKVGYFJ3/AXJjSOGvcqK7Ry/j9BM1Q==}
+  /monaco-editor/0.44.0:
+    resolution: {integrity: sha512-5SmjNStN6bSuSE5WPT2ZV+iYn1/yI9sd4Igtk23ChvqB7kDk9lZbB9F5frsuvpB+2njdIeGGFf2G4gbE6rCC9Q==}
     dev: false
 
   /ms/2.1.2:
