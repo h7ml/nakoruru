@@ -34,7 +34,7 @@ specifiers:
   mobx: ^6.10.2
   monaco-editor: ^0.44.0
   multistreamsmixer: ^1.2.2
-  npm-check-updates: ^16.14.5
+  npm-check-updates: ^16.14.6
   plop: ^4.0.0
   prettier: 3.0.3
   qs: ^6.11.2
@@ -141,7 +141,7 @@ devDependencies:
   eslint-plugin-react-refresh: 0.4.3_eslint@8.51.0
   fs-extra: 11.1.1
   lint-staged: 15.0.1
-  npm-check-updates: 16.14.5
+  npm-check-updates: 16.14.6
   plop: 4.0.0
   prettier: 3.0.3
   rollup-plugin-visualizer: 5.9.2
@@ -3732,7 +3732,7 @@ packages:
     dependencies:
       '@npmcli/fs': 3.1.0
       fs-minipass: 3.0.2
-      glob: 10.3.3
+      glob: 10.3.10
       lru-cache: 7.18.3
       minipass: 5.0.0
       minipass-collect: 1.0.2
@@ -4979,8 +4979,8 @@ packages:
       fetch-blob: 3.2.0
     dev: false
 
-  /fp-and-or/0.1.3:
-    resolution: {integrity: sha512-wJaE62fLaB3jCYvY2ZHjZvmKK2iiLiiehX38rz5QZxtdN8fVPJDeZUiVvJrHStdTc+23LHlyZuSEKgFc0pxi2g==}
+  /fp-and-or/0.1.4:
+    resolution: {integrity: sha512-+yRYRhpnFPWXSly/6V4Lw9IfOV26uu30kynGJ03PW+MnjOEQe45RZ141QcS0aJehYBYA50GfCDnsRbFJdhssRw==}
     engines: {node: '>=10'}
     dev: true
 
@@ -5088,13 +5088,13 @@ packages:
       is-glob: 4.0.3
     dev: true
 
-  /glob/10.3.3:
-    resolution: {integrity: sha512-92vPiMb/iqpmEgsOoIDvTjc50wf9CCCvMzsi6W0JLPeUKE8TWP1a73PgqSrqy7iAZxaSD1YdzU7QZR5LF51MJw==}
+  /glob/10.3.10:
+    resolution: {integrity: sha512-fa46+tv1Ak0UPK1TOy/pZrIybNNt4HCv7SDzwyfiOZkvZLEbjsZkJBPtDHVshZjbecAoAGSC20MjLDG/qr679g==}
     engines: {node: '>=16 || 14 >=14.17'}
     hasBin: true
     dependencies:
       foreground-child: 3.1.1
-      jackspeak: 2.2.2
+      jackspeak: 2.3.6
       minimatch: 9.0.3
       minipass: 7.0.2
       path-scurry: 1.10.1
@@ -5743,8 +5743,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /jackspeak/2.2.2:
-    resolution: {integrity: sha512-mgNtVv4vUuaKA97yxUHoA3+FkuhtxkjdXEWOyB/N76fjy0FjezEt34oy3epBtvCvS+7DyKwqCFWx/oJLV5+kCg==}
+  /jackspeak/2.3.6:
+    resolution: {integrity: sha512-N3yCS/NegsOBokc8GAdM8UcmfsKiSS8cipheD/nivzr700H+nsMOxJjQnvwOcRYVuFkdH0wGUvW2WbXGmrZGbQ==}
     engines: {node: '>=14'}
     dependencies:
       '@isaacs/cliui': 8.0.2
@@ -6570,8 +6570,8 @@ packages:
       npm-normalize-package-bin: 3.0.1
     dev: true
 
-  /npm-check-updates/16.14.5:
-    resolution: {integrity: sha512-f7v3YzPUgadtkB2LAVhiWMjrSejJ0N8OM9JjjVfxBz2neHqmPSWQUAUA+U/p3xeXHl9bghRD6knRqBhm9dkRGg==}
+  /npm-check-updates/16.14.6:
+    resolution: {integrity: sha512-sJ6w4AmSDP7YzBXah94Ul2JhiIbjBDfx9XYgib15um2wtiQkOyjE7Lov3MNUSQ84Ry7T81mE4ynMbl/mGbK4HQ==}
     engines: {node: '>=14.14'}
     hasBin: true
     dependencies:
@@ -6580,7 +6580,7 @@ packages:
       commander: 10.0.1
       fast-memoize: 2.5.2
       find-up: 5.0.0
-      fp-and-or: 0.1.3
+      fp-and-or: 0.1.4
       get-stdin: 8.0.0
       globby: 11.1.0
       hosted-git-info: 5.2.1
@@ -6598,11 +6598,11 @@ packages:
       prompts-ncu: 3.0.0
       rc-config-loader: 4.1.3
       remote-git-tags: 3.0.0
-      rimraf: 5.0.1
+      rimraf: 5.0.5
       semver: 7.5.4
       semver-utils: 1.1.4
       source-map-support: 0.5.21
-      spawn-please: 2.0.1
+      spawn-please: 2.0.2
       strip-ansi: 7.1.0
       strip-json-comments: 5.0.1
       untildify: 4.0.0
@@ -8035,7 +8035,7 @@ packages:
     resolution: {integrity: sha512-AEtWXYfopBj2z5N5PbkAOeNHRPUg5q+Nen7QLxV8M2zJq1ym6/lCz3fYNTCXe19puu2d06jfHhrP7v/S2PtMMw==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
     dependencies:
-      glob: 10.3.3
+      glob: 10.3.10
       json-parse-even-better-errors: 3.0.0
       normalize-package-data: 5.0.0
       npm-normalize-package-bin: 3.0.1
@@ -8367,12 +8367,12 @@ packages:
     dependencies:
       glob: 7.2.3
 
-  /rimraf/5.0.1:
-    resolution: {integrity: sha512-OfFZdwtd3lZ+XZzYP/6gTACubwFcHdLRqS9UX3UwpU2dnGQYkPFISRwvM3w9IiB2w7bW5qGo/uAwE4SmXXSKvg==}
+  /rimraf/5.0.5:
+    resolution: {integrity: sha512-CqDakW+hMe/Bz202FPEymy68P+G50RfMQK+Qo5YUqc9SPipvbGjCGKd0RSKEelbsfQuw3g5NZDSrlZZAJurH1A==}
     engines: {node: '>=14'}
     hasBin: true
     dependencies:
-      glob: 10.3.3
+      glob: 10.3.10
     dev: true
 
   /rollup-plugin-license/3.2.0:
@@ -8723,8 +8723,8 @@ packages:
     deprecated: Please use @jridgewell/sourcemap-codec instead
     dev: false
 
-  /spawn-please/2.0.1:
-    resolution: {integrity: sha512-W+cFbZR2q2mMTfjz5ZGvhBAiX+e/zczFCNlbS9mxiSdYswBXwUuBUT+a0urH+xZZa8f/bs0mXHyZsZHR9hKogA==}
+  /spawn-please/2.0.2:
+    resolution: {integrity: sha512-KM8coezO6ISQ89c1BzyWNtcn2V2kAVtwIXd3cN/V5a0xPYc1F/vydrRc01wsKFEQ/p+V1a4sw4z2yMITIXrgGw==}
     engines: {node: '>=14'}
     dependencies:
       cross-spawn: 7.0.3
