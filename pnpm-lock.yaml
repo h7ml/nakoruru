@@ -54,7 +54,7 @@ specifiers:
   recoil-devtools-logger: ^0.5.0
   recoil-persist: ^5.1.0
   reset-css: ^5.0.2
-  rollup-plugin-license: ^3.1.0
+  rollup-plugin-license: ^3.2.0
   rollup-plugin-visualizer: ^5.9.2
   stylelint: 15.10.3
   stylelint-config-recommended: ^13.0.0
@@ -109,7 +109,7 @@ dependencies:
   recoil-devtools-logger: 0.5.0_react@18.2.0+recoil@0.7.7
   recoil-persist: 5.1.0_recoil@0.7.7
   reset-css: 5.0.2
-  rollup-plugin-license: 3.1.0
+  rollup-plugin-license: 3.2.0
   stylelint: 15.10.3
   stylelint-config-recommended: 13.0.0_stylelint@15.10.3
   stylelint-config-styled-components: 0.1.1
@@ -8331,11 +8331,11 @@ packages:
       glob: 10.3.3
     dev: true
 
-  /rollup-plugin-license/3.1.0:
-    resolution: {integrity: sha512-Cny2H2hJ7K+VdcJkH1pNcYRVhqIhZNu/fPusedW53fNZQOIwpXiznJ220EFvDkJbFUEkLqIDsDB5bEr/N9qfqw==}
+  /rollup-plugin-license/3.2.0:
+    resolution: {integrity: sha512-gLtSOTE3hZ/mDgxg1HvYz87timTpLlyWXnV7OTyYMhn+Esek+xKxAOjtTsYnfMFGtsBWX+hvqC4b2Ct5ABpE6A==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
-      rollup: ^1.0.0 || ^2.0.0 || ^3.0.0
+      rollup: ^1.0.0 || ^2.0.0 || ^3.0.0 || ^4.0.0
     dependencies:
       commenting: 1.1.0
       glob: 7.2.3
