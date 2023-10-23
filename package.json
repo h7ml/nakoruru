@@ -54,7 +54,7 @@
     "recoil-persist": "^5.1.0",
     "reset-css": "^5.0.2",
     "rollup-plugin-license": "^3.2.0",
-    "stylelint": "15.10.3",
+    "stylelint": "15.11.0",
     "stylelint-config-recommended": "^13.0.0",
     "stylelint-config-styled-components": "^0.1.1",
     "stylelint-order": "^6.0.3",
