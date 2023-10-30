@@ -9,7 +9,7 @@ specifiers:
   '@types/lodash-es': ^4.17.10
   '@types/node': ^20.8.7
   '@types/qs': ^6.9.9
-  '@types/react': ^18.2.31
+  '@types/react': ^18.2.33
   '@types/react-dom': ^18.2.14
   '@typescript-eslint/eslint-plugin': ^6.9.0
   '@typescript-eslint/parser': ^6.8.0
@@ -95,7 +95,7 @@ dependencies:
   qs: 6.11.2
   rc-field-form: 1.40.0_biqbaboplfbrettd7655fr4n2y
   react: 18.2.0
-  react-dnd: 16.0.1_iyztbojj5obb35gz7y5omsv5iy
+  react-dnd: 16.0.1_emlblbjwh3st2qzpr4msskqncu
   react-dnd-html5-backend: 16.0.1
   react-dom: 18.2.0_react@18.2.0
   react-flow-renderer: 10.3.17_biqbaboplfbrettd7655fr4n2y
@@ -104,8 +104,8 @@ dependencies:
   react-use: 17.4.0_biqbaboplfbrettd7655fr4n2y
   recoil: 0.7.7_biqbaboplfbrettd7655fr4n2y
   recoil-devtools: 0.5.0_react@18.2.0+recoil@0.7.7
-  recoil-devtools-dock: 0.5.0_yuq7d6c2wnjt2mr7myxaxq2p2e
-  recoil-devtools-log-monitor: 0.5.0_yuq7d6c2wnjt2mr7myxaxq2p2e
+  recoil-devtools-dock: 0.5.0_wneuamn6sv7wbaxqa2njh4ixum
+  recoil-devtools-log-monitor: 0.5.0_wneuamn6sv7wbaxqa2njh4ixum
   recoil-devtools-logger: 0.5.0_react@18.2.0+recoil@0.7.7
   recoil-persist: 5.1.0_recoil@0.7.7
   reset-css: 5.0.2
@@ -123,13 +123,13 @@ dependencies:
   vite-plugin-html: 3.2.0_vite@4.5.0
   vite-plugin-windicss: 1.9.1_vite@4.5.0
   windicss: 3.5.6
-  zustand: 4.4.3_uruz7wj5nvbintwsrh6fwqb4ri
+  zustand: 4.4.3_o5ysialsahsznabqayk7pree4e
 
 devDependencies:
   '@types/lodash-es': 4.17.10
   '@types/node': 20.8.7
   '@types/qs': 6.9.9
-  '@types/react': 18.2.31
+  '@types/react': 18.2.33
   '@types/react-dom': 18.2.14
   '@typescript-eslint/eslint-plugin': 6.9.0_xmlw7ciba4dhvvbsnhnqmsoya4
   '@typescript-eslint/parser': 6.8.0_i3vkbg2fztj7jno7sh3heeojya
@@ -2943,11 +2943,11 @@ packages:
   /@types/react-dom/18.2.14:
     resolution: {integrity: sha512-V835xgdSVmyQmI1KLV2BEIUgqEuinxp9O4G6g3FqO/SqLac049E53aysv0oEFD2kHfejeKU+ZqL2bcFWj9gLAQ==}
     dependencies:
-      '@types/react': 18.2.31
+      '@types/react': 18.2.33
     dev: true
 
-  /@types/react/18.2.31:
-    resolution: {integrity: sha512-c2UnPv548q+5DFh03y8lEDeMfDwBn9G3dRwfkrxQMo/dOtRHUUO57k6pHvBIfH/VF4Nh+98mZ5aaSe+2echD5g==}
+  /@types/react/18.2.33:
+    resolution: {integrity: sha512-v+I7S+hu3PIBoVkKGpSYYpiBT1ijqEzWpzQD62/jm4K74hPpSP7FF9BnKG6+fg2+62weJYkkBWDJlZt5JO/9hg==}
     dependencies:
       '@types/prop-types': 15.7.5
       '@types/scheduler': 0.16.3
@@ -7824,7 +7824,7 @@ packages:
       dnd-core: 16.0.1
     dev: false
 
-  /react-dnd/16.0.1_iyztbojj5obb35gz7y5omsv5iy:
+  /react-dnd/16.0.1_emlblbjwh3st2qzpr4msskqncu:
     resolution: {integrity: sha512-QeoM/i73HHu2XF9aKksIUuamHPDvRglEwdHL4jsp784BgUuWcg6mzfxT0QDdQz8Wj0qyRKx2eMg8iZtWvU4E2Q==}
     peerDependencies:
       '@types/hoist-non-react-statics': '>= 3.3.1'
@@ -7842,21 +7842,21 @@ packages:
       '@react-dnd/invariant': 4.0.2
       '@react-dnd/shallowequal': 4.0.2
       '@types/node': 20.8.7
-      '@types/react': 18.2.31
+      '@types/react': 18.2.33
       dnd-core: 16.0.1
       fast-deep-equal: 3.1.3
       hoist-non-react-statics: 3.3.2
       react: 18.2.0
     dev: false
 
-  /react-dock/0.3.0_uruz7wj5nvbintwsrh6fwqb4ri:
+  /react-dock/0.3.0_o5ysialsahsznabqayk7pree4e:
     resolution: {integrity: sha512-A0Dfy6enwb6gruxsMXAkZM6hVyJETTcuB4u/CUVPAj4ZH0/ULQacLHmIdUHfYtZYmPCfeEgOa7KyTueSPrIjFg==}
     peerDependencies:
       '@types/react': ^16.3.18
       react: ^16.3.0
     dependencies:
       '@types/prop-types': 15.7.5
-      '@types/react': 18.2.31
+      '@types/react': 18.2.33
       lodash.debounce: 4.0.8
       prop-types: 15.8.1
       react: 18.2.0
@@ -7900,14 +7900,14 @@ packages:
     resolution: {integrity: sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==}
     dev: false
 
-  /react-json-tree/0.13.0_uruz7wj5nvbintwsrh6fwqb4ri:
+  /react-json-tree/0.13.0_o5ysialsahsznabqayk7pree4e:
     resolution: {integrity: sha512-FPJUQzYWi7pvBUAnMd9ENOnAUT2mXLhe01VUbPfKH9Q4gk4FQ0fpS1e1WZ3o7g6zfYJpYJeBTo1WwlMHlMlZOw==}
     peerDependencies:
       '@types/react': ^16.3.18
       react: ^16.3.0
     dependencies:
       '@types/prop-types': 15.7.5
-      '@types/react': 18.2.31
+      '@types/react': 18.2.33
       prop-types: 15.8.1
       react: 18.2.0
       react-base16-styling: 0.8.2
@@ -8075,7 +8075,7 @@ packages:
       resolve: 1.22.4
     dev: true
 
-  /recoil-devtools-dock/0.5.0_yuq7d6c2wnjt2mr7myxaxq2p2e:
+  /recoil-devtools-dock/0.5.0_wneuamn6sv7wbaxqa2njh4ixum:
     resolution: {integrity: sha512-wsDat4OUaE8IOkSkV5huuryDdfAvAEkXHRhKvtatc2fcow8GoOagZCHgJBNqxOfSYgQQl5N0zYmzU0Q8EDyAuQ==}
     engines: {node: '>=10'}
     peerDependencies:
@@ -8084,13 +8084,13 @@ packages:
     dependencies:
       parse-key: 0.2.1
       react: 18.2.0
-      react-dock: 0.3.0_uruz7wj5nvbintwsrh6fwqb4ri
+      react-dock: 0.3.0_o5ysialsahsznabqayk7pree4e
       recoil: 0.7.7_biqbaboplfbrettd7655fr4n2y
     transitivePeerDependencies:
       - '@types/react'
     dev: false
 
-  /recoil-devtools-log-monitor/0.5.0_yuq7d6c2wnjt2mr7myxaxq2p2e:
+  /recoil-devtools-log-monitor/0.5.0_wneuamn6sv7wbaxqa2njh4ixum:
     resolution: {integrity: sha512-JCXr+LZwOVI9fK0mygtmo8ciXXPjSaTr66mwlkO5P8PwldRHjVH12fNQgh36L3pSdbzUttvBervRq7q14u52EA==}
     engines: {node: '>=10'}
     peerDependencies:
@@ -8100,7 +8100,7 @@ packages:
       base16: 1.0.0
       lodash.debounce: 4.0.8
       react: 18.2.0
-      react-json-tree: 0.13.0_uruz7wj5nvbintwsrh6fwqb4ri
+      react-json-tree: 0.13.0_o5ysialsahsznabqayk7pree4e
       recoil: 0.7.7_biqbaboplfbrettd7655fr4n2y
       recoil-devtools-themes: 0.2.0_react@18.2.0
     transitivePeerDependencies:
@@ -9783,7 +9783,7 @@ packages:
       react: 18.2.0
     dev: false
 
-  /zustand/4.4.3_uruz7wj5nvbintwsrh6fwqb4ri:
+  /zustand/4.4.3_o5ysialsahsznabqayk7pree4e:
     resolution: {integrity: sha512-oRy+X3ZazZvLfmv6viIaQmtLOMeij1noakIsK/Y47PWYhT8glfXzQ4j0YcP5i0P0qI1A4rIB//SGROGyZhx91A==}
     engines: {node: '>=12.7.0'}
     peerDependencies:
@@ -9798,7 +9798,7 @@ packages:
       react:
         optional: true
     dependencies:
-      '@types/react': 18.2.31
+      '@types/react': 18.2.33
       react: 18.2.0
       use-sync-external-store: 1.2.0_react@18.2.0
     dev: false
