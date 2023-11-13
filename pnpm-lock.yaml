@@ -6,7 +6,7 @@ specifiers:
   '@emotion/css': ^11.11.2
   '@tanstack/react-query': ^4.32.0
   '@tanstack/react-query-devtools': ^4.32.0
-  '@types/lodash-es': ^4.17.10
+  '@types/lodash-es': ^4.17.11
   '@types/node': ^20.9.0
   '@types/qs': ^6.9.10
   '@types/react': ^18.2.37
@@ -126,7 +126,7 @@ dependencies:
   zustand: 4.4.6_u5zja476buyywzbvglb2fbhaii
 
 devDependencies:
-  '@types/lodash-es': 4.17.10
+  '@types/lodash-es': 4.17.11
   '@types/node': 20.9.0
   '@types/qs': 6.9.10
   '@types/react': 18.2.37
@@ -2907,8 +2907,8 @@ packages:
       '@types/node': 20.9.0
     dev: true
 
-  /@types/lodash-es/4.17.10:
-    resolution: {integrity: sha512-YJP+w/2khSBwbUSFdGsSqmDvmnN3cCKoPOL7Zjle6s30ZtemkkqhjVfFqGwPN7ASil5VyjE2GtyU/yqYY6mC0A==}
+  /@types/lodash-es/4.17.11:
+    resolution: {integrity: sha512-eCw8FYAWHt2DDl77s+AMLLzPn310LKohruumpucZI4oOFJkIgnlaJcy23OKMJxx4r9PeTF13Gv6w+jqjWQaYUg==}
     dependencies:
       '@types/lodash': 4.14.196
     dev: true
