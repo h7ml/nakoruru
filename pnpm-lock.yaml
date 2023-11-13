@@ -31,7 +31,7 @@ specifiers:
   less: ^4.2.0
   lint-staged: ^15.0.2
   lodash-es: ^4.17.21
-  mobx: ^6.10.2
+  mobx: ^6.11.0
   monaco-editor: ^0.44.0
   multistreamsmixer: ^1.2.2
   npm-check-updates: ^16.14.6
@@ -89,7 +89,7 @@ dependencies:
   http-proxy-middleware: 2.0.6
   less: 4.2.0
   lodash-es: 4.17.21
-  mobx: 6.10.2
+  mobx: 6.11.0
   monaco-editor: 0.44.0
   multistreamsmixer: 1.2.2
   qs: 6.11.2
@@ -6288,8 +6288,8 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
 
-  /mobx/6.10.2:
-    resolution: {integrity: sha512-B1UGC3ieK3boCjnMEcZSwxqRDMdzX65H/8zOHbuTY8ZhvrIjTUoLRR2TP2bPqIgYRfb3+dUigu8yMZufNjn0LQ==}
+  /mobx/6.11.0:
+    resolution: {integrity: sha512-qngYCmr0WJiFRSAtYe82DB7SbzvbhehkJjONs8ydynUwoazzUQHZdAlaJqUfks5j4HarhWsZrMRhV7HtSO9HOQ==}
     dev: false
 
   /moment/2.29.4:
