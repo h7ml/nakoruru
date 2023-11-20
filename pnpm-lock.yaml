@@ -7,7 +7,7 @@ specifiers:
   '@tanstack/react-query': ^4.32.0
   '@tanstack/react-query-devtools': ^4.32.0
   '@types/lodash-es': ^4.17.11
-  '@types/node': ^20.9.0
+  '@types/node': ^20.9.2
   '@types/qs': ^6.9.10
   '@types/react': ^18.2.37
   '@types/react-dom': ^18.2.15
@@ -95,7 +95,7 @@ dependencies:
   qs: 6.11.2
   rc-field-form: 1.40.0_biqbaboplfbrettd7655fr4n2y
   react: 18.2.0
-  react-dnd: 16.0.1_v37tvnlpsmfxrg2ereuoficzua
+  react-dnd: 16.0.1_mkwxu437sitcyax3u2udxrksd4
   react-dnd-html5-backend: 16.0.1
   react-dom: 18.2.0_react@18.2.0
   react-flow-renderer: 10.3.17_biqbaboplfbrettd7655fr4n2y
@@ -116,7 +116,7 @@ dependencies:
   stylelint-order: 6.0.3_stylelint@15.11.0
   stylelint-processor-styled-components: 1.10.0
   swagger-typescript-api: 13.0.3
-  ts-node: 10.9.1_oindi6ejmpcxfgvswaebsuu3vy
+  ts-node: 10.9.1_suzn2iy4oqhn3nxq7v7dem747a
   unplugin-starter: 0.1.0_vite@4.5.0
   unplugin-visualizer: 0.0.7_vite@4.5.0
   vite-plugin-compression: 0.5.1_vite@4.5.0
@@ -127,7 +127,7 @@ dependencies:
 
 devDependencies:
   '@types/lodash-es': 4.17.11
-  '@types/node': 20.9.0
+  '@types/node': 20.9.2
   '@types/qs': 6.9.10
   '@types/react': 18.2.37
   '@types/react-dom': 18.2.15
@@ -146,7 +146,7 @@ devDependencies:
   prettier: 3.1.0
   rollup-plugin-visualizer: 5.9.2
   typescript: 5.2.2
-  vite: 4.5.0_selparimxigoaw5na2h5n2nbie
+  vite: 4.5.0_4dibpglfacfseqp527yqmymqby
 
 packages:
 
@@ -2882,7 +2882,7 @@ packages:
   /@types/http-proxy/1.17.11:
     resolution: {integrity: sha512-HC8G7c1WmaF2ekqpnFq626xd3Zz0uvaqFmBJNRZCGEZCXkvSdJoNFn/8Ygbd9fKNQj8UzLdCETaI0UWPAjK7IA==}
     dependencies:
-      '@types/node': 20.9.0
+      '@types/node': 20.9.2
     dev: false
 
   /@types/inquirer/9.0.3:
@@ -2904,7 +2904,7 @@ packages:
     resolution: {integrity: sha512-GUUFIP1wHuB6DEg65hkgJdqqmEeK5Vj+Wy5Tza26F9FuaHhtm4BxN00N3PhVUdCcryY9pn3SkcXGGQDLBisAPQ==}
     dependencies:
       '@types/fined': 1.1.3
-      '@types/node': 20.9.0
+      '@types/node': 20.9.2
     dev: true
 
   /@types/lodash-es/4.17.11:
@@ -2920,8 +2920,8 @@ packages:
     resolution: {integrity: sha512-jhuKLIRrhvCPLqwPcx6INqmKeiA5EWrsCOPhrlFSrbrmU4ZMPjj5Ul/oLCMDO98XRUIwVm78xICz4EPCektzeQ==}
     dev: false
 
-  /@types/node/20.9.0:
-    resolution: {integrity: sha512-nekiGu2NDb1BcVofVcEKMIwzlx4NjHlcjhoxxKBNLtz15Y1z7MYf549DFvkHSId02Ax6kGwWntIBPC3l/JZcmw==}
+  /@types/node/20.9.2:
+    resolution: {integrity: sha512-WHZXKFCEyIUJzAwh3NyyTHYSR35SevJ6mZ1nWwJafKtiQbqRTIKSRcw3Ma3acqgsent3RRDqeVwpHntMk+9irg==}
     dependencies:
       undici-types: 5.26.5
 
@@ -2971,7 +2971,7 @@ packages:
   /@types/through/0.0.30:
     resolution: {integrity: sha512-FvnCJljyxhPM3gkRgWmxmDZyAQSiBQQWLI0A0VFL0K7W1oRUrPJSqNO0NvTnLkBcotdlp3lKvaT0JrnyRDkzOg==}
     dependencies:
-      '@types/node': 20.9.0
+      '@types/node': 20.9.2
     dev: true
 
   /@types/use-sync-external-store/0.0.3:
@@ -3196,7 +3196,7 @@ packages:
       magic-string: 0.30.1
       regenerator-runtime: 0.13.11
       systemjs: 6.14.1
-      vite: 4.5.0_selparimxigoaw5na2h5n2nbie
+      vite: 4.5.0_4dibpglfacfseqp527yqmymqby
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -3207,7 +3207,7 @@ packages:
       vite: ^4 || ^5
     dependencies:
       '@swc/core': 1.3.96
-      vite: 4.5.0_selparimxigoaw5na2h5n2nbie
+      vite: 4.5.0_4dibpglfacfseqp527yqmymqby
     transitivePeerDependencies:
       - '@swc/helpers'
     dev: false
@@ -3223,7 +3223,7 @@ packages:
       '@babel/plugin-transform-react-jsx-source': 7.22.5_@babel+core@7.23.2
       '@types/babel__core': 7.20.3
       react-refresh: 0.14.0
-      vite: 4.5.0_selparimxigoaw5na2h5n2nbie
+      vite: 4.5.0_4dibpglfacfseqp527yqmymqby
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -7822,7 +7822,7 @@ packages:
       dnd-core: 16.0.1
     dev: false
 
-  /react-dnd/16.0.1_v37tvnlpsmfxrg2ereuoficzua:
+  /react-dnd/16.0.1_mkwxu437sitcyax3u2udxrksd4:
     resolution: {integrity: sha512-QeoM/i73HHu2XF9aKksIUuamHPDvRglEwdHL4jsp784BgUuWcg6mzfxT0QDdQz8Wj0qyRKx2eMg8iZtWvU4E2Q==}
     peerDependencies:
       '@types/hoist-non-react-statics': '>= 3.3.1'
@@ -7839,7 +7839,7 @@ packages:
     dependencies:
       '@react-dnd/invariant': 4.0.2
       '@react-dnd/shallowequal': 4.0.2
-      '@types/node': 20.9.0
+      '@types/node': 20.9.2
       '@types/react': 18.2.37
       dnd-core: 16.0.1
       fast-deep-equal: 3.1.3
@@ -9185,7 +9185,7 @@ packages:
     resolution: {integrity: sha512-Z86EW+fFFh/IFB1fqQ3/+7Zpf9t2ebOAxNI/V6Wo7r5gqiqtxmgTlQ1qbqQcjLKYeSHPTsEmvlJUDg/EuL0uHQ==}
     dev: false
 
-  /ts-node/10.9.1_oindi6ejmpcxfgvswaebsuu3vy:
+  /ts-node/10.9.1_suzn2iy4oqhn3nxq7v7dem747a:
     resolution: {integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==}
     hasBin: true
     peerDependencies:
@@ -9204,7 +9204,7 @@ packages:
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
-      '@types/node': 20.9.0
+      '@types/node': 20.9.2
       acorn: 8.10.0
       acorn-walk: 8.2.0
       arg: 4.1.3
@@ -9378,7 +9378,7 @@ packages:
       webpack:
         optional: true
     dependencies:
-      vite: 4.5.0_selparimxigoaw5na2h5n2nbie
+      vite: 4.5.0_4dibpglfacfseqp527yqmymqby
       webpack-virtual-modules: 0.4.6
     dev: false
 
@@ -9400,7 +9400,7 @@ packages:
         optional: true
     dependencies:
       chokidar: 3.5.3
-      vite: 4.5.0_selparimxigoaw5na2h5n2nbie
+      vite: 4.5.0_4dibpglfacfseqp527yqmymqby
       webpack-sources: 3.2.3
       webpack-virtual-modules: 0.4.6
     dev: false
@@ -9498,7 +9498,7 @@ packages:
       chalk: 4.1.2
       debug: 4.3.4
       fs-extra: 10.1.0
-      vite: 4.5.0_selparimxigoaw5na2h5n2nbie
+      vite: 4.5.0_4dibpglfacfseqp527yqmymqby
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -9520,7 +9520,7 @@ packages:
       html-minifier-terser: 6.1.0
       node-html-parser: 5.4.2
       pathe: 0.2.0
-      vite: 4.5.0_selparimxigoaw5na2h5n2nbie
+      vite: 4.5.0_4dibpglfacfseqp527yqmymqby
     dev: false
 
   /vite-plugin-windicss/1.9.1_vite@4.5.0:
@@ -9531,13 +9531,13 @@ packages:
       '@windicss/plugin-utils': 1.9.1
       debug: 4.3.4
       kolorist: 1.8.0
-      vite: 4.5.0_selparimxigoaw5na2h5n2nbie
+      vite: 4.5.0_4dibpglfacfseqp527yqmymqby
       windicss: 3.5.6
     transitivePeerDependencies:
       - supports-color
     dev: false
 
-  /vite/4.5.0_selparimxigoaw5na2h5n2nbie:
+  /vite/4.5.0_4dibpglfacfseqp527yqmymqby:
     resolution: {integrity: sha512-ulr8rNLA6rkyFAlVWw2q5YJ91v098AFQ2R0PRFwPzREXOUJQPtFUG0t+/ZikhaOCDqFoDhN6/v8Sq0o4araFAw==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -9565,7 +9565,7 @@ packages:
       terser:
         optional: true
     dependencies:
-      '@types/node': 20.9.0
+      '@types/node': 20.9.2
       esbuild: 0.18.17
       less: 4.2.0
       postcss: 8.4.31
