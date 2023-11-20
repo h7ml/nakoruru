@@ -16,7 +16,7 @@ specifiers:
   '@uiw/react-github-corners': ^1.5.16
   '@vitejs/plugin-legacy': ^4.1.1
   '@vitejs/plugin-react': ^4.1.1
-  '@vitejs/plugin-react-swc': ^3.4.1
+  '@vitejs/plugin-react-swc': ^3.5.0
   ahooks: ^3.7.8
   antd: ^5.11.1
   axios: ^1.6.0
@@ -81,7 +81,7 @@ dependencies:
   '@tanstack/react-query-devtools': 4.32.0_xzqwv52z3lkencxda3hsqynkyy
   '@uiw/react-github-corners': 1.5.16_biqbaboplfbrettd7655fr4n2y
   '@vitejs/plugin-legacy': 4.1.1_vite@4.5.0
-  '@vitejs/plugin-react-swc': 3.4.1_vite@4.5.0
+  '@vitejs/plugin-react-swc': 3.5.0_vite@4.5.0
   ahooks: 3.7.8_react@18.2.0
   antd: 5.11.1_biqbaboplfbrettd7655fr4n2y
   axios: 1.6.0
@@ -3159,10 +3159,10 @@ packages:
       - supports-color
     dev: false
 
-  /@vitejs/plugin-react-swc/3.4.1_vite@4.5.0:
-    resolution: {integrity: sha512-7YQOQcVV5x1luD8nkbCDdyYygFvn1hjqJk68UvNAzY2QG4o4N5EwAhLLFNOcd1HrdMwDl0VElP8VutoWf9IvJg==}
+  /@vitejs/plugin-react-swc/3.5.0_vite@4.5.0:
+    resolution: {integrity: sha512-1PrOvAaDpqlCV+Up8RkAh9qaiUjoDUcjtttyhXDKw53XA6Ve16SOp6cCOpRs8Dj8DqUQs6eTW5YkLcLJjrXAig==}
     peerDependencies:
-      vite: ^4
+      vite: ^4 || ^5
     dependencies:
       '@swc/core': 1.3.96
       vite: 4.5.0_selparimxigoaw5na2h5n2nbie
