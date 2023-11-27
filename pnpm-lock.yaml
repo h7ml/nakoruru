@@ -10,7 +10,7 @@ specifiers:
   '@types/node': ^20.10.0
   '@types/qs': ^6.9.10
   '@types/react': ^18.2.38
-  '@types/react-dom': ^18.2.15
+  '@types/react-dom': ^18.2.17
   '@typescript-eslint/eslint-plugin': ^6.12.0
   '@typescript-eslint/parser': ^6.12.0
   '@uiw/react-github-corners': ^1.5.16
@@ -130,7 +130,7 @@ devDependencies:
   '@types/node': 20.10.0
   '@types/qs': 6.9.10
   '@types/react': 18.2.38
-  '@types/react-dom': 18.2.15
+  '@types/react-dom': 18.2.17
   '@typescript-eslint/eslint-plugin': 6.12.0_wnbvn5ztc62p5ue2kz3rdpuw6q
   '@typescript-eslint/parser': 6.12.0_t4y562kuozn2x6kqiutrjmhi5a
   '@vitejs/plugin-react': 4.2.0_vite@4.5.0
@@ -2917,8 +2917,8 @@ packages:
     resolution: {integrity: sha512-3Gnx08Ns1sEoCrWssEgTSJs/rsT2vhGP+Ja9cnnk9k4ALxinORlQneLXFeFKOTJMOeZUFD1s7w+w2AphTpvzZw==}
     dev: true
 
-  /@types/react-dom/18.2.15:
-    resolution: {integrity: sha512-HWMdW+7r7MR5+PZqJF6YFNSCtjz1T0dsvo/f1BV6HkV+6erD/nA7wd9NM00KVG83zf2nJ7uATPO9ttdIPvi3gg==}
+  /@types/react-dom/18.2.17:
+    resolution: {integrity: sha512-rvrT/M7Df5eykWFxn6MYt5Pem/Dbyc1N8Y0S9Mrkw2WFCRiqUgw9P7ul2NpwsXCSM1DVdENzdG9J5SreqfAIWg==}
     dependencies:
       '@types/react': 18.2.38
     dev: true
