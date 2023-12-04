@@ -67,7 +67,7 @@
     "vite-plugin-html": "^3.2.0",
     "vite-plugin-windicss": "^1.9.2",
     "windicss": "^3.5.6",
-    "zustand": "^4.4.6"
+    "zustand": "^4.4.7"
   },
   "devDependencies": {
     "@types/lodash-es": "^4.17.12",
