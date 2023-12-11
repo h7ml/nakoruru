@@ -60,7 +60,7 @@
     "stylelint-order": "^6.0.3",
     "stylelint-processor-styled-components": "^1.10.0",
     "swagger-typescript-api": "^13.0.3",
-    "ts-node": "^10.9.1",
+    "ts-node": "^10.9.2",
     "unplugin-starter": "^0.1.0",
     "unplugin-visualizer": "^0.0.7",
     "vite-plugin-compression": "^0.5.1",
