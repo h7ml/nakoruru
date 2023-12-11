@@ -59,7 +59,7 @@ specifiers:
   stylelint: 15.11.0
   stylelint-config-recommended: ^13.0.0
   stylelint-config-styled-components: ^0.1.1
-  stylelint-order: ^6.0.3
+  stylelint-order: ^6.0.4
   stylelint-processor-styled-components: ^1.10.0
   swagger-typescript-api: ^13.0.3
   ts-node: ^10.9.2
@@ -113,7 +113,7 @@ dependencies:
   stylelint: 15.11.0
   stylelint-config-recommended: 13.0.0_stylelint@15.11.0
   stylelint-config-styled-components: 0.1.1
-  stylelint-order: 6.0.3_stylelint@15.11.0
+  stylelint-order: 6.0.4_stylelint@15.11.0
   stylelint-processor-styled-components: 1.10.0
   swagger-typescript-api: 13.0.3
   ts-node: 10.9.2_xy5pmmm77qgfdfg5jflxsqkm74
@@ -7237,12 +7237,12 @@ packages:
       util-deprecate: 1.0.2
     dev: false
 
-  /postcss-sorting/8.0.2_postcss@8.4.27:
+  /postcss-sorting/8.0.2_postcss@8.4.32:
     resolution: {integrity: sha512-M9dkSrmU00t/jK7rF6BZSZauA5MAaBW4i5EnJXspMwt4iqTh/L9j6fgMnbElEOfyRyfLfVbIHj/R52zHzAPe1Q==}
     peerDependencies:
       postcss: ^8.4.20
     dependencies:
-      postcss: 8.4.27
+      postcss: 8.4.32
     dev: false
 
   /postcss-value-parser/4.2.0:
@@ -7255,15 +7255,6 @@ packages:
     dependencies:
       picocolors: 0.2.1
       source-map: 0.6.1
-    dev: false
-
-  /postcss/8.4.27:
-    resolution: {integrity: sha512-gY/ACJtJPSmUFPDCHtX78+01fHa64FaU4zaaWfuh1MhGJISufJAH4cun6k/8fwsHYeK4UQmENQK+tRLCFJE8JQ==}
-    engines: {node: ^10 || ^12 || >=14}
-    dependencies:
-      nanoid: 3.3.6
-      picocolors: 1.0.0
-      source-map-js: 1.0.2
     dev: false
 
   /postcss/8.4.31:
@@ -9070,13 +9061,13 @@ packages:
     resolution: {integrity: sha512-z5Xz/9GmvxO6e/DLzBMwkB85zHxEEjN6K7Cj80Bi+o/9vR9eS3GX3E9VuMnX9WLFYulqbqLtTapGGY28JBiy9Q==}
     dev: false
 
-  /stylelint-order/6.0.3_stylelint@15.11.0:
-    resolution: {integrity: sha512-1j1lOb4EU/6w49qZeT2SQVJXm0Ht+Qnq9GMfUa3pMwoyojIWfuA+JUDmoR97Bht1RLn4ei0xtLGy87M7d29B1w==}
+  /stylelint-order/6.0.4_stylelint@15.11.0:
+    resolution: {integrity: sha512-0UuKo4+s1hgQ/uAxlYU4h0o0HS4NiQDud0NAUNI0aa8FJdmYHA5ZZTFHiV5FpmE3071e9pZx5j0QpVJW5zOCUA==}
     peerDependencies:
-      stylelint: ^14.0.0 || ^15.0.0
+      stylelint: ^14.0.0 || ^15.0.0 || ^16.0.1
     dependencies:
-      postcss: 8.4.27
-      postcss-sorting: 8.0.2_postcss@8.4.27
+      postcss: 8.4.32
+      postcss-sorting: 8.0.2_postcss@8.4.32
       stylelint: 15.11.0
     dev: false
 
