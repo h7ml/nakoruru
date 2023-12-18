@@ -85,7 +85,7 @@
     "eslint-plugin-react-refresh": "^0.4.5",
     "fs-extra": "^11.2.0",
     "lint-staged": "^15.2.0",
-    "npm-check-updates": "^16.14.11",
+    "npm-check-updates": "^16.14.12",
     "plop": "^4.0.0",
     "prettier": "3.1.1",
     "rollup-plugin-visualizer": "^5.11.0",
