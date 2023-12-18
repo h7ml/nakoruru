@@ -44,7 +44,7 @@
     "react-dom": "^18.2.0",
     "react-flow-renderer": "^10.3.17",
     "react-query": "^4.0.0",
-    "react-router-dom": "^6.20.1",
+    "react-router-dom": "^6.21.0",
     "react-use": "^17.4.2",
     "recoil": "^0.7.7",
     "recoil-devtools": "^0.5.0",
