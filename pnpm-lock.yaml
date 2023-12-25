@@ -8,7 +8,7 @@ specifiers:
   '@tanstack/react-query-devtools': ^4.32.0
   '@types/lodash-es': ^4.17.12
   '@types/node': ^20.10.5
-  '@types/qs': ^6.9.10
+  '@types/qs': ^6.9.11
   '@types/react': ^18.2.45
   '@types/react-dom': ^18.2.18
   '@typescript-eslint/eslint-plugin': ^6.14.0
@@ -128,7 +128,7 @@ dependencies:
 devDependencies:
   '@types/lodash-es': 4.17.12
   '@types/node': 20.10.5
-  '@types/qs': 6.9.10
+  '@types/qs': 6.9.11
   '@types/react': 18.2.45
   '@types/react-dom': 18.2.18
   '@typescript-eslint/eslint-plugin': 6.14.0_hdhd7lep2u7mp37r4wdy3vmljq
@@ -3057,8 +3057,8 @@ packages:
   /@types/prop-types/15.7.5:
     resolution: {integrity: sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==}
 
-  /@types/qs/6.9.10:
-    resolution: {integrity: sha512-3Gnx08Ns1sEoCrWssEgTSJs/rsT2vhGP+Ja9cnnk9k4ALxinORlQneLXFeFKOTJMOeZUFD1s7w+w2AphTpvzZw==}
+  /@types/qs/6.9.11:
+    resolution: {integrity: sha512-oGk0gmhnEJK4Yyk+oI7EfXsLayXatCWPHary1MtcmbAifkobT9cM9yutG/hZKIseOU0MqbIwQ/u2nn/Gb+ltuQ==}
     dev: true
 
   /@types/react-dom/18.2.18:
