@@ -86,7 +86,7 @@
     "fs-extra": "^11.2.0",
     "lint-staged": "^15.2.0",
     "npm-check-updates": "^16.14.12",
-    "plop": "^4.0.0",
+    "plop": "^4.0.1",
     "prettier": "3.1.1",
     "rollup-plugin-visualizer": "^5.11.0",
     "typescript": "^5.3.3",
