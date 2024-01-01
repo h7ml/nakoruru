@@ -55,7 +55,7 @@ specifiers:
   recoil-persist: ^5.1.0
   reset-css: ^5.0.2
   rollup-plugin-license: ^3.2.0
-  rollup-plugin-visualizer: ^5.11.0
+  rollup-plugin-visualizer: ^5.12.0
   stylelint: 16.1.0
   stylelint-config-recommended: ^14.0.0
   stylelint-config-styled-components: ^0.1.1
@@ -144,7 +144,7 @@ devDependencies:
   npm-check-updates: 16.14.12
   plop: 4.0.1
   prettier: 3.1.1
-  rollup-plugin-visualizer: 5.11.0
+  rollup-plugin-visualizer: 5.12.0
   typescript: 5.3.3
   vite: 5.0.10_gp2qq7yzsbw3xp4aqfe6bbhs4e
 
@@ -8397,8 +8397,8 @@ packages:
       spdx-satisfies: 5.0.1
     dev: false
 
-  /rollup-plugin-visualizer/5.11.0:
-    resolution: {integrity: sha512-exM0Ms2SN3AgTzMeW7y46neZQcyLY7eKwWAop1ZoRTCZwyrIRdMMJ6JjToAJbML77X/9N8ZEpmXG4Z/Clb9k8g==}
+  /rollup-plugin-visualizer/5.12.0:
+    resolution: {integrity: sha512-8/NU9jXcHRs7Nnj07PF2o4gjxmm9lXIrZ8r175bT9dK8qoLlvKTwRMArRCMgpMGlq8CTLugRvEmyMeMXIU2pNQ==}
     engines: {node: '>=14'}
     hasBin: true
     peerDependencies:
