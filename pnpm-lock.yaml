@@ -36,7 +36,7 @@ specifiers:
   multistreamsmixer: ^1.2.2
   npm-check-updates: ^16.14.12
   plop: ^4.0.1
-  prettier: 3.1.1
+  prettier: 3.2.2
   qs: ^6.11.2
   rc-field-form: 1.41.0
   react: ^18.2.0
@@ -143,7 +143,7 @@ devDependencies:
   lint-staged: 15.2.0
   npm-check-updates: 16.14.12
   plop: 4.0.1
-  prettier: 3.1.1
+  prettier: 3.2.2
   rollup-plugin-visualizer: 5.12.0
   typescript: 5.3.3
   vite: 5.0.11_akojlrpmtneiotfvlsjzx76gwm
@@ -7185,8 +7185,8 @@ packages:
     hasBin: true
     dev: false
 
-  /prettier/3.1.1:
-    resolution: {integrity: sha512-22UbSzg8luF4UuZtzgiUOfcGM8s4tjBv6dJRT7j275NXsy2jb4aJa4NNveul5x4eqlF1wuhuR2RElK71RvmVaw==}
+  /prettier/3.2.2:
+    resolution: {integrity: sha512-HTByuKZzw7utPiDO523Tt2pLtEyK7OibUD9suEJQrPUCYQqrHr74GGX6VidMrovbf/I50mPqr8j/II6oBAuc5A==}
     engines: {node: '>=14'}
     hasBin: true
     dev: true
