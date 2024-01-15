@@ -46,7 +46,7 @@ specifiers:
   react-flow-renderer: ^10.3.17
   react-query: ^4.0.0
   react-router-dom: ^6.21.2
-  react-use: ^17.4.2
+  react-use: ^17.4.3
   recoil: ^0.7.7
   recoil-devtools: ^0.5.0
   recoil-devtools-dock: ^0.5.0
@@ -101,7 +101,7 @@ dependencies:
   react-flow-renderer: 10.3.17_biqbaboplfbrettd7655fr4n2y
   react-query: 4.0.0_biqbaboplfbrettd7655fr4n2y
   react-router-dom: 6.21.2_biqbaboplfbrettd7655fr4n2y
-  react-use: 17.4.2_biqbaboplfbrettd7655fr4n2y
+  react-use: 17.4.3_biqbaboplfbrettd7655fr4n2y
   recoil: 0.7.7_biqbaboplfbrettd7655fr4n2y
   recoil-devtools: 0.5.0_react@18.2.0+recoil@0.7.7
   recoil-devtools-dock: 0.5.0_svxi3pep22mdnj3mttagz32tle
@@ -7973,8 +7973,8 @@ packages:
       tslib: 2.6.1
     dev: false
 
-  /react-use/17.4.2_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-1jPtmWLD8OJJNYCdYLJEH/HM+bPDfJuyGwCYeJFgPmWY8ttwpgZnW5QnzgM55CYUByUiTjHxsGOnEpLl6yQaoQ==}
+  /react-use/17.4.3_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-05Oyuwn4ZccdzLD4ttLbMe8TkobdKpOj7YCFE9VhVpbXrTWZpvCcMyroRw/Banh1RIcQRcM06tfzPpY5D9sTsQ==}
     peerDependencies:
       react: '*'
       react-dom: '*'
