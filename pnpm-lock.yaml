@@ -68,7 +68,7 @@ specifiers:
   unplugin-visualizer: ^0.0.7
   vite: ^5.0.12
   vite-plugin-compression: ^0.5.1
-  vite-plugin-html: ^3.2.1
+  vite-plugin-html: ^3.2.2
   vite-plugin-windicss: ^1.9.3
   windicss: ^3.5.6
   zustand: ^4.4.7
@@ -120,7 +120,7 @@ dependencies:
   unplugin-starter: 0.1.0_vite@5.0.12
   unplugin-visualizer: 0.0.7_vite@5.0.12
   vite-plugin-compression: 0.5.1_vite@5.0.12
-  vite-plugin-html: 3.2.1_vite@5.0.12
+  vite-plugin-html: 3.2.2_vite@5.0.12
   vite-plugin-windicss: 1.9.3_vite@5.0.12
   windicss: 3.5.6
   zustand: 4.4.7_7kh72gklg5qjlh5zc6s6v3p6v4
@@ -9510,8 +9510,8 @@ packages:
       - supports-color
     dev: false
 
-  /vite-plugin-html/3.2.1_vite@5.0.12:
-    resolution: {integrity: sha512-UuNTUvGPa9BxZK1I/VC+hWMSl0eIE5ClEdXza3SGGb09jxxS7oAAjRGalUJNZI9lAPvu0W817GD53K/p78wxQw==}
+  /vite-plugin-html/3.2.2_vite@5.0.12:
+    resolution: {integrity: sha512-vb9C9kcdzcIo/Oc3CLZVS03dL5pDlOFuhGlZYDCJ840BhWl/0nGeZWf3Qy7NlOayscY4Cm/QRgULCQkEZige5Q==}
     peerDependencies:
       vite: '>=2.0.0'
     dependencies:
