@@ -34,7 +34,7 @@ specifiers:
   mobx: ^6.12.0
   monaco-editor: ^0.45.0
   multistreamsmixer: ^1.2.2
-  npm-check-updates: ^16.14.12
+  npm-check-updates: ^16.14.14
   plop: ^4.0.1
   prettier: 3.2.4
   qs: ^6.11.2
@@ -141,7 +141,7 @@ devDependencies:
   eslint-plugin-react-refresh: 0.4.5_eslint@8.56.0
   fs-extra: 11.2.0
   lint-staged: 15.2.0
-  npm-check-updates: 16.14.12
+  npm-check-updates: 16.14.14
   plop: 4.0.1
   prettier: 3.2.4
   rollup-plugin-visualizer: 5.12.0
@@ -6573,8 +6573,8 @@ packages:
       npm-normalize-package-bin: 3.0.1
     dev: true
 
-  /npm-check-updates/16.14.12:
-    resolution: {integrity: sha512-5FvqaDX8AqWWTDQFbBllgLwoRXTvzlqVIRSKl9Kg8bYZTfNwMnrp1Zlmb5e/ocf11UjPTc+ShBFjYQ7kg6FL0w==}
+  /npm-check-updates/16.14.14:
+    resolution: {integrity: sha512-Y3ajS/Ep40jM489rLBdz9jehn/BMil5s9fA4PSr2ZJxxSmtLWCSmRqsI2IEZ9Nb3MTMu8a3s7kBs0l+JbjdkTA==}
     engines: {node: '>=14.14'}
     hasBin: true
     dependencies:
