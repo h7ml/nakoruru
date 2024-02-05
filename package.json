@@ -87,7 +87,7 @@
     "lint-staged": "^15.2.0",
     "npm-check-updates": "^16.14.14",
     "plop": "^4.0.1",
-    "prettier": "3.2.4",
+    "prettier": "3.2.5",
     "rollup-plugin-visualizer": "^5.12.0",
     "typescript": "^5.3.3",
     "vite": "^5.0.12"
