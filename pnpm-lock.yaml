@@ -17,7 +17,7 @@ specifiers:
   '@vitejs/plugin-legacy': ^5.3.0
   '@vitejs/plugin-react': ^4.2.1
   '@vitejs/plugin-react-swc': ^3.6.0
-  ahooks: ^3.7.9
+  ahooks: ^3.7.10
   antd: ^5.13.3
   axios: ^1.6.7
   classnames: ^2.5.1
@@ -82,7 +82,7 @@ dependencies:
   '@uiw/react-github-corners': 1.5.16_biqbaboplfbrettd7655fr4n2y
   '@vitejs/plugin-legacy': 5.3.0_vite@5.0.12
   '@vitejs/plugin-react-swc': 3.6.0_vite@5.0.12
-  ahooks: 3.7.9_react@18.2.0
+  ahooks: 3.7.10_react@18.2.0
   antd: 5.13.3_biqbaboplfbrettd7655fr4n2y
   axios: 1.6.7
   classnames: 2.5.1
@@ -3422,8 +3422,8 @@ packages:
       indent-string: 5.0.0
     dev: true
 
-  /ahooks/3.7.9_react@18.2.0:
-    resolution: {integrity: sha512-1nuCnaBe/DvZD2QAZVGLLmu0vDi6jxbiAP3Ghkj6Ocqk9YSXI6ydwo2x5I3lXowZyM8MNJDnHFvIo0vJS1CuFw==}
+  /ahooks/3.7.10_react@18.2.0:
+    resolution: {integrity: sha512-/HLYif7sFA/5qSuWKrwvjDbf3bq+sdaMrUWS7XGCDRWdC2FrG/i+u5LZdakMYc6UIgJTMQ7tGiJCV7sdU4kSIw==}
     engines: {node: '>=8.0.0'}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
@@ -3432,7 +3432,7 @@ packages:
       dayjs: 1.11.10
       intersection-observer: 0.12.2
       js-cookie: 2.2.1
-      lodash-es: 4.17.21
+      lodash: 4.17.21
       react: 18.2.0
       resize-observer-polyfill: 1.5.1
       screenfull: 5.2.0
