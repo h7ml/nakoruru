@@ -1,0 +1,1 @@
+import{cE as i,cq as s,j as r}from"./index-BYIAYquO.js";import{R as e}from"./index-BPpWFGVc.js";import"./index2-3I_u_Mx0.js";import"./index3-DD9VxT17.js";function n(){const n=i(s);return r.jsx(r.Fragment,{children:n?r.jsx(e,{initialNodes:n}):r.jsx("p",{children:"initialNodes is error"})})}export{n as default};
